@@ -405,9 +405,45 @@
   <meta property="og:image" content="/images/tool-ogp.webp">
   <meta property="og:type" content="website">
 </head>
-<body>
-  <!-- ヘッダー -->
-  <div id="header-placeholder"></div>
+<body>  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-container">
+        <div class="site-logo-text">
+            <a href="../index.html">CLAN</a>
+        </div>
+        <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+        <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+  </header>
+
+  <!-- モバイルメニュー -->
+  <div class="mobile-menu">
+    <nav aria-label="モバイルメニュー">
+        <ul>
+            <li><a href="../index.html">ホーム</a></li>
+            <li><a href="../achievement/index.html">お客様の声</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-cta">
+        <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+            無料相談
+        </a>
+    </div>
+  </div>
 
   <!-- メインコンテンツ -->
   <main>
@@ -509,28 +545,102 @@
                   <li class="usage-item">透明部分は指定した背景色（デフォルトは白）で塗りつぶされます。</li>
                   <li class="usage-item">品質を下げると、ファイルサイズを小さくできますが、画質は低下します。</li>
                   <li class="usage-item">変換後のファイル名は「元のファイル名.jpg」となります。</li>
-               </ul>
-            </div>
-            
-            <!-- ツールリンク -->            <div class="other-tools">
-               <h2 class="other-tools-title">その他のまえゆきツール</h2>
-               <div class="tools-list">
-
-                  <a href="image-resize.html" class="tool-link">画像サイズ変更</a>
-                  <a href="png-jpeg-to-webp.html" class="tool-link">WebP変換ツール</a>
-                  <a href="meme-generator.html" class="tool-link">ミームジェネレーター</a>
-                  <a href="letters-counter.html" class="tool-link">文字数カウント</a>
-                  <a href="color-palette.html" class="tool-link">カラーパレット</a>
-                  <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
-                  <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
-               </div>
+               </ul>            </div>            <!-- 他のツールリンク -->
+            <div class="other-tools">
+              <h2 class="other-tools-title">その他のまえゆきツール</h2>
+              <div class="tools-list">
+                <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
+                <a href="image-resize.html" class="tool-link">画像サイズ変更</a>
+                <a href="png-jpeg-to-webp.html" class="tool-link">WebP変換ツール</a>
+                <a href="png-to-jpeg.html" class="tool-link">PNG→JPEG変換</a>
+                <a href="meme-generator.html" class="tool-link">ミームジェネレーター</a>
+                <a href="letters-counter.html" class="tool-link">文字数カウント</a>
+                <a href="color-palette.html" class="tool-link">カラーパレット</a>
+                <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
+              </div>
             </div>
          </div>
-      </section>      <!-- 他のツールリンク -->
-   </main>
+      </section>   </main>
 
    <!-- フッター -->
-   <div id="footer-placeholder"></div>
+   <footer class="site-footer">
+     <div class="footer-container">
+       <div class="footer-brand">
+         <h2>CLAN</h2>
+       </div>
+       <div class="footer-links">
+         <ul>
+           <li><a href="https://utage-system.com/p/EcESO02xLLoK">無料相談</a></li>
+           <li><a href="../achievement/index.html">お客様の声</a></li>
+           <li><a href="../owner.html">運営者情報</a></li>
+           <li><a href="../terms.html">利用規約</a></li>
+           <li><a href="../privacy.html">プライバシーポリシー</a></li>
+           <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
+         </ul>
+       </div>
+     </div>
+   </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   <script>
+     document.addEventListener('DOMContentLoaded', function() {
+         // ハンバーガーメニューの制御
+         const hamburgerButton = document.querySelector('.hamburger-button');
+         const mobileMenu = document.querySelector('.mobile-menu');
+         
+         if (hamburgerButton && mobileMenu) {
+             hamburgerButton.addEventListener('click', function() {
+                 mobileMenu.classList.toggle('active');
+                 hamburgerButton.classList.toggle('active');
+             });
+         }
+
+         // すべてのAOS要素を確実に表示状態にする
+         const allAosElements = document.querySelectorAll('[data-aos]');
+         if (allAosElements.length > 0) {
+             allAosElements.forEach(el => {
+                 el.classList.add('aos-animate');
+                 el.style.opacity = '1';
+                 el.style.transform = 'none';
+                 el.removeAttribute('data-aos');
+             });
+         }
+         
+         // AOS初期化 - アニメーションを完全に無効化
+         if (typeof AOS !== 'undefined') {
+             AOS.init({
+                 duration: 0,
+                 easing: 'linear',
+                 once: true,
+                 offset: 0,
+                 disable: true,
+                 startEvent: 'DOMContentLoaded',
+                 disableMutationObserver: true
+             });
+             
+             setTimeout(function() {
+                 document.querySelectorAll('*[data-aos]').forEach(function(el) {
+                     el.style.opacity = '1';
+                     el.style.transform = 'none';
+                 });
+             }, 100);
+         }
+
+         // スクロール検出のためのIntersection Observer
+         const fadeElements = document.querySelectorAll('.fade-in');
+         const observer = new IntersectionObserver(entries => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     entry.target.classList.add('active');
+                 }
+             });
+         }, { threshold: 0.1 });
+
+         fadeElements.forEach(element => {
+             observer.observe(element);
+         });
+     });
+   </script>
    
    <script>
      if (!window.isScriptLoaded || !window.isScriptLoaded('/js/include.js')) {

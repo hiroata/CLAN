@@ -235,7 +235,37 @@
       background-color: #f9f9f9;
     }
     .wareki-table tr:hover {
-      background-color: #f1f7ff;
+      background-color: #f1f7ff;    }
+
+    /* その他のツール */
+    .other-tools {
+      margin-top: 40px;
+    }
+    .other-tools-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .tool-link {
+      display: inline-block;
+      padding: 8px 16px;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .tool-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      border-color: var(--primary);
     }
     
     /* レスポンシブ対応 */
@@ -270,7 +300,44 @@
 </head>
 <body>
   <!-- ヘッダー -->
-  <div id="header-placeholder"></div>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="../index.html">
+            <h1>CLAN</h1>
+          </a>
+        </div>
+        
+        <nav class="global-nav">
+          <ul class="nav-menu">
+            <li><a href="../index.html">ホーム</a></li>
+            <li><a href="../achievement/index.html">お客様の声</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="../owner.html#contact" class="cta-button">無料相談</a>
+        </div>
+        
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- モバイルメニュー -->
+    <nav class="mobile-menu">
+      <ul class="mobile-menu-list">
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../achievement/index.html">お客様の声</a></li>
+        <li><a href="../owner.html#contact" class="mobile-cta">無料相談</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- メインコンテンツ -->
   <main>
@@ -508,27 +575,95 @@
             <li class="usage-item">和暦一覧表：明治以降の元号と西暦の対応表を確認できます。</li>
             <li class="usage-item">入力した生年月日や日付情報はサーバーに送信されないため安全にご利用いただけます。</li>
           </ul>
-        </div>
-
-        <!-- 他のツールリンク -->        <div class="other-tools">
+        </div>        <!-- 他のツールリンク -->
+        <div class="other-tools">
           <h2 class="other-tools-title">その他のまえゆきツール</h2>
           <div class="tools-list">
-
+            <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
             <a href="image-resize.html" class="tool-link">画像サイズ変更</a>
             <a href="png-jpeg-to-webp.html" class="tool-link">WebP変換ツール</a>
             <a href="png-to-jpeg.html" class="tool-link">PNG→JPEG変換</a>
             <a href="meme-generator.html" class="tool-link">ミームジェネレーター</a>
             <a href="letters-counter.html" class="tool-link">文字数カウント</a>
             <a href="color-palette.html" class="tool-link">カラーパレット</a>
-            <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
+            <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- フッター -->
-  <div id="footer-placeholder"></div>
+  <!-- フッター -->  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>CLAN</h2>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="../owner.html#contact">無料相談</a></li>
+          <li><a href="../achievement/index.html">お客様の声</a></li>
+          <li><a href="../owner.html">運営者情報</a></li>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Intersection Observer for fade-in elements
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in-section elements
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // ハンバーガーメニューの制御
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.classList.toggle('mobile-menu-open');
+        });
+
+        // モバイルメニューのリンクをクリックしたときにメニューを閉じる
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
+          });
+        });
+      }
+    });
+  </script>
   <script>
     if (!window.isScriptLoaded || !window.isScriptLoaded('/js/include.js')) {
       document.write('<script src="/js/include.js"><\/script>');

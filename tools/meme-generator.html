@@ -562,9 +562,45 @@
 
 </head>
 <body>
-<!-- header -->
-  <!-- ヘッダー -->
-  <div id="header-placeholder"></div>
+<!-- header -->  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-container">
+        <div class="site-logo-text">
+            <a href="../index.html">CLAN</a>
+        </div>
+        <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+        <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+  </header>
+
+  <!-- モバイルメニュー -->
+  <div class="mobile-menu">
+    <nav aria-label="モバイルメニュー">
+        <ul>
+            <li><a href="../index.html">ホーム</a></li>
+            <li><a href="../achievement/index.html">お客様の声</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-cta">
+        <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+            無料相談
+        </a>
+    </div>
+  </div>
 
 
   <!-- メインコンテンツ -->
@@ -720,12 +756,26 @@
                      <a href="../tools/image-resize/" class="usage-link">画像サイズ変更ツール</a>や
                      <a href="../tools/png-to-jpeg/" class="usage-link">PNG→JPEG変換ツール</a>もぜひご利用ください。
                   </li>
-               </ul>
-            </div>
-      </section>
+               </ul>            </div>
 
-      <!-- シェアモーダル -->
-      <div class="share-modal" id="shareModal">
+        <!-- 他のツールリンク -->        <div class="other-tools">
+          <h2 class="other-tools-title">その他のまえゆきツール</h2>
+          <div class="tools-list">
+            <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
+            <a href="image-resize.html" class="tool-link">画像サイズ変更</a>
+            <a href="png-jpeg-to-webp.html" class="tool-link">WebP変換ツール</a>
+            <a href="png-to-jpeg.html" class="tool-link">PNG→JPEG変換</a>
+            <a href="meme-generator.html" class="tool-link">ミームジェネレーター</a>
+            <a href="letters-counter.html" class="tool-link">文字数カウント</a>
+            <a href="color-palette.html" class="tool-link">カラーパレット</a>
+            <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- シェアモーダル -->
+    <div class="share-modal" id="shareModal">
          <div class="share-dialog">
             <div class="share-dialog-title">
                <span>ミームをシェア</span>
@@ -746,23 +796,9 @@
                </a>
                <div class="share-option share-copy" id="shareCopy">
                   <svg width="20" height="20" fill="#fff" viewBox="0 0 24 24"><path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path></svg>
-               </div>
-
-      <!-- 読み込みインジケータ -->
+               </div>      <!-- 読み込みインジケータ -->
       <div class="loading" id="loading">
          <div class="loading-spinner"></div>
-
-      <!-- 他のツールリンク -->
-      <div class="other-tools">
-         <h2 class="other-tools-title">その他のまえゆきツール</h2>          <div class="tools-list">
-            <a href="image-resize.html" class="tool-link">画像サイズ変更</a>
-            <a href="png-jpeg-to-webp.html" class="tool-link">WebP変換ツール</a>
-            <a href="png-to-jpeg.html" class="tool-link">PNG→JPEG変換</a>
-            <a href="letters-counter.html" class="tool-link">文字数カウント</a>
-            <a href="color-palette.html" class="tool-link">カラーパレット</a>
-            <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
-            <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
-         </div>
       </div>
 
     <!-- SVGアイコン -->
@@ -770,17 +806,90 @@
       <symbol id="icon-pdf" viewBox="0 0 24 24">
         <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"></path>
       </symbol>
-    </svg>
-
-    <!-- 個別ツールのJavaScript -->
+    </svg>    <!-- 個別ツールのJavaScript -->
     <script>
       // ミームジェネレーター用のスクリプトはここに記述します
-    </script>
-  </p>
-</li>
-</main>
+    </script>  </main>
+  
   <!-- フッター -->
-  <div id="footer-placeholder"></div>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>CLAN</h2>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="https://utage-system.com/p/EcESO02xLLoK">無料相談</a></li>
+          <li><a href="../achievement/index.html">お客様の声</a></li>
+          <li><a href="../owner.html">運営者情報</a></li>
+          <li><a href="../terms.html">利用規約</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ハンバーガーメニューの制御
+        const hamburgerButton = document.querySelector('.hamburger-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (hamburgerButton && mobileMenu) {
+            hamburgerButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                hamburgerButton.classList.toggle('active');
+            });
+        }
+
+        // すべてのAOS要素を確実に表示状態にする
+        const allAosElements = document.querySelectorAll('[data-aos]');
+        if (allAosElements.length > 0) {
+            allAosElements.forEach(el => {
+                el.classList.add('aos-animate');
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+                el.removeAttribute('data-aos');
+            });
+        }
+        
+        // AOS初期化 - アニメーションを完全に無効化
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 0,
+                easing: 'linear',
+                once: true,
+                offset: 0,
+                disable: true,
+                startEvent: 'DOMContentLoaded',
+                disableMutationObserver: true
+            });
+            
+            setTimeout(function() {
+                document.querySelectorAll('*[data-aos]').forEach(function(el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }, 100);
+        }
+
+        // スクロール検出のためのIntersection Observer
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+  </script>
   
   <!-- ミームジェネレーター用JavaScript -->
   <script>
