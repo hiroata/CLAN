@@ -369,4 +369,138 @@
   window.SiteManager = SiteManager;
   window.ComponentLoader = ComponentLoader;
   
+  /**
+   * 画像ツール共通ユーティリティクラス
+   */
+  class ImageToolsUtils {
+    // ファイルドロップとファイル選択の設定
+    static setupFileDropAndSelection(dropArea, fileInput, handleFilesCallback) {
+      // ドラッグ&ドロップ機能
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, this.preventDefaults, false);
+      });
+
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropArea.addEventListener(eventName, this.highlight.bind(null, dropArea), false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, this.unhighlight.bind(null, dropArea), false);
+      });
+
+      // ファイルドロップ処理
+      dropArea.addEventListener('drop', function(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFilesCallback(files);
+      });
+
+      // ファイル選択ボタン処理
+      dropArea.addEventListener('click', function() {
+        fileInput.click();
+      });
+
+      fileInput.addEventListener('change', function() {
+        handleFilesCallback(this.files);
+      });
+    }
+
+    static preventDefaults(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    static highlight(dropArea) {
+      dropArea.classList.add('drag-over');
+    }
+
+    static unhighlight(dropArea) {
+      dropArea.classList.remove('drag-over');
+    }
+
+    // ファイルアイテムのUI作成
+    static createFileItem(file, imageSrc, onRemoveCallback) {
+      const fileItem = document.createElement('div');
+      fileItem.className = 'file-item';
+      
+      const sizeInKB = (file.size / 1024).toFixed(1);
+      
+      fileItem.innerHTML = `
+        <div class="file-preview">
+          <img src="${imageSrc}" alt="${file.name}" class="preview-image">
+        </div>
+        <div class="file-info">
+          <div class="file-name">${file.name}</div>
+          <div class="file-size">${sizeInKB} KB</div>
+        </div>
+        <button type="button" class="remove-file-btn" aria-label="ファイルを削除">×</button>
+      `;
+
+      // 削除ボタンイベント
+      const removeBtn = fileItem.querySelector('.remove-file-btn');
+      removeBtn.addEventListener('click', function() {
+        fileItem.remove();
+        if (onRemoveCallback) onRemoveCallback();
+      });
+
+      return fileItem;
+    }
+
+    // UI状態更新
+    static updateUI(message, isError = false) {
+      const messageElement = document.querySelector('.message') || this.createMessageElement();
+      messageElement.textContent = message;
+      messageElement.className = isError ? 'message error' : 'message success';
+      
+      // 3秒後に自動で消去
+      setTimeout(() => {
+        if (messageElement.parentNode) {
+          messageElement.remove();
+        }
+      }, 3000);
+    }
+
+    static createMessageElement() {
+      const messageElement = document.createElement('div');
+      messageElement.className = 'message';
+      document.querySelector('.tool-container').appendChild(messageElement);
+      return messageElement;
+    }
+
+    // ファイルサイズをフォーマット
+    static formatFileSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // 画像の寸法を取得
+    static getImageDimensions(file) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = function() {
+          resolve({
+            width: this.naturalWidth,
+            height: this.naturalHeight
+          });
+        };
+        img.src = URL.createObjectURL(file);
+      });
+    }
+  }
+
+  // グローバルに公開
+  window.ImageToolsUtils = ImageToolsUtils;
+  
+  // レガシー関数のサポート（後方互換性）
+  window.setupFileDropAndSelection = ImageToolsUtils.setupFileDropAndSelection.bind(ImageToolsUtils);
+  window.createFileItem = ImageToolsUtils.createFileItem.bind(ImageToolsUtils);
+  window.updateUI = ImageToolsUtils.updateUI.bind(ImageToolsUtils);
+  window.formatFileSize = ImageToolsUtils.formatFileSize.bind(ImageToolsUtils);
+  window.getImageDimensions = ImageToolsUtils.getImageDimensions.bind(ImageToolsUtils);
+
 })();

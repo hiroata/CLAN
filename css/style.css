@@ -1634,3 +1634,330 @@ footer { flex-shrink: 0; }
   height: 0 !important;
   overflow: hidden !important;
 }
+
+/* ==========================================
+   ツール共通スタイル（統合版）
+   ========================================== */
+
+/* ツールページ共通レイアウト */
+.tool-section {
+    padding: 80px 0 40px;
+    margin-top: var(--header-h, 60px);
+    background: #f8f9fa;
+    min-height: calc(100vh - var(--header-h, 60px));
+}
+
+.tool-container {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ツールヘッダー */
+.tool-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-dark, #333);
+    font-weight: 700;
+}
+
+.tool-subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-mid, #555);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* メイン機能エリア */
+.tool-main {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+}
+
+/* ファイルドロップエリア */
+.file-drop-area {
+    border: 3px dashed #e0e7ff;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #f8faff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.file-drop-area:hover,
+.file-drop-area.drag-over {
+    border-color: var(--primary, #0066ff);
+    background: #f0f4ff;
+    transform: translateY(-2px);
+}
+
+.drop-icon {
+    font-size: 48px;
+    color: #a0aec0;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.drop-text {
+    font-size: 18px;
+    color: var(--text-mid, #555);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.drop-subtext {
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+/* ファイル表示エリア */
+.files-display {
+    margin: 20px 0;
+}
+
+.files-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    min-width: 280px;
+}
+
+.file-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-info {
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 600;
+    color: var(--text-dark, #333);
+    font-size: 14px;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.file-size {
+    color: var(--text-mid, #555);
+    font-size: 12px;
+}
+
+.remove-file-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ff4757;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.remove-file-btn:hover {
+    background: #ff3742;
+}
+
+/* ツールボタン */
+.tool-btn {
+    background: var(--primary, #0066ff);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tool-btn:hover {
+    background: var(--dark-blue, #0d3283);
+    transform: translateY(-2px);
+}
+
+.tool-btn:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.tool-btn-secondary {
+    background: var(--secondary, #ff3a3a);
+}
+
+.tool-btn-secondary:hover {
+    background: #e53e3e;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 画像ツール固有のスタイル */
+.image-tool-section {
+    background: linear-gradient(135deg, #f6f9fc 0%, #e9f4ff 100%);
+}
+
+/* 画像プレビュー強化 */
+.image-preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.image-preview-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-preview-item:hover {
+    transform: translateY(-4px);
+}
+
+.preview-image-large {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.image-info {
+    font-size: 14px;
+    color: var(--text-mid, #555);
+}
+
+.image-info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.image-info-label {
+    font-weight: 600;
+}
+
+/* その他のツールセクション */
+.other-tools {
+    margin-top: 40px;
+}
+
+.other-tools-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--text-dark, #333);
+    font-weight: 600;
+}
+
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tool-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: var(--text-dark, #333);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tool-link:hover {
+    background: var(--primary, #0066ff);
+    color: white;
+    transform: translateY(-2px);
+    border-color: var(--primary, #0066ff);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+/* ツールページレスポンシブ対応 */
+@media (max-width: 768px) {
+    .tool-container {
+        padding: 0 16px;
+    }
+    
+    .tool-main {
+        padding: 20px;
+    }
+    
+    .file-drop-area {
+        padding: 30px 16px;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    .tool-btn {
+        justify-content: center;
+    }
+    
+    .files-container {
+        flex-direction: column;
+    }
+    
+    .file-item {
+        min-width: auto;
+    }
+    
+    .image-preview-container {
+        grid-template-columns: 1fr;
+    }
+}

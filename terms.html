@@ -15,10 +15,162 @@
     <meta property="og:title" content="利用規約 | CLAN">
     <meta property="og:description" content="CLANの利用規約です。当サイトをご利用いただく際の規約条件について詳しく説明しています。">
     <meta property="og:image" content="/images/ogp_image_about.webp">
-    <meta property="og:type" content="article">
-
-    <script src="/js/main.js" defer></script>
+    <meta property="og:type" content="article">    <script src="/js/main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <style>
+    /* 横スクロール防止とレスポンシブ対応 */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .apple-page-container {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .apple-card {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* 目次の改善 */
+    .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        max-width: 100%;
+    }
+    
+    /* タブレット対応 */
+    @media (max-width: 900px) {
+        .toc-grid {
+            grid-template-columns: 1fr !important;
+        }
+        
+        .apple-page-container {
+            padding: 0 1.5rem !important;
+        }
+    }
+    
+    /* モバイル（中）対応 */
+    @media (max-width: 768px) {
+        .apple-page-container {
+            padding: 0 1rem !important;
+        }
+        
+        .apple-card {
+            padding: 1rem !important;
+        }
+        
+        /* 目次をモバイルで確実に単一カラムに */
+        .toc-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.5rem !important;
+        }
+        
+        /* 各セクションのpaddingを調整 */
+        .apple-legal-section {
+            padding: 1.5rem !important;
+            margin-bottom: 2rem !important;
+        }
+        
+        /* リストのpaddingを調整 */
+        ol, ul {
+            padding-left: 1.2rem !important;
+        }
+        
+        /* フォントサイズを少し小さく */
+        .apple-legal-section h2 {
+            font-size: 1.2rem !important;
+        }
+        
+        .apple-legal-section p {
+            font-size: 0.95rem !important;
+        }
+        
+        .apple-legal-section li {
+            font-size: 0.95rem !important;
+        }
+    }
+    
+    /* モバイル（小）対応 */
+    @media (max-width: 480px) {
+        .apple-page-container {
+            padding: 0 0.75rem !important;
+        }
+        
+        .apple-card {
+            padding: 0.75rem !important;
+        }
+        
+        .apple-legal-section {
+            padding: 1rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        
+        .apple-legal-section h2 {
+            font-size: 1.1rem !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .apple-legal-section p {
+            font-size: 0.9rem !important;
+        }
+        
+        .apple-legal-section li {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.6rem !important;
+        }
+        
+        ol, ul {
+            padding-left: 1rem !important;
+        }
+        
+        /* 目次の背景調整 */
+        .toc-grid + div {
+            padding: 1.5rem 1rem !important;
+        }
+    }
+    
+    /* 極小デバイス対応 */
+    @media (max-width: 360px) {
+        .apple-page-container {
+            padding: 0 0.5rem !important;
+        }
+        
+        .apple-card {
+            padding: 0.5rem !important;
+        }
+        
+        .apple-legal-section {
+            padding: 0.75rem !important;
+        }
+        
+        .apple-legal-section h2 {
+            font-size: 1rem !important;
+        }
+        
+        .apple-legal-section p,
+        .apple-legal-section li {
+            font-size: 0.85rem !important;
+        }
+    }
+    
+    /* ワードブレーク対応 */
+    .apple-legal-section p,
+    .apple-legal-section li,
+    .toc-grid a {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* 長いURLやテキストの処理 */
+    .apple-legal-section a {
+        word-break: break-all;
+        overflow-wrap: break-word;
+    }
+    </style>
 </head>
 <body>
 
@@ -58,6 +210,7 @@
             <ul>
                 <li><a href="/index.html" aria-current="page">ホーム</a></li>
                 <li><a href="/achievement/index.html">お客様の声</a></li>
+                <li><a href="/tools/index.html">まえゆきツール</a></li>
             </ul>
         </nav><div class="header-cta">
             <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact" aria-label="無料相談する">
@@ -77,6 +230,7 @@
         <ul>
             <li><a href="/index.html">ホーム</a></li>
             <li><a href="/achievement/index.html">お客様の声</a></li>
+            <li><a href="/tools/index.html">まえゆきツール</a></li>
         </ul>
     </nav><div class="mobile-cta">
         <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact" aria-label="無料相談する">
@@ -96,11 +250,10 @@
     </section>
 
     <div class="apple-page-container">
-        <div class="apple-card" data-aos="fade-up">
-            <!-- 目次 -->
+        <div class="apple-card" data-aos="fade-up">            <!-- 目次 -->
             <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2rem; border-radius: 16px; margin-bottom: 3rem; border-left: 4px solid var(--primary);">
                 <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary);">目次</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                <div class="toc-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
                     <ul style="margin: 0; padding-left: 1.5rem; color: #555; line-height: 1.8;">
                         <li style="margin-bottom: 0.5rem;"><a href="#intro" style="color: var(--primary); text-decoration: none; font-weight: 500;">はじめに</a></li>
                         <li style="margin-bottom: 0.5rem;"><a href="#application" style="color: var(--primary); text-decoration: none; font-weight: 500;">第1条（適用範囲）</a></li>
@@ -116,8 +269,8 @@
                         <li style="margin-bottom: 0.5rem;"><a href="#governing-law" style="color: var(--primary); text-decoration: none; font-weight: 500;">第9条（準拠法・管轄裁判所）</a></li>
                     </ul>
                 </div>
-            </div>            <div class="apple-legal-section" id="intro" style="margin-bottom: 3rem; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <p style="font-size: 1.1rem; color: #555; line-height: 1.8; margin: 0;">
+            </div><div class="apple-legal-section" id="intro" style="margin-bottom: 3rem; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <p style="font-size: 1.1rem; color: #555; line-height: 1.8; margin: 0; word-break: break-word; overflow-wrap: break-word;">
                     この利用規約（以下「<span style="color: var(--primary); font-weight: 600;">本規約</span>」）は、株式会社CLAN（以下「<span style="color: var(--primary); font-weight: 600;">当社</span>」）が運営するウェブサイト「CLAN」（以下「<span style="color: var(--primary); font-weight: 600;">当サイト</span>」）の利用条件を定めるものです。当サイトをご利用される方（以下「<span style="color: var(--primary); font-weight: 600;">ユーザー</span>」）は、本規約に同意したものとみなします。
                 </p>
             </div>
@@ -224,11 +377,11 @@
   <div class="footer-container">
     <div class="footer-brand">
       <h2>CLAN</h2>
-    </div>
-    <div class="footer-links">
+    </div>    <div class="footer-links">
       <ul>
         <li><a href="https://utage-system.com/p/EcESO02xLLoK">無料相談</a></li>
         <li><a href="/achievement/index.html">お客様の声</a></li>
+        <li><a href="/tools/index.html">まえゆきツール</a></li>
         <li><a href="/owner.html">運営者情報</a></li>
         <li><a href="/terms.html">利用規約</a></li>
         <li><a href="/privacy.html">プライバシーポリシー</a></li>
