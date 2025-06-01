@@ -652,24 +652,23 @@
                      <div class="option-group">
                         <label class="option-label" for="textColor">テキスト色</label>
                         <input type="color" id="textColor" class="option-color" value="#ffffff">
-                     </div>
-
-                     <div class="option-group">
+                     </div>                     <div class="option-group">
                         <label class="option-label" for="strokeColor">枠線色</label>
                         <input type="color" id="strokeColor" class="option-color" value="#000000">
                      </div>
+                  </div>
+               </div>
 
                <div id="noTemplateMessage" class="no-template-message">
                   <p>画像を選択するとここにエディタが表示されます</p>
                </div>
+            </div>
 
             <!-- ステップ3: ダウンロード/シェア -->
             <div class="step-section">
                <span class="step-number">3</span>
                <h2 class="step-title">完成したミームをダウンロード・シェア</h2>
-               <p class="step-description">作成したミームを保存して皆とシェアしましょう</p>
-
-               <div class="action-buttons">
+               <p class="step-description">作成したミームを保存して皆とシェアしましょう</p>               <div class="action-buttons">
                   <button type="button" class="download-button" id="downloadBtn" disabled="">
                      <span class="button-icon">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -694,6 +693,7 @@
                      SNSでシェア
                   </button>
                </div>
+            </div>
 
             <!-- 使い方ボックス -->
             <div class="usage-box">
@@ -779,9 +779,363 @@
   </p>
 </li>
 </main>
-
   <!-- フッター -->
   <div id="footer-placeholder"></div>
+  
+  <!-- ミームジェネレーター用JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 要素の参照
+        const dropArea = document.getElementById('dropArea');
+        const fileInput = document.getElementById('fileInput');
+        const templateGrid = document.getElementById('templateGrid');
+        const memeEditor = document.getElementById('memeEditor');
+        const memeCanvas = document.getElementById('memeCanvas');
+        const ctx = memeCanvas.getContext('2d');
+        const topTextInput = document.getElementById('topText');
+        const bottomTextInput = document.getElementById('bottomText');
+        const fontSizeSelect = document.getElementById('fontSize');
+        const fontFamilySelect = document.getElementById('fontFamily');
+        const textColorInput = document.getElementById('textColor');
+        const strokeColorInput = document.getElementById('strokeColor');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const shareModal = document.getElementById('shareModal');
+        const shareClose = document.getElementById('shareClose');
+        const noTemplateMessage = document.getElementById('noTemplateMessage');
+
+        // 状態管理
+        let currentImage = null;
+        let fontSize = 30;
+        let fontFamily = "'Impact', sans-serif";
+        let textColor = '#ffffff';
+        let strokeColor = '#000000';
+
+        // テンプレート画像の定義（プレースホルダー画像を使用）
+        const templates = [
+            { id: 1, name: 'Drake', url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2YjZiIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkRyYWtlPC90ZXh0Pjwvc3ZnPg==' },
+            { id: 2, name: '注目される彼氏', url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNGVjZGM0Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuazqOebruOBleOCjOOCi+W9vOawj+OAguOCreODo+ODg+ODiDwvdGV4dD48L3N2Zz4=' },
+            { id: 3, name: '女性と猫', url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDViN2QxIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWlsOaAp+OBqOeMqjwvdGV4dD48L3N2Zz4=' },
+            { id: 4, name: '2つのボタン', url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjdiNzMxIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPjLjgaTjga7jg5zjgr/jg7M8L3RleHQ+PC9zdmc+' },
+            { id: 5, name: '進化する脳', url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNWYyN2NkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPumAsuWMluOBmeOCi+iEsy8vdGV4dD48L3N2Zz4=' },
+            { id: 6, name: '意見を変えて', url: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDBkMmQzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuaEj+imi+OCkuWkieOBiOOBpjwvdGV4dD48L3N2Zz4=' }
+        ];
+
+        // テンプレートの表示
+        function displayTemplates() {
+            templateGrid.innerHTML = '';
+            templates.forEach(template => {
+                const img = document.createElement('img');
+                img.src = template.url;
+                img.alt = template.name;
+                img.title = template.name;
+                img.className = 'template-item';
+                img.addEventListener('click', () => loadTemplate(template.url));
+                templateGrid.appendChild(img);
+            });
+        }
+
+        // ファイルドロップの設定
+        if (typeof setupFileDropAndSelection === 'function') {
+            setupFileDropAndSelection(dropArea, fileInput, handleFiles);
+        } else {
+            // フォールバック処理
+            dropArea.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+            
+            // ドラッグ&ドロップ
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            dropArea.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            });
+        }
+
+        // ファイル処理
+        function handleFiles(files) {
+            const file = files[0];
+            if (!file || !file.type.match('image.*')) {
+                if (typeof updateUI === 'function') {
+                    updateUI('画像ファイルを選択してください', true);
+                } else {
+                    alert('画像ファイルを選択してください');
+                }
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => loadImage(e.target.result);
+            reader.readAsDataURL(file);
+        }
+
+        // テンプレート読み込み
+        function loadTemplate(url) {
+            // アクティブなテンプレートのスタイルを更新
+            document.querySelectorAll('.template-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.src === url) item.classList.add('active');
+            });
+            loadImage(url);
+        }
+
+        // 画像読み込み
+        function loadImage(src) {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function() {
+                currentImage = img;
+                
+                // キャンバスサイズを画像に合わせる（最大幅600px）
+                const maxWidth = 600;
+                const ratio = img.width / img.height;
+                
+                if (img.width > maxWidth) {
+                    memeCanvas.width = maxWidth;
+                    memeCanvas.height = maxWidth / ratio;
+                } else {
+                    memeCanvas.width = img.width;
+                    memeCanvas.height = img.height;
+                }
+                
+                // エディタを表示
+                memeEditor.style.display = 'block';
+                noTemplateMessage.style.display = 'none';
+                downloadBtn.disabled = false;
+                shareBtn.disabled = false;
+                
+                // 初期描画
+                drawMeme();
+            };
+            img.src = src;
+        }
+
+        // ミーム描画
+        function drawMeme() {
+            if (!currentImage) return;
+
+            // キャンバスをクリア
+            ctx.clearRect(0, 0, memeCanvas.width, memeCanvas.height);
+            
+            // 画像を描画
+            ctx.drawImage(currentImage, 0, 0, memeCanvas.width, memeCanvas.height);
+            
+            // テキスト設定
+            ctx.font = `bold ${fontSize}px ${fontFamily}`;
+            ctx.fillStyle = textColor;
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = Math.max(1, fontSize / 15);
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            
+            // 上部テキスト
+            const topText = topTextInput.value.toUpperCase();
+            if (topText) {
+                const y = fontSize * 0.5;
+                drawTextWithStroke(topText, memeCanvas.width / 2, y);
+            }
+            
+            // 下部テキスト
+            ctx.textBaseline = 'bottom';
+            const bottomText = bottomTextInput.value.toUpperCase();
+            if (bottomText) {
+                const y = memeCanvas.height - fontSize * 0.5;
+                drawTextWithStroke(bottomText, memeCanvas.width / 2, y);
+            }
+        }
+
+        // ストローク付きテキスト描画
+        function drawTextWithStroke(text, x, y) {
+            // テキストを行に分割（長い場合）
+            const maxWidth = memeCanvas.width * 0.9;
+            const words = text.split(' ');
+            let line = '';
+            let lines = [];
+            
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const metrics = ctx.measureText(testLine);
+                const testWidth = metrics.width;
+                
+                if (testWidth > maxWidth && n > 0) {
+                    lines.push(line);
+                    line = words[n] + ' ';
+                } else {
+                    line = testLine;
+                }
+            }
+            lines.push(line);
+            
+            // 各行を描画
+            const lineHeight = fontSize * 1.2;
+            lines.forEach((line, index) => {
+                const lineY = y + (index * lineHeight);
+                // ストローク（枠線）を描画
+                ctx.strokeText(line.trim(), x, lineY);
+                // テキストを描画
+                ctx.fillText(line.trim(), x, lineY);
+            });
+        }
+
+        // イベントリスナー設定
+        topTextInput.addEventListener('input', drawMeme);
+        bottomTextInput.addEventListener('input', drawMeme);
+        
+        fontSizeSelect.addEventListener('change', (e) => {
+            fontSize = parseInt(e.target.value);
+            drawMeme();
+        });
+        
+        fontFamilySelect.addEventListener('change', (e) => {
+            fontFamily = e.target.value;
+            drawMeme();
+        });
+        
+        textColorInput.addEventListener('input', (e) => {
+            textColor = e.target.value;
+            drawMeme();
+        });
+        
+        strokeColorInput.addEventListener('input', (e) => {
+            strokeColor = e.target.value;
+            drawMeme();
+        });
+
+        // ダウンロード機能
+        downloadBtn.addEventListener('click', () => {
+            if (!currentImage) return;
+            
+            try {
+                memeCanvas.toBlob((blob) => {
+                    if (blob) {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `meme_${Date.now()}.png`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        
+                        if (typeof updateUI === 'function') {
+                            updateUI('ミーム画像をダウンロードしました！');
+                        }
+                    }
+                }, 'image/png');
+            } catch (error) {
+                console.error('ダウンロードエラー:', error);
+                if (typeof updateUI === 'function') {
+                    updateUI('ダウンロードに失敗しました', true);
+                } else {
+                    alert('ダウンロードに失敗しました');
+                }
+            }
+        });
+
+        // シェア機能
+        shareBtn.addEventListener('click', () => {
+            if (!currentImage) return;
+            
+            try {
+                memeCanvas.toBlob((blob) => {
+                    if (blob) {
+                        const url = URL.createObjectURL(blob);
+                        const sharePreviewImg = document.getElementById('sharePreviewImg');
+                        if (sharePreviewImg) {
+                            sharePreviewImg.src = url;
+                        }
+                        shareModal.style.display = 'flex';
+                    }
+                }, 'image/png');
+            } catch (error) {
+                console.error('シェアエラー:', error);
+                if (typeof updateUI === 'function') {
+                    updateUI('シェア機能の準備に失敗しました', true);
+                } else {
+                    alert('シェア機能の準備に失敗しました');
+                }
+            }
+        });
+
+        // シェアモーダル閉じる
+        if (shareClose) {
+            shareClose.addEventListener('click', () => {
+                shareModal.style.display = 'none';
+            });
+        }
+
+        // モーダル外クリックで閉じる
+        shareModal.addEventListener('click', (e) => {
+            if (e.target === shareModal) {
+                shareModal.style.display = 'none';
+            }
+        });
+
+        // シェアボタンのイベント
+        const shareTwitter = document.getElementById('shareTwitter');
+        const shareFacebook = document.getElementById('shareFacebook');
+        const shareLine = document.getElementById('shareLine');
+        const shareCopy = document.getElementById('shareCopy');
+
+        if (shareTwitter) {
+            shareTwitter.addEventListener('click', (e) => {
+                e.preventDefault();
+                const text = encodeURIComponent('私が作成したミーム画像です！ #まえゆきツール');
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+            });
+        }
+
+        if (shareFacebook) {
+            shareFacebook.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+            });
+        }
+
+        if (shareLine) {
+            shareLine.addEventListener('click', (e) => {
+                e.preventDefault();
+                const text = encodeURIComponent('私が作成したミーム画像です！');
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://social-plugins.line.me/lineit/share?url=${url}&text=${text}`, '_blank');
+            });
+        }
+
+        if (shareCopy) {
+            shareCopy.addEventListener('click', () => {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    if (typeof updateUI === 'function') {
+                        updateUI('URLをコピーしました！');
+                    } else {
+                        alert('URLをコピーしました！');
+                    }
+                }).catch(() => {
+                    if (typeof updateUI === 'function') {
+                        updateUI('URLのコピーに失敗しました', true);
+                    } else {
+                        alert('URLのコピーに失敗しました');
+                    }
+                });
+            });
+        }
+
+        // 初期化
+        displayTemplates();
+        
+        console.log('ミームジェネレーターが初期化されました');
+    });
+  </script>
+  
   <script>
     if (!window.isScriptLoaded || !window.isScriptLoaded('/js/include.js')) {
         document.write('<script src="/js/include.js"><\/script>');
