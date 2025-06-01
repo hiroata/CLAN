@@ -7,8 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap&subset=japanese&font-display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link rel="icon" href="/images/favicon.ico">
     
@@ -17,29 +16,227 @@
     <meta property="og:image" content="/images/ogp_image_about.webp">
     <meta property="og:type" content="article">    <script src="/js/main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-      <style>
-    /* 横スクロール防止とレスポンシブ対応 */
-    body {
-        overflow-x: hidden;
-    }
-    
-    .apple-page-container {
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
-    
-    .apple-card {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-    
-    /* 目次の改善 */
-    .toc-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        max-width: 100%;
-    }
+    <!-- Apple風デザインスタイル -->
+    <style>
+        :root {
+            --primary: #0071e3;
+            --primary-dark: #0056b3;
+            --text-dark: #1d1d1f;
+            --text-light: #86868b;
+            --bg-light: #f5f5f7;
+            --border-radius: 18px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --shadow: 0 12px 40px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .apple-hero-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apple-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.15) 0%, transparent 50%);
+        }
+
+        .apple-hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .apple-hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .apple-hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            opacity: 0.9;
+            margin: 0;
+            font-weight: 400;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .apple-page-container {
+            max-width: 1000px;
+            margin: -40px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 3;
+            overflow-x: hidden;
+        }
+
+        .apple-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .apple-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%);
+        }
+
+        /* 横スクロール防止とレスポンシブ対応 */
+        body {
+            overflow-x: hidden;
+        }        /* 目次の改善 */
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 100%;
+        }
+
+        .table-of-contents {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid #e9ecef;
+        }
+
+        .table-of-contents h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .table-of-contents li {
+            margin: 0;
+        }
+
+        .table-of-contents a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
+            transition: var(--transition);
+            border-radius: 8px;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .table-of-contents a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .table-of-contents a:hover {
+            color: var(--primary);
+            background: rgba(0, 113, 227, 0.05);
+            padding-left: 1.5rem;
+        }        .table-of-contents a:hover::before {
+            opacity: 1;
+        }
+
+        .apple-legal-section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .apple-legal-section:hover {
+            box-shadow: var(--shadow-hover);
+            border-left-color: var(--primary);
+        }
+
+        .apple-legal-section h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .apple-legal-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .apple-legal-section p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .apple-legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .apple-legal-section ul,
+        .apple-legal-section ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .apple-legal-section li {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .apple-legal-section strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
     
     /* タブレット対応 */
     @media (max-width: 900px) {
