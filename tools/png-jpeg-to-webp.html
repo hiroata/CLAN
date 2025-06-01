@@ -1,0 +1,833 @@
+<!-- ツール共通テンプレート --><!DOCTYPE html><html lang="ja"><head>
+    <script src="/js/prevent-duplicate-includes.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="description" content="まえゆきツールのWebP変換ツール - JPEG・PNG画像をまとめてWebP形式に変換できる無料ツールです。ファイルサイズを最大70%削減し、Webサイトの表示速度を向上できます。">
+  <meta name="keywords" content="WebP変換,WebP画像,画像圧縮,JPEG変換,PNG変換,無料ツール,オンライン変換">
+  <title>WebP変換ツール | まえゆきツール</title>
+
+  <!-- リソースの先読み -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- インクルード処理 -->
+
+  <!-- 画像遅延読み込み -->
+  <script src="/js/lazy-loading.js" defer></script>
+
+  <!-- 共通CSSとフォント -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
+
+  <!-- ツール共通CSS -->
+  <link rel="stylesheet" href="/css/tools-common.css">
+  <link rel="stylesheet" href="/css/image-tools-styles.css">
+
+  <!-- 共通スクリプト読み込み -->
+  <script src="/js/image-tools-utils.js"></script>
+
+  <!-- 個別ツールのスタイル -->  <style>
+    :root{--primary:#0066ff;--secondary:#ff3a3a;--accent:#ff9500;--dark-blue:#0d3283;--light-bg:#f8f9fa;--text-dark:#333;--text-mid:#555;--header-h:60px}*,::after,::before{box-sizing:border-box;margin:0;padding:0}body{font:16px/1.6 'Noto Sans JP',sans-serif;color:var(--text-dark);background:#fff;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;-webkit-text-size-adjust:100%}img{max-width:100%;height:auto;vertical-align:middle;border:0}a{text-decoration:none;color:inherit}ul{list-style:none}main{flex:1 0 auto}.site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);height:var(--header-h);display:flex;align-items:center}.header-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;width:100%}.site-logo-text{font-weight:700;font-size:20px}.site-logo-text a{color:var(--dark-blue)}.hamburger-button{display:block;width:30px;height:30px;position:relative;z-index:1001;border:0;background:0;cursor:pointer}.hamburger-button span{display:block;position:absolute;width:100%;height:2px;background:var(--text-dark);left:0}.hamburger-button span:nth-child(1){top:8px}.hamburger-button span:nth-child(2){top:14px}.hamburger-button span:nth-child(3){bottom:8px}
+
+     /* フッタースタイル */
+     .site-footer {
+         background: linear-gradient(135deg, #1a2d54, #0d3283);
+         color: #fff;
+         padding-top: 50px;
+         position: relative;
+         z-index: 10;
+         margin-top: 40px;
+         box-shadow: 0 -8px 20px rgba(0,0,0,0.15);
+     }
+     .footer-container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 20px;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: flex-start;
+         gap: 32px;
+     }
+     .footer-widgets {
+         display: flex;
+         flex: 1;
+         flex-wrap: wrap;
+         gap: 32px;
+     }
+     .widget-area {
+         min-width: 160px;
+     }
+     .widget-area h4 {
+         color: white;
+         margin-bottom: 15px;
+         font-size: 16px;
+         font-weight: bold;
+     }
+     .widget-area ul {
+         padding: 0;
+         list-style: none;
+     }
+     .widget-area ul li {
+         position: relative;
+         margin-bottom: 10px;
+     }
+     .widget-area ul li a {
+         position: relative;
+         display: inline-block;
+         color: rgba(255, 255, 255, 0.8);
+         font-size: 14px;
+         text-decoration: none;
+         transition: all 0.15s ease-out;
+     }
+     .widget-area ul li a:hover {
+         color: white;
+     }
+     @media (max-width: 768px) {
+         .footer-container {
+             flex-direction: column;
+             gap: 20px;
+         }
+         .footer-widgets {
+             flex-direction: column;
+             gap: 20px;
+         }
+     }
+
+     /* WebP変換ツールスタイル */
+     .tool-section {
+         padding: 80px 0 40px;
+         margin-top: var(--header-h);
+         background: #f9f3e9;
+     }
+     .tool-container {
+         max-width: 840px;
+         margin: 0 auto;
+         padding: 0 20px;
+     }
+     .tool-title {
+         font-size: 28px;
+         text-align: center;
+         margin-bottom: 1rem;
+         color: var(--text-dark);
+     }
+     .tool-subtitle {
+         font-size: 16px;
+         color: var(--text-mid);
+         text-align: center;
+         margin-bottom: 8px;
+     }
+     .tool-label {
+         font-size: 12px;
+         display: table;
+         margin: 0 auto;
+         padding: 4px 10px;
+         border-radius: 15px;
+         background: var(--text-mid);
+         color: #fff;
+         letter-spacing: .05em;
+     }
+
+     /* ステップスタイル */
+     .step-section {
+         background: #fff;
+         border-radius: 10px;
+         padding: 25px;
+         position: relative;
+         margin-top: 30px;
+         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+     }
+     .step-number {
+         position: absolute;
+         left: -10px;
+         top: -10px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 30px;
+         height: 30px;
+         font-weight: 700;
+         text-align: center;
+         background: var(--primary);
+         color: #fff;
+         border-radius: 50%;
+         font-size: 16px;
+     }
+     .step-title {
+         font-size: 18px;
+         margin-bottom: 10px;
+         line-height: 1.3;
+     }
+     .step-description {
+         font-size: 14px;
+         color: var(--text-mid);
+         margin-bottom: 15px;
+     }
+
+     /* ドロップエリア */
+     .drop-area {
+         border: 2px dashed #ccc;
+         border-radius: 8px;
+         padding: 20px;
+         text-align: center;
+         cursor: pointer;
+         transition: all 0.3s;
+         margin-bottom: 20px;
+     }
+     .drop-area.active {
+         border-color: var(--primary);
+         background: rgba(0, 102, 255, 0.05);
+     }
+     .drop-area-icon {
+         font-size: 32px;
+         margin-bottom: 10px;
+         color: #aaa;
+     }
+     .drop-area-text {
+         margin-bottom: 10px;
+     }
+     .file-button {
+         display: inline-block;
+         background: var(--primary);
+         color: white;
+         padding: 6px 14px;
+         border-radius: 4px;
+         font-size: 14px;
+         cursor: pointer;
+         transition: background 0.3s;
+     }
+     .file-button:hover {
+         background: #0052cc;
+     }
+     .file-input {
+         display: none;
+     }
+
+     /* ファイルプレビュー */
+     .files-container {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 10px;
+         margin-bottom: 20px;
+     }
+     .file-item {
+         position: relative;
+         width: 100px;
+         height: 100px;
+         border-radius: 4px;
+         overflow: hidden;
+         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+     }
+     .file-preview {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+     }
+     .file-remove {
+         position: absolute;
+         right: 5px;
+         top: 5px;
+         width: 20px;
+         height: 20px;
+         background: rgba(255,0,0,0.8);
+         color: white;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 12px;
+         cursor: pointer;
+         z-index: 1;
+     }
+     .files-meta {
+         font-size: 14px;
+         color: var(--text-mid);
+         margin-bottom: 15px;
+     }
+
+     /* 品質スライダー */
+     .quality-slider-container {
+         margin-bottom: 20px;
+     }
+     .quality-slider-label {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 5px;
+     }
+     .quality-slider {
+         width: 100%;
+         -webkit-appearance: none;
+         appearance: none;
+         height: 6px;
+         border-radius: 3px;
+         background: #ddd;
+         outline: none;
+     }
+     .quality-slider::-webkit-slider-thumb {
+         -webkit-appearance: none;
+         appearance: none;
+         width: 18px;
+         height: 18px;
+         border-radius: 50%;
+         background: var(--primary);
+         cursor: pointer;
+     }
+     .quality-slider::-moz-range-thumb {
+         width: 18px;
+         height: 18px;
+         border-radius: 50%;
+         background: var(--primary);
+         cursor: pointer;
+     }
+
+     /* ボタン */
+     .btn-container {
+         display: flex;
+         justify-content: space-between;
+         margin-top: 20px;
+     }
+     .btn-primary, 
+     .btn-secondary {
+         padding: 10px 20px;
+         border: none;
+         border-radius: 4px;
+         font-size: 16px;
+         font-weight: 600;
+         cursor: pointer;
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         transition: all 0.3s;
+     }
+     .btn-primary {
+         background: var(--primary);
+         color: white;
+     }
+     .btn-secondary {
+         background: #e0e0e0;
+         color: var(--text-dark);
+     }
+     .btn-primary:hover {
+         background: #0052cc;
+     }
+     .btn-secondary:hover {
+         background: #d0d0d0;
+     }
+     .btn-primary:disabled,
+     .btn-secondary:disabled {
+         opacity: 0.6;
+         cursor: not-allowed;
+     }
+     .btn-primary i,
+     .btn-secondary i {
+         margin-right: 8px;
+     }
+
+     /* 結果テーブル */
+     .result-table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px;
+     }
+     .result-table th,
+     .result-table td {
+         padding: 8px 12px;
+         text-align: left;
+         border-bottom: 1px solid #eee;
+     }
+     .result-table th {
+         background: #f5f5f5;
+         font-weight: 600;
+         color: var(--text-dark);
+     }
+     .file-size-reduction {
+         color: #2e7d32;
+         font-weight: 600;
+     }
+
+     /* レスポンシブ調整 */
+     @media (max-width: 768px) {
+         .tool-title {
+             font-size: 24px;
+         }
+         .step-section {
+             padding: 20px;
+         }
+         .btn-container {
+             flex-direction: column;
+             gap: 15px;
+         }
+         .btn-primary, 
+         .btn-secondary {
+             width: 100%;
+         }
+         .result-table {
+             font-size: 14px;
+         }
+         .result-table th,
+         .result-table td {
+             padding: 6px 8px;
+         }
+     }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="site-logo-text">
+        <a href="/index.html">CLAN</a>
+      </div>
+      <button class="hamburger-button" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ツールコンテンツ -->
+    <section class="tool-section">
+      <div class="tool-container">
+        <span class="tool-label">画像ツール</span>
+        <h1 class="tool-title">WebP変換ツール</h1>
+        <p class="tool-subtitle">JPEG・PNG画像をWebP形式に変換して画像サイズを削減</p>
+
+        <!-- ステップ1: ドラッグ＆ドロップ -->
+        <div class="step-section">
+          <div class="step-number">1</div>
+          <h2 class="step-title">JPEG・PNG画像を選択</h2>
+          <p class="step-description">変換したい画像ファイルをドラッグ＆ドロップするか、ファイル選択ボタンをクリックします。複数のファイルを一度に選択できます。</p>
+          
+          <div id="dropArea" class="drop-area">
+            <div class="drop-area-icon">📁</div>
+            <p class="drop-area-text">ここに画像をドロップ</p>
+            <label class="file-button">
+              画像を選択
+              <input type="file" id="fileInput" class="file-input" accept="image/jpeg,image/png,image/gif" multiple>
+            </label>
+          </div>
+          
+          <!-- ファイルプレビュー -->
+          <div id="filesContainer" class="files-container"></div>
+          <div id="filesMeta" class="files-meta"></div>
+        </div>
+        
+        <!-- ステップ2: 変換設定 -->
+        <div class="step-section">
+          <div class="step-number">2</div>
+          <h2 class="step-title">変換設定</h2>
+          <p class="step-description">WebPの品質を調整します。品質を下げるとファイルサイズが小さくなりますが、画質が低下します。</p>
+          
+          <div class="quality-slider-container">
+            <div class="quality-slider-label">
+              <span>品質:</span>
+              <span id="qualityValue">80%</span>
+            </div>
+            <input type="range" id="qualitySlider" class="quality-slider" min="10" max="100" value="80" step="5">
+          </div>
+          
+          <!-- 変換ボタン -->
+          <div class="status-container">
+            <div id="status" class="status"></div>
+          </div>
+          
+          <div class="btn-container">
+            <button id="convertBtn" class="btn-primary">→ WebPに変換する</button>
+            <button id="downloadBtn" class="btn-secondary" disabled>ダウンロード</button>
+          </div>
+        </div>
+        
+        <!-- 変換結果 -->
+        <div id="resultTableContainer"></div>
+      </div>
+    </section>    <!-- 他のツールリンク -->
+    <div class="other-tools">
+      <h2 class="other-tools-title">その他のまえゆきツール</h2>      <div class="tools-list">
+        <a href="image-resize.html" class="tool-link">画像サイズ変更</a>
+        <a href="png-to-jpeg.html" class="tool-link">PNG→JPEG変換</a>
+        <a href="meme-generator.html" class="tool-link">ミームジェネレーター</a>
+        <a href="letters-counter.html" class="tool-link">文字数カウント</a>
+        <a href="color-palette.html" class="tool-link">カラーパレット</a>
+        <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
+        <a href="calc.html" class="tool-link">世界の単位換算ツール</a>
+      </div>
+    </div>
+  </main>
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div style="font-weight:bold;font-size:1.3rem;color:#fff;letter-spacing:0.08em;min-width:80px;">CLAN</div>
+      <div class="footer-widgets">
+        <div class="widget-area footer-widget-2">
+          <h4>サイトマップ</h4>
+          <ul>
+            <li><a href="/index.html">ホーム</a></li>
+            <li><a href="/about.html">オートウェビナー大学とは</a></li>
+            <li><a href="/blog/index.html">ブログ一覧</a></li>
+            <li><a href="/tools/index.html">まえゆきツール</a></li>
+            <li><a href="/achievement/index.html">お客様の声</a></li>
+          </ul>
+        </div>
+        <div class="widget-area footer-widget-3">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="/seminar/index.html">無料セミナー</a></li>
+            <li><a href="/free-consultation.html">無料相談</a></li>
+            <li><a href="/document.html">資料請求</a></li>
+            <li><a href="/course/index.html">有料講座</a></li>
+          </ul>
+        </div>
+        <div class="widget-area footer-widget-4">
+          <h4>お役立ち</h4>
+          <ul>
+            <li><a href="/owner.html">運営者情報</a></li>
+            <li><a href="/privacy.html">プライバシーポリシー</a></li>
+            <li><a href="/terms.html">利用規約</a></li>
+            <li><a href="/tokutei.html">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" style="text-align:center;padding:15px 0;font-size:14px;color:rgba(255,255,255,0.7);">© 2025 CLAN All rights reserved.</div>
+  </footer>
+
+  <!-- SVGアイコン -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-pdf" viewBox="0 0 24 24">
+      <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"></path>
+    </symbol>
+  </svg>
+
+  <!-- インクルード処理 -->
+  <script>
+    if (!window.isScriptLoaded || !window.isScriptLoaded('/js/include.js')) {
+        document.write('<script src="/js/include.js"><\/script>');
+    } else {
+        console.log('include.jsのロードをスキップしました');
+    }
+  </script>
+
+  <script src="/js/script.js"></script>
+  
+  <!-- JSZipの読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- WebP変換用JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 要素の参照
+        const dropArea = document.getElementById('dropArea');
+        const fileInput = document.getElementById('fileInput');
+        const filesContainer = document.getElementById('filesContainer');
+        const filesMeta = document.getElementById('filesMeta');
+        const qualitySlider = document.getElementById('qualitySlider');
+        const qualityValue = document.getElementById('qualityValue');
+        const convertBtn = document.getElementById('convertBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resultTableContainer = document.getElementById('resultTableContainer');
+
+        // 状態管理
+        let selectedFiles = [];
+        let convertedImages = [];
+        let quality = 80;
+
+        // WebPサポートチェック
+        function checkWebPSupport() {
+            const canvas = document.createElement('canvas');
+            if (!canvas.getContext || !canvas.getContext('2d')) {
+                return false;
+            }
+            return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+        }
+
+        // WebPがサポートされていない場合の処理
+        if (!checkWebPSupport()) {
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message';
+            errorMessage.style.color = '#f00';
+            errorMessage.style.padding = '10px';
+            errorMessage.style.marginTop = '20px';
+            errorMessage.style.background = '#ffeeee';
+            errorMessage.style.borderRadius = '5px';
+            errorMessage.innerHTML = '<strong>ご利用のブラウザはWebP形式をサポートしていません。</strong><br>Google Chrome、Microsoft Edgeなど、最新のブラウザでご利用ください。';
+
+            dropArea.parentNode.appendChild(errorMessage);
+            dropArea.style.opacity = '0.5';
+            convertBtn.disabled = true;
+            downloadBtn.disabled = true;
+            return;
+        }
+
+        // 共通関数を使用してファイルドロップ設定
+        setupFileDropAndSelection(dropArea, fileInput, handleFiles);
+
+        // 品質スライダー
+        qualitySlider.addEventListener('input', function() {
+            quality = parseInt(this.value);
+            qualityValue.textContent = `${quality}%`;
+        });
+
+        // ファイル処理
+        function handleFiles(files) {
+            const validFiles = Array.from(files).filter(file => {
+                const type = file.type.toLowerCase();
+                return type === 'image/jpeg' || type === 'image/png' || type === 'image/gif';
+            });
+
+            if (validFiles.length === 0) {
+                // 共通関数を使用してエラー表示
+                updateUI('JPEG/PNG/GIF画像を選択してください。', true);
+                return;
+            }
+
+            // 既存のファイルに追加
+            selectedFiles = [...selectedFiles, ...validFiles];
+
+            // UIを更新
+            updateFilesUI();
+            updateFilesMetaUI();
+
+            // 変換ボタンを有効化
+            convertBtn.disabled = selectedFiles.length === 0;
+        }
+
+        // ファイルUI更新（共通関数を使用）
+        function updateFilesUI() {
+            filesContainer.innerHTML = '';
+
+            selectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const fileItem = createFileItem(file, e.target.result, () => {
+                        selectedFiles.splice(index, 1);
+                        updateFilesUI();
+                        updateFilesMetaUI();
+                        convertBtn.disabled = selectedFiles.length === 0;
+                    });
+                    filesContainer.appendChild(fileItem);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // ファイルメタ情報更新
+        function updateFilesMetaUI() {
+            if (selectedFiles.length === 0) {
+                filesMeta.textContent = '';
+                return;
+            }
+
+            let totalSize = 0;
+            selectedFiles.forEach(file => {
+                totalSize += file.size;
+            });
+
+            const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
+            filesMeta.textContent = `${selectedFiles.length}枚の画像（合計 ${sizeInMB} MB）`;
+        }
+
+        // ファイルアイテム作成
+        function createFileItem(file, previewUrl, onRemove) {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+
+            const preview = document.createElement('img');
+            preview.className = 'file-preview';
+            preview.src = previewUrl;
+
+            const removeBtn = document.createElement('div');
+            removeBtn.className = 'file-remove';
+            removeBtn.textContent = '×';
+            removeBtn.addEventListener('click', onRemove);
+
+            fileItem.appendChild(preview);
+            fileItem.appendChild(removeBtn);
+            return fileItem;
+        }
+
+        // WebP形式に変換
+        function convertToWebP(file, quality) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // WebPに変換
+                    canvas.toBlob(blob => {
+                        if (blob) {
+                            resolve(blob);
+                        } else {
+                            reject(new Error('WebP変換に失敗しました'));
+                        }
+                    }, 'image/webp', quality / 100);
+                };
+                
+                img.onerror = () => reject(new Error('画像の読み込みに失敗しました'));
+                
+                // 画像読み込み
+                const reader = new FileReader();
+                reader.onload = e => {
+                    img.src = e.target.result;
+                };
+                reader.onerror = () => reject(new Error('ファイルの読み込みに失敗しました'));
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // 変換ボタン
+        convertBtn.addEventListener('click', async function() {
+            if (selectedFiles.length === 0) return;
+
+            convertBtn.disabled = true;
+            convertBtn.textContent = '変換中...';
+
+            // 変換結果をクリア
+            convertedImages = [];
+
+            // 表示用の結果テーブルを準備
+            resultTableContainer.innerHTML = `
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>元のファイル</th>
+                            <th>元のサイズ</th>
+                            <th>WebPサイズ</th>
+                            <th>削減率</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultTableBody">
+                    </tbody>
+                </table>
+            `;
+
+            const resultTableBody = document.getElementById('resultTableBody');
+
+            // 各画像を変換
+            for (let i = 0; i < selectedFiles.length; i++) {
+                const file = selectedFiles[i];
+                try {
+                    const webpBlob = await convertToWebP(file, quality);
+
+                    // 元のファイル名から拡張子を取り除き、.webpを追加
+                    const originalName = file.name;
+                    const baseName = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
+                    const webpName = `${baseName}.webp`;
+
+                    // 変換結果を保存
+                    convertedImages.push({
+                        name: webpName,
+                        blob: webpBlob,
+                        originalSize: file.size,
+                        webpSize: webpBlob.size
+                    });
+
+                    // 結果テーブルに追加
+                    const row = document.createElement('tr');
+
+                    const originalSizeKB = (file.size / 1024).toFixed(1);
+                    const webpSizeKB = (webpBlob.size / 1024).toFixed(1);
+                    const reductionPercent = ((1 - webpBlob.size / file.size) * 100).toFixed(1);
+
+                    row.innerHTML = `
+                        <td>${originalName}</td>
+                        <td>${originalSizeKB} KB</td>
+                        <td>${webpSizeKB} KB</td>
+                        <td class="file-size-reduction">${reductionPercent}%</td>
+                    `;
+
+                    resultTableBody.appendChild(row);
+                } catch (err) {
+                    console.error('変換エラー:', err);
+
+                    // エラー表示
+                    updateUI('変換エラーが発生しました', true);
+
+                    // エラー行を追加
+                    const errorRow = document.createElement('tr');
+                    errorRow.innerHTML = `
+                        <td>${file.name}</td>
+                        <td colspan="3" style="color: red;">変換エラー</td>
+                    `;
+                    resultTableBody.appendChild(errorRow);
+                }
+            }
+
+            // 変換完了
+            convertBtn.textContent = '変換完了!';
+            downloadBtn.disabled = convertedImages.length === 0;
+
+            // 成功メッセージを表示
+            updateUI('WebPへの変換が完了しました！');
+
+            setTimeout(() => {
+                convertBtn.textContent = '→ WebPに変換する';
+                convertBtn.disabled = false;
+            }, 2000);
+        });
+
+        // ダウンロードボタン
+        downloadBtn.addEventListener('click', function(e) {
+            if (convertedImages.length === 0) {
+                e.preventDefault();
+                return;
+            }
+
+            // 単一画像の場合は直接ダウンロード
+            if (convertedImages.length === 1) {
+                const url = URL.createObjectURL(convertedImages[0].blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = convertedImages[0].name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                return;
+            }
+
+            // 複数画像の場合はZIPでダウンロード
+            e.preventDefault();
+
+            const zip = new JSZip();
+
+            // 画像をZIPに追加
+            convertedImages.forEach(image => {
+                zip.file(image.name, image.blob);
+            });
+
+            // ZIPを生成してダウンロード
+            zip.generateAsync({ type: 'blob' }).then(content => {
+                const url = URL.createObjectURL(content);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `webp_images_${new Date().toISOString().slice(0, 10)}.zip`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        });
+
+        // UI状態の更新
+        function updateUI(message, isError = false) {
+            const statusElement = document.getElementById('status');
+            if (!statusElement) return;
+            
+            statusElement.textContent = message;
+            statusElement.className = isError ? 'error' : 'success';
+            
+            // 一定時間後にメッセージを消す
+            setTimeout(() => {
+                statusElement.textContent = '';
+                statusElement.className = '';
+            }, 5000);
+        }
+    });
+  </script>
+</body>
+</html>
