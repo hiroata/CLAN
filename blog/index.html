@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事一覧 | ブログ名</title>
+    <meta name="description" content="ブログの記事一覧ページです。様々なテーマの記事を掲載しています。">
+    <link rel="stylesheet" href="myblog-style.css">
+</head>
+<body class="myblog-body">
+    <!-- ヘッダー -->
+    <header class="myblog-header">
+        <div class="myblog-header-container">
+            <!-- ロゴ・タイトル -->
+            <div class="myblog-header-left">
+                <h1 class="myblog-logo">
+                    <a href="#" class="myblog-logo-link">ブログタイトル</a>
+                </h1>
+                <!-- スマホ用ハンバーガーメニュー -->
+                <button class="myblog-hamburger" aria-label="メニューを開く" id="myblog-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- PC用ナビゲーション -->
+            <nav class="myblog-nav" id="myblog-nav">
+                <ul class="myblog-nav-list">
+                    <li class="myblog-nav-item">
+                        <a href="#" class="myblog-nav-link">ホーム</a>
+                    </li>
+                    <li class="myblog-nav-item">
+                        <a href="#" class="myblog-nav-link myblog-nav-link--active">記事一覧</a>
+                    </li>
+                    <li class="myblog-nav-item">
+                        <a href="#" class="myblog-nav-link">タグ一覧</a>
+                    </li>
+                    <li class="myblog-nav-item">
+                        <a href="#" class="myblog-nav-link">このブログについて</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- ヘッダー右側 -->
+            <div class="myblog-header-right">
+                <!-- 検索ボタン -->
+                <button class="myblog-search-btn" aria-label="検索">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                        <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+
+                <!-- SNSリンク -->
+                <div class="myblog-social-links">
+                    <a href="#" class="myblog-social-link" aria-label="RSS">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 11a9 9 0 0 1 9 9"></path>
+                            <path d="M4 4a16 16 0 0 1 16 16"></path>
+                            <circle cx="5" cy="19" r="1"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="myblog-social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="myblog-social-link" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="myblog-main">
+        <div class="myblog-container">
+            <!-- ページタイトル -->
+            <div class="myblog-page-header">
+                <h1 class="myblog-page-title">記事一覧</h1>
+                <p class="myblog-page-description">
+                    ウェブデザイン、プログラミング、マーケティングなど、様々なテーマの記事を掲載しています。
+                </p>
+            </div>
+
+            <!-- フィルター・検索バー -->
+            <div class="myblog-filter-bar">
+                <div class="myblog-filter-section">
+                    <label for="myblog-category-filter" class="myblog-filter-label">カテゴリー:</label>
+                    <select id="myblog-category-filter" class="myblog-filter-select">
+                        <option value="">すべて</option>
+                        <option value="web-design">ウェブデザイン</option>
+                        <option value="programming">プログラミング</option>
+                        <option value="marketing">マーケティング</option>
+                        <option value="business">ビジネス</option>
+                    </select>
+                </div>
+                
+                <div class="myblog-filter-section">
+                    <label for="myblog-sort-filter" class="myblog-filter-label">並び順:</label>
+                    <select id="myblog-sort-filter" class="myblog-filter-select">
+                        <option value="newest">新着順</option>
+                        <option value="oldest">古い順</option>
+                        <option value="popular">人気順</option>
+                    </select>
+                </div>
+            </div>            <!-- 記事一覧グリッド -->
+            <div class="myblog-articles-grid">
+                <!-- 記事カード 新着 -->
+                <article class="myblog-article-card" data-category="lifestyle" data-date="2024-06-04">
+                    <a href="article-glue-stick-ranking.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="スティックのり人気ランキング5選！用途別おすすめ完全ガイド">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-06-04">2024年6月4日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">文房具</span>
+                                    <span class="myblog-tag">ランキング</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">【2024年最新】スティックのり人気ランキング5選！用途別おすすめ完全ガイド</h2>
+                            <p class="myblog-article-card-excerpt">
+                                オフィスワークから学校の工作まで、幅広いシーンで活躍するスティックのり。使いやすさ・接着力・コスパを徹底比較した人気ランキングをご紹介します！
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード 1 -->                <article class="myblog-article-card">
+                    <a href="article.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="ウェブサイトに導入する汎用性の高いブログデザインの作成方法">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-06-04">2024年6月4日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">ウェブデザイン</span>
+                                    <span class="myblog-tag">CSS</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">ウェブサイトに導入する汎用性の高いブログデザインの作成方法</h2>
+                            <p class="myblog-article-card-excerpt">
+                                この記事では、既存のウェブサイトに組み込むことができる、シンプルで洗練されたブログデザインの作成方法について詳しく説明します。
+                            </p>
+                        </div>
+                    </a>
+                </article>                <!-- 記事カード 2 -->
+                <article class="myblog-article-card">
+                    <a href="#" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="モダンCSS技術を使った効率的なレイアウト手法">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-05-28">2024年5月28日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">CSS</span>
+                                    <span class="myblog-tag">レスポンシブ</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">モダンCSS技術を使った効率的なレイアウト手法</h2>
+                            <p class="myblog-article-card-excerpt">
+                                CSS GridやFlexboxを活用して、複雑なレイアウトも簡単に実現できる現代的な手法を解説します。
+                            </p>
+                        </div>
+                    </a>
+                </article>                <!-- 記事カード 3 -->
+                <article class="myblog-article-card">
+                    <a href="#" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="JavaScriptを使わないアニメーション実装テクニック">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-05-20">2024年5月20日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">JavaScript</span>
+                                    <span class="myblog-tag">アニメーション</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">JavaScriptを使わないアニメーション実装テクニック</h2>
+                            <p class="myblog-article-card-excerpt">
+                                CSSのみでリッチなアニメーション効果を実現する方法と、パフォーマンスを考慮した実装のコツを紹介します。
+                            </p>
+                        </div>
+                    </a>
+                </article>                <!-- 記事カード 4 -->
+                <article class="myblog-article-card">
+                    <a href="#" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="ウェブアクセシビリティを向上させる実践的な方法">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-05-15">2024年5月15日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">アクセシビリティ</span>
+                                    <span class="myblog-tag">UX</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">ウェブアクセシビリティを向上させる実践的な方法</h2>
+                            <p class="myblog-article-card-excerpt">
+                                すべてのユーザーにとって使いやすいウェブサイトを作るための、具体的なアクセシビリティ向上技術を解説します。
+                            </p>
+                        </div>
+                    </a>
+                </article>                <!-- 記事カード 5 -->
+                <article class="myblog-article-card">
+                    <a href="#" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="コンテンツマーケティングで成果を出すSEO戦略">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-05-10">2024年5月10日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">マーケティング</span>
+                                    <span class="myblog-tag">SEO</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">コンテンツマーケティングで成果を出すSEO戦略</h2>
+                            <p class="myblog-article-card-excerpt">
+                                検索エンジンで上位表示を狙いながら、読者にとって価値のあるコンテンツを作成する方法を詳しく解説します。
+                            </p>
+                        </div>
+                    </a>
+                </article>                <!-- 記事カード 6 -->
+                <article class="myblog-article-card">
+                    <a href="#" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="パフォーマンス最適化でサイト高速化を実現">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2024-05-05">2024年5月5日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">ビジネス</span>
+                                    <span class="myblog-tag">効率化</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">リモートワーク時代の生産性向上テクニック</h2>
+                            <p class="myblog-article-card-excerpt">
+                                在宅勤務やリモートワークで最大限の成果を出すための、実践的な作業環境の構築と時間管理の方法を紹介します。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- ページネーション -->
+            <nav class="myblog-pagination" aria-label="ページナビゲーション">
+                <div class="myblog-pagination-container">
+                    <a href="#" class="myblog-pagination-btn myblog-pagination-btn--prev" aria-label="前のページ">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        前のページ
+                    </a>
+                    
+                    <div class="myblog-pagination-numbers">
+                        <a href="#" class="myblog-pagination-number myblog-pagination-number--active" aria-current="page">1</a>
+                        <a href="#" class="myblog-pagination-number">2</a>
+                        <a href="#" class="myblog-pagination-number">3</a>
+                        <span class="myblog-pagination-ellipsis">...</span>
+                        <a href="#" class="myblog-pagination-number">10</a>
+                    </div>
+                    
+                    <a href="#" class="myblog-pagination-btn myblog-pagination-btn--next" aria-label="次のページ">
+                        次のページ
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="myblog-footer">
+        <div class="myblog-container">
+            <div class="myblog-footer-content">
+                <p class="myblog-copyright">&copy; 2024 あなたのサイト名. All rights reserved.</p>
+                <nav class="myblog-footer-nav">
+                    <a href="#" class="myblog-footer-link">プライバシーポリシー</a>
+                    <a href="#" class="myblog-footer-link">利用規約</a>
+                    <a href="#" class="myblog-footer-link">お問い合わせ</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="myblog-script.js"></script>
+</body>
+</html>
