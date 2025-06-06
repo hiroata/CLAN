@@ -5,76 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>記事一覧 | ブログ名</title>
     <meta name="description" content="ブログの記事一覧ページです。様々なテーマの記事を掲載しています。">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="myblog-style.css">
 </head>
 <body class="myblog-body">
     <!-- ヘッダー -->
-    <header class="myblog-header">
-        <div class="myblog-header-container">
-            <!-- ロゴ・タイトル -->
-            <div class="myblog-header-left">
-                <h1 class="myblog-logo">
-                    <a href="#" class="myblog-logo-link">ブログタイトル</a>
-                </h1>
-                <!-- スマホ用ハンバーガーメニュー -->
-                <button class="myblog-hamburger" aria-label="メニューを開く" id="myblog-hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
             </div>
-
-            <!-- PC用ナビゲーション -->
-            <nav class="myblog-nav" id="myblog-nav">
-                <ul class="myblog-nav-list">
-                    <li class="myblog-nav-item">
-                        <a href="#" class="myblog-nav-link">ホーム</a>
-                    </li>
-                    <li class="myblog-nav-item">
-                        <a href="#" class="myblog-nav-link myblog-nav-link--active">記事一覧</a>
-                    </li>
-                    <li class="myblog-nav-item">
-                        <a href="#" class="myblog-nav-link">タグ一覧</a>
-                    </li>
-                    <li class="myblog-nav-item">
-                        <a href="#" class="myblog-nav-link">このブログについて</a>
-                    </li>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html" aria-current="page">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
                 </ul>
             </nav>
-
-            <!-- ヘッダー右側 -->
-            <div class="myblog-header-right">
-                <!-- 検索ボタン -->
-                <button class="myblog-search-btn" aria-label="検索">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                        <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </button>
-
-                <!-- SNSリンク -->
-                <div class="myblog-social-links">
-                    <a href="#" class="myblog-social-link" aria-label="RSS">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M4 11a9 9 0 0 1 9 9"></path>
-                            <path d="M4 4a16 16 0 0 1 16 16"></path>
-                            <circle cx="5" cy="19" r="1"></circle>
-                        </svg>
-                    </a>
-                    <a href="#" class="myblog-social-link" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="myblog-social-link" aria-label="Twitter">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-                        </svg>
-                    </a>
-                </div>
+            <div class="header-cta">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                    無料相談
+                </a>
             </div>
+            <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu">
+        <nav aria-label="モバイルメニュー">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+    </div>
 
     <!-- メインコンテンツ -->
     <main class="myblog-main">
@@ -110,137 +87,304 @@
                 </div>
             </div>            <!-- 記事一覧グリッド -->
             <div class="myblog-articles-grid">
-                <!-- 記事カード 新着 -->
-                <article class="myblog-article-card" data-category="lifestyle" data-date="2024-06-04">
-                    <a href="article-glue-stick-ranking.html" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="スティックのり人気ランキング5選！用途別おすすめ完全ガイド">
+                <!-- 記事カード NEW: UTAGEファネル機能ガイド -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-funnel-guide.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-06-04">2024年6月4日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
                                 <div class="myblog-article-card-tags">
-                                    <span class="myblog-tag">文房具</span>
-                                    <span class="myblog-tag">ランキング</span>
+                                    <span class="myblog-tag">セールスファネル</span>
+                                    <span class="myblog-tag">ファネル最適化</span>
+                                    <span class="myblog-tag">コンバージョン向上</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">【2024年最新】スティックのり人気ランキング5選！用途別おすすめ完全ガイド</h2>
+                            <h2 class="myblog-article-card-title">UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方</h2>
                             <p class="myblog-article-card-excerpt">
-                                オフィスワークから学校の工作まで、幅広いシーンで活躍するスティックのり。使いやすさ・接着力・コスパを徹底比較した人気ランキングをご紹介します！
+                                UTAGEのファネル機能を活用して売れるセールスファネルを構築する完全ガイド。TOFU・MOFU・BOFUの各段階での最適化から、コンバージョン向上のテクニックまで詳しく解説します。
                             </p>
                         </div>
                     </a>
                 </article>
 
-                <!-- 記事カード 1 -->                <article class="myblog-article-card">
-                    <a href="article.html" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="ウェブサイトに導入する汎用性の高いブログデザインの作成方法">
+                <!-- 記事カード: UTAGEでLINEステップ配信 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-line-step-delivery.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEでLINEステップ配信を作る方法｜CVR20%超えのシナリオ構築術">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-06-04">2024年6月4日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
                                 <div class="myblog-article-card-tags">
-                                    <span class="myblog-tag">ウェブデザイン</span>
-                                    <span class="myblog-tag">CSS</span>
+                                    <span class="myblog-tag">LINEステップ配信</span>
+                                    <span class="myblog-tag">CVR向上</span>
+                                    <span class="myblog-tag">シナリオ設計</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">ウェブサイトに導入する汎用性の高いブログデザインの作成方法</h2>
+                            <h2 class="myblog-article-card-title">UTAGEでLINEステップ配信を作る方法｜CVR20%超えのシナリオ構築術</h2>
                             <p class="myblog-article-card-excerpt">
-                                この記事では、既存のウェブサイトに組み込むことができる、シンプルで洗練されたブログデザインの作成方法について詳しく説明します。
+                                LINEステップ配信は、適切なシナリオ設計によりCVR20%超えも実現可能な強力なマーケティング手法です。UTAGEを活用した効果的なステップ配信の作成方法から、心理学に基づくシナリオ構築まで詳しく解説。
                             </p>
                         </div>
                     </a>
-                </article>                <!-- 記事カード 2 -->
-                <article class="myblog-article-card">
-                    <a href="#" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="モダンCSS技術を使った効率的なレイアウト手法">
+                </article>
+
+                <!-- 記事カード: UTAGE LINE配信完全ガイド -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-line-delivery-guide.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-05-28">2024年5月28日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
                                 <div class="myblog-article-card-tags">
-                                    <span class="myblog-tag">CSS</span>
-                                    <span class="myblog-tag">レスポンシブ</span>
+                                    <span class="myblog-tag">LINE配信</span>
+                                    <span class="myblog-tag">公式アカウント連携</span>
+                                    <span class="myblog-tag">マーケティング自動化</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">モダンCSS技術を使った効率的なレイアウト手法</h2>
+                            <h2 class="myblog-article-card-title">UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで</h2>
                             <p class="myblog-article-card-excerpt">
-                                CSS GridやFlexboxを活用して、複雑なレイアウトも簡単に実現できる現代的な手法を解説します。
+                                UTAGEとLINE公式アカウントを連携させることで、メール配信に加えてLINE配信も自動化できます。本記事では、連携設定から配信設定まで、初心者でも迷わず設定できるよう詳しく解説します。
                             </p>
                         </div>
                     </a>
-                </article>                <!-- 記事カード 3 -->
-                <article class="myblog-article-card">
-                    <a href="#" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="JavaScriptを使わないアニメーション実装テクニック">
+                </article>
+
+                <!-- 記事カード: UTAGEリマインダー配信設定 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-reminder-system.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEリマインダー配信設定方法｜セミナー・イベント参加率を80%にする技">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-05-20">2024年5月20日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
                                 <div class="myblog-article-card-tags">
-                                    <span class="myblog-tag">JavaScript</span>
-                                    <span class="myblog-tag">アニメーション</span>
+                                    <span class="myblog-tag">リマインダー配信</span>
+                                    <span class="myblog-tag">セミナー</span>
+                                    <span class="myblog-tag">参加率向上</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">JavaScriptを使わないアニメーション実装テクニック</h2>
+                            <h2 class="myblog-article-card-title">UTAGEリマインダー配信設定方法｜セミナー・イベント参加率を80%にする技</h2>
                             <p class="myblog-article-card-excerpt">
-                                CSSのみでリッチなアニメーション効果を実現する方法と、パフォーマンスを考慮した実装のコツを紹介します。
+                                セミナーやイベントの参加率向上に悩んでいませんか？UTAGEのリマインダー配信機能を戦略的に活用することで、参加率を最大80%まで改善することが可能です。
                             </p>
                         </div>
                     </a>
-                </article>                <!-- 記事カード 4 -->
-                <article class="myblog-article-card">
-                    <a href="#" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="ウェブアクセシビリティを向上させる実践的な方法">
+                </article>
+
+                <!-- 記事カード: UTAGEのラベル機能活用術 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-label-automation.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEのラベル機能活用術｜読者管理を自動化して売上アップする方法">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-05-15">2024年5月15日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
                                 <div class="myblog-article-card-tags">
-                                    <span class="myblog-tag">アクセシビリティ</span>
-                                    <span class="myblog-tag">UX</span>
+                                    <span class="myblog-tag">ラベル機能</span>
+                                    <span class="myblog-tag">読者管理</span>
+                                    <span class="myblog-tag">マーケティング自動化</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">ウェブアクセシビリティを向上させる実践的な方法</h2>
+                            <h2 class="myblog-article-card-title">UTAGEのラベル機能活用術｜読者管理を自動化して売上アップする方法</h2>
                             <p class="myblog-article-card-excerpt">
-                                すべてのユーザーにとって使いやすいウェブサイトを作るための、具体的なアクセシビリティ向上技術を解説します。
+                                UTAGEのラベル機能は、単なる読者分類ツールではありません。適切に活用することで読者管理を完全自動化し、個々の顧客に最適化されたマーケティングを実現できます。
                             </p>
                         </div>
                     </a>
-                </article>                <!-- 記事カード 5 -->
-                <article class="myblog-article-card">
-                    <a href="#" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="コンテンツマーケティングで成果を出すSEO戦略">
+                </article>
+
+                <!-- 記事カード: UTAGEメール配信で迷惑メール対策 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-email-spam-prevention.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-05-10">2024年5月10日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">メール配信</span>
+                                    <span class="myblog-tag">到達率向上</span>
+                                    <span class="myblog-tag">迷惑メール対策</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGEでメール配信をしているのに迷惑メールフォルダに入ってしまう...そんな悩みを解決！到達率95%超えを実現するための具体的な設定方法と、迷惑メール判定を回避するプロのテクニックを詳しく解説。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード: UTAGEステップメール完全活用法 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-step-mail-course.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEステップメール完全活用法｜自動化で売上を10倍にする方法">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">ステップメール</span>
+                                    <span class="myblog-tag">売上向上</span>
+                                    <span class="myblog-tag">マーケティング自動化</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGEステップメール完全活用法｜自動化で売上を10倍にする方法</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGEのステップメール機能を使いこなして売上を劇的に向上させる方法を詳しく解説。効果的なシナリオ設計から配信タイミングの最適化まで、実践的なテクニックを公開します。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード: UTAGE独自ドメイン設定完全ガイド -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-domain-dkim-spf-setup.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">独自ドメイン</span>
+                                    <span class="myblog-tag">DKIM設定</span>
+                                    <span class="myblog-tag">SPF設定</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGEで独自ドメインを設定することで、メール到達率を大幅に向上させることができます。本記事では、DKIM・SPFの設定からDNS設定まで、技術的な知識がない方でも迷わず設定できるよう詳しく解説。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード NEW: UTAGEメール配信機能 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-08">
+                    <a href="article-utage-email-setup.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-08">2025年6月8日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">メール配信</span>
+                                    <span class="myblog-tag">UTAGE</span>
+                                    <span class="myblog-tag">初心者向け</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGE（ウタゲ）のメール配信機能を初心者でも簡単に設定できる手順を詳しく解説。ステップメール、自動配信、セグメント配信の設定方法を5分で完了する方法をご紹介します。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード 1: UTAGEメリット・デメリット -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-06">
+                    <a href="article-utage-merits-demerits-2.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE（ウタゲ）のメリット・デメリット完全解説">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-06">2025年6月6日</time>
                                 <div class="myblog-article-card-tags">
                                     <span class="myblog-tag">マーケティング</span>
-                                    <span class="myblog-tag">SEO</span>
+                                    <span class="myblog-tag">比較</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">コンテンツマーケティングで成果を出すSEO戦略</h2>
+                            <h2 class="myblog-article-card-title">UTAGE（ウタゲ）のメリット・デメリット完全解説【導入前必読】</h2>
                             <p class="myblog-article-card-excerpt">
-                                検索エンジンで上位表示を狙いながら、読者にとって価値のあるコンテンツを作成する方法を詳しく解説します。
+                                UTAGE（ウタゲ）の導入を検討中の方へ。実際に使ってわかったメリット・デメリットを包み隠さずお伝えします。あなたのビジネスに適しているか判断材料にしてください。
                             </p>
                         </div>
                     </a>
-                </article>                <!-- 記事カード 6 -->
-                <article class="myblog-article-card">
-                    <a href="#" class="myblog-article-card-link">
-                        <div class="myblog-article-card-image myblog-auto-image" data-title="パフォーマンス最適化でサイト高速化を実現">
+                </article>
+
+                <!-- 記事カード 2: UTAGE料金プラン -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-05">
+                    <a href="article-utage-pricing.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE（ウタゲ）料金プラン完全ガイド">
                         </div>
                         <div class="myblog-article-card-content">
                             <div class="myblog-article-card-meta">
-                                <time class="myblog-article-card-date" datetime="2024-05-05">2024年5月5日</time>
+                                <time class="myblog-article-card-date" datetime="2025-06-05">2025年6月5日</time>
                                 <div class="myblog-article-card-tags">
-                                    <span class="myblog-tag">ビジネス</span>
-                                    <span class="myblog-tag">効率化</span>
+                                    <span class="myblog-tag">マーケティング</span>
+                                    <span class="myblog-tag">料金</span>
                                 </div>
                             </div>
-                            <h2 class="myblog-article-card-title">リモートワーク時代の生産性向上テクニック</h2>
+                            <h2 class="myblog-article-card-title">UTAGE（ウタゲ）料金プラン完全ガイド【2025年最新版】</h2>
                             <p class="myblog-article-card-excerpt">
-                                在宅勤務やリモートワークで最大限の成果を出すための、実践的な作業環境の構築と時間管理の方法を紹介します。
+                                UTAGE（ウタゲ）の料金プランを徹底解説。各プランの機能比較、コスパ分析、他社との料金比較まで、あなたに最適なプラン選びをサポートします。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード 3: UTAGEサポート体制 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-04">
+                    <a href="article-utage-support-guide.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE（ウタゲ）サポート体制完全ガイド">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-04">2025年6月4日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">マーケティング</span>
+                                    <span class="myblog-tag">サポート</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGE（ウタゲ）サポート体制完全ガイド【初心者も安心】</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGE（ウタゲ）のサポート体制を徹底解説。導入支援から日常的なサポートまで、初心者でも安心して利用できる充実のサポート内容をご紹介します。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード 4: UTAGE無料トライアル -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-03">
+                    <a href="article-utage-free-trial-guide.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE（ウタゲ）無料トライアル完全ガイド">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-03">2025年6月3日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">マーケティング</span>
+                                    <span class="myblog-tag">無料体験</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGE（ウタゲ）無料トライアル完全ガイド【2025年版】</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGE（ウタゲ）の無料トライアルを最大限活用する方法を解説。申し込み手順から、トライアル期間中に確認すべきポイントまで、失敗しない導入のコツをお伝えします。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード 5: UTAGE他ツール比較 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-02">
+                    <a href="article-utage-vs-comparison.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE（ウタゲ）vs 他ツール徹底比較">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-02">2025年6月2日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">マーケティング</span>
+                                    <span class="myblog-tag">比較</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGE（ウタゲ）vs 他ツール徹底比較【2025年最新版】</h2>
+                            <p class="myblog-article-card-excerpt">
+                                UTAGE（ウタゲ）と競合ツールを徹底比較。機能、料金、使いやすさなど多角的に分析し、あなたのビジネスに最適なツール選びをサポートします。
                             </p>
                         </div>
                     </a>
@@ -250,7 +394,7 @@
             <!-- ページネーション -->
             <nav class="myblog-pagination" aria-label="ページナビゲーション">
                 <div class="myblog-pagination-container">
-                    <a href="#" class="myblog-pagination-btn myblog-pagination-btn--prev" aria-label="前のページ">
+                    <a href="#" class="myblog-pagination-btn myblog-pagination-btn--prev myblog-pagination-btn--disabled" aria-label="前のページ">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2"/>
                         </svg>
@@ -259,13 +403,10 @@
                     
                     <div class="myblog-pagination-numbers">
                         <a href="#" class="myblog-pagination-number myblog-pagination-number--active" aria-current="page">1</a>
-                        <a href="#" class="myblog-pagination-number">2</a>
-                        <a href="#" class="myblog-pagination-number">3</a>
-                        <span class="myblog-pagination-ellipsis">...</span>
-                        <a href="#" class="myblog-pagination-number">10</a>
+                        <a href="index-page-2.html" class="myblog-pagination-number">2</a>
                     </div>
                     
-                    <a href="#" class="myblog-pagination-btn myblog-pagination-btn--next" aria-label="次のページ">
+                    <a href="index-page-2.html" class="myblog-pagination-btn myblog-pagination-btn--next" aria-label="次のページ">
                         次のページ
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2"/>
@@ -276,20 +417,50 @@
         </div>
     </main>
 
-    <!-- フッター -->
-    <footer class="myblog-footer">
-        <div class="myblog-container">
-            <div class="myblog-footer-content">
-                <p class="myblog-copyright">&copy; 2024 あなたのサイト名. All rights reserved.</p>
-                <nav class="myblog-footer-nav">
-                    <a href="#" class="myblog-footer-link">プライバシーポリシー</a>
-                    <a href="#" class="myblog-footer-link">利用規約</a>
-                    <a href="#" class="myblog-footer-link">お問い合わせ</a>
-                </nav>
+    <!-- 重大告知 -->
+    <div class="important-notice">
+        <h2>UTAGE構築代行丸投げちゃんとは？</h2>
+        <a href="https://utage-system.com/p/EcESO02xLLoK" class="important-notice-button">詳細を見る</a>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
+            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
+                UTAGEの導入で最大75万円の補助金が受けられます。<br>
+                面倒な申請手続きはすべてお任せください。<br>
+                あなたは事業成長に集中するだけでOKです。
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">無料相談してみる</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>CLAN</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="https://utage-system.com/p/EcESO02xLLoK">無料相談</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                    <li><a href="../owner.html">運営者情報</a></li>
+                    <li><a href="../terms.html">利用規約</a></li>
+                    <li><a href="../privacy.html">プライバシーポリシー</a></li>
+                    <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
+    <script src="../js/main.js" defer></script>
     <script src="myblog-script.js"></script>
+    <script src="blog-manager.js"></script>
 </body>
 </html>

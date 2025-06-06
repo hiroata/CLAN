@@ -1,5 +1,61 @@
 # ブログ記事作成ガイド
 
+## 新規記事の自動登録システム
+
+### 1. 記事ファイルの作成
+1. `/blog/`フォルダに`article-記事名.html`の形式でファイルを作成
+2. 既存記事（例：`article-utage-pricing.html`）をコピーしてベースとして使用
+
+### 2. blog-manager.jsの更新
+1. `/blog/blog-manager.js`を開く
+2. `BLOG_ARTICLES`配列に新しい記事の情報を追加：
+```javascript
+{
+  filename: 'article-新記事名.html',
+  title: '記事のタイトル',
+  excerpt: '記事の要約（150文字程度）',
+  date: 'YYYY-MM-DD',
+  category: 'marketing',
+  tags: ['タグ1', 'タグ2', 'タグ3'],
+  relatedArticles: ['関連記事1.html', '関連記事2.html', '関連記事3.html']
+}
+```
+
+### 3. index.htmlの自動更新
+1. `/blog/index.html`を開く
+2. 記事一覧グリッド部分に新しい記事カードを日付順（新しい順）で追加
+3. 記事カードのHTMLフォーマット：
+```html
+<article class="myblog-article-card" data-category="marketing" data-date="YYYY-MM-DD">
+    <a href="article-新記事名.html" class="myblog-article-card-link">
+        <div class="myblog-article-card-image myblog-auto-image" data-title="記事タイトル">
+        </div>
+        <div class="myblog-article-card-content">
+            <div class="myblog-article-card-meta">
+                <time class="myblog-article-card-date" datetime="YYYY-MM-DD">YYYY年M月D日</time>
+                <div class="myblog-article-card-tags">
+                    <span class="myblog-tag">タグ1</span>
+                    <span class="myblog-tag">タグ2</span>
+                </div>
+            </div>
+            <h2 class="myblog-article-card-title">記事タイトル</h2>
+            <p class="myblog-article-card-excerpt">
+                記事の要約文
+            </p>
+        </div>
+    </a>
+</article>
+```
+
+### 4. 関連記事の自動更新
+新しい記事を追加したら、関連する既存記事の関連記事セクションも更新してください。
+現在の関連記事設定：
+- article-utage-pricing.html ↔ overview, free-trial, support
+- article-utage-free-trial-guide.html ↔ overview, pricing, support  
+- article-utage-support-guide.html ↔ overview, pricing, free-trial
+- article-utage-vs-comparison.html ↔ overview, pricing, merits-demerits
+- article-utage-merits-demerits.html ↔ overview, vs-comparison, reviews
+
 ## 重要な実装指針
 
 ### 1. ヘッダー・フッター統合（必須）

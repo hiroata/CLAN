@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記事一覧 - ページ2 | ブログ名</title>
+    <meta name="description" content="ブログの記事一覧ページです。様々なテーマの記事を掲載しています。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="myblog-style.css">
+</head>
+<body class="myblog-body">
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
+            </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html" aria-current="page">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                    無料相談
+                </a>
+            </div>
+            <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu">
+        <nav aria-label="モバイルメニュー">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main class="myblog-main">
+        <div class="myblog-container">
+            <!-- ページタイトル -->
+            <div class="myblog-page-header">
+                <h1 class="myblog-page-title">記事一覧</h1>
+                <p class="myblog-page-description">
+                    ウェブデザイン、プログラミング、マーケティングなど、様々なテーマの記事を掲載しています。
+                </p>
+            </div>
+
+            <!-- フィルター・検索バー -->
+            <div class="myblog-filter-bar">
+                <div class="myblog-filter-section">
+                    <label for="myblog-category-filter" class="myblog-filter-label">カテゴリー:</label>
+                    <select id="myblog-category-filter" class="myblog-filter-select">
+                        <option value="">すべて</option>
+                        <option value="web-design">ウェブデザイン</option>
+                        <option value="programming">プログラミング</option>
+                        <option value="marketing">マーケティング</option>
+                        <option value="business">ビジネス</option>
+                    </select>
+                </div>
+                
+                <div class="myblog-filter-section">
+                    <label for="myblog-sort-filter" class="myblog-filter-label">並び順:</label>
+                    <select id="myblog-sort-filter" class="myblog-filter-select">
+                        <option value="newest">新着順</option>
+                        <option value="oldest">古い順</option>
+                        <option value="popular">人気順</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 記事一覧グリッド（2ページ目用の記事） -->
+            <div class="myblog-articles-grid">
+                <!-- 記事カード: UTAGE vs 他ツール徹底比較 新版 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-06-01">
+                    <a href="article-utage-vs-comparison-new.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE vs 競合ツール徹底比較2025｜プロが選ぶべきツールはこれだ">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-06-01">2025年6月1日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">ツール比較</span>
+                                    <span class="myblog-tag">UTAGE</span>
+                                    <span class="myblog-tag">選び方</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGE vs 競合ツール徹底比較2025｜プロが選ぶべきツールはこれだ</h2>
+                            <p class="myblog-article-card-excerpt">
+                                マーケティングツール選びで迷っているあなたへ。UTAGEと主要競合ツールを徹底比較し、あなたのビジネスに最適なツールをプロの視点で解説します。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード: UTAGE vs MyASP メール比較 -->
+                <article class="myblog-article-card" data-category="marketing" data-date="2025-05-30">
+                    <a href="article-utage-vs-myasp-email-comparison.html" class="myblog-article-card-link">
+                        <div class="myblog-article-card-image myblog-auto-image" data-title="UTAGE vs MyASP メール配信機能比較｜どちらが売上アップに効果的？">
+                        </div>
+                        <div class="myblog-article-card-content">
+                            <div class="myblog-article-card-meta">
+                                <time class="myblog-article-card-date" datetime="2025-05-30">2025年5月30日</time>
+                                <div class="myblog-article-card-tags">
+                                    <span class="myblog-tag">UTAGE</span>
+                                    <span class="myblog-tag">MyASP</span>
+                                    <span class="myblog-tag">メール配信</span>
+                                </div>
+                            </div>
+                            <h2 class="myblog-article-card-title">UTAGE vs MyASP メール配信機能比較｜どちらが売上アップに効果的？</h2>
+                            <p class="myblog-article-card-excerpt">
+                                メール配信システムの双璧、UTAGEとMyASPを徹底比較。到達率、使いやすさ、料金、機能面から詳しく分析し、あなたのビジネスに適したツールを見つけましょう。
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- ページネーション -->
+            <nav class="myblog-pagination" aria-label="ページナビゲーション">
+                <div class="myblog-pagination-container">
+                    <a href="index.html" class="myblog-pagination-btn myblog-pagination-btn--prev" aria-label="前のページ">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        前のページ
+                    </a>
+                    
+                    <div class="myblog-pagination-numbers">
+                        <a href="index.html" class="myblog-pagination-number">1</a>
+                        <a href="#" class="myblog-pagination-number myblog-pagination-number--active" aria-current="page">2</a>
+                    </div>
+                    
+                    <a href="#" class="myblog-pagination-btn myblog-pagination-btn--next myblog-pagination-btn--disabled" aria-label="次のページ">
+                        次のページ
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- 重大告知 -->
+    <div class="important-notice">
+        <h2>UTAGE構築代行丸投げちゃんとは？</h2>
+        <a href="https://utage-system.com/p/EcESO02xLLoK" class="important-notice-button">詳細を見る</a>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
+            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
+                UTAGEの導入で最大75万円の補助金が受けられます。<br>
+                面倒な申請手続きはすべてお任せください。<br>
+                あなたは事業成長に集中するだけでOKです。
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">無料相談してみる</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>CLAN</h2>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="https://utage-system.com/p/EcESO02xLLoK">無料相談</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                    <li><a href="../owner.html">運営者情報</a></li>
+                    <li><a href="../terms.html">利用規約</a></li>
+                    <li><a href="../privacy.html">プライバシーポリシー</a></li>
+                    <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="myblog-script.js"></script>
+    <script src="blog-manager.js"></script>
+</body>
+</html>

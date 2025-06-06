@@ -517,6 +517,14 @@
       initResizeHandler();
       improveAccessibility();
       
+      // 自動アイキャッチ画像の生成
+      initAutoFeaturedImages();
+      
+      // 画像再生成イベントリスナー
+      window.addEventListener('myblog:refresh-images', function() {
+        initAutoFeaturedImages();
+      });
+      
       // カスタムイベントを発火（他のスクリプトとの連携用）
       const initEvent = new CustomEvent('myblog:initialized', {
         detail: {
@@ -593,7 +601,16 @@
       articleCards.forEach(function(card) {
         card.style.display = 'block';
       });
-    }  };
+    },
+    
+    // 自動画像生成を外部から呼び出し可能にする
+    refreshImages: function() {
+      initAutoFeaturedImages();
+    }
+  };
+  
+  // グローバル関数として自動画像生成を公開
+  window.initAutoFeaturedImages = initAutoFeaturedImages;
   // 自動アイキャッチ画像の生成
   function initAutoFeaturedImages() {
     const autoImages = getElements('.myblog-auto-image');
@@ -626,7 +643,9 @@
 
       // タイトルの長さに基づいてカラーパレットを選択
       const colorIndex = title.length % colorPalettes.length;
-      imageElement.style.background = colorPalettes[colorIndex];      // テキスト要素を作成
+      imageElement.style.background = colorPalettes[colorIndex];
+      
+      // テキスト要素を作成
       const textElement = document.createElement('div');
       textElement.className = 'myblog-auto-image-text';
       
@@ -702,21 +721,5 @@
            title.substring(twoThirdLength);
   }
 
-  // 初期化関数
-  function init() {
-    initHamburgerMenu();
-    initTableOfContents();
-    initQuiz();
-    initShareButtons();
-    initArticleFilters();
-    initAutoFeaturedImages(); // 自動アイキャッチの初期化を追加
-  }
-
-  // DOMが読み込まれたら初期化を実行
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
 
 })();
