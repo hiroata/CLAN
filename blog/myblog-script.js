@@ -15,6 +15,36 @@
     return document.querySelectorAll(selector);
   }
 
+  // タイトルの文字数制限
+  function limitTitleLength() {
+    // 記事一覧のタイトル制限
+    const titles = getElements('.myblog-article-card-title');
+    titles.forEach(function(title) {
+      const originalText = title.textContent.trim();
+      if (originalText.length > 45) {
+        title.textContent = originalText.substring(0, 45) + '...';
+      }
+    });
+
+    // 関連記事のサムネイルタイトル制限
+    const autoImages = getElements('.myblog-auto-image[data-title]');
+    autoImages.forEach(function(img) {
+      const originalTitle = img.getAttribute('data-title');
+      if (originalTitle && originalTitle.length > 40) {
+        img.setAttribute('data-title', originalTitle.substring(0, 40) + '...');
+      }
+    });
+
+    // 関連記事カードのタイトル制限
+    const relatedTitles = getElements('.myblog-related-card-title');
+    relatedTitles.forEach(function(title) {
+      const originalText = title.textContent.trim();
+      if (originalText.length > 40) {
+        title.textContent = originalText.substring(0, 40) + '...';
+      }
+    });
+  }
+
   // ハンバーガーメニューの制御
   function initHamburgerMenu() {
     const hamburger = getElement('#myblog-hamburger');
@@ -508,6 +538,7 @@
       initArticleFilters();
       initPagination();
       enhanceArticleCards();
+      limitTitleLength();
       
       // UX向上機能
       initLazyLoading();
