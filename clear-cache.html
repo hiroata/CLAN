@@ -26,6 +26,21 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
+        .refresh-button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+        }
+        .refresh-button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
         .progress {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
@@ -135,16 +150,10 @@
                     updateProgress(100);
                     addLog('🎉 全キャッシュクリア完了');
                     
-                    // 3秒後に自動で閉じる
+                    // ボタンを表示
                     setTimeout(() => {
-                        addLog('🔄 3秒後にページを閉じます...');
-                        setTimeout(() => {
-                            if (window.opener) {
-                                window.close();
-                            } else {
-                                window.location.href = 'index.html';
-                            }
-                        }, 3000);
+                        addLog('🔄 ページをリフレッシュしてください');
+                        statusEl.innerHTML = '✅ キャッシュクリア完了！<br><button class="refresh-button" onclick="window.location.reload(true)">ページをリフレッシュ</button>';
                     }, 1000);
                     
                 } catch (error) {

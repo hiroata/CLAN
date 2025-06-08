@@ -992,54 +992,41 @@
 
 .myblog-author-avatar {
   flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #f0f0f0;
 }
 
 .myblog-author-avatar img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 50% !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  /* 強制的に正方形のアスペクト比を維持 */
+  aspect-ratio: 1 / 1 !important;
+  min-width: 80px !important;
+  max-width: 80px !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
 }
 
 .myblog-author-info {
   flex: 1;
-}
-
-.myblog-author-name {
-  font-size: 1.3rem;
-  font-weight: var(--myblog-font-weight-bold);
-  margin: 0 0 var(--myblog-spacing-sm) 0;
-  color: var(--myblog-text-color);
-}
-
-.myblog-author-bio {
-  margin: 0 0 var(--myblog-spacing-md) 0;
-  line-height: 1.6;
-  color: var(--myblog-text-light);
-  font-size: 0.95rem;
-}
-
-.myblog-author-social {
-  display: flex;
-  gap: var(--myblog-spacing-sm);
-}
-
-.myblog-author-social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: var(--myblog-text-light);
-  color: var(--myblog-content-bg);
-  border-radius: 50%;
-  text-decoration: none;
-  transition: var(--myblog-transition);
-}
-
-.myblog-author-social-link:hover {
-  background-color: var(--myblog-accent-color);
-  transform: translateY(-1px);
 }
 
 /* 関連記事 */

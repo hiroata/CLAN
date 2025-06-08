@@ -1,5 +1,5 @@
 // サービスワーカー (service-worker.js)
-const CACHE_NAME = 'clan-site-cache-v10000-it-hojo-updated'; // IT導入補助金リンク更新対応
+const CACHE_NAME = 'clan-site-cache-v10001-profile-css-fix'; // プロフィール画像CSS修正対応
 const STATIC_ASSETS = [
   // メインページと重要ページ
   '/',
