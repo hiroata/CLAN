@@ -421,7 +421,7 @@
             <ul>
                 <li><a href="/index.html">ホーム</a></li>
                 <li><a href="/achievement/index.html">お客様の声</a></li>
-                <li><a href/blog/index.html">ブログ</a></li>
+                <li><a href="/blog/index.html">ブログ</a></li>
                 <li><a href="/tools/index.html">まえゆきツール</a></li>
             </ul>
         </nav>
@@ -606,7 +606,13 @@
     </div>  </div>
 </footer>
 
-<script src="/js/main.js" defer></script>
+<!-- 統合システムスクリプト（優先読み込み） -->
+<script src="../js/common-cache.js"></script>
+<script src="../js/common-lazy-loading.js"></script>
+<script src="../js/common-init.js"></script>
+
+<!-- メインスクリプト -->
+<script src="../js/main.js" defer></script>
 
 <!-- footer -->
 </body>
