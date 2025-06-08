@@ -472,5 +472,10 @@
             });
         }
     </script>
+
+    <!-- 統合システムスクリプト（優先読み込み） -->
+    <script src="../js/common-cache.js" onerror="console.warn('common-cache.js not found')"></script>
+    <script src="../js/common-lazy-loading.js" onerror="console.warn('common-lazy-loading.js not found')"></script>
+    <script src="../js/common-init.js" onerror="console.warn('common-init.js not found')"></script>
 </body>
 </html>

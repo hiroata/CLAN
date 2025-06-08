@@ -1,4 +1,7 @@
-<!-- ツール共通テンプレート --><!DOCTYPE html><html lang="ja"><head>
+<!-- ツール共通テンプレート -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="まえゆきツールのミームジェネレーター - 自分だけのオリジナルミームを簡単に作成できる無料ツールです。テキストを追加して画像をシェアしましょう。">
@@ -1268,6 +1271,11 @@
         console.log('include.jsのロードをスキップしました');
     }
 </script>
+
+<!-- 統合システムスクリプト（優先読み込み） -->
+<script src="../js/common-cache.js" onerror="console.warn('common-cache.js not found')"></script>
+<script src="../js/common-lazy-loading.js" onerror="console.warn('common-lazy-loading.js not found')"></script>
+<script src="../js/common-init.js" onerror="console.warn('common-init.js not found')"></script>
 
 <!-- footer -->
 </body>
