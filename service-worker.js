@@ -1,5 +1,5 @@
 // サービスワーカー (service-worker.js)
-const CACHE_NAME = 'clan-site-cache-v9999-cache-cleared'; // キャッシュクリア対応でバージョン強制更新
+const CACHE_NAME = 'clan-site-cache-v10000-it-hojo-updated'; // IT導入補助金リンク更新対応
 const STATIC_ASSETS = [
   // メインページと重要ページ
   '/',

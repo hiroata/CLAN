@@ -577,8 +577,9 @@ footer { flex-shrink: 0; }
 
 .cta-container {
   max-width: 800px;
-  margin: var(--container-center);
-  padding: var(--container-padding);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .cta-title {
@@ -605,6 +606,8 @@ footer { flex-shrink: 0; }
   display: flex;
   gap: 20px;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cta-btn {
@@ -2031,4 +2034,32 @@ footer { flex-shrink: 0; }
     .image-preview-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* CTA中央寄せ修正 */
+.cta-section {
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }

@@ -793,7 +793,12 @@
                </a>
                <div class="share-option share-copy" id="shareCopy">
                   <svg width="20" height="20" fill="#fff" viewBox="0 0 24 24"><path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"></path></svg>
-               </div>      <!-- 読み込みインジケータ -->
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- 読み込みインジケータ -->
       <div class="loading" id="loading">
          <div class="loading-spinner"></div>
       </div>
@@ -805,7 +810,9 @@
       </symbol>
     </svg>    <!-- 個別ツールのJavaScript -->
     <script>
-      // ミームジェネレーター用のスクリプトはここに記述します    </script>  </main>
+      // ミームジェネレーター用のスクリプト - 完全版実装
+      // 既に上部で実装済みのため、この部分は必要なし
+    </script>  </main>
   
     <!-- 重大告知 -->
     <div class="important-notice">
@@ -824,7 +831,7 @@
                 あなたは事業成長に集中するだけでOKです。
             </p>
             <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">無料相談してみる</a>
+                <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
             </div>
         </div>
     </section>
@@ -1257,10 +1264,217 @@
             });
         }
 
+        // ドラッグ&ドロップの設定
+        function setupDragAndDrop() {
+            // ドロップエリアのクリックでファイル選択
+            dropArea.addEventListener('click', () => fileInput.click());
+            
+            // ファイル選択の変更
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFiles(e.target.files);
+                }
+            });
+            
+            // ドラッグイベントの設定
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            // ドラッグハイライト
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, () => {
+                    dropArea.classList.add('dragover');
+                }, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, () => {
+                    dropArea.classList.remove('dragover');
+                }, false);
+            });
+
+            // ドロップ処理
+            dropArea.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                if (files.length > 0) {
+                    showLoading();
+                    handleFiles(files);
+                }
+            });
+        }
+
+        // イベントリスナー設定
+        function setupEventListeners() {
+            try {
+                // テキスト入力
+                topTextInput.addEventListener('input', drawMeme);
+                bottomTextInput.addEventListener('input', drawMeme);
+                
+                // フォント設定
+                fontSizeSelect.addEventListener('change', (e) => {
+                    fontSize = parseInt(e.target.value);
+                    drawMeme();
+                });
+                
+                fontFamilySelect.addEventListener('change', (e) => {
+                    fontFamily = e.target.value;
+                    drawMeme();
+                });
+                
+                // 色設定
+                textColorInput.addEventListener('input', (e) => {
+                    textColor = e.target.value;
+                    drawMeme();
+                });
+                
+                strokeColorInput.addEventListener('input', (e) => {
+                    strokeColor = e.target.value;
+                    drawMeme();
+                });
+
+                // ダウンロード機能
+                downloadBtn.addEventListener('click', () => {
+                    if (!currentImage) return;
+                    
+                    try {
+                        // PNG形式でダウンロード
+                        memeCanvas.toBlob((blob) => {
+                            if (blob) {
+                                const url = URL.createObjectURL(blob);
+                                const a = document.createElement('a');
+                                a.href = url;
+                                a.download = `meme_${Date.now()}.png`;
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                                URL.revokeObjectURL(url);
+                                showMessage('ミーム画像をダウンロードしました！');
+                            } else {
+                                showMessage('ダウンロードに失敗しました', true);
+                            }
+                        }, 'image/png', 1.0);
+                    } catch (error) {
+                        console.error('ダウンロードエラー:', error);
+                        showMessage('ダウンロードに失敗しました', true);
+                    }
+                });
+
+                // シェア機能
+                shareBtn.addEventListener('click', () => {
+                    if (!currentImage) return;
+                    
+                    try {
+                        memeCanvas.toBlob((blob) => {
+                            if (blob) {
+                                const url = URL.createObjectURL(blob);
+                                const sharePreviewImg = document.getElementById('sharePreviewImg');
+                                if (sharePreviewImg) {
+                                    sharePreviewImg.src = url;
+                                }
+                                shareModal.style.display = 'flex';
+                            } else {
+                                showMessage('シェア準備に失敗しました', true);
+                            }
+                        }, 'image/png', 1.0);
+                    } catch (error) {
+                        console.error('シェアエラー:', error);
+                        showMessage('シェア機能の準備に失敗しました', true);
+                    }
+                });
+
+                // シェアモーダル閉じる
+                if (shareClose) {
+                    shareClose.addEventListener('click', () => {
+                        shareModal.style.display = 'none';
+                    });
+                }
+
+                // モーダル外クリックで閉じる
+                shareModal.addEventListener('click', (e) => {
+                    if (e.target === shareModal) {
+                        shareModal.style.display = 'none';
+                    }
+                });
+
+                // SNSシェア機能の設定
+                setupSocialShare();
+                
+            } catch (error) {
+                console.error('イベントリスナー設定エラー:', error);
+            }
+        }
+
+        // SNSシェア機能
+        function setupSocialShare() {
+            const shareTwitter = document.getElementById('shareTwitter');
+            const shareFacebook = document.getElementById('shareFacebook');
+            const shareLine = document.getElementById('shareLine');
+            const shareCopy = document.getElementById('shareCopy');
+
+            if (shareTwitter) {
+                shareTwitter.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const text = encodeURIComponent('私が作成したミーム画像です！ #まえゆきツール #ミーム');
+                    const url = encodeURIComponent(window.location.href);
+                    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+                });
+            }
+
+            if (shareFacebook) {
+                shareFacebook.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = encodeURIComponent(window.location.href);
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+                });
+            }
+
+            if (shareLine) {
+                shareLine.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const text = encodeURIComponent('私が作成したミーム画像です！');
+                    const url = encodeURIComponent(window.location.href);
+                    window.open(`https://social-plugins.line.me/lineit/share?url=${url}&text=${text}`, '_blank');
+                });
+            }
+
+            if (shareCopy) {
+                shareCopy.addEventListener('click', async () => {
+                    try {
+                        await navigator.clipboard.writeText(window.location.href);
+                        showMessage('URLをコピーしました！');
+                    } catch (error) {
+                        console.error('クリップボードエラー:', error);
+                        showMessage('URLのコピーに失敗しました', true);
+                    }
+                });
+            }
+        }
+
         // 初期化
-        displayTemplates();
-        
-        console.log('ミームジェネレーターが初期化されました');
+        function init() {
+            try {
+                displayTemplates();
+                setupDragAndDrop();
+                setupEventListeners();
+                
+                console.log('ミームジェネレーターが正常に初期化されました');
+                
+            } catch (error) {
+                console.error('初期化エラー:', error);
+                showMessage('アプリケーションの初期化に失敗しました', true);
+            }
+        }
+
+        // アプリケーション開始
+        init();
     });
   </script>
   
