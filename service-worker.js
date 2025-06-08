@@ -1,5 +1,5 @@
 // サービスワーカー (service-worker.js)
-const CACHE_NAME = 'clan-site-cache-v8944-integrated'; // 統合システム対応でバージョン更新
+const CACHE_NAME = 'clan-site-cache-v9999-cache-cleared'; // キャッシュクリア対応でバージョン強制更新
 const STATIC_ASSETS = [
   // メインページと重要ページ
   '/',
@@ -111,5 +111,24 @@ self.addEventListener('fetch', event => {
           });
         })
     );
+  }
+});
+
+// メッセージイベントリスナー（キャッシュクリア要求を処理）
+self.addEventListener('message', async (event) => {
+  if (event.data && event.data.type === 'CLEAR_CACHE') {
+    try {
+      // 全てのキャッシュを削除
+      const cacheNames = await caches.keys();
+      await Promise.all(cacheNames.map(name => caches.delete(name)));
+      
+      // クライアントに成功を通知
+      event.ports[0].postMessage({ success: true });
+      console.log('🧹 Service Worker: 全キャッシュをクリアしました');
+    } catch (error) {
+      // クライアントにエラーを通知
+      event.ports[0].postMessage({ success: false, error: error.message });
+      console.error('❌ Service Worker: キャッシュクリアに失敗:', error);
+    }
   }
 });

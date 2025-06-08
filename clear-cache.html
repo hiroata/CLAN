@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャッシュクリア実行中...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .progress {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            background: #4CAF50;
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        .log {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .status {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .success {
+            color: #4CAF50;
+        }
+        .error {
+            color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 サイト全体キャッシュクリア実行中</h1>
+        <div class="status" id="status">初期化中...</div>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="log" id="log"></div>
+    </div>
+
+    <!-- 統合システムスクリプト -->
+    <script src="js/common-cache.js"></script>
+    
+    <script>
+        (function() {
+            'use strict';
+            
+            const statusEl = document.getElementById('status');
+            const progressEl = document.getElementById('progressBar');
+            const logEl = document.getElementById('log');
+            
+            function updateStatus(message, type = 'info') {
+                statusEl.textContent = message;
+                statusEl.className = 'status ' + (type === 'success' ? 'success' : type === 'error' ? 'error' : '');
+            }
+            
+            function updateProgress(percent) {
+                progressEl.style.width = percent + '%';
+            }
+            
+            function addLog(message) {
+                const time = new Date().toLocaleTimeString();
+                logEl.innerHTML += `<div>[${time}] ${message}</div>`;
+                logEl.scrollTop = logEl.scrollHeight;
+            }
+            
+            async function clearAllCaches() {
+                try {
+                    updateStatus('キャッシュマネージャーを初期化中...', 'info');
+                    updateProgress(10);
+                    addLog('🔧 キャッシュクリア開始');
+                    
+                    // 統合キャッシュマネージャーを初期化
+                    const cacheManager = new CommonCacheManager();
+                    
+                    updateStatus('sessionStorageをクリア中...', 'info');
+                    updateProgress(25);
+                    cacheManager.clearSessionStorage();
+                    addLog('✅ sessionStorage クリア完了');
+                    
+                    updateStatus('localStorageをクリア中...', 'info');
+                    updateProgress(40);
+                    cacheManager.clearLocalStorage();
+                    addLog('✅ localStorage クリア完了');
+                    
+                    updateStatus('ブラウザ状態をリセット中...', 'info');
+                    updateProgress(60);
+                    cacheManager.resetBrowserState();
+                    addLog('✅ ブラウザ状態リセット完了');
+                    
+                    updateStatus('Service Workerキャッシュをクリア中...', 'info');
+                    updateProgress(80);
+                    
+                    if ('caches' in window) {
+                        await cacheManager.clearServiceWorkerCache();
+                        addLog('✅ Service Worker キャッシュクリア完了');
+                    } else {
+                        addLog('⚠️ Cache API はサポートされていません');
+                    }
+                    
+                    updateStatus('サイト全体キャッシュクリア完了！', 'success');
+                    updateProgress(100);
+                    addLog('🎉 全キャッシュクリア完了');
+                    
+                    // 3秒後に自動で閉じる
+                    setTimeout(() => {
+                        addLog('🔄 3秒後にページを閉じます...');
+                        setTimeout(() => {
+                            if (window.opener) {
+                                window.close();
+                            } else {
+                                window.location.href = 'index.html';
+                            }
+                        }, 3000);
+                    }, 1000);
+                    
+                } catch (error) {
+                    updateStatus('キャッシュクリアでエラーが発生しました', 'error');
+                    addLog('❌ エラー: ' + error.message);
+                    console.error('Cache clear error:', error);
+                }
+            }
+            
+            // ページ読み込み後にキャッシュクリアを実行
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(clearAllCaches, 1000);
+            });
+            
+        })();
+    </script>
+</body>
+</html>
