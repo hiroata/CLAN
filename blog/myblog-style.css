@@ -374,6 +374,22 @@
   white-space: pre-line;
 }
 
+/* モバイルでのメイン画像テキスト調整 */
+@media (max-width: 768px) {
+  .myblog-auto-image .myblog-auto-image-text {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    padding: var(--myblog-spacing-md);
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+  
+  .myblog-featured-image .myblog-auto-image .myblog-auto-image-text {
+    font-size: 1.1rem;
+    padding: var(--myblog-spacing-sm);
+  }
+}
+
 /* 記事カード用自動生成画像（CLS対策） */
 .myblog-article-card-image {
   width: 100%;
@@ -1019,6 +1035,43 @@
   width: 100%;
   height: 180px;
   overflow: hidden;
+  position: relative;
+}
+
+/* 関連記事の自動生成画像 */
+.myblog-related-image.myblog-auto-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.myblog-related-image.myblog-auto-image::before {
+  content: attr(data-title);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: var(--myblog-spacing-sm);
+  max-width: 90%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  word-break: break-word;
+  hyphens: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+.myblog-related-image.myblog-auto-image .myblog-auto-image-text {
+  display: none;
 }
 
 .myblog-related-image img {
@@ -1525,11 +1578,20 @@
   }
   
   .myblog-article-card-image.myblog-auto-image::before {
-    font-size: 0.9rem;
-    line-height: 1.3;
+    font-size: 0.85rem;
+    line-height: 1.4;
     padding: var(--myblog-spacing-sm);
-    top: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 90%;
+    /* モバイルでのテキスト表示改善 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   /* ページネーション */

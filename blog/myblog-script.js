@@ -848,16 +848,16 @@
     });
   }
 
-  // タイトルを3行に適切に分割する関数
+  // タイトルを適切に分割する関数（モバイル最適化）
   function formatTitleForThreeLines(title) {
-    // 20文字以下の場合はそのまま返す
-    if (title.length <= 20) {
+    // モバイルでの表示を考慮したより短い文字制限
+    if (title.length <= 18) {
       return title;
     }
 
-    // 60文字以上の場合は57文字で切り詰める
-    if (title.length > 60) {
-      title = title.substring(0, 57) + '...';
+    // モバイルでは50文字以上で切り詰め（より短く）
+    if (title.length > 50) {
+      title = title.substring(0, 47) + '...';
     }
 
     // 自然な分割ポイントを探す

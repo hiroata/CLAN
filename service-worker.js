@@ -1,5 +1,5 @@
 // サービスワーカー (service-worker.js)
-const CACHE_NAME = 'clan-site-cache-v4-integrated'; // 統合システム対応でバージョン更新
+const CACHE_NAME = 'clan-site-cache-v8944-integrated'; // 統合システム対応でバージョン更新
 const STATIC_ASSETS = [
   // メインページと重要ページ
   '/',
