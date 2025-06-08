@@ -518,16 +518,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <link rel="icon" href="assets/images/logo.webp" type="image/webp"> <!-- 存在する画像を使用 -->
-    <link rel="canonical" href="https://example.com/"> <!-- canonicalタグ追加 -->
+    <link rel="canonical" href="https://clanbiz.jp/"> <!-- canonicalタグ追加 -->
     <meta property="og:title" content="CLAN｜マーケティング自動化とウェビナー構築でビジネスを加速">
     <meta property="og:description" content="CLANは、マーケティング自動化とウェビナー構築であなたのビジネスを加速させるオンラインスクールです。Utageシステム導入やIT導入補助金活用もサポート。">
-    <meta property="og:image" content="assets/images/hero-pc.webp"> <!-- 存在する画像を使用 -->
+    <meta property="og:image" content="https://clanbiz.jp/assets/images/hero-pc.webp"> <!-- 存在する画像を使用 -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/"> <!-- Absolute URL -->
+    <meta property="og:url" content="https://clanbiz.jp/"> <!-- Absolute URL -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CLAN｜マーケティング自動化とウェビナー構築でビジネスを加速">
     <meta name="twitter:description" content="CLANは、マーケティング自動化とウェビナー構築であなたのビジネスを加速させるオンラインスクールです。Utageシステム導入やIT導入補助金活用もサポート。">
-    <meta name="twitter:image" content="assets/images/hero-pc.webp"> <!-- 存在する画像を使用 -->
+    <meta name="twitter:image" content="https://clanbiz.jp/assets/images/hero-pc.webp"> <!-- 存在する画像を使用 -->
 
     <!-- 構造化データ（JSON-LD）追加 -->
     <script type="application/ld+json">
@@ -535,12 +535,12 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "CLAN",
-      "url": "https://example.com/",
-      "logo": "https://example.com/images/logo.webp",
+      "url": "https://clanbiz.jp/",
+      "logo": "https://clanbiz.jp/assets/images/logo.webp",
       "description": "マーケティング自動化とウェビナー構築であなたのビジネスを加速させるオンラインスクール",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "",
+        "telephone": "+81-3-6408-5572",
         "contactType": "customer support",
         "email": "info@clanbiz.net",
         "availableLanguage": "Japanese"
@@ -550,8 +550,23 @@
     }
     </script>
 
-    <!-- キャッシュ制御 -->
+    <!-- キャッシュ制御とパフォーマンス最適化 -->
     <meta http-equiv="Cache-Control" content="max-age=31536000, public">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- DNS プリフェッチとプリロード -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//utage-system.com">
+    
+    <!-- リソースヒント -->
+    <link rel="prefetch" href="blog/index.html">
+    <link rel="prefetch" href="achievement/index.html">
+    
+    <!-- WebP形式の画像をプリロード -->
+    <link rel="preload" href="assets/images/hero-pc.webp" as="image" type="image/webp">
 
    <!-- モバイルUX向上のための追加CSS -->
    <!-- モバイルCSSはstyle.cssに統合済み -->
@@ -833,6 +848,19 @@
         fadeElements.forEach(element => {
             observer.observe(element);
         });
+        
+        // Service Workerの登録
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
     });
 </script>
 

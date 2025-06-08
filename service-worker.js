@@ -1,12 +1,24 @@
 // サービスワーカー (service-worker.js)
-const CACHE_NAME = 'maeyuki-tools-cache-v1';
+const CACHE_NAME = 'clan-site-cache-v3'; // キャッシュバージョンを更新
 const STATIC_ASSETS = [
+  // メインページと重要ページ
+  '/',
+  '/index.html',
+  '/blog/index.html',
+  '/achievement/index.html',
   // 共通スクリプトとスタイル
   '/js/main.js',
   '/css/style.css',
-  // よく使用される外部ライブラリ
-  'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
-  'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap',
+  '/blog/myblog-style.css',
+  // 重要な画像
+  '/assets/images/logo.webp',
+  '/assets/images/hero-pc.webp',
+  '/assets/images/hero-sp.webp',
+  // 外部ライブラリ
+  'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+  'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css',
+  'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js'
 ];
 
 // インストール時に静的アセットをキャッシュ
@@ -25,13 +37,36 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
+      console.log('古いキャッシュを削除中:', cacheNames);
       return Promise.all(
         cacheNames
           .filter(name => name !== CACHE_NAME)
-          .map(name => caches.delete(name))
+          .map(name => {
+            console.log('削除するキャッシュ:', name);
+            return caches.delete(name);
+          })
       );
-    }).then(() => self.clients.claim())
+    }).then(() => {
+      console.log('Service Worker アクティベート完了');
+      return self.clients.claim();
+    })
   );
+});
+
+// キャッシュクリア用のメッセージハンドラー
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'CLEAR_CACHE') {
+    event.waitUntil(
+      caches.keys().then(cacheNames => {
+        console.log('手動キャッシュクリア実行');
+        return Promise.all(
+          cacheNames.map(name => caches.delete(name))
+        );
+      }).then(() => {
+        event.ports[0].postMessage({success: true});
+      })
+    );
+  }
 });
 
 // フェッチリクエストの処理

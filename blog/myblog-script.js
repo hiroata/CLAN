@@ -245,7 +245,7 @@
     }
   }
 
-  // 画像の遅延読み込み（簡易版）
+  // 画像の遅延読み込み（強化版・CLS対策）
   function initLazyLoading() {
     const images = getElements('img[loading="lazy"]');
     
@@ -255,16 +255,41 @@
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             const img = entry.target;
+            
+            // CLS対策：画像サイズを事前に設定
+            if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+              // デフォルトのアスペクト比を設定
+              img.style.aspectRatio = '16 / 9';
+              img.style.objectFit = 'cover';
+            }
+            
+            // WebPフォールバック対応
+            if (img.dataset.webp && supportsWebP()) {
+              img.src = img.dataset.webp;
+            }
+            
             img.classList.add('loaded');
             observer.unobserve(img);
           }
         });
+      }, {
+        // より早めに読み込み開始
+        rootMargin: '50px 0px',
+        threshold: 0.1
       });
 
       images.forEach(function(img) {
         imageObserver.observe(img);
       });
     }
+  }
+
+  // WebP対応チェック
+  function supportsWebP() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1;
+    canvas.height = 1;
+    return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
   }
 
   // フォームのバリデーション（今後の拡張用）
@@ -284,9 +309,27 @@
     console.error(`ブログスクリプトエラー (${context}):`, error);
   }
 
-  // スクロール位置の復元
+  // スクロール位置の復元（ブログ記事間の遷移では無効化）
   function restoreScrollPosition() {
-    // ページリロード時にスクロール位置を復元
+    // ブログ記事からブログ記事への遷移の場合は復元しない
+    const referrer = document.referrer;
+    const currentUrl = window.location.href;
+    
+    // ブログ記事間の遷移をチェック
+    if (referrer && referrer.includes('/blog/') && currentUrl.includes('/blog/article-')) {
+      // ブログ記事間の遷移の場合は自動でトップにスクロール
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'auto';
+      }
+      sessionStorage.removeItem('myblog-scroll-position');
+      // 明示的にトップにスクロール
+      setTimeout(function() {
+        window.scrollTo(0, 0);
+      }, 0);
+      return;
+    }
+    
+    // それ以外の場合は通常の復元処理
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
@@ -298,9 +341,17 @@
     }
   }
 
-  // スクロール位置の保存
+  // スクロール位置の保存（ブログ記事遷移時は無効化）
   function saveScrollPosition() {
     window.addEventListener('beforeunload', function() {
+      // ブログ記事へのリンクをクリックした場合は保存しない
+      const activeElement = document.activeElement;
+      if (activeElement && activeElement.tagName === 'A' && 
+          activeElement.href && activeElement.href.includes('/blog/article-')) {
+        sessionStorage.removeItem('myblog-scroll-position');
+        return;
+      }
+      
       sessionStorage.setItem('myblog-scroll-position', window.pageYOffset.toString());
     });
   }
@@ -340,6 +391,25 @@
     // キーボードナビゲーションの改善
     const focusableElements = getElements('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
     
+    // フォーカス可能要素にスキップリンク機能を追加
+    focusableElements.forEach(function(element, index) {
+      // タブキーでのナビゲーション向上
+      element.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          // 最後の要素で次に進む場合は最初に戻る
+          if (!e.shiftKey && index === focusableElements.length - 1) {
+            e.preventDefault();
+            focusableElements[0].focus();
+          }
+          // 最初の要素で前に戻る場合は最後に移動
+          else if (e.shiftKey && index === 0) {
+            e.preventDefault();
+            focusableElements[focusableElements.length - 1].focus();
+          }
+        }
+      });
+    });
+    
     // ESCキーでモーダルやメニューを閉じる
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
@@ -350,6 +420,7 @@
           hamburger.classList.remove('active');
           nav.classList.remove('active');
           hamburger.setAttribute('aria-label', 'メニューを開く');
+          hamburger.focus(); // フォーカスを戻す
         }
 
         // 目次を閉じる（スマホ時）
@@ -359,7 +430,30 @@
           tocNav.classList.remove('active');
           tocToggle.classList.remove('active');
           tocToggle.setAttribute('aria-label', '目次を開く');
+          tocToggle.focus(); // フォーカスを戻す
         }
+      }
+    });
+    
+    // ARIA属性の動的更新
+    updateAriaAttributes();
+  }
+
+  // ARIA属性の更新
+  function updateAriaAttributes() {
+    // ページネーション番号にaria-labelを追加
+    const paginationNumbers = getElements('.myblog-pagination-number');
+    paginationNumbers.forEach(function(number) {
+      const pageNum = number.textContent;
+      number.setAttribute('aria-label', `${pageNum}ページへ移動`);
+    });
+    
+    // 記事カードにaria-labelを追加
+    const articleCards = getElements('.myblog-article-card-link');
+    articleCards.forEach(function(link) {
+      const title = link.querySelector('.myblog-article-card-title');
+      if (title) {
+        link.setAttribute('aria-label', `記事「${title.textContent}」を読む`);
       }
     });
   }
@@ -513,10 +607,28 @@
           card.style.boxShadow = '';
         });
 
+        // クリック時にスクロール位置をリセット
+        link.addEventListener('click', function(e) {
+          // セッションストレージをクリア
+          sessionStorage.removeItem('myblog-scroll-position');
+          
+          // モバイルデバイスの場合は特別な処理
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const targetUrl = this.href;
+            
+            // 即座にページ遷移（スクロール位置を保存する前に）
+            setTimeout(function() {
+              window.location.href = targetUrl;
+            }, 0);
+          }
+        });
+
         // Enter キーでリンクを開く
         link.addEventListener('keydown', function(e) {
           if (e.key === 'Enter') {
             e.preventDefault();
+            sessionStorage.removeItem('myblog-scroll-position');
             window.location.href = this.href;
           }
         });
@@ -524,9 +636,60 @@
     });
   }
 
+  // キャッシュクリア機能
+  function clearAllCache() {
+    // sessionStorage クリア
+    sessionStorage.clear();
+    
+    // localStorage クリア（ブログ関連のもののみ）
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && (key.includes('myblog') || key.includes('scroll'))) {
+        keysToRemove.push(key);
+      }
+    }
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+    
+    // ブラウザキャッシュのハードリロード（可能な場合）
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        names.forEach(function(name) {
+          caches.delete(name);
+        });
+      });
+    }
+    
+    console.log('ブログキャッシュをクリアしました');
+  }
+
   // 初期化関数
   function init() {
     try {
+      // 記事ページの場合、ページロード時に確実にトップにスクロール
+      if (window.location.pathname.includes('/blog/article-')) {
+        // 強制的にキャッシュクリア
+        clearAllCache();
+        
+        // ページ読み込み直後にトップへスクロール
+        window.scrollTo(0, 0);
+        
+        // DOMContentLoaded後にも再度トップへ
+        document.addEventListener('DOMContentLoaded', function() {
+          window.scrollTo(0, 0);
+        });
+        
+        // 画像読み込み完了後にも念のため
+        window.addEventListener('load', function() {
+          window.scrollTo(0, 0);
+        });
+      }
+      
+      // ブログ一覧ページでもキャッシュクリア
+      if (window.location.pathname.includes('/blog/') && !window.location.pathname.includes('/blog/article-')) {
+        clearAllCache();
+      }
+      
       // 基本機能の初期化
       initHamburgerMenu();
       initTableOfContents();
@@ -554,6 +717,8 @@
       // 画像再生成イベントリスナー
       window.addEventListener('myblog:refresh-images', function() {
         initAutoFeaturedImages();
+        // 画像生成後にARIA属性を更新
+        setTimeout(updateAriaAttributes, 100);
       });
       
       // カスタムイベントを発火（他のスクリプトとの連携用）
@@ -580,6 +745,13 @@
   // パブリックAPIの提供（必要に応じて外部からアクセス可能）
   window.MyBlog = {
     version: '1.0.0',
+    
+    // キャッシュクリア機能を公開
+    clearCache: function() {
+      clearAllCache();
+      // ページリロード
+      window.location.reload(true);
+    },
     
     // 目次を手動で更新する関数
     updateToc: function() {

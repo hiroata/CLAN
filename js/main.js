@@ -18,6 +18,9 @@
      * サイト初期化
      */
     init() {
+      // 全体キャッシュクリア
+      this.clearAllCache();
+      
       this.componentLoader = new ComponentLoader();
       this.componentLoader.loadAll();
       
@@ -25,6 +28,47 @@
       this.initMainSite();
       
       console.log('🚀 サイト初期化完了');
+    }
+    
+    /**
+     * 全体キャッシュクリア機能
+     */
+    clearAllCache() {
+      // sessionStorage 完全クリア
+      sessionStorage.clear();
+      
+      // localStorage クリア（サイト関連のもの）
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && (
+          key.includes('scroll') || 
+          key.includes('menu') || 
+          key.includes('animation') ||
+          key.includes('clan') ||
+          key.includes('site') ||
+          key.includes('utage')
+        )) {
+          keysToRemove.push(key);
+        }
+      }
+      keysToRemove.forEach(key => localStorage.removeItem(key));
+      
+      // Service Worker キャッシュクリア
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          names.forEach(function(name) {
+            caches.delete(name);
+          });
+        });
+      }
+      
+      // history.scrollRestoration を自動に設定
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'auto';
+      }
+      
+      console.log('🧹 全サイトキャッシュをクリアしました');
     }
     
     /**
@@ -502,5 +546,44 @@
   window.updateUI = ImageToolsUtils.updateUI.bind(ImageToolsUtils);
   window.formatFileSize = ImageToolsUtils.formatFileSize.bind(ImageToolsUtils);
   window.getImageDimensions = ImageToolsUtils.getImageDimensions.bind(ImageToolsUtils);
+  
+  // グローバルキャッシュクリア関数
+  window.clearSiteCache = function() {
+    console.log('🧹 サイト全体のキャッシュクリアを開始...');
+    
+    // 全ストレージクリア
+    sessionStorage.clear();
+    localStorage.clear();
+    
+    // Service Worker にキャッシュクリアメッセージを送信
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+      const messageChannel = new MessageChannel();
+      messageChannel.port1.onmessage = function(event) {
+        if (event.data.success) {
+          console.log('🧹 Service Worker キャッシュクリア完了');
+          // ハードリロード
+          window.location.reload(true);
+        }
+      };
+      
+      navigator.serviceWorker.controller.postMessage(
+        {type: 'CLEAR_CACHE'}, 
+        [messageChannel.port2]
+      );
+    } else {
+      // Service Worker がない場合は直接キャッシュクリア
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          return Promise.all(names.map(name => caches.delete(name)));
+        }).then(function() {
+          console.log('🧹 ブラウザキャッシュクリア完了');
+          window.location.reload(true);
+        });
+      } else {
+        console.log('🧹 ストレージクリア完了');
+        window.location.reload(true);
+      }
+    }
+  };
 
 })();

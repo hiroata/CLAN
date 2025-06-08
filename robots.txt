@@ -1,0 +1,25 @@
+# robots.txt for https://clanbiz.jp/
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://clanbiz.jp/sitemap.xml
+
+# クロールの遅延（秒）
+Crawl-delay: 1
+
+# 特定のボットに対する設定
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1
+
+# 不要なクローリングを防ぐ
+User-agent: *
+Disallow: /assets/images/
+Disallow: *.pdf$
+Disallow: /admin/
+Disallow: /private/

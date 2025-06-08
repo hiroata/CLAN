@@ -13,6 +13,11 @@
   --myblog-border-radius-small: 4px;
   --myblog-transition: all 0.3s ease;
   
+  /* パフォーマンス最適化用変数 */
+  --myblog-gpu-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --myblog-opacity-transition: opacity 0.2s ease;
+  --myblog-color-transition: color 0.2s ease, background-color 0.2s ease;
+  
   /* フォント設定 */
   --myblog-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --myblog-font-size-base: 16px;
@@ -46,6 +51,37 @@
   color: var(--myblog-text-color);
   background-color: var(--myblog-bg-color);
   overflow-x: hidden;
+  /* モバイルでのスクロール問題を修正 */
+  overflow-anchor: none;
+}
+
+/* モバイルでのスクロール挙動を改善 */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  .myblog-body {
+    /* スクロール位置の自動調整を無効化 */
+    overflow-anchor: none;
+  }
+  
+  /* 記事カードリンクのタップ時の処理 */
+  .myblog-article-card-link {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* モバイルでのアニメーション最適化 */
+  .myblog-article-card {
+    will-change: auto;
+    transform: none;
+    transition: var(--myblog-color-transition);
+  }
+  
+  .myblog-article-card:hover {
+    transform: none;
+  }
 }
 
 /* ヘッダー */
@@ -90,17 +126,31 @@
   color: var(--myblog-accent-color);
 }
 
-/* ハンバーガーメニュー */
+/* ハンバーガーメニュー（モバイル最適化：44px以上のタップターゲット） */
 .myblog-hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 12px;
+  border-radius: var(--myblog-border-radius-small);
+  transition: var(--myblog-transition);
+  /* タッチ操作最適化 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.myblog-hamburger-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 14px;
 }
 
 .myblog-hamburger span {
@@ -109,10 +159,20 @@
   width: 100%;
   background-color: var(--myblog-text-color);
   transition: var(--myblog-transition);
+  transform-origin: center;
+}
+
+.myblog-hamburger:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.myblog-hamburger:focus {
+  outline: 2px solid var(--myblog-accent-color);
+  outline-offset: 2px;
 }
 
 .myblog-hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(3px, 3px);
 }
 
 .myblog-hamburger.active span:nth-child(2) {
@@ -120,7 +180,7 @@
 }
 
 .myblog-hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 
 /* ナビゲーション */
@@ -311,12 +371,16 @@
   white-space: pre-line;
 }
 
-/* 記事カード用自動生成画像 */
+/* 記事カード用自動生成画像（CLS対策） */
 .myblog-article-card-image {
   width: 100%;
-  height: 280px;
+  height: 160px;
   overflow: hidden;
   position: relative;
+  /* CLS対策：アスペクト比固定 */
+  aspect-ratio: 16 / 9;
+  min-height: 160px;
+  background-color: #f8f9fa;
 }
 
 .myblog-article-card-image.myblog-auto-image {
@@ -324,27 +388,29 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* ローディング中の背景色 */
+  background-color: var(--myblog-border-color);
 }
 
 .myblog-article-card-image.myblog-auto-image::before {
   content: attr(data-title);
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.25;
-  padding: var(--myblog-spacing-md);
+  padding: var(--myblog-spacing-sm);
   max-width: 95%;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   word-break: break-word;
   hyphens: auto;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   white-space: pre-line;
@@ -804,6 +870,15 @@
   font-weight: var(--myblog-font-weight-medium);
   transition: var(--myblog-transition);
   font-size: 0.9rem;
+  /* モバイル最適化：44px以上のタップターゲット */
+  min-height: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.myblog-share-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
 }
 
 .myblog-share-btn--twitter {
@@ -1084,7 +1159,8 @@
 }
 
 .myblog-filter-select:focus {
-  outline: none;
+  outline: 2px solid var(--myblog-accent-color);
+  outline-offset: 2px;
   border-color: var(--myblog-accent-color);
   box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.1);
 }
@@ -1092,8 +1168,8 @@
 /* 記事一覧グリッド */
 .myblog-articles-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: var(--myblog-spacing-xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--myblog-spacing-lg);
   margin-bottom: var(--myblog-spacing-xxl);
 }
 
@@ -1103,13 +1179,16 @@
   border-radius: var(--myblog-border-radius);
   box-shadow: var(--myblog-shadow);
   overflow: hidden;
-  transition: var(--myblog-transition);
+  transition: var(--myblog-gpu-transition), var(--myblog-color-transition);
   height: fit-content;
+  /* GPUアクセラレーション有効化 */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .myblog-article-card:hover {
   box-shadow: var(--myblog-shadow-hover);
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
 }
 
 .myblog-article-card-link {
@@ -1117,13 +1196,21 @@
   text-decoration: none;
   color: inherit;
   height: 100%;
+  /* モバイル最適化：最小タップターゲット確保 */
+  min-height: 120px;
+  position: relative;
+}
+
+.myblog-article-card-link:focus {
+  outline: 2px solid var(--myblog-accent-color);
+  outline-offset: 2px;
 }
 
 .myblog-article-card-content {
-  padding: var(--myblog-spacing-lg);
+  padding: var(--myblog-spacing-md);
   display: flex;
   flex-direction: column;
-  gap: var(--myblog-spacing-md);
+  gap: var(--myblog-spacing-sm);
 }
 
 .myblog-article-card-meta {
@@ -1147,14 +1234,14 @@
 }
 
 .myblog-article-card-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: var(--myblog-font-weight-bold);
   line-height: 1.3;
   margin: 0;
   color: var(--myblog-text-color);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
@@ -1162,12 +1249,12 @@
 }
 
 .myblog-article-card-excerpt {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: 1.4;
   color: var(--myblog-text-light);
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1196,6 +1283,10 @@
   color: var(--myblog-text-color);
   text-decoration: none;
   font-weight: var(--myblog-font-weight-medium);
+  /* モバイル最適化：44px以上のタップターゲット */
+  min-height: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: var(--myblog-transition);
   font-size: 0.9rem;
 }
@@ -1222,13 +1313,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background-color: var(--myblog-content-bg);
   border: 2px solid var(--myblog-border-color);
   border-radius: var(--myblog-border-radius-small);
   color: var(--myblog-text-color);
   text-decoration: none;
+  /* モバイル最適化 */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   font-weight: var(--myblog-font-weight-medium);
   transition: var(--myblog-transition);
   font-size: 0.9rem;
@@ -1238,6 +1332,11 @@
   background-color: var(--myblog-accent-color);
   color: var(--myblog-content-bg);
   border-color: var(--myblog-accent-color);
+}
+
+.myblog-pagination-number:focus {
+  outline: 2px solid var(--myblog-accent-color);
+  outline-offset: 2px;
 }
 
 .myblog-pagination-number--active {
@@ -1355,7 +1454,7 @@
   }
   
   .myblog-articles-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--myblog-spacing-lg);
   }
   
@@ -1484,6 +1583,12 @@
   .myblog-nav-link {
     padding: var(--myblog-spacing-md);
     border-bottom: 1px solid var(--myblog-border-color);
+    /* モバイル最適化：44px以上のタップターゲット */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
   
   .myblog-nav-item:last-child .myblog-nav-link {
@@ -1641,9 +1746,9 @@
   }
   
   .myblog-pagination-number {
-    width: 36px;
-    height: 36px;
-    font-size: 0.8rem;
+    width: 44px;
+    height: 44px;
+    font-size: 0.9rem;
   }
   
   .myblog-article-title {
@@ -1681,6 +1786,17 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  
+  /* アニメーション・トランジション無効化 */
+  .myblog-article-card,
+  .myblog-share-btn,
+  .myblog-pagination-btn,
+  .myblog-pagination-number,
+  .myblog-hamburger {
+    will-change: auto !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 
