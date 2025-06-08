@@ -9,7 +9,7 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" rel="stylesheet">    <!-- 統合JavaScriptファイル -->    <script src="js/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- クリティカルCSS インライン化 -->
@@ -799,6 +799,14 @@
     </div>
   </div>
 </footer>
+
+<!-- 統合システムスクリプト（優先読み込み） -->
+<script src="js/common-cache.js"></script>
+<script src="js/common-lazy-loading.js"></script>
+<script src="js/common-init.js"></script>
+
+<!-- メインスクリプト -->
+<script src="js/main.js" defer></script>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>    document.addEventListener('DOMContentLoaded', function() {

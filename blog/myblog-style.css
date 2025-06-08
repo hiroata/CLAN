@@ -1,44 +1,47 @@
-/* CSS変数でカラーパレットを管理 */
+/* ブログ専用CSS変数（統合版）*/
+@import url('../css/common-variables.css');
+
 :root {
-  --myblog-bg-color: #f8f9fa;
-  --myblog-content-bg: #ffffff;
-  --myblog-text-color: #212529;
-  --myblog-text-light: #6c757d;
-  --myblog-accent-color: #3f51b5;
-  --myblog-accent-light: #7986cb;
-  --myblog-border-color: #dee2e6;
-  --myblog-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --myblog-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
-  --myblog-border-radius: 8px;
-  --myblog-border-radius-small: 4px;
-  --myblog-transition: all 0.3s ease;
+  /* ブログ専用のエイリアス（後方互換性のため維持） */
+  --myblog-bg-color: var(--bg-secondary);
+  --myblog-content-bg: var(--bg-primary);
+  --myblog-text-color: var(--text-dark);
+  --myblog-text-light: var(--text-light);
+  --myblog-accent-color: var(--primary-alt);
+  --myblog-accent-light: var(--primary-alt-hover);
+  --myblog-border-color: var(--border-color-light);
+  --myblog-shadow: var(--shadow-md);
+  --myblog-shadow-hover: var(--shadow-lg);
+  --myblog-border-radius: var(--radius-sm);
+  --myblog-border-radius-small: var(--radius-xs);
+  --myblog-transition: var(--transition-normal);
   
   /* パフォーマンス最適化用変数 */
-  --myblog-gpu-transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --myblog-opacity-transition: opacity 0.2s ease;
-  --myblog-color-transition: color 0.2s ease, background-color 0.2s ease;
+  --myblog-gpu-transition: var(--transition-gpu);
+  --myblog-opacity-transition: var(--transition-opacity);
+  --myblog-color-transition: var(--transition-color);
   
   /* フォント設定 */
-  --myblog-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --myblog-font-size-base: 16px;
-  --myblog-line-height-base: 1.6;
-  --myblog-font-weight-normal: 400;
-  --myblog-font-weight-medium: 500;
-  --myblog-font-weight-bold: 700;
+  --myblog-font-family: var(--font-family);
+  --myblog-font-size-base: var(--font-size-base);
+  --myblog-line-height-base: var(--line-height-normal);
+  --myblog-font-weight-normal: var(--font-weight-normal);
+  --myblog-font-weight-medium: var(--font-weight-medium);
+  --myblog-font-weight-bold: var(--font-weight-bold);
   
   /* スペーシング */
-  --myblog-spacing-xs: 0.25rem;
-  --myblog-spacing-sm: 0.5rem;
-  --myblog-spacing-md: 1rem;
-  --myblog-spacing-lg: 1.5rem;
-  --myblog-spacing-xl: 2rem;
-  --myblog-spacing-xxl: 3rem;
+  --myblog-spacing-xs: var(--space-xs);
+  --myblog-spacing-sm: var(--space-sm);
+  --myblog-spacing-md: var(--space-md);
+  --myblog-spacing-lg: var(--space-lg);
+  --myblog-spacing-xl: var(--space-xl);
+  --myblog-spacing-xxl: var(--space-xxl);
   
   /* ブレークポイント */
-  --myblog-breakpoint-sm: 576px;
-  --myblog-breakpoint-md: 768px;
-  --myblog-breakpoint-lg: 992px;
-  --myblog-breakpoint-xl: 1200px;
+  --myblog-breakpoint-sm: var(--breakpoint-sm);
+  --myblog-breakpoint-md: var(--breakpoint-md);
+  --myblog-breakpoint-lg: var(--breakpoint-lg);
+  --myblog-breakpoint-xl: var(--breakpoint-xl);
 }
 
 /* リセット・ベーススタイル */

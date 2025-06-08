@@ -18,57 +18,17 @@
      * サイト初期化
      */
     init() {
-      // 全体キャッシュクリア
-      this.clearAllCache();
+      // 統合キャッシュシステムでキャッシュクリア
+      if (window.cacheManager) {
+        window.cacheManager.clearSiteCache();
+      }
       
       this.componentLoader = new ComponentLoader();
       this.componentLoader.loadAll();
       
-      this.initLazyLoading();
       this.initMainSite();
       
       console.log('🚀 サイト初期化完了');
-    }
-    
-    /**
-     * 全体キャッシュクリア機能
-     */
-    clearAllCache() {
-      // sessionStorage 完全クリア
-      sessionStorage.clear();
-      
-      // localStorage クリア（サイト関連のもの）
-      const keysToRemove = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && (
-          key.includes('scroll') || 
-          key.includes('menu') || 
-          key.includes('animation') ||
-          key.includes('clan') ||
-          key.includes('site') ||
-          key.includes('utage')
-        )) {
-          keysToRemove.push(key);
-        }
-      }
-      keysToRemove.forEach(key => localStorage.removeItem(key));
-      
-      // Service Worker キャッシュクリア
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          names.forEach(function(name) {
-            caches.delete(name);
-          });
-        });
-      }
-      
-      // history.scrollRestoration を自動に設定
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'auto';
-      }
-      
-      console.log('🧹 全サイトキャッシュをクリアしました');
     }
     
     /**
@@ -82,43 +42,6 @@
       this.initFooterEffects();
     }
     
-    /**
-     * 画像の遅延読み込み初期化
-     */
-    initLazyLoading() {
-      if (!('IntersectionObserver' in window)) {
-        // フォールバック: 即時読み込み
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(img => {
-          if (img.dataset.src) img.src = img.dataset.src;
-          if (img.dataset.srcset) img.srcset = img.dataset.srcset;
-        });
-        return;
-      }
-      
-      const lazyImages = document.querySelectorAll('img[data-src]');
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            
-            if (img.dataset.src) {
-              img.src = img.dataset.src;
-              img.removeAttribute('data-src');
-            }
-            
-            if (img.dataset.srcset) {
-              img.srcset = img.dataset.srcset;
-              img.removeAttribute('data-srcset');
-            }
-            
-            observer.unobserve(img);
-          }
-        });
-      });
-      
-      lazyImages.forEach(img => imageObserver.observe(img));
-    }
     
     /**
      * ハンバーガーメニューの初期化
@@ -547,42 +470,13 @@
   window.formatFileSize = ImageToolsUtils.formatFileSize.bind(ImageToolsUtils);
   window.getImageDimensions = ImageToolsUtils.getImageDimensions.bind(ImageToolsUtils);
   
-  // グローバルキャッシュクリア関数
+  // グローバルキャッシュクリア関数（統合システム使用）
   window.clearSiteCache = function() {
-    console.log('🧹 サイト全体のキャッシュクリアを開始...');
-    
-    // 全ストレージクリア
-    sessionStorage.clear();
-    localStorage.clear();
-    
-    // Service Worker にキャッシュクリアメッセージを送信
-    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-      const messageChannel = new MessageChannel();
-      messageChannel.port1.onmessage = function(event) {
-        if (event.data.success) {
-          console.log('🧹 Service Worker キャッシュクリア完了');
-          // ハードリロード
-          window.location.reload(true);
-        }
-      };
-      
-      navigator.serviceWorker.controller.postMessage(
-        {type: 'CLEAR_CACHE'}, 
-        [messageChannel.port2]
-      );
+    if (window.cacheManager) {
+      return window.cacheManager.hardReload('site');
     } else {
-      // Service Worker がない場合は直接キャッシュクリア
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          return Promise.all(names.map(name => caches.delete(name)));
-        }).then(function() {
-          console.log('🧹 ブラウザキャッシュクリア完了');
-          window.location.reload(true);
-        });
-      } else {
-        console.log('🧹 ストレージクリア完了');
-        window.location.reload(true);
-      }
+      console.warn('統合キャッシュシステムが利用できません');
+      window.location.reload(true);
     }
   };
 

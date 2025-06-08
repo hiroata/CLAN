@@ -245,42 +245,30 @@
     }
   }
 
-  // 画像の遅延読み込み（強化版・CLS対策）
+  // 遅延読み込み（統合システム使用）
   function initLazyLoading() {
-    const images = getElements('img[loading="lazy"]');
+    // 統合遅延読み込みシステムが利用可能な場合は委譲
+    if (window.lazyLoader) {
+      window.lazyLoader.observeImages();
+      return;
+    }
     
-    // IntersectionObserver をサポートしているブラウザで遅延読み込みを実装
+    // フォールバック: 基本的な遅延読み込み
+    const images = getElements('img[loading="lazy"]');
     if ('IntersectionObserver' in window) {
       const imageObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             const img = entry.target;
-            
-            // CLS対策：画像サイズを事前に設定
-            if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
-              // デフォルトのアスペクト比を設定
-              img.style.aspectRatio = '16 / 9';
-              img.style.objectFit = 'cover';
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
             }
-            
-            // WebPフォールバック対応
-            if (img.dataset.webp && supportsWebP()) {
-              img.src = img.dataset.webp;
-            }
-            
             img.classList.add('loaded');
             observer.unobserve(img);
           }
         });
-      }, {
-        // より早めに読み込み開始
-        rootMargin: '50px 0px',
-        threshold: 0.1
-      });
-
-      images.forEach(function(img) {
-        imageObserver.observe(img);
-      });
+      }, { rootMargin: '50px 0px', threshold: 0.1 });
+      images.forEach(img => imageObserver.observe(img));
     }
   }
 
@@ -636,12 +624,15 @@
     });
   }
 
-  // キャッシュクリア機能
+  // キャッシュクリア機能（統合システム使用）
   function clearAllCache() {
-    // sessionStorage クリア
-    sessionStorage.clear();
+    // 統合キャッシュシステムが利用可能な場合は委譲
+    if (window.cacheManager) {
+      return window.cacheManager.clearBlogCache();
+    }
     
-    // localStorage クリア（ブログ関連のもののみ）
+    // フォールバック: 基本的なキャッシュクリア
+    sessionStorage.clear();
     const keysToRemove = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -650,16 +641,6 @@
       }
     }
     keysToRemove.forEach(key => localStorage.removeItem(key));
-    
-    // ブラウザキャッシュのハードリロード（可能な場合）
-    if ('caches' in window) {
-      caches.keys().then(function(names) {
-        names.forEach(function(name) {
-          caches.delete(name);
-        });
-      });
-    }
-    
     console.log('ブログキャッシュをクリアしました');
   }
 
@@ -746,11 +727,14 @@
   window.MyBlog = {
     version: '1.0.0',
     
-    // キャッシュクリア機能を公開
+    // キャッシュクリア機能を公開（統合システム使用）
     clearCache: function() {
-      clearAllCache();
-      // ページリロード
-      window.location.reload(true);
+      if (window.cacheManager) {
+        return window.cacheManager.hardReload('blog');
+      } else {
+        clearAllCache();
+        window.location.reload(true);
+      }
     },
     
     // 目次を手動で更新する関数
@@ -809,6 +793,10 @@
     // 自動画像生成を外部から呼び出し可能にする
     refreshImages: function() {
       initAutoFeaturedImages();
+      // 統合遅延読み込みシステムも更新
+      if (window.lazyLoader) {
+        window.lazyLoader.observeImages();
+      }
     }
   };
   

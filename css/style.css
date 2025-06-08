@@ -4,55 +4,9 @@
  */
 
 /* ==========================================
-   1. CSS変数・デザイントークン
+   1. CSS変数・デザイントークン（統合版）
    ========================================== */
-:root {
-  /* カラーパレット */
-  --primary: #0071e3;
-  --secondary: #ff3b30;
-  --accent: #ff9500;
-  --text-dark: #1d1d1f;
-  --text-mid: #424245;
-  --text-light: #86868b;
-  --bg-light: #f5f5f7;
-  --bg-white: #ffffff;
-  --border-color: #d1d1d6;
-  
-  /* シャドウ */
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
-  --shadow-hover: 0 8px 32px rgba(0, 102, 255, 0.15);
-  
-  /* トランジション */
-  --transition: all 0.2s ease;
-  --transition-slow: all 0.3s ease;
-  --transition-cubic: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* レイアウト */
-  --radius: 12px;
-  --header-height: 60px;
-  --container-max: 1200px;
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-    /* 共通レイアウトパターン */
-  --container-center: 0 auto;
-  --container-padding: 0 20px;
-    /* モバイル向けサイズ */
-  --mobile-header-height: 55px;
-  --mobile-container-padding: 0 15px;
-  --mobile-hero-padding: 0 20px;
-  
-  /* 共通スペーシング値 */
-  --gap-sm: 1rem;
-  --gap-md: 1.5rem;
-  --gap-lg: 2rem;
-  
-  /* フォント */
-  --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Noto Sans JP', system-ui, sans-serif;
-}
+@import url('/css/common-variables.css');
 
 /* ==========================================
    2. リセット・ベーススタイル

@@ -1,12 +1,18 @@
 // サービスワーカー (service-worker.js)
-const CACHE_NAME = 'clan-site-cache-v3'; // キャッシュバージョンを更新
+const CACHE_NAME = 'clan-site-cache-v4-integrated'; // 統合システム対応でバージョン更新
 const STATIC_ASSETS = [
   // メインページと重要ページ
   '/',
   '/index.html',
   '/blog/index.html',
   '/achievement/index.html',
-  // 共通スクリプトとスタイル
+  // 統合システムファイル（新規追加）
+  '/css/common-variables.css',
+  '/css/common-hamburger.css',
+  '/js/common-cache.js',
+  '/js/common-lazy-loading.js',
+  '/js/common-init.js',
+  // 既存のスクリプトとスタイル
   '/js/main.js',
   '/css/style.css',
   '/blog/myblog-style.css',

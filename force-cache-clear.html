@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>強制キャッシュクリア - CLAN統合システム</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f5f7;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+        }
+        .status {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        .status.info {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        .status.success {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        .status.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .status.warning {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        button {
+            background: #0071e3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 8px;
+            transition: all 0.2s ease;
+        }
+        button:hover {
+            background: #005bb5;
+            transform: translateY(-1px);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .log {
+            background: #1d1d1f;
+            color: #00ff00;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 CLAN 統合システム - 強制キャッシュクリア</h1>
+        
+        <div class="warning-box">
+            <strong>⚠️ 注意</strong><br>
+            このツールはサイト全体のキャッシュを完全にクリアします。実行後はページが自動的にリロードされます。
+        </div>
+        
+        <div id="status" class="status info">
+            統合キャッシュシステムの準備中...
+        </div>
+        
+        <div>
+            <button id="fullClear" onclick="executeFullClear()">🗑️ 完全キャッシュクリア</button>
+            <button id="blogClear" onclick="executeBlogClear()">📝 ブログキャッシュクリア</button>
+            <button id="legacyClear" onclick="executeLegacyClear()">🔧 レガシーキャッシュクリア</button>
+        </div>
+        
+        <div id="log" class="log"></div>
+        
+        <h3>📋 対象キャッシュ</h3>
+        <ul>
+            <li><strong>sessionStorage</strong> - セッションデータ</li>
+            <li><strong>localStorage</strong> - 永続ローカルデータ</li>
+            <li><strong>Service Worker キャッシュ</strong> - オフライン対応キャッシュ</li>
+            <li><strong>ブラウザキャッシュ</strong> - 自動リロードによる更新</li>
+            <li><strong>統合システムキャッシュ</strong> - CSS変数、JS機能キャッシュ</li>
+        </ul>
+        
+        <h3>🔧 統合システム情報</h3>
+        <div id="systemInfo">
+            <p>読み込み中...</p>
+        </div>
+    </div>
+
+    <!-- 統合システムスクリプト -->
+    <script src="js/common-cache.js"></script>
+    <script src="js/common-lazy-loading.js"></script>
+    <script src="js/common-init.js"></script>
+
+    <script>
+        let logElement = document.getElementById('log');
+        let statusElement = document.getElementById('status');
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const emoji = {
+                info: '🔧',
+                success: '✅', 
+                warning: '⚠️',
+                error: '❌'
+            }[type] || '📝';
+            
+            logElement.innerHTML += `[${timestamp}] ${emoji} ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(`${emoji} ${message}`);
+        }
+        
+        function updateStatus(message, type = 'info') {
+            statusElement.textContent = message;
+            statusElement.className = `status ${type}`;
+        }
+        
+        function updateSystemInfo() {
+            const info = document.getElementById('systemInfo');
+            const systems = {
+                'キャッシュマネージャー': typeof window.cacheManager !== 'undefined',
+                '遅延読み込み': typeof window.lazyLoader !== 'undefined',
+                '統合初期化': typeof window.commonSystemInit !== 'undefined',
+                'CSS変数': getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() !== ''
+            };
+            
+            info.innerHTML = Object.entries(systems)
+                .map(([name, available]) => 
+                    `<p>• ${name}: ${available ? '✅ 利用可能' : '❌ 未検出'}</p>`
+                ).join('');
+        }
+        
+        async function executeFullClear() {
+            log('🧹 完全キャッシュクリア開始', 'info');
+            updateStatus('完全キャッシュクリア実行中...', 'warning');
+            
+            try {
+                if (window.cacheManager) {
+                    log('統合キャッシュシステムを使用', 'success');
+                    await window.cacheManager.hardReload('site');
+                } else {
+                    throw new Error('統合システム未検出');
+                }
+            } catch (error) {
+                log(`エラー: ${error.message}`, 'error');
+                executeLegacyClear();
+            }
+        }
+        
+        async function executeBlogClear() {
+            log('📝 ブログキャッシュクリア開始', 'info');
+            updateStatus('ブログキャッシュクリア実行中...', 'warning');
+            
+            try {
+                if (window.cacheManager) {
+                    log('統合キャッシュシステムでブログキャッシュクリア', 'success');
+                    await window.cacheManager.hardReload('blog');
+                } else {
+                    throw new Error('統合システム未検出');
+                }
+            } catch (error) {
+                log(`エラー: ${error.message}`, 'error');
+                executeLegacyClear();
+            }
+        }
+        
+        function executeLegacyClear() {
+            log('🔧 レガシーキャッシュクリア開始', 'warning');
+            updateStatus('レガシー方式でキャッシュクリア実行中...', 'warning');
+            
+            // 1. sessionStorage
+            try {
+                sessionStorage.clear();
+                log('sessionStorage クリア完了', 'success');
+            } catch (error) {
+                log(`sessionStorage クリア失敗: ${error.message}`, 'error');
+            }
+            
+            // 2. localStorage
+            try {
+                localStorage.clear();
+                log('localStorage クリア完了', 'success');
+            } catch (error) {
+                log(`localStorage クリア失敗: ${error.message}`, 'error');
+            }
+            
+            // 3. Service Worker キャッシュ
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    log(`${names.length} 個のキャッシュを検出`, 'info');
+                    return Promise.all(names.map(name => {
+                        log(`キャッシュ "${name}" を削除中...`, 'info');
+                        return caches.delete(name);
+                    }));
+                }).then(() => {
+                    log('Service Worker キャッシュクリア完了', 'success');
+                    updateStatus('キャッシュクリア完了 - リロード中...', 'success');
+                    
+                    setTimeout(() => {
+                        try {
+                            window.location.reload(true);
+                        } catch (error) {
+                            window.location.reload();
+                        }
+                    }, 2000);
+                }).catch(error => {
+                    log(`Service Worker キャッシュクリア失敗: ${error.message}`, 'error');
+                    window.location.reload();
+                });
+            } else {
+                log('Cache API はサポートされていません', 'warning');
+                updateStatus('キャッシュクリア完了 - リロード中...', 'success');
+                setTimeout(() => window.location.reload(), 2000);
+            }
+        }
+        
+        // 初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            log('キャッシュクリアツール初期化完了', 'success');
+            
+            // 統合システムの準備完了を待機
+            if (window.commonSystemInit) {
+                window.commonSystemInit.ready().then(() => {
+                    updateStatus('統合システム準備完了 - キャッシュクリア可能', 'success');
+                    log('統合システム準備完了', 'success');
+                    updateSystemInfo();
+                });
+            } else {
+                updateStatus('統合システム未検出 - レガシーモードで動作', 'warning');
+                log('統合システム未検出', 'warning');
+                updateSystemInfo();
+            }
+        });
+        
+        // システム準備完了イベント
+        window.addEventListener('commonSystemReady', function(event) {
+            log('統合システム準備完了イベント受信', 'success');
+            updateStatus('統合システム準備完了 - 全機能利用可能', 'success');
+            updateSystemInfo();
+        });
+    </script>
+</body>
+</html>
