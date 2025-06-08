@@ -186,6 +186,56 @@
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
+/* 標準のハンバーガーボタンクラス（.hamburger-button）のエイリアス定義 */
+/* ブログ記事で使用される.hamburger-buttonクラスに.myblog-hamburgerと同じスタイルを適用 */
+.hamburger-button {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: var(--myblog-border-radius-small);
+  transition: var(--myblog-transition);
+  /* タッチ操作最適化 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.hamburger-button span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--myblog-text-color);
+  transition: var(--myblog-transition);
+  transform-origin: center;
+}
+
+.hamburger-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-button:focus {
+  outline: 2px solid var(--myblog-accent-color);
+  outline-offset: 2px;
+}
+
+.hamburger-button.active span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.hamburger-button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
 /* ナビゲーション */
 .myblog-nav {
   display: block;
@@ -1619,7 +1669,8 @@
     padding: var(--myblog-spacing-md);
   }
   
-  .myblog-hamburger {
+  .myblog-hamburger,
+  .hamburger-button {
     display: flex;
   }
   
