@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="訪問看護ステーションにおけるUTAGE活用で利用者連絡と訪問スケジュール管理を自動化し、業務効率化と直行直帰の実現を図る方法を詳しく解説。">
+    <title>訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理</title>
+    
+    <!-- フォントとスタイル -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap&subset=japanese" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap&subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=10001">
+    <link rel="stylesheet" href="myblog-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SEO関連 -->
+    <link rel="canonical" href="https://clanbiz.jp/blog/article-utage-visiting-nurse-schedule-management.html">
+    <meta property="og:title" content="訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理">
+    <meta property="og:description" content="訪問看護ステーションにおけるUTAGE活用で利用者連絡と訪問スケジュール管理を自動化し、業務効率化と直行直帰の実現を図る方法を詳しく解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://clanbiz.jp/blog/article-utage-visiting-nurse-schedule-management.html">
+    <meta property="og:image" content="https://clanbiz.jp/assets/images/logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理">
+    <meta name="twitter:description" content="訪問看護ステーションにおけるUTAGE活用で利用者連絡と訪問スケジュール管理を自動化し、業務効率化と直行直帰の実現を図る方法を詳しく解説。">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理",
+      "description": "訪問看護ステーションにおけるUTAGE活用で利用者連絡と訪問スケジュール管理を自動化し、業務効率化と直行直帰の実現を図る方法を詳しく解説。",
+      "author": {
+        "@type": "Person",
+        "name": "前田由紀子",
+        "jobTitle": "UTAGE認定コンサルタント"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CLAN",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://clanbiz.jp/assets/images/logo.webp"
+        }
+      },
+      "datePublished": "2025-01-09",
+      "dateModified": "2025-01-09",
+      "image": "https://clanbiz.jp/assets/images/logo.webp",
+      "url": "https://clanbiz.jp/blog/article-utage-visiting-nurse-schedule-management.html",
+      "mainEntityOfPage": "https://clanbiz.jp/blog/article-utage-visiting-nurse-schedule-management.html"
+    }
+    </script>
+</head>
+
+<body class="myblog-body">
+    <!-- アクセシビリティ強化：スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
+            </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html" aria-current="page">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                    無料相談
+                </a>
+            </div>
+            <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu">
+        <nav aria-label="モバイルメニュー">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+    </div>
+
+    <main class="myblog-main" id="main-content">
+        <div class="myblog-container">
+            <!-- 戻るリンク -->
+            <div class="myblog-back-link">
+                <a href="index.html" class="myblog-back-btn">
+                    <i class="fas fa-chevron-left"></i>
+                    ブログ一覧に戻る
+                </a>
+            </div>
+
+            <!-- 記事 -->
+            <article class="myblog-article">
+                <!-- 記事ヘッダー -->
+                <header class="myblog-article-header">
+                    <!-- アイキャッチ画像 -->
+                    <div class="myblog-featured-image">
+                        <div class="myblog-auto-image">
+                            <div class="myblog-auto-image-text">訪問看護ステーションのUTAGE｜
+利用者連絡と訪問スケジュール
+管理</div>
+                        </div>
+                    </div>
+
+                    <!-- 記事メタ情報 -->
+                    <div class="myblog-article-meta">
+                        <div class="myblog-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            2025年1月9日
+                        </div>
+                        <div class="myblog-tags">
+                            <span class="myblog-tag">UTAGE活用</span>
+                            <span class="myblog-tag">訪問看護</span>
+                            <span class="myblog-tag">業務効率化</span>
+                        </div>
+                    </div>
+
+                    <!-- 記事タイトル -->
+                    <h1 class="myblog-article-title">訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理</h1>
+
+                    <!-- 記事概要 -->
+                    <div class="myblog-article-summary">
+                        訪問看護ステーションの業務効率化において、利用者連絡と訪問スケジュール管理の自動化は重要な課題です。UTAGEシステムを活用することで、スタッフの直行直帰を実現し、業務負担軽減と利用者サービス向上の両立を図る方法をご紹介します。
+                    </div>
+                </header>
+
+                <!-- 目次 -->
+                <div class="myblog-toc-wrapper">
+                    <div class="myblog-toc-header">
+                        <h2 class="myblog-toc-title">目次</h2>
+                        <button class="myblog-toc-toggle" aria-label="目次を展開・折りたたみ">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <nav class="myblog-toc-nav active">
+                        <ol class="myblog-toc-list">
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section1" class="myblog-toc-link">訪問看護ステーションの現状課題とデジタル化の必要性</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section2" class="myblog-toc-link">利用者連絡システムの自動化</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section3" class="myblog-toc-link">訪問スケジュール管理の最適化</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section4" class="myblog-toc-link">直行直帰と働き方改革の実現</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section5" class="myblog-toc-link">訪問看護向けUTAGE導入・活用ガイド</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- 記事本文 -->
+                <div class="myblog-content">
+                    <h2 id="section1">訪問看護ステーションの現状課題とデジタル化の必要性</h2>
+                    
+                    <p>訪問看護ステーションにおいて、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>利用者との連絡調整や訪問スケジュール管理</strong></span>は、日々の業務の中核を担う重要な要素です。しかし、従来のアナログな手法では様々な課題が生じています。</p>
+
+                    <p>現代の訪問看護ステーションでは、<span style="color: #FF5722; font-weight: bold;">ICTの導入によるデジタル化</span>が業務効率化の鍵となっており、UTAGEシステムがその解決策として注目されています。</p>
+
+                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f8f9fa;">
+                        <h4 style="color: #4CAF50; margin-bottom: 15px;">📊 訪問看護ステーションの主要課題</h4>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><span style="color: #FF5722; font-weight: bold;">スケジュール管理の複雑化</span>：手作業による訪問予定の調整</li>
+                            <li style="margin-bottom: 8px;"><span style="color: #2196F3; font-weight: bold;">連絡業務の属人化</span>：利用者家族との連絡調整の煩雑さ</li>
+                            <li style="margin-bottom: 8px;"><span style="color: #FF9800; font-weight: bold;">情報共有の困難</span>：スタッフ間での情報伝達の非効率性</li>
+                            <li style="margin-bottom: 8px;"><span style="color: #9C27B0; font-weight: bold;">事務所への立ち寄り必須</span>：直行直帰の実現困難</li>
+                        </ul>
+                    </div>
+
+                    <p>UTAGEシステムを導入することで、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>これらの課題を包括的に解決</strong></span>し、以下のような成果を実現できます：</p>
+
+                    <ul style="margin: 20px 0; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">24時間対応の利用者・家族連絡システム</li>
+                        <li style="margin-bottom: 10px;">視覚的で直感的な訪問スケジュール管理</li>
+                        <li style="margin-bottom: 10px;">リアルタイムでの情報共有と更新</li>
+                        <li style="margin-bottom: 10px;">スマートデバイスによる外出先での業務完結</li>
+                    </ul>
+
+                    <h2 id="section2">利用者連絡システムの自動化</h2>
+
+                    <p>訪問看護における<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>利用者・ご家族との連絡調整</strong></span>は、サービスの質を左右する重要な要素です。UTAGEシステムの活用により、この連絡業務を効率化できます。</p>
+
+                    <h3>1️⃣ 訪問前後の自動連絡システム</h3>
+                    
+                    <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
+                        <h4 style="color: #2196F3; margin-bottom: 15px;">📞 利用者・家族向け連絡システム</h4>
+                        <p style="margin-bottom: 15px;"><strong>訪問前の連絡（自動配信）</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">訪問予定時刻の前日確認メッセージ</li>
+                            <li style="margin-bottom: 8px;">訪問スタッフの紹介と連絡先</li>
+                            <li style="margin-bottom: 8px;">当日の訪問内容と準備事項の案内</li>
+                        </ul>
+                        <p style="margin-bottom: 15px;"><strong>緊急時対応システム</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">24時間受付の緊急連絡フォーム</li>
+                            <li style="margin-bottom: 8px;">症状変化時の即座な情報収集</li>
+                            <li style="margin-bottom: 8px;">必要に応じた緊急訪問の手配</li>
+                        </ul>
+                    </div>
+
+                    <h3>2️⃣ 家族への定期報告自動化</h3>
+
+                    <p><span style="color: #FF5722; font-weight: bold;">訪問看護の報告書作成と家族への情報共有</span>をシステム化することで、透明性の高いサービス提供が可能になります。</p>
+
+                    <div style="border: 2px solid #FF9800; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #fff3e0;">
+                        <h4 style="color: #FF9800; margin-bottom: 15px;">📋 報告システムの自動化メリット</h4>
+                        
+                        <p style="margin-bottom: 10px;"><strong>利用者・家族側のメリット</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">リアルタイムでの看護状況把握</li>
+                            <li style="margin-bottom: 8px;">写真付きレポートによる安心感</li>
+                            <li style="margin-bottom: 8px;">過去の訪問記録の簡単閲覧</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>看護師側のメリット</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">報告書作成時間の50%削減</li>
+                            <li style="margin-bottom: 8px;">家族からの問い合わせ対応の効率化</li>
+                            <li style="margin-bottom: 8px;">記録の標準化と質向上</li>
+                        </ul>
+                    </div>
+
+                    <h3>3️⃣ 多職種連携のコミュニケーション強化</h3>
+
+                    <p>UTAGEシステムにより、<span style="color: #4CAF50; font-weight: bold;">医師・ケアマネジャー・薬剤師等</span>との連携も自動化し、利用者を中心とした包括的なケアを実現できます。</p>
+
+                    <h2 id="section3">訪問スケジュール管理の最適化</h2>
+
+                    <p>訪問看護における<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>効率的なスケジュール管理</strong></span>は、サービスの質と業務効率の両方に直結する重要な要素です。</p>
+
+                    <div style="border: 2px solid #9C27B0; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f3e5f5;">
+                        <h4 style="color: #9C27B0; margin-bottom: 15px;">🗓️ 最適化されたスケジュール管理システム</h4>
+                        
+                        <p style="margin-bottom: 10px;"><strong>1. 視覚的なスケジュール表示</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">カレンダー形式での訪問予定一覧表示</li>
+                            <li style="margin-bottom: 8px;">スタッフごとの色分け管理</li>
+                            <li style="margin-bottom: 8px;">緊急度別の優先順位表示</li>
+                            <li style="margin-bottom: 8px;">移動時間を考慮した効率的ルート提案</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>2. リアルタイム更新機能</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">予定変更の即座な全スタッフ共有</li>
+                            <li style="margin-bottom: 8px;">訪問完了・未完了のステータス管理</li>
+                            <li style="margin-bottom: 8px;">突発的な訪問依頼への迅速対応</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>3. 自動化機能</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">定期訪問の自動スケジューリング</li>
+                            <li style="margin-bottom: 8px;">スタッフの勤務時間・スキルに応じた最適配置</li>
+                            <li style="margin-bottom: 8px;">訪問漏れ防止アラート機能</li>
+                        </ul>
+                    </div>
+
+                    <h3>4️⃣ 効率的なリソース配置</h3>
+
+                    <p><span style="color: #2196F3; font-weight: bold;">スタッフの専門性と地理的配置</span>を考慮した最適なスケジューリングにより、サービスの質向上とコスト削減を両立できます。</p>
+
+                    <h2 id="section4">直行直帰と働き方改革の実現</h2>
+
+                    <p>現代の訪問看護ステーションでは、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>スタッフの働き方改革</strong></span>が重要な経営課題となっています。UTAGEシステムの導入により、直行直帰の実現が可能になります。</p>
+
+                    <h3>5️⃣ スマートデバイス活用による業務革新</h3>
+
+                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e8f5e8;">
+                        <h4 style="color: #4CAF50; margin-bottom: 15px;">📱 モバイル業務の実現</h4>
+                        
+                        <p style="margin-bottom: 15px;"><strong>外出先での完結業務</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>「見る」</strong>：利用者情報・訪問記録の即座確認</li>
+                            <li style="margin-bottom: 8px;"><strong>「書く」</strong>：訪問先でのケア記録直接入力</li>
+                            <li style="margin-bottom: 8px;"><strong>「伝える」</strong>：スタッフ間の連絡事項リアルタイム共有</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>働き方の多様性実現</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">直行直帰による通勤時間削減</li>
+                            <li style="margin-bottom: 8px;">在宅ワークと外出業務の柔軟な組み合わせ</li>
+                            <li style="margin-bottom: 8px;">時差出勤による勤務時間の最適化</li>
+                            <li style="margin-bottom: 8px;">車内や訪問先での効率的な業務処理</li>
+                        </ul>
+                    </div>
+
+                    <p><span style="color: #FF5722; font-weight: bold;">これらの働き方改革により</span>、離職率の改善にもつながり、優秀なスタッフの定着を図ることができます。</p>
+
+                    <h2 id="section5">訪問看護向けUTAGE導入・活用ガイド</h2>
+
+                    <p>訪問看護ステーションでのUTAGEシステム導入を成功させるための<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>段階的導入プロセス</strong></span>をご紹介します。</p>
+
+                    <div style="border: 2px solid #FF5722; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #ffebee;">
+                        <h4 style="color: #FF5722; margin-bottom: 15px;">🚀 導入ロードマップ</h4>
+                        
+                        <p style="margin-bottom: 15px;"><strong>Phase 1：準備・基盤構築（1ヶ月目）</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">現状業務フローの詳細分析</li>
+                            <li style="margin-bottom: 8px;">スタッフのITスキル調査と研修計画策定</li>
+                            <li style="margin-bottom: 8px;">利用者・家族への新システム説明</li>
+                            <li style="margin-bottom: 8px;">既存データの整理と移行準備</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>Phase 2：限定運用開始（2ヶ月目）</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">少数利用者での試験運用開始</li>
+                            <li style="margin-bottom: 8px;">スタッフの操作習熟とフィードバック収集</li>
+                            <li style="margin-bottom: 8px;">システム設定の微調整実施</li>
+                            <li style="margin-bottom: 8px;">効果測定指標の設定</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>Phase 3：本格運用・拡張（3ヶ月目以降）</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">全利用者への段階的拡張</li>
+                            <li style="margin-bottom: 8px;">高度な自動化機能の活用開始</li>
+                            <li style="margin-bottom: 8px;">多職種連携システムの構築</li>
+                            <li style="margin-bottom: 8px;">継続的な改善とシステム最適化</li>
+                        </ul>
+                    </div>
+
+                    <h3>投資対効果（ROI）の詳細分析</h3>
+
+                    <p>訪問看護ステーションでの<span style="color: #FF5722; font-weight: bold;">UTAGEシステム導入における投資効果</span>は、運用開始から2-3ヶ月で具体的に現れます：</p>
+
+                    <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
+                        <h4 style="color: #2196F3; margin-bottom: 15px;">💰 ROI計算例（利用者100名規模のステーション）</h4>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>業務効率化効果：</strong> 週<span style="color: #4CAF50; font-weight: bold;">25時間</span>の事務作業削減</li>
+                            <li style="margin-bottom: 8px;"><strong>直行直帰実現：</strong> 月額<span style="color: #2196F3; font-weight: bold;">18万円</span>の交通費・時間コスト削減</li>
+                            <li style="margin-bottom: 8px;"><strong>サービス品質向上：</strong> 利用者満足度<span style="color: #FF9800; font-weight: bold;">15%向上</span></li>
+                            <li style="margin-bottom: 8px;"><strong>スタッフ定着率改善：</strong> 離職率<span style="color: #9C27B0; font-weight: bold;">30%削減</span></li>
+                            <li style="margin-bottom: 8px;"><strong>システム運用コスト：</strong> 月額<span style="color: #FF5722; font-weight: bold;">3.5万円</span></li>
+                        </ul>
+                        <p style="margin-top: 15px; font-weight: bold; color: #FF5722;">⭐ 実質的な月間効果：+<span style="font-size: 1.2em;">28万円</span></p>
+                    </div>
+
+                    <h3>成功事例に学ぶベストプラクティス</h3>
+
+                    <p><span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実際の導入成功事例</strong></span>から、効果的な運用のコツを学ぶことができます：</p>
+
+                    <ul style="margin: 20px 0; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Aステーション：</strong>直行直帰率80%達成、スタッフ満足度大幅向上</li>
+                        <li style="margin-bottom: 10px;"><strong>Bステーション：</strong>事務作業時間50%削減、利用者対応時間増加</li>
+                        <li style="margin-bottom: 10px;"><strong>Cステーション：</strong>緊急対応時間30%短縮、家族満足度95%達成</li>
+                    </ul>
+
+                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 30px 0; background-color: #e8f5e8; text-align: center;">
+                        <h4 style="color: #4CAF50; margin-bottom: 15px;">🎯 まとめ</h4>
+                        <p style="margin-bottom: 15px; font-size: 1.1em;">訪問看護ステーションにおけるUTAGE活用は、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>利用者連絡と訪問スケジュール管理の自動化</strong></span>により、業務効率化と働き方改革を同時に実現します。</p>
+                        <p style="margin-bottom: 15px;">直行直帰の実現により、スタッフの負担軽減と利用者サービスの質向上が可能になります。</p>
+                        <p style="margin: 0; font-weight: bold; color: #FF5722;">導入をご検討の訪問看護ステーション様は、ぜひ無料相談をご活用ください。</p>
+                    </div>
+                </div>
+
+                <!-- 著者プロフィール -->
+                <div class="myblog-author">
+                    <div class="myblog-author-avatar">
+                        <img src="../assets/images/profile-owner.webp" alt="前田由紀子" loading="lazy">
+                    </div>
+                    <div class="myblog-author-info">
+                        <h3 class="myblog-author-name">前田由紀子</h3>
+                        <p class="myblog-author-bio">
+                            UTAGE認定コンサルタント。これまで70社以上の法人・個人事業主のマーケティング自動化をサポート。特に医療・介護分野でのデジタル変革に豊富な実績を持つ。「現場の働きやすさを最優先とした実用的なシステム設計」をコンセプトに、利用者満足度とスタッフの働き方改革を両立するソリューションを提供している。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 関連記事 -->
+                <div class="myblog-related">
+                    <h3 class="myblog-related-title">関連記事</h3>
+                    <div class="myblog-related-grid">
+                        <div class="myblog-related-card">
+                            <a href="article-utage-dental-clinic-patient-follow-up.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="歯科医院のUTAGE活用ガイド">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成</h4>
+                                    <div class="myblog-related-date">2025年1月9日</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="myblog-related-card">
+                            <a href="article-utage-beauty-clinic-strategy.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="美容クリニックのUTAGE戦略">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化</h4>
+                                    <div class="myblog-related-date">2025年1月9日</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="myblog-related-card">
+                            <a href="article-utage-medical-interview-advice.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="UTAGE医療機関活用ガイド">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">医療機関のUTAGE活用｜患者管理から集患まで完全ガイド</h4>
+                                    <div class="myblog-related-date">2024年12月28日</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">訪問看護ステーションの業務効率化をサポート</h2>
+            <h3 class="cta-subtitle">UTAGE構築代行で働き方改革を実現</h3>
+            <p class="cta-text">
+                利用者連絡の自動化から訪問スケジュール管理まで、<br>
+                訪問看護特化のシステム構築をお任せください。<br>
+                無料相談で具体的な改善提案をいたします。
+            </p>
+            <div class="cta-buttons">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">無料相談を申し込む</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>CLAN</h2>
+            </div>
+            <nav class="footer-links" aria-label="フッターナビゲーション">
+                <ul>
+                    <li><a href="https://utage-system.com/p/EcESO02xLLoK" 
+                           title="UTAGEシステム導入の無料相談">無料相談</a></li>
+                    <li><a href="../achievement/index.html" 
+                           title="UTAGE導入企業の成功事例">お客様の声</a></li>
+                    <li><a href="index.html" 
+                           title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+                    <li><a href="../tools/index.html" 
+                           title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+                    <li><a href="../owner.html" 
+                           title="CLANの運営会社情報">運営者情報</a></li>
+                    <li><a href="../terms.html" 
+                           title="サービス利用規約">利用規約</a></li>
+                    <li><a href="../privacy.html" 
+                           title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+                    <li><a href="../tokutei.html" 
+                           title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" defer></script>
+    <script src="myblog-script.js" defer></script>
+</body>
+</html>

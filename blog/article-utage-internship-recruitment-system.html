@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="インターン募集におけるUTAGE活用で先輩社員の声動画と業務日報管理システムを構築し、効果的なインターン採用と育成の自動化を実現する方法を詳しく解説。">
+    <title>インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化</title>
+    
+    <!-- フォントとスタイル -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap&subset=japanese" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap&subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=10001">
+    <link rel="stylesheet" href="myblog-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SEO関連 -->
+    <link rel="canonical" href="https://clanbiz.jp/blog/article-utage-internship-recruitment-system.html">
+    <meta property="og:title" content="インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化">
+    <meta property="og:description" content="インターン募集におけるUTAGE活用で先輩社員の声動画と業務日報管理システムを構築し、効果的なインターン採用と育成の自動化を実現する方法を詳しく解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://clanbiz.jp/blog/article-utage-internship-recruitment-system.html">
+    <meta property="og:image" content="https://clanbiz.jp/assets/images/logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化">
+    <meta name="twitter:description" content="インターン募集におけるUTAGE活用で先輩社員の声動画と業務日報管理システムを構築し、効果的なインターン採用と育成の自動化を実現する方法を詳しく解説。">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+      "description": "インターン募集におけるUTAGE活用で先輩社員の声動画と業務日報管理システムを構築し、効果的なインターン採用と育成の自動化を実現する方法を詳しく解説。",
+      "author": {
+        "@type": "Person",
+        "name": "前田由紀子",
+        "jobTitle": "UTAGE認定コンサルタント"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CLAN",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://clanbiz.jp/assets/images/logo.webp"
+        }
+      },
+      "datePublished": "2025-01-12",
+      "dateModified": "2025-01-12",
+      "image": "https://clanbiz.jp/assets/images/logo.webp",
+      "url": "https://clanbiz.jp/blog/article-utage-internship-recruitment-system.html",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://clanbiz.jp/blog/article-utage-internship-recruitment-system.html"
+      }
+    }
+    </script>
+</head>
+
+<body class="myblog-body">
+    <!-- ヘッダー（index.htmlと同じものをコピペ） -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
+            </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                    無料相談
+                </a>
+            </div>
+            <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu">
+        <nav aria-label="モバイルメニュー">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+    </div>
+
+    <main class="myblog-main">
+        <div class="myblog-container">
+            <!-- 戻るリンク -->
+            <div class="myblog-back-link">
+                <a href="index.html" class="myblog-back-btn">
+                    <i class="fas fa-arrow-left"></i> ブログ一覧に戻る
+                </a>
+            </div>
+
+            <!-- 記事 -->
+            <article class="myblog-article">
+                <!-- 記事ヘッダー -->
+                <header class="myblog-article-header">
+                    <!-- サムネイル（myblog-auto-imageシステムで記事タイトル全文を3行表示） -->
+                    <div class="myblog-featured-image">
+                        <div class="myblog-auto-image">
+                            <div class="myblog-auto-image-text">インターン募集のUTAGE活用｜
+先輩社員の声動画と
+業務日報管理のシステム化</div>
+                        </div>
+                    </div>
+
+                    <!-- 記事メタ情報 -->
+                    <div class="myblog-article-meta">
+                        <div class="myblog-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>2025年1月12日</span>
+                        </div>
+                        <div class="myblog-tags">
+                            <span class="myblog-tag">インターン募集</span>
+                            <span class="myblog-tag">UTAGE活用</span>
+                            <span class="myblog-tag">先輩社員の声</span>
+                            <span class="myblog-tag">業務日報管理</span>
+                        </div>
+                    </div>
+
+                    <!-- 記事タイトル -->
+                    <h1 class="myblog-article-title">インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化</h1>
+
+                    <!-- 記事概要 -->
+                    <div class="myblog-article-summary">
+                        インターンシップ採用では<span style="background-color: #ffff00;">優秀な学生の確保</span>と<span style="background-color: #ffff00;">効果的な育成プログラム</span>が企業成長の鍵となります。従来の面接重視の選考と属人的な指導では、学生の能力を最大限に引き出すことが困難です。UTAGEシステムを活用することで、<span style="color: #ff0000; font-weight: bold;">先輩社員の声動画による魅力的な募集と業務日報管理システムの自動化</span>により、質の高いインターンシッププログラムを構築できます。
+                    </div>
+                </header>
+
+                <!-- 目次 -->
+                <div class="myblog-toc-wrapper">
+                    <div class="myblog-toc-header">
+                        <h2 class="myblog-toc-title">目次</h2>
+                    </div>
+                    <nav class="myblog-toc-nav">
+                        <ul class="myblog-toc-list">
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section1" class="myblog-toc-link">インターンシップ採用の現状と課題</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section2" class="myblog-toc-link">UTAGE活用による先輩社員の声動画システム</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section3" class="myblog-toc-link">業務日報管理の自動化システム</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section4" class="myblog-toc-link">インターン育成プログラムの最適化</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section5" class="myblog-toc-link">導入効果と成功事例分析</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- 記事本文 -->
+                <div class="myblog-content">
+                    <section id="section1">
+                        <h2>インターンシップ採用の現状と課題</h2>
+                        
+                        <div style="border: 2px solid #FF5722; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #fff3e0;">
+                            <h3 style="color: #FF5722; margin-top: 0;">📊 インターンシップ市場の急速な拡大</h3>
+                            <p>近年のインターンシップ市場では<span style="background-color: #ffff00;">学生の参加意欲の高まり</span>と<span style="background-color: #ffff00;">企業の早期人材確保ニーズ</span>が相まって、競争が激化しています。</p>
+                            <p>特に<span style="color: #ff0000; font-weight: bold;">優秀な学生の争奪戦</span>が激しく、従来の一方向的な企業説明では学生の関心を引きつけることが困難になっています。</p>
+                        </div>
+
+                        <h3>インターンシップ採用における課題</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                            <div style="border: 1px solid #e74c3c; border-radius: 8px; padding: 15px; background-color: #fdedec;">
+                                <h4 style="color: #c0392b;">🎯 応募者の質と量の課題</h4>
+                                <p>・優秀な学生の応募数不足<br>
+                                ・企業の魅力伝達の困難さ<br>
+                                ・他社との差別化不足</p>
+                            </div>
+                            <div style="border: 1px solid #f39c12; border-radius: 8px; padding: 15px; background-color: #fef9e7;">
+                                <h4 style="color: #d68910;">📋 育成プログラムの属人化</h4>
+                                <p>・指導者による教育品質のばらつき<br>
+                                ・体系的な学習プログラムの不足<br>
+                                ・進捗管理の非効率性</p>
+                            </div>
+                            <div style="border: 1px solid #8e44ad; border-radius: 8px; padding: 15px; background-color: #f4ecf7;">
+                                <h4 style="color: #7d3c98;">⏰ 管理・運営負荷の増大</h4>
+                                <p>・日報確認・フィードバック業務<br>
+                                ・個別面談のスケジュール調整<br>
+                                ・成果評価の標準化困難</p>
+                            </div>
+                        </div>
+
+                        <h3>学生側の変化するニーズ</h3>
+                        <div style="background-color: #e8f5e8; border: 1px solid #4CAF50; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #2e7d32; margin-top: 0;">🎓 Z世代インターンの特徴的要求</h4>
+                            <ul>
+                                <li>💻 <strong>リアルな職場体験への期待</strong> - 表面的でない実際の業務参加を求める</li>
+                                <li>👥 <strong>先輩社員との交流重視</strong> - 同世代に近い社員の体験談に高い関心</li>
+                                <li>📈 <strong>成長実感の可視化</strong> - 自分の成長が数値や形で見えることを重要視</li>
+                                <li>💬 <strong>継続的なフィードバック</strong> - 定期的な指導・評価を期待</li>
+                                <li>🔍 <strong>将来キャリアの具体性</strong> - インターン経験が将来にどう活かされるかを知りたがる</li>
+                            </ul>
+                        </div>
+
+                        <h3>従来手法の限界点</h3>
+                        <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #856404; margin-top: 0;">⚠️ 既存インターンシップ運営の問題</h4>
+                            <p><strong>【情報提供の一方向性】</strong></p>
+                            <ul>
+                                <li>📢 <span style="background-color: #ffff00;">企業主導の情報発信のみ</span></li>
+                                <li>💭 <span style="background-color: #ffff00;">学生の疑問・不安への対応不足</span></li>
+                                <li>👥 <span style="background-color: #ffff00;">現場社員との接点機会の限定</span></li>
+                                <li>🏢 <span style="background-color: #ffff00;">実際の働く環境の見えにくさ</span></li>
+                            </ul>
+                            
+                            <p><strong>【管理・育成の非効率性】</strong></p>
+                            <ul>
+                                <li>📝 日報のアナログ管理による時間ロス</li>
+                                <li>👨‍🏫 指導担当者への業務集中</li>
+                                <li>📊 客観的な成長測定の困難</li>
+                                <li>🔄 ノウハウの蓄積・共有不足</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="section2">
+                        <h2>UTAGE活用による先輩社員の声動画システム</h2>
+                        
+                        <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
+                            <h3 style="color: #2196F3; margin-top: 0;">🎬 リアルな職場体験を伝える動画コンテンツ</h3>
+                            <p>UTAGEシステムを活用することで、<span style="background-color: #ffff00;">先輩社員のリアルな体験談動画</span>を体系的に配信し、<span style="background-color: #ffff00;">学生の興味関心を高める効果的な募集システム</span>を構築します。</p>
+                        </div>
+
+                        <h3>動画コンテンツの戦略的構成</h3>
+                        
+                        <div style="border-left: 4px solid #4CAF50; padding-left: 20px; margin: 20px 0; background-color: #f8fff8;">
+                            <h4 style="color: #4CAF50;">Phase 1: 企業文化・環境紹介（3-4分）</h4>
+                            <ul>
+                                <li>🏢 <strong>オフィス環境・雰囲気</strong> - 実際の職場の様子とチームワーク</li>
+                                <li>🌟 <strong>社風・企業文化</strong> - 働きやすさや成長を支援する環境</li>
+                                <li>👥 <strong>チーム構成・連携</strong> - 部署間の協力関係と風通しの良さ</li>
+                                <li>🎯 <strong>ミッション・ビジョン</strong> - 会社が目指す方向性と社会的意義</li>
+                            </ul>
+                        </div>
+
+                        <div style="border-left: 4px solid #FF9800; padding-left: 20px; margin: 20px 0; background-color: #fff8f0;">
+                            <h4 style="color: #FF9800;">Phase 2: 先輩社員体験談シリーズ（5-6分）</h4>
+                            <ul>
+                                <li>🎓 <strong>入社動機・決め手</strong> - なぜこの会社を選んだのか</li>
+                                <li>📈 <strong>成長体験エピソード</strong> - 具体的なスキルアップ事例</li>
+                                <li>💼 <strong>担当業務の詳細</strong> - 日常的な仕事内容とやりがい</li>
+                                <li>🚀 <strong>今後のキャリア展望</strong> - 将来的な目標と成長計画</li>
+                                <li>💡 <strong>学生時代との比較</strong> - 学生生活で培った経験の活かし方</li>
+                            </ul>
+                        </div>
+
+                        <div style="border-left: 4px solid #E91E63; padding-left: 20px; margin: 20px 0; background-color: #fce4ec;">
+                            <h4 style="color: #E91E63;">Phase 3: インターン体験者の声（4-5分）</h4>
+                            <ul>
+                                <li>🌱 <strong>インターンでの学び</strong> - 実際に参加して得られた知識・経験</li>
+                                <li>🎯 <strong>参加前後の変化</strong> - 意識・スキル・考え方の成長</li>
+                                <li>🤝 <strong>社員との関わり</strong> - 指導・サポート体制の実際</li>
+                                <li>📊 <strong>実務への参加度</strong> - 任せてもらった業務の具体例</li>
+                                <li>🚪 <strong>正社員への道筋</strong> - インターンから入社に至った経緯</li>
+                            </ul>
+                        </div>
+
+                        <h3>インタラクティブ要素の実装</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">💬 質問機能</h4>
+                                <p>動画視聴中に疑問点を<br>直接先輩社員に質問</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: #8b4513; margin-top: 0;">🎯 興味分野選択</h4>
+                                <p>関心のある部署・職種の<br>詳細情報をカスタマイズ</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: #2d3748; margin-top: 0;">📅 面談予約</h4>
+                                <p>先輩社員との個別面談<br>スケジュール調整</p>
+                            </div>
+                        </div>
+
+                        <h3>部署別・職種別コンテンツ</h3>
+                        <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #495057; margin-top: 0;">🎯 ターゲット特化した動画シリーズ</h4>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                                <div style="background-color: white; border: 1px solid #e9ecef; border-radius: 5px; padding: 12px;">
+                                    <h5 style="color: #007bff; margin: 0 0 8px 0;">💻 エンジニア・IT職</h5>
+                                    <p style="font-size: 0.9em; margin: 0;">・開発プロジェクト参加体験<br>・技術スタック学習過程<br>・コードレビュー文化</p>
+                                </div>
+                                <div style="background-color: white; border: 1px solid #e9ecef; border-radius: 5px; padding: 12px;">
+                                    <h5 style="color: #28a745; margin: 0 0 8px 0;">📈 営業・マーケティング</h5>
+                                    <p style="font-size: 0.9em; margin: 0;">・顧客対応の実践体験<br>・提案資料作成スキル<br>・数値達成への取組み</p>
+                                </div>
+                                <div style="background-color: white; border: 1px solid #e9ecef; border-radius: 5px; padding: 12px;">
+                                    <h5 style="color: #dc3545; margin: 0 0 8px 0;">🎨 企画・クリエイティブ</h5>
+                                    <p style="font-size: 0.9em; margin: 0;">・アイデア発想プロセス<br>・制作物への取組み<br>・チーム連携の重要性</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>配信最適化機能</h3>
+                        <p><span style="color: #0066cc; font-weight: bold;">【学生エンゲージメント向上システム】</span></p>
+                        <ul>
+                            <li>📊 <strong>視聴行動分析</strong> - どの動画を重点視聴したか詳細追跡</li>
+                            <li>⏰ <strong>最適配信タイミング</strong> - 学生の活動パターンに合わせた配信</li>
+                            <li>🎯 <strong>パーソナライズ推奨</strong> - 興味分野に基づく関連動画提案</li>
+                            <li>📱 <strong>マルチデバイス対応</strong> - スマホ・PC・タブレット全対応</li>
+                            <li>🔔 <strong>プッシュ通知</strong> - 新着動画・重要情報の即座配信</li>
+                            <li>👥 <strong>コミュニティ機能</strong> - 同期参加者との交流促進</li>
+                        </ul>
+                    </section>
+
+                    <section id="section3">
+                        <h2>業務日報管理の自動化システム</h2>
+                        
+                        <div style="border: 2px solid #9C27B0; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f3e5f5;">
+                            <h3 style="color: #9C27B0; margin-top: 0;">📝 デジタル化された日報システム</h3>
+                            <p>UTAGEの日報管理機能により、<span style="background-color: #ffff00;">インターン生の日々の学習進捗を効率的に追跡</span>し、<span style="background-color: #ffff00;">指導担当者の負荷軽減と育成品質向上</span>を同時に実現します。</p>
+                        </div>
+
+                        <h3>自動化日報システムの構成</h3>
+                        
+                        <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin: 20px 0;">
+                            <div style="background-color: #e8f5e9; padding: 15px; border-bottom: 1px solid #e0e0e0;">
+                                <h4 style="margin: 0; color: #2e7d32;">1️⃣ スマート入力フォーム</h4>
+                            </div>
+                            <div style="padding: 15px;">
+                                <ul>
+                                    <li>📱 <strong>モバイル最適化</strong> - スマートフォンからの簡単入力</li>
+                                    <li>🎯 <strong>項目別テンプレート</strong> - 部署・業務に応じたフォーマット</li>
+                                    <li>⏰ <strong>入力時間記録</strong> - 作業時間の自動計測機能</li>
+                                    <li>💾 <strong>下書き自動保存</strong> - 入力途中でも内容保持</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin: 20px 0;">
+                            <div style="background-color: #e3f2fd; padding: 15px; border-bottom: 1px solid #e0e0e0;">
+                                <h4 style="margin: 0; color: #1976d2;">2️⃣ AI支援機能</h4>
+                            </div>
+                            <div style="padding: 15px;">
+                                <ul>
+                                    <li>🤖 <strong>文章改善提案</strong> - より具体的で分かりやすい表現をサジェスト</li>
+                                    <li>📊 <strong>キーワード抽出</strong> - 学習内容の重要ポイント自動識別</li>
+                                    <li>🎯 <strong>目標達成度判定</strong> - 設定目標に対する進捗自動評価</li>
+                                    <li>💡 <strong>次回課題提案</strong> - 学習進度に応じた適切な課題推奨</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; margin: 20px 0;">
+                            <div style="background-color: #fff3e0; padding: 15px; border-bottom: 1px solid #e0e0e0;">
+                                <h4 style="margin: 0; color: #f57c00;">3️⃣ 自動通知・リマインダー</h4>
+                            </div>
+                            <div style="padding: 15px;">
+                                <ul>
+                                    <li>⏰ <strong>提出期限リマインダー</strong> - 日報未提出時の自動通知</li>
+                                    <li>👥 <strong>メンター通知</strong> - 新規日報提出の即座連絡</li>
+                                    <li>📊 <strong>週次サマリー配信</strong> - 週間振り返りレポート自動生成</li>
+                                    <li>🎯 <strong>目標進捗アラート</strong> - 計画に対する遅れの早期発見</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>指導者向け管理ダッシュボード</h3>
+                        <div style="background-color: #f3e5f5; border: 1px solid #9c27b0; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #7b1fa2; margin-top: 0;">📊 効率的な進捗管理システム</h4>
+                            <p><strong>一元管理機能：</strong></p>
+                            <ul>
+                                <li>👥 <strong>複数インターン一覧表示</strong> - 全体の進捗状況を俯瞰</li>
+                                <li>📈 <strong>成長グラフ可視化</strong> - 個人別スキル向上の推移</li>
+                                <li>⚠️ <strong>課題早期発見</strong> - 躓きポイントの自動検知</li>
+                                <li>💬 <strong>フィードバック履歴</strong> - 過去の指導内容確認</li>
+                                <li>📋 <strong>評価項目管理</strong> - 統一された評価基準適用</li>
+                                <li>🎯 <strong>目標設定支援</strong> - 適切な目標レベル提案</li>
+                            </ul>
+                        </div>
+
+                        <h3>データ分析・活用機能</h3>
+                        <p><span style="color: #0066cc; font-weight: bold;">【育成効果測定システム】</span></p>
+                        <ul>
+                            <li>📊 <strong>スキル習得速度分析</strong> - 個人差を考慮した最適指導法提案</li>
+                            <li>📈 <strong>パフォーマンス推移</strong> - 時系列での成長曲線表示</li>
+                            <li>🎯 <strong>強み・弱み識別</strong> - 得意分野と改善点の明確化</li>
+                            <li>🔄 <strong>過去データ比較</strong> - 前年度インターンとの比較分析</li>
+                            <li>💡 <strong>改善提案機能</strong> - データに基づく育成プログラム最適化</li>
+                            <li>📋 <strong>レポート自動生成</strong> - 定期的な進捗報告書作成</li>
+                        </ul>
+
+                        <h3>セキュリティ・プライバシー保護</h3>
+                        <div style="background-color: #e8f5e8; border: 1px solid #4caf50; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #2e7d32; margin-top: 0;">🔒 安全な情報管理体制</h4>
+                            <ul>
+                                <li>🛡️ <strong>アクセス権限管理</strong> - 役割に応じた情報閲覧制限</li>
+                                <li>🔐 <strong>データ暗号化</strong> - 個人情報の高度セキュリティ保護</li>
+                                <li>📝 <strong>ログ管理</strong> - アクセス履歴の完全記録</li>
+                                <li>🔄 <strong>自動バックアップ</strong> - データ消失リスクの最小化</li>
+                                <li>⚖️ <strong>法令遵守</strong> - 個人情報保護法への完全対応</li>
+                                <li>🎓 <strong>学生同意取得</strong> - 明確な利用目的説明と同意プロセス</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="section4">
+                        <h2>インターン育成プログラムの最適化</h2>
+                        
+                        <div style="border: 2px solid #607D8B; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f5f7fa;">
+                            <h3 style="color: #607D8B; margin-top: 0;">🎯 個別最適化された学習プログラム</h3>
+                            <p>UTAGEシステムによる<span style="background-color: #ffff00;">データドリブンな育成アプローチ</span>により、<span style="background-color: #ffff00;">各インターン生の特性に応じた最適な学習プログラム</span>を提供できます。</p>
+                        </div>
+
+                        <h3>段階的スキル習得システム</h3>
+                        
+                        <div style="border-left: 4px solid #E91E63; padding-left: 20px; margin: 20px 0; background-color: #fce4ec;">
+                            <h4 style="color: #E91E63;">Week 1-2: 基礎習得フェーズ</h4>
+                            <ul>
+                                <li>🏢 <strong>企業理解</strong> - 会社概要・事業内容・組織構造の学習</li>
+                                <li>💼 <strong>業務基礎知識</strong> - 配属部署の基本業務内容理解</li>
+                                <li>🛠️ <strong>ツール習得</strong> - 業務で使用するソフトウェア・システム操作</li>
+                                <li>👥 <strong>コミュニケーション</strong> - 社内での基本的な連絡・報告方法</li>
+                                <li>📋 <strong>ビジネスマナー</strong> - 社会人としての基本的なマナー習得</li>
+                            </ul>
+                        </div>
+
+                        <div style="border-left: 4px solid #00BCD4; padding-left: 20px; margin: 20px 0; background-color: #e0f7fa;">
+                            <h4 style="color: #00BCD4;">Week 3-6: 実践スキル習得フェーズ</h4>
+                            <ul>
+                                <li>🎯 <strong>実務参加</strong> - 実際のプロジェクトへの段階的参加</li>
+                                <li>📊 <strong>データ分析</strong> - 業務データの読み取り・分析手法習得</li>
+                                <li>💡 <strong>課題解決</strong> - 小規模な課題への取組みと解決プロセス</li>
+                                <li>📝 <strong>資料作成</strong> - 会議資料・報告書の作成スキル</li>
+                                <li>🤝 <strong>チームワーク</strong> - 他部署・外部関係者との連携経験</li>
+                            </ul>
+                        </div>
+
+                        <div style="border-left: 4px solid #FF5722; padding-left: 20px; margin: 20px 0; background-color: #fbe9e7;">
+                            <h4 style="color: #FF5722;">Week 7-12: 応用・貢献フェーズ</h4>
+                            <ul>
+                                <li>🚀 <strong>独立業務遂行</strong> - 責任を持った業務の完全担当</li>
+                                <li>💡 <strong>改善提案</strong> - 業務プロセス改善のアイデア提示</li>
+                                <li>👨‍🏫 <strong>後輩指導</strong> - 新しいインターン生のメンタリング</li>
+                                <li>📈 <strong>成果創出</strong> - 具体的な業績・成果の達成</li>
+                                <li>🎯 <strong>将来計画</strong> - キャリア形成・継続就業の検討</li>
+                            </ul>
+                        </div>
+
+                        <h3>個別フィードバックシステム</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">📊 定量評価</h4>
+                                <p>スキル習得度を数値化<br>客観的な成長測定</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">💬 定性フィードバック</h4>
+                                <p>具体的な改善点提示<br>成長への動機付け</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">🎯 目標調整</h4>
+                                <p>進捗に応じた目標修正<br>適切な難易度維持</p>
+                            </div>
+                        </div>
+
+                        <h3>メンタリング体制の構築</h3>
+                        <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #495057; margin-top: 0;">👥 多層サポート体制</h4>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                                <div style="background-color: white; border: 1px solid #e9ecef; border-radius: 5px; padding: 12px;">
+                                    <h5 style="color: #007bff; margin: 0 0 8px 0;">👨‍💼 直属メンター</h5>
+                                    <p style="font-size: 0.9em; margin: 0;">・日常的な業務指導<br>・定期的な面談実施<br>・課題解決支援</p>
+                                </div>
+                                <div style="background-color: white; border: 1px solid #e9ecef; border-radius: 5px; padding: 12px;">
+                                    <h5 style="color: #28a745; margin: 0 0 8px 0;">👥 チームサポート</h5>
+                                    <p style="font-size: 0.9em; margin: 0;">・同部署メンバーの協力<br>・プロジェクト参加支援<br>・社内ネットワーク構築</p>
+                                </div>
+                                <div style="background-color: white; border: 1px solid #e9ecef; border-radius: 5px; padding: 12px;">
+                                    <h5 style="color: #dc3545; margin: 0 0 8px 0;">🎓 先輩インターン</h5>
+                                    <p style="font-size: 0.9em; margin: 0;">・学生視点でのアドバイス<br>・経験談の共有<br>・相談相手としての役割</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>成果評価・表彰システム</h3>
+                        <p><span style="color: #0066cc; font-weight: bold;">【モチベーション維持機能】</span></p>
+                        <ul>
+                            <li>🏆 <strong>段階的認定制度</strong> - スキルレベルに応じた認定バッジ</li>
+                            <li>📊 <strong>ランキング表示</strong> - 同期との健全な競争促進</li>
+                            <li>🎉 <strong>成果発表会</strong> - インターン期間の学習成果プレゼン</li>
+                            <li>📜 <strong>修了証明書</strong> - 習得スキル・実績の公式認定</li>
+                            <li>🌟 <strong>社内表彰</strong> - 優秀な成果への社内での表彰</li>
+                            <li>🔗 <strong>継続雇用検討</strong> - 本採用への道筋明確化</li>
+                        </ul>
+
+                        <h3>将来キャリア支援</h3>
+                        <div style="background-color: #e8f5e8; border: 1px solid #4caf50; border-radius: 8px; padding: 15px; margin: 20px 0;">
+                            <h4 style="color: #2e7d32; margin-top: 0;">🚀 キャリア形成支援プログラム</h4>
+                            <ul>
+                                <li>📈 <strong>キャリアパス提示</strong> - 入社後の具体的成長イメージ</li>
+                                <li>🎯 <strong>スキルマップ作成</strong> - 必要スキルの体系的整理</li>
+                                <li>👥 <strong>先輩社員メンタリング</strong> - キャリア相談・アドバイス</li>
+                                <li>📚 <strong>継続学習支援</strong> - 必要な研修・資格取得サポート</li>
+                                <li>🤝 <strong>ネットワーキング</strong> - 社内外の人脈構築機会</li>
+                                <li>💼 <strong>本採用優遇制度</strong> - インターン実績に基づく採用考慮</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="section5">
+                        <h2>導入効果と成功事例分析</h2>
+                        
+                        <div style="border: 2px solid #795548; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f3e5f5;">
+                            <h3 style="color: #795548; margin-top: 0;">📈 インターンシップ革新の定量的成果</h3>
+                            <p>UTAGE導入による<span style="background-color: #ffff00;">インターンシップ採用・育成の劇的改善</span>と<span style="background-color: #ffff00;">企業・学生双方の満足度向上</span>の具体的データをご紹介します。</p>
+                        </div>
+
+                        <h3>採用・育成効率化の成果指標</h3>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                            <div style="background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">📈 応募者数増加</h4>
+                                <p style="font-size: 24px; font-weight: bold; margin: 10px 0;">+195%</p>
+                                <p>動画導入後のインターン応募数</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">⏰ 管理工数削減</h4>
+                                <p style="font-size: 24px; font-weight: bold; margin: 10px 0;">-68%</p>
+                                <p>日報確認・フィードバック時間</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #f57c00 0%, #ef6c00 100%); color: white; border-radius: 8px; padding: 15px; text-align: center;">
+                                <h4 style="color: white; margin-top: 0;">🎯 本採用移行率</h4>
+                                <p style="font-size: 24px; font-weight: bold; margin: 10px 0;">+156%</p>
+                                <p>インターンから正社員への移行</p>
+                            </div>
+                        </div>
+
+                        <h3>成功事例：テック企業G社（従業員800名）</h3>
+                        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #fafafa;">
+                            <h4 style="color: #333; margin-top: 0;">💻 導入背景・課題</h4>
+                            <p><strong>急成長に伴うエンジニア人材不足の深刻化：</strong></p>
+                            <ul>
+                                <li>🎯 優秀な学生インターンの獲得競争激化</li>
+                                <li>⏰ 従来の紙ベース日報管理による指導負荷増大</li>
+                                <li>💸 インターン受入コストの高騰</li>
+                                <li>🔄 インターン期間中の離脱率20%の高さ</li>
+                            </ul>
+                            
+                            <h4 style="color: #2e7d32;">✅ UTAGE戦略実施内容</h4>
+                            <ul>
+                                <li>🎬 <strong>エンジニア先輩動画シリーズ制作</strong> - 技術領域別の詳細な体験談</li>
+                                <li>📱 <strong>モバイル対応日報システム</strong> - スマホからの簡単入力・進捗確認</li>
+                                <li>🤖 <strong>AI支援指導機能</strong> - 学習進度に応じた自動課題提案</li>
+                                <li>👥 <strong>メンター連携システム</strong> - 効率的な指導・フィードバック体制</li>
+                                <li>🎯 <strong>スキル可視化ダッシュボード</strong> - 成長度合いの客観的測定</li>
+                            </ul>
+                            
+                            <div style="background-color: #e8f5e8; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                                <p><strong>結果：</strong><span style="color: #ff0000; font-size: 18px; font-weight: bold;">インターン採用効率200%向上</span></p>
+                                <p><strong>効果：</strong></p>
+                                <ul style="margin: 10px 0;">
+                                    <li>• インターン応募者数：<span style="color: #4caf50; font-weight: bold;">年間45名→126名（180%増）</span></li>
+                                    <li>• 管理者工数削減：<span style="color: #4caf50; font-weight: bold;">週20時間→週7時間（65%削減）</span></li>
+                                    <li>• インターン継続率：<span style="color: #4caf50; font-weight: bold;">80%→95%（15ポイント向上）</span></li>
+                                    <li>• 本採用移行率：<span style="color: #4caf50; font-weight: bold;">35%→78%（43ポイント向上）</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>成功事例：マーケティング会社H社（従業員150名）</h3>
+                        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #fafafa;">
+                            <h4 style="color: #333; margin-top: 0;">📊 業界特有の課題</h4>
+                            <p>マーケティング業界特有のクリエイティブスキル評価の困難：</p>
+                            <ul>
+                                <li>🎨 創作能力の客観的評価方法の確立困難</li>
+                                <li>📈 実務スキルと学生の実力ギャップ</li>
+                                <li>⏰ プロジェクトベース業務での進捗管理複雑化</li>
+                                <li>💡 アイデア発想力育成の体系化不足</li>
+                            </ul>
+                            
+                            <h4 style="color: #1976d2;">🚀 UTAGE活用戦略</h4>
+                            <ul>
+                                <li>🎥 <strong>クリエイティブ制作プロセス動画</strong> - 企画から実行までの詳細解説</li>
+                                <li>💡 <strong>アイデア発想法動画</strong> - 実際のブレストシーン・発想技法紹介</li>
+                                <li>📊 <strong>成果物ポートフォリオ管理</strong> - 制作物の系統的管理・評価</li>
+                                <li>🎯 <strong>プロジェクト貢献度測定</strong> - 定量・定性両面での貢献度評価</li>
+                                <li>👥 <strong>クリエイター先輩メンタリング</strong> - 業界経験者による専門指導</li>
+                            </ul>
+                            
+                            <div style="background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                                <p><strong>成果：</strong><span style="color: #ff0000; font-size: 18px; font-weight: bold;">インターン満足度95%達成</span></p>
+                                <p><strong>特記事項：</strong></p>
+                                <ul style="margin: 10px 0;">
+                                    <li>• クリエイティブ系学生応募：<span style="color: #2196f3; font-weight: bold;">前年比 240%増加</span></li>
+                                    <li>• インターン制作物品質：<span style="color: #2196f3; font-weight: bold;">評価平均点 3.2→4.6（5点満点）</span></li>
+                                    <li>• プロジェクト完遂率：<span style="color: #2196f3; font-weight: bold;">65%→91%（26ポイント改善）</span></li>
+                                    <li>• 指導担当者満足度：<span style="color: #2196f3; font-weight: bold;">89%が「効率的になった」と回答</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>ROI分析と投資効果計算</h3>
+                        <div style="background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                            <h4 style="color: #333; margin-top: 0;">💰 中規模企業（インターン受入20名/年）の場合</h4>
+                            
+                            <p><strong>【導入前のインターン運営コスト】</strong></p>
+                            <ul>
+                                <li>👥 採用・選考活動費：<span style="font-weight: bold;">年間 120万円</span></li>
+                                <li>📚 指導・管理人件費：<span style="font-weight: bold;">年間 480万円</span></li>
+                                <li>🏢 研修・設備費：<span style="font-weight: bold;">年間 80万円</span></li>
+                                <li>🔄 中途離脱による損失：<span style="font-weight: bold;">年間 150万円</span></li>
+                                <li><strong>総コスト：</strong><span style="color: #e74c3c; font-weight: bold;">年間 830万円</span></li>
+                            </ul>
+                            
+                            <p><strong>【UTAGE導入による削減効果】</strong></p>
+                            <ul>
+                                <li>⏰ 指導・管理工数効率化：<span style="color: #27ae60; font-weight: bold;">-320万円/年</span></li>
+                                <li>📱 デジタル化による運営費削減：<span style="color: #27ae60; font-weight: bold;">-60万円/年</span></li>
+                                <li>🎯 継続率向上による損失防止：<span style="color: #27ae60; font-weight: bold;">-120万円/年</span></li>
+                                <li>📈 採用精度向上による効率化：<span style="color: #27ae60; font-weight: bold;">-80万円/年</span></li>
+                            </ul>
+                            
+                            <p><strong>【質的向上による付加価値】</strong></p>
+                            <ul>
+                                <li>🏆 優秀人材発掘による採用効果：<span style="color: #3498db; font-weight: bold;">+250万円/年</span></li>
+                                <li>📈 本採用移行率向上による価値：<span style="color: #3498db; font-weight: bold;">+180万円/年</span></li>
+                                <li>🤝 企業ブランド向上効果：<span style="color: #3498db; font-weight: bold;">+120万円/年</span></li>
+                            </ul>
+                            
+                            <div style="background-color: #e8f5e8; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                                <p><strong>総合効果：</strong><span style="color: #ff0000; font-size: 20px; font-weight: bold;">年間 1,130万円の価値創出</span></p>
+                                <p><strong>ROI：</strong><span style="color: #0066cc; font-weight: bold;">約475%</span>（初年度投資額240万円として計算）</p>
+                                <p><strong>投資回収期間：</strong><span style="color: #27ae60; font-weight: bold;">約2.5か月</span></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 40px 0;">
+                        <h3 style="color: white; margin-top: 0;">🎯 まとめ</h3>
+                        <p style="font-size: 18px; line-height: 1.6;">インターン募集のUTAGE活用により、<span style="background-color: rgba(255, 255, 255, 0.3); padding: 2px 6px; border-radius: 4px;">先輩社員の声動画による魅力的な募集</span>と<span style="background-color: rgba(255, 255, 255, 0.3); padding: 2px 6px; border-radius: 4px;">業務日報管理の完全自動化</span>を実現できます。</p>
+                        <p style="font-size: 16px;">優秀な学生の獲得と効果的な育成により、将来の核となる人材確保と企業成長を加速させましょう。</p>
+                    </div>
+
+                </div>
+
+                <!-- プロフィールセクション -->
+                <div class="myblog-author">
+                    <div class="myblog-author-avatar">
+                        <img src="../assets/images/profile-YUKI.webp" alt="前田由紀子" loading="lazy">
+                    </div>
+                    <div class="myblog-author-info">
+                        <h3>前田由紀子</h3>
+                        <p><strong>UTAGE認定コンサルタント・人材育成システム専門家</strong></p>
+                        <p>インターンシップ採用の自動化を専門とし、80社以上の企業でUTAGE導入をサポート。特に先輩社員動画コンテンツの戦略的活用と業務日報管理システムの構築により、インターン採用効率とプログラム品質の大幅向上を実現。IT・マーケティング・コンサルティング業界での成功事例を多数創出している。</p>
+                    </div>
+                </div>
+
+                <!-- 関連記事 -->
+                <div class="myblog-related">
+                    <h3 class="myblog-related-title">関連記事</h3>
+                    <div class="myblog-related-grid">
+                        <div class="myblog-related-card">
+                            <a href="article-utage-new-graduate-recruitment.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="新卒採用のUTAGE活用｜会社説明用動画配信とエントリー受付の自動化"></div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">新卒採用のUTAGE活用｜会社説明用動画配信とエントリー受付の自動化</h4>
+                                    <div class="myblog-related-date">2025年1月12日</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="myblog-related-card">
+                            <a href="article-utage-part-time-recruitment-automation.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="アルバイト採用のUTAGE｜仕事紹介動画からオンライン面接セッティングまでの効率化"></div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">アルバイト採用のUTAGE｜仕事紹介動画からオンライン面接セッティングまでの効率化</h4>
+                                    <div class="myblog-related-date">2025年1月12日</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="myblog-related-card">
+                            <a href="article-utage-online-education-complete-guide.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="UTAGE完全活用ガイド｜オンライン教育システムの構築"></div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">UTAGE完全活用ガイド｜オンライン教育システムの構築</h4>
+                                    <div class="myblog-related-date">2025年1月6日</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- フッター前のCTA（index.htmlと同じものをコピペ） -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
+            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
+                UTAGEの導入で最大75万円の補助金が受けられます。<br>
+                面倒な申請手続きはすべてお任せください。<br>
+                あなたは事業成長に集中するだけでOKです。
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター（index.htmlと同じものをコピペ） -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>CLAN</h2>
+            </div>
+            <nav class="footer-links" aria-label="フッターナビゲーション">
+                <ul>
+                    <li><a href="https://utage-system.com/p/EcESO02xLLoK" title="UTAGEシステム導入の無料相談">無料相談</a></li>
+                    <li><a href="../achievement/index.html" title="UTAGE導入企業の成功事例">お客様の声</a></li>
+                    <li><a href="index.html" title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+                    <li><a href="../tools/index.html" title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+                    <li><a href="../owner.html" title="CLANの運営会社情報">運営者情報</a></li>
+                    <li><a href="../terms.html" title="サービス利用規約">利用規約</a></li>
+                    <li><a href="../privacy.html" title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+                    <li><a href="../tokutei.html" title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- 統合システムスクリプト -->
+    <script src="../js/common-cache.js" defer onerror="console.warn('common-cache.js not found')"></script>
+    <script src="../js/common-lazy-loading.js" defer onerror="console.warn('common-lazy-loading.js not found')"></script>
+    <script src="../js/common-init.js" defer onerror="console.warn('common-init.js not found')"></script>
+    
+    <!-- メインスクリプト -->
+    <script src="../js/main.js?v=10000" defer></script>
+    <script src="myblog-script.js" defer></script>
+</body>
+</html>

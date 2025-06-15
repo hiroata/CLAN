@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="介護施設におけるUTAGE活用で見学予約受付と資料請求を自動化し、入居相談から契約まで一貫したサポートシステムを構築する方法を詳しく解説。">
+    <title>介護施設のUTAGE｜見学予約受付と資料請求の自動化</title>
+    
+    <!-- フォントとスタイル -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap&subset=japanese" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap&subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=10001">
+    <link rel="stylesheet" href="myblog-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SEO関連 -->
+    <link rel="canonical" href="https://clanbiz.jp/blog/article-utage-nursing-home-tour-booking-automation.html">
+    <meta property="og:title" content="介護施設のUTAGE｜見学予約受付と資料請求の自動化">
+    <meta property="og:description" content="介護施設におけるUTAGE活用で見学予約受付と資料請求を自動化し、入居相談から契約まで一貫したサポートシステムを構築する方法を詳しく解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://clanbiz.jp/blog/article-utage-nursing-home-tour-booking-automation.html">
+    <meta property="og:image" content="https://clanbiz.jp/assets/images/logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="介護施設のUTAGE｜見学予約受付と資料請求の自動化">
+    <meta name="twitter:description" content="介護施設におけるUTAGE活用で見学予約受付と資料請求を自動化し、入居相談から契約まで一貫したサポートシステムを構築する方法を詳しく解説。">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+      "description": "介護施設におけるUTAGE活用で見学予約受付と資料請求を自動化し、入居相談から契約まで一貫したサポートシステムを構築する方法を詳しく解説。",
+      "author": {
+        "@type": "Person",
+        "name": "前田由紀子",
+        "jobTitle": "UTAGE認定コンサルタント"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CLAN",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://clanbiz.jp/assets/images/logo.webp"
+        }
+      },
+      "datePublished": "2025-01-09",
+      "dateModified": "2025-01-09",
+      "image": "https://clanbiz.jp/assets/images/logo.webp",
+      "url": "https://clanbiz.jp/blog/article-utage-nursing-home-tour-booking-automation.html",
+      "mainEntityOfPage": "https://clanbiz.jp/blog/article-utage-nursing-home-tour-booking-automation.html"
+    }
+    </script>
+</head>
+
+<body class="myblog-body">
+    <!-- アクセシビリティ強化：スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
+            </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="index.html" aria-current="page">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                    無料相談
+                </a>
+            </div>
+            <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu">
+        <nav aria-label="モバイルメニュー">
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-cta">
+            <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-contact">
+                無料相談
+            </a>
+        </div>
+    </div>
+
+    <main class="myblog-main" id="main-content">
+        <div class="myblog-container">
+            <!-- 戻るリンク -->
+            <div class="myblog-back-link">
+                <a href="index.html" class="myblog-back-btn">
+                    <i class="fas fa-chevron-left"></i>
+                    ブログ一覧に戻る
+                </a>
+            </div>
+
+            <!-- 記事 -->
+            <article class="myblog-article">
+                <!-- 記事ヘッダー -->
+                <header class="myblog-article-header">
+                    <!-- アイキャッチ画像 -->
+                    <div class="myblog-featured-image">
+                        <div class="myblog-auto-image">
+                            <div class="myblog-auto-image-text">介護施設のUTAGE｜
+見学予約受付と資料請求の
+自動化</div>
+                        </div>
+                    </div>
+
+                    <!-- 記事メタ情報 -->
+                    <div class="myblog-article-meta">
+                        <div class="myblog-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            2025年1月9日
+                        </div>
+                        <div class="myblog-tags">
+                            <span class="myblog-tag">UTAGE活用</span>
+                            <span class="myblog-tag">介護施設</span>
+                            <span class="myblog-tag">見学予約</span>
+                        </div>
+                    </div>
+
+                    <!-- 記事タイトル -->
+                    <h1 class="myblog-article-title">介護施設のUTAGE｜見学予約受付と資料請求の自動化</h1>
+
+                    <!-- 記事概要 -->
+                    <div class="myblog-article-summary">
+                        介護施設における入居相談から契約までのプロセスには、多くの段階と調整が必要です。UTAGEシステムを活用した見学予約受付と資料請求の自動化により、ご家族の負担軽減と施設スタッフの業務効率化を同時に実現し、信頼関係構築をサポートする方法をご紹介します。
+                    </div>
+                </header>
+
+                <!-- 目次 -->
+                <div class="myblog-toc-wrapper">
+                    <div class="myblog-toc-header">
+                        <h2 class="myblog-toc-title">目次</h2>
+                        <button class="myblog-toc-toggle" aria-label="目次を展開・折りたたみ">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <nav class="myblog-toc-nav active">
+                        <ol class="myblog-toc-list">
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section1" class="myblog-toc-link">介護施設業界の現状課題とデジタル化の必要性</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section2" class="myblog-toc-link">見学予約受付システムの自動化</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section3" class="myblog-toc-link">資料請求から入居相談までの一貫システム</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section4" class="myblog-toc-link">家族サポートと継続的なコミュニケーション</a>
+                            </li>
+                            <li class="myblog-toc-item myblog-toc-item--h2">
+                                <a href="#section5" class="myblog-toc-link">介護施設向けUTAGE導入・活用ガイド</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- 記事本文 -->
+                <div class="myblog-content">
+                    <h2 id="section1">介護施設業界の現状課題とデジタル化の必要性</h2>
+                    
+                    <p>介護施設業界では<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>高齢化社会の進展</strong></span>とともに入居希望者が増加している一方で、施設選択における情報収集や見学予約の煩雑さが課題となっています。</p>
+
+                    <p>特にご家族にとって介護施設選びは<span style="color: #FF5722; font-weight: bold;">人生の重要な決断</span>であり、十分な情報提供と丁寧なサポートが求められています。</p>
+
+                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f8f9fa;">
+                        <h4 style="color: #4CAF50; margin-bottom: 15px;">🏠 介護施設の主要課題</h4>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><span style="color: #FF5722; font-weight: bold;">問い合わせ対応の負担</span>：電話・来訪による時間消費</li>
+                            <li style="margin-bottom: 8px;"><span style="color: #2196F3; font-weight: bold;">情報提供の非効率性</span>：資料準備・発送の手作業</li>
+                            <li style="margin-bottom: 8px;"><span style="color: #FF9800; font-weight: bold;">見学スケジュール調整</span>：個別対応による煩雑な手続き</li>
+                            <li style="margin-bottom: 8px;"><span style="color: #9C27B0; font-weight: bold;">入居までの長期間サポート</span>：継続的なフォローアップの困難</li>
+                        </ul>
+                    </div>
+
+                    <p>UTAGEシステムを導入することで、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>これらの課題を包括的に解決</strong></span>し、以下のような成果を実現できます：</p>
+
+                    <ul style="margin: 20px 0; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">24時間対応の見学予約受付システム</li>
+                        <li style="margin-bottom: 10px;">個別ニーズに応じた資料の自動配信</li>
+                        <li style="margin-bottom: 10px;">入居検討段階に応じた段階的サポート</li>
+                        <li style="margin-bottom: 10px;">スタッフ業務の効率化と品質向上</li>
+                    </ul>
+
+                    <h2 id="section2">見学予約受付システムの自動化</h2>
+
+                    <p>介護施設における<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>見学予約システム</strong></span>は、ご家族の不安軽減と施設理解促進において重要な役割を果たします。</p>
+
+                    <h3>1️⃣ 24時間対応予約システム</h3>
+                    
+                    <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
+                        <h4 style="color: #2196F3; margin-bottom: 15px;">📅 見学予約システムの特徴</h4>
+                        <p style="margin-bottom: 15px;"><strong>柔軟な予約受付</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">平日・土日祝日の見学時間設定</li>
+                            <li style="margin-bottom: 8px;">個別見学・グループ見学の選択</li>
+                            <li style="margin-bottom: 8px;">見学希望エリア（居室・食堂・共用部等）の事前選択</li>
+                            <li style="margin-bottom: 8px;">車椅子利用等のバリアフリー対応確認</li>
+                        </ul>
+                        <p style="margin-bottom: 15px;"><strong>事前情報収集</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">介護度・医療的ケアの必要度</li>
+                            <li style="margin-bottom: 8px;">入居希望時期・予算範囲</li>
+                            <li style="margin-bottom: 8px;">特別な配慮事項・アレルギー等</li>
+                            <li style="margin-bottom: 8px;">見学時の質問事項の事前収集</li>
+                        </ul>
+                    </div>
+
+                    <h3>2️⃣ 見学前後のサポートシステム</h3>
+
+                    <p><span style="color: #FF5722; font-weight: bold;">見学予約から当日、事後フォロー</span>まで一貫したサポートを提供します。</p>
+
+                    <div style="border: 2px solid #FF9800; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #fff3e0;">
+                        <h4 style="color: #FF9800; margin-bottom: 15px;">🔄 見学サポートプロセス</h4>
+                        
+                        <p style="margin-bottom: 10px;"><strong>見学前サポート（予約確定後）</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">施設パンフレット・料金表の事前送付</li>
+                            <li style="margin-bottom: 8px;">見学時の持参書類・確認事項の案内</li>
+                            <li style="margin-bottom: 8px;">アクセス方法・駐車場情報の提供</li>
+                            <li style="margin-bottom: 8px;">見学当日の流れと所要時間の説明</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>見学当日サポート</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">事前情報に基づく個別対応準備</li>
+                            <li style="margin-bottom: 8px;">質問事項への詳細回答</li>
+                            <li style="margin-bottom: 8px;">体験食事・レクリエーション参加（希望者）</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>見学後フォロー</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">お礼メッセージと追加質問受付</li>
+                            <li style="margin-bottom: 8px;">見学で伝えきれなかった詳細情報の提供</li>
+                            <li style="margin-bottom: 8px;">入居検討に必要な各種書類の案内</li>
+                        </ul>
+                    </div>
+
+                    <h3>3️⃣ 複数施設比較サポート</h3>
+
+                    <p><span style="color: #4CAF50; font-weight: bold;">ご家族の施設選択</span>をサポートするため、比較検討に必要な情報を整理して提供します。</p>
+
+                    <h2 id="section3">資料請求から入居相談までの一貫システム</h2>
+
+                    <p>介護施設選択は<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>長期間にわたる検討プロセス</strong></span>であり、段階的なサポートが必要です。</p>
+
+                    <div style="border: 2px solid #9C27B0; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f3e5f5;">
+                        <h4 style="color: #9C27B0; margin-bottom: 15px;">📋 段階的サポートシステム</h4>
+                        
+                        <p style="margin-bottom: 10px;"><strong>1. 初期情報提供段階</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>基本パンフレット：</strong>施設概要・サービス内容</li>
+                            <li style="margin-bottom: 8px;"><strong>料金詳細資料：</strong>入居費用・月額費用の明細</li>
+                            <li style="margin-bottom: 8px;"><strong>生活スケジュール：</strong>1日の流れ・年間行事</li>
+                            <li style="margin-bottom: 8px;"><strong>医療・介護体制：</strong>スタッフ配置・協力医療機関</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>2. 詳細検討段階</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>入居者の声：</strong>実際の入居者・ご家族の体験談</li>
+                            <li style="margin-bottom: 8px;"><strong>ケーススタディ：</strong>介護度別のケア事例</li>
+                            <li style="margin-bottom: 8px;"><strong>施設内動画：</strong>実際の様子を動画で紹介</li>
+                            <li style="margin-bottom: 8px;"><strong>Q&A集：</strong>よくある質問と詳細回答</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>3. 入居準備段階</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>契約書類：</strong>重要事項説明書・契約書雛形</li>
+                            <li style="margin-bottom: 8px;"><strong>準備チェックリスト：</strong>入居に必要な手続き一覧</li>
+                            <li style="margin-bottom: 8px;"><strong>持参品リスト：</strong>必要品・推奨品の詳細</li>
+                        </ul>
+                    </div>
+
+                    <h3>4️⃣ 個別ニーズ対応システム</h3>
+
+                    <p><span style="color: #2196F3; font-weight: bold;">介護度・疾患・ライフスタイル</span>に応じたカスタマイズされた情報提供により、より適切なサポートを実現できます。</p>
+
+                    <h2 id="section4">家族サポートと継続的なコミュニケーション</h2>
+
+                    <p>介護施設選択プロセスでは<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>ご家族の心理的サポート</strong></span>も重要な要素となります。UTAGEシステムにより、継続的なコミュニケーションを実現できます。</p>
+
+                    <h3>5️⃣ 家族の不安解消プログラム</h3>
+
+                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e8f5e8;">
+                        <h4 style="color: #4CAF50; margin-bottom: 15px;">💝 家族支援プログラム</h4>
+                        
+                        <p style="margin-bottom: 15px;"><strong>情報提供プログラム</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">介護施設選択のポイント解説</li>
+                            <li style="margin-bottom: 8px;">介護保険制度・費用に関する基礎知識</li>
+                            <li style="margin-bottom: 8px;">医療連携・緊急時対応の仕組み説明</li>
+                            <li style="margin-bottom: 8px;">面会・外出・外泊規則の詳細案内</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>心理的サポート</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">家族の罪悪感・不安感への共感メッセージ</li>
+                            <li style="margin-bottom: 8px;">入居後の生活変化への準備アドバイス</li>
+                            <li style="margin-bottom: 8px;">家族関係維持のための具体的提案</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>継続的フォロー</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">検討期間中の定期的な状況確認</li>
+                            <li style="margin-bottom: 8px;">他施設との比較検討サポート</li>
+                            <li style="margin-bottom: 8px;">入居決定後の手続き支援</li>
+                        </ul>
+                    </div>
+
+                    <p><span style="color: #FF5722; font-weight: bold;">長期的な関係構築</span>により、入居前から入居後まで継続的な信頼関係を築くことができます。</p>
+
+                    <h2 id="section5">介護施設向けUTAGE導入・活用ガイド</h2>
+
+                    <p>介護施設でのUTAGEシステム導入を成功させるための<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実践的導入プロセス</strong></span>をご紹介します。</p>
+
+                    <div style="border: 2px solid #FF5722; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #ffebee;">
+                        <h4 style="color: #FF5722; margin-bottom: 15px;">🚀 介護施設特化導入ロードマップ</h4>
+                        
+                        <p style="margin-bottom: 15px;"><strong>Phase 1：基盤構築（1-2ヶ月目）</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">既存問い合わせ情報の整理・分析</li>
+                            <li style="margin-bottom: 8px;">見学予約システムの設計・構築</li>
+                            <li style="margin-bottom: 8px;">施設紹介資料のデジタル化</li>
+                            <li style="margin-bottom: 8px;">スタッフ向け運用研修の実施</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>Phase 2：試験運用（3-4ヶ月目）</strong></p>
+                        <ul style="margin-bottom: 15px; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">新規問い合わせでのシステム運用開始</li>
+                            <li style="margin-bottom: 8px;">見学予約・資料請求フローの検証</li>
+                            <li style="margin-bottom: 8px;">利用者フィードバックの収集・分析</li>
+                            <li style="margin-bottom: 8px;">システム設定の調整・改善</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 15px;"><strong>Phase 3：本格運用・拡張（5-6ヶ月目以降）</strong></p>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;">全問い合わせへのシステム適用</li>
+                            <li style="margin-bottom: 8px;">入居後フォローアップ機能の追加</li>
+                            <li style="margin-bottom: 8px;">地域連携・医療機関との情報共有</li>
+                            <li style="margin-bottom: 8px;">継続的な改善とアップデート</li>
+                        </ul>
+                    </div>
+
+                    <h3>投資対効果（ROI）の詳細分析</h3>
+
+                    <p>介護施設でのUTAGEシステム導入による<span style="color: #FF5722; font-weight: bold;">投資対効果</span>は、導入から2-3ヶ月で明確に現れます：</p>
+
+                    <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
+                        <h4 style="color: #2196F3; margin-bottom: 15px;">💰 ROI計算例（50床規模の介護施設）</h4>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li style="margin-bottom: 8px;"><strong>問い合わせ対応効率化：</strong> 週<span style="color: #4CAF50; font-weight: bold;">20時間</span>の時間創出</li>
+                            <li style="margin-bottom: 8px;"><strong>見学予約率向上：</strong> <span style="color: #2196F3; font-weight: bold;">+35%</span>（24時間受付効果）</li>
+                            <li style="margin-bottom: 8px;"><strong>入居契約率改善：</strong> <span style="color: #FF9800; font-weight: bold;">65%→80%</span>向上</li>
+                            <li style="margin-bottom: 8px;"><strong>資料準備コスト削減：</strong> 月額<span style="color: #9C27B0; font-weight: bold;">8万円</span>節約</li>
+                            <li style="margin-bottom: 8px;"><strong>システム運用コスト：</strong> 月額<span style="color: #FF5722; font-weight: bold;">3.5万円</span></li>
+                        </ul>
+                        <p style="margin-top: 15px; font-weight: bold; color: #FF5722;">⭐ 実質的な月間効果：+<span style="font-size: 1.2em;">45万円</span></p>
+                    </div>
+
+                    <h3>成功事例から学ぶベストプラクティス</h3>
+
+                    <p><span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実際の導入成功事例</strong></span>から、効果的な運用のポイントを学ぶことができます：</p>
+
+                    <ul style="margin: 20px 0; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>A特別養護老人ホーム：</strong>見学予約率40%向上、スタッフ業務効率化60%達成</li>
+                        <li style="margin-bottom: 10px;"><strong>B有料老人ホーム：</strong>入居契約率85%達成、家族満足度95%維持</li>
+                        <li style="margin-bottom: 10px;"><strong>Cサービス付き高齢者向け住宅：</strong>問い合わせ対応時間50%削減、入居待機期間短縮</li>
+                    </ul>
+
+                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 30px 0; background-color: #e8f5e8; text-align: center;">
+                        <h4 style="color: #4CAF50; margin-bottom: 15px;">🎯 まとめ</h4>
+                        <p style="margin-bottom: 15px; font-size: 1.1em;">介護施設におけるUTAGE活用は、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>見学予約受付と資料請求の自動化</strong></span>により、ご家族の負担軽減と施設の業務効率化を同時に実現します。</p>
+                        <p style="margin-bottom: 15px;">継続的なサポートにより、入居前から入居後まで信頼関係を構築し、選ばれ続ける介護施設を目指せます。</p>
+                        <p style="margin: 0; font-weight: bold; color: #FF5722;">導入をご検討の介護施設様は、ぜひ無料相談をご活用ください。</p>
+                    </div>
+                </div>
+
+                <!-- 著者プロフィール -->
+                <div class="myblog-author">
+                    <div class="myblog-author-avatar">
+                        <img src="../assets/images/profile-owner.webp" alt="前田由紀子" loading="lazy">
+                    </div>
+                    <div class="myblog-author-info">
+                        <h3 class="myblog-author-name">前田由紀子</h3>
+                        <p class="myblog-author-bio">
+                            UTAGE認定コンサルタント。これまで70社以上の法人・個人事業主のマーケティング自動化をサポート。特に介護・福祉分野でのデジタル化支援に豊富な実績を持つ。「ご家族の不安に寄り添う丁寧なシステム設計」をコンセプトに、利用者満足度とスタッフの働きやすさを両立するソリューションを提供している。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 関連記事 -->
+                <div class="myblog-related">
+                    <h3 class="myblog-related-title">関連記事</h3>
+                    <div class="myblog-related-grid">
+                        <div class="myblog-related-card">
+                            <a href="article-utage-visiting-nurse-schedule-management.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="訪問看護ステーションのUTAGE">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理</h4>
+                                    <div class="myblog-related-date">2025年1月9日</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="myblog-related-card">
+                            <a href="article-utage-veterinary-clinic-vaccination-reminder.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="動物病院のUTAGE戦略">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">動物病院のUTAGE戦略｜ワクチン接種リマインダーと健康情報配信</h4>
+                                    <div class="myblog-related-date">2025年1月9日</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="myblog-related-card">
+                            <a href="article-utage-dental-clinic-patient-follow-up.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="歯科医院のUTAGE活用ガイド">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h4 class="myblog-related-card-title">歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成</h4>
+                                    <div class="myblog-related-date">2025年1月9日</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">介護施設の業務効率化をサポート</h2>
+            <h3 class="cta-subtitle">UTAGE構築代行で入居相談プロセスを最適化</h3>
+            <p class="cta-text">
+                見学予約の自動化から資料請求まで、<br>
+                介護施設特化のシステム構築をお任せください。<br>
+                無料相談で具体的な改善提案をいたします。
+            </p>
+            <div class="cta-buttons">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">無料相談を申し込む</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>CLAN</h2>
+            </div>
+            <nav class="footer-links" aria-label="フッターナビゲーション">
+                <ul>
+                    <li><a href="https://utage-system.com/p/EcESO02xLLoK" 
+                           title="UTAGEシステム導入の無料相談">無料相談</a></li>
+                    <li><a href="../achievement/index.html" 
+                           title="UTAGE導入企業の成功事例">お客様の声</a></li>
+                    <li><a href="index.html" 
+                           title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+                    <li><a href="../tools/index.html" 
+                           title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+                    <li><a href="../owner.html" 
+                           title="CLANの運営会社情報">運営者情報</a></li>
+                    <li><a href="../terms.html" 
+                           title="サービス利用規約">利用規約</a></li>
+                    <li><a href="../privacy.html" 
+                           title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+                    <li><a href="../tokutei.html" 
+                           title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js" defer></script>
+    <script src="myblog-script.js" defer></script>
+</body>
+</html>
