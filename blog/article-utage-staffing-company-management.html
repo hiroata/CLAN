@@ -13,6 +13,104 @@
     <link rel="stylesheet" href="myblog-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- 記事ナビゲーション用スタイル -->
+    <style>
+        .myblog-article-navigation {
+            margin: 40px 0;
+            padding: 30px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .myblog-nav-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 100%;
+        }
+        
+        .myblog-nav-prev,
+        .myblog-nav-next {
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            min-height: 80px;
+        }
+        
+        .myblog-nav-prev:hover,
+        .myblog-nav-next:hover {
+            background: #f0f0f0;
+            border-color: #0071e3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.1);
+        }
+        
+        .myblog-nav-prev.disabled,
+        .myblog-nav-next.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f5f5f5;
+        }
+        
+        .myblog-nav-prev.disabled:hover,
+        .myblog-nav-next.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: #e0e0e0;
+            background: #f5f5f5;
+        }
+        
+        .myblog-nav-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .myblog-nav-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: #333;
+        }
+        
+        .myblog-nav-prev .myblog-nav-label::before {
+            content: "← ";
+            margin-right: 4px;
+        }
+        
+        .myblog-nav-next .myblog-nav-label::after {
+            content: " →";
+            margin-left: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .myblog-nav-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .myblog-nav-prev,
+            .myblog-nav-next {
+                padding: 16px;
+                min-height: 70px;
+            }
+            
+            .myblog-nav-title {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+    <!-- SEO関連 -->
+    
     <!-- SEO関連 -->
     <link rel="canonical" href="https://clanbiz.jp/blog/article-utage-staffing-company-management.html">
     <meta property="og:title" content="派遣会社のUTAGE導入｜スタッフ登録管理と仕事情報の自動配信">
@@ -691,6 +789,22 @@
                         <h3>前田由紀子</h3>
                         <p><strong>UTAGE認定コンサルタント・人材派遣業務最適化専門家</strong></p>
                         <p>人材派遣業界のデジタル化を専門とし、90社以上の派遣会社でUTAGE導入をサポート。特にスタッフ管理システムの自動化と案件配信の最適化により、業務効率化と収益向上を同時に実現する手法を確立。大手から中小企業まで幅広い規模の派遣会社でマッチング精度向上と満足度改善の成功事例を多数創出している。</p>
+                    </div>
+                </div>
+
+                </div>
+
+                <!-- 記事ナビゲーション -->
+                <div class="myblog-article-navigation">
+                    <div class="myblog-nav-container">
+                        <div class="myblog-nav-prev" id="prevArticle">
+                            <span class="myblog-nav-label">前の記事</span>
+                            <div class="myblog-nav-title" id="prevTitle">読み込み中...</div>
+                        </div>
+                        <div class="myblog-nav-next" id="nextArticle">
+                            <span class="myblog-nav-label">次の記事</span>
+                            <div class="myblog-nav-title" id="nextTitle">読み込み中...</div>
+                        </div>
                     </div>
                 </div>
 
