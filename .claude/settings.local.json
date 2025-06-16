@@ -11,7 +11,9 @@
       "Bash(./restore-broken-articles.sh:*)",
       "Bash(dos2unix:*)",
       "Bash(bash:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(python3:*)",
+      "Bash(./remove-footer-link.sh:*)"
     ],
     "deny": []
   }
