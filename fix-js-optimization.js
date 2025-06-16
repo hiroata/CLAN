@@ -1,0 +1,1 @@
+const fs = require('fs');const path = require('path');class JSOptimizer{constructor(){this.issues = [];this.optimizations = [];this.jsFiles = [];this.htmlFiles = [];this.duplicateFunctions = new Map();this.conflictingEventHandlers = [];this.consoleStatements = [];}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(node:*)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(git checkout:*)",
+      "Bash(chmod:*)",
+      "Bash(./restore-broken-articles.sh:*)",
+      "Bash(dos2unix:*)",
+      "Bash(bash:*)",
+      "Bash(git reset:*)"
+    ],
+    "deny": []
+  }
+}

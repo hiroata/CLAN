@@ -1,0 +1,4949 @@
+{
+  "articles": [
+    {
+      "file": "article-utage-accounting-cloud-bookkeeping.html",
+      "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+      "description": "会計事務所におけるUTAGE活用でクラウド会計導入支援と記帳代行受付を自動化し、顧客サービス向上と業務効率化を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-administrative-scrivener-license-permit.html",
+      "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+      "description": "行政書士におけるUTAGE活用で許認可チェックリストと申請代行受付を自動化し、行政手続き支援の効率化と顧客獲得を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-beauty-clinic-strategy.html",
+      "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+      "description": "美容クリニックにおけるUTAGE戦略でカウンセリング予約システムとアフターケアを自動化し、集客力向上とリピート率改善を実現する方法を詳しく解説。",
+      "categories": [
+        "医療・健康"
+      ]
+    },
+    {
+      "file": "article-utage-beauty-health-digital-marketing.html",
+      "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+      "description": "UTAGE活用による美容・健康業界のデジタルマーケティング成功事例を詳細解説。エステサロン・ジム・フィットネスでの集客自動化から顧客継続まで、売上4倍を実現する実践的戦略をご紹介します。",
+      "categories": [
+        "医療・健康"
+      ]
+    },
+    {
+      "file": "article-utage-calligraphy-school-strategy.html",
+      "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+      "description": "書道教室におけるUTAGE戦略でお手本動画配信と通信添削受付を自動化し、伝統技術のデジタル化と生徒指導の効率化を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-chamber-commerce-seminar-member.html",
+      "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+      "description": "商工会議所におけるUTAGE活用でセミナー集客と会員企業向け情報配信を自動化し、中小企業のデジタル化支援と地域経済活性化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-checkout-optimization.html",
+      "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+      "description": "UTAGEの決済ページ設定を最適化して離脱率を大幅に改善する方法を解説。オーダーバンプ・アップセル機能、デザイン統一、ワンクリック決済など実践的なチェックアウト最適化テクニックをご紹介します。",
+      "categories": [
+        "ファネル・LP機能"
+      ]
+    },
+    {
+      "file": "article-utage-coaching-business-automation.html",
+      "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+      "description": "UTAGEを活用したコーチングビジネスの完全自動化システム構築方法を解説。個人指導の予約管理から決済処理、顧客フォローまで、売上3倍を実現する自動化戦略をご紹介します。",
+      "categories": [
+        "士業・コンサル",
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-consultant-success-patterns.html",
+      "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+      "description": "UTAGE活用でコンサルタント業界の売上を飛躍的に向上させた成功事例を詳細解説。自動化による効率化から高額商品販売まで、実績に基づく売上アップの成功パターンをご紹介します。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-consulting-diagnosis-funnel.html",
+      "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+      "description": "コンサルティング会社におけるUTAGE活用で無料診断から有料コンサルへの効果的な導線を構築し、顧客獲得と売上向上を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル",
+        "ファネル・LP機能"
+      ]
+    },
+    {
+      "file": "article-utage-content-management.html",
+      "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+      "description": "UTAGE会員サイトのコンテンツ管理を効率化する方法を解説。複数サイト運営から段階的公開、レッスン整理まで、運用負荷を大幅削減する実践的な管理術をご紹介します。",
+      "categories": [
+        "自動化・管理",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-cooking-school-recipe-videos.html",
+      "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+      "description": "料理教室におけるUTAGE活用でレシピ動画配信と単発レッスン予約を自動化し、オンライン料理教室の効率化と生徒満足度向上を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-corporate-training-elearning.html",
+      "title": "社内研修のUTAGE導入｜eラーニング配信と受講管理",
+      "description": "社内研修のUTAGE導入でeラーニング配信と受講管理を自動化し、効率的な人材育成と学習効果の最大化を実現する方法を詳しく解説。",
+      "categories": [
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-dance-school-automation.html",
+      "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+      "description": "ダンススクールにおけるUTAGE活用で体験予約と月謝決済を自動化し、スクール運営の効率化と生徒満足度向上を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール",
+        "フィットネス・スポーツ",
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-dental-clinic-patient-follow-up.html",
+      "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+      "description": "歯科医院におけるUTAGE活用で予約管理と患者フォローアップシステムを自動化し、再診率70%を達成した事例と導入方法を詳しく解説。歯科医院のマーケティング自動化の完全ガイド。",
+      "categories": [
+        "医療・健康"
+      ]
+    },
+    {
+      "file": "article-utage-domain-dkim-spf-setup.html",
+      "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+      "description": "UTAGEで独自ドメインを設定してメール到達率を向上させる完全マニュアル。DKIM・SPFの具体的設定手順から、DNS設定まで初心者でも分かりやすく解説します。",
+      "categories": [
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-education-committee-parent-notification.html",
+      "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+      "description": "教育委員会におけるUTAGE活用で保護者向け通知と教育相談予約システムを自動化し、教育DX推進と学校・家庭の連携強化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール",
+        "公共・行政"
+      ]
+    },
+    {
+      "file": "article-utage-email-setup.html",
+      "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+      "description": "UTAGE（ウタゲ）のメール配信機能を初心者でも簡単に設定できる手順を詳しく解説。ステップメール、自動配信、セグメント配信の設定方法を5分で完了する方法をご紹介します。",
+      "categories": [
+        "メール・LINE配信",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-email-spam-prevention.html",
+      "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣",
+      "description": "UTAGEメール配信で迷惑メール扱いされない設定方法を徹底解説。SPF・DKIM・DMARC設定から件名・送信者名の最適化まで、到達率向上の秘訣をプロが伝授します。",
+      "categories": [
+        "メール・LINE配信"
+      ]
+    },
+    {
+      "file": "article-utage-english-school-level-check.html",
+      "title": "英会話スクールのUTAGE活用｜レベルチェック予約と教材販売",
+      "description": "英会話スクールにおけるUTAGE活用でレベルチェック予約と教材販売を自動化し、生徒の学習効果向上と売上増加を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-event-management-automation.html",
+      "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+      "description": "UTAGEのイベント機能でセミナー・ワークショップ運営を完全自動化。集客から予約管理、決済、フォローアップまで、参加者満足度98%を実現するイベント運営システムの構築方法を詳しく解説します。",
+      "categories": [
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-fire-department-disaster-prevention.html",
+      "title": "消防署のUTAGE活用｜防災情報配信と消防署員への動画講習",
+      "description": "消防署におけるUTAGE活用で防災情報配信と消防署員への動画講習を自動化し、自衛消防訓練支援と地域防災力向上を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "公共・行政"
+      ]
+    },
+    {
+      "file": "article-utage-fitness-gym-trial-membership-automation.html",
+      "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化",
+      "description": "フィットネスジムにおけるUTAGE活用で体験予約と入会キャンペーン自動化を実現し、会員継続率向上とデジタル化による効率的な運営を実現する方法を詳しく解説。",
+      "categories": [
+        "フィットネス・スポーツ",
+        "自動化・管理",
+        "決済・会員制"
+      ]
+    },
+    {
+      "file": "article-utage-fitness-sports-online-expansion.html",
+      "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+      "description": "UTAGEでフィットネス・スポーツ業界のオンライン展開を完全攻略。ジム運営からパーソナルトレーニングまで、会員管理・予約システム・オンライン指導で売上5倍を実現する実践的手法を詳しく解説します。",
+      "categories": [
+        "フィットネス・スポーツ",
+        "メール・LINE配信",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-fp-lifeplan-consultation.html",
+      "title": "FPのUTAGE活用｜ライフプラン診断と個別相談予約システム",
+      "description": "FPにおけるUTAGE活用でライフプラン診断と個別相談予約システムを自動化し、顧客の人生設計支援と継続的な関係構築を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-free-trial-guide.html",
+      "title": "UTAGEの無料お試し期間を最大限活用する方法｜14日間でマスターする手順",
+      "description": "UTAGEの14日間無料お試し期間を効率的に活用して、オールインワンマーケティングツールをマスターする具体的な手順とチェックリストを詳しく解説します。",
+      "categories": [
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-funnel-guide.html",
+      "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+      "description": "UTAGEのファネル機能を活用して売れるセールスファネルを構築する完全ガイド。TOFU・MOFU・BOFUの各段階での最適化から、コンバージョン向上のテクニックまで詳しく解説します。",
+      "categories": [
+        "ファネル・LP機能",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-funnel-seo-strategy.html",
+      "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法",
+      "description": "UTAGEファネルのSEO対策を徹底解説。検索エンジンからの集客を増やすランディングページ最適化、metaタグ設定、コンテンツ戦略まで実践的な方法をご紹介します。",
+      "categories": [
+        "ファネル・LP機能"
+      ]
+    },
+    {
+      "file": "article-utage-funnel-vs-clickfunnels.html",
+      "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+      "description": "UTAGEファネルとClickFunnelsの機能・価格を徹底比較。日本語サポート、導入コスト、使いやすさなど多角的に分析し、最適なファネル構築ツールの選び方を解説します。",
+      "categories": [
+        "ファネル・LP機能",
+        "比較・選定"
+      ]
+    },
+    {
+      "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+      "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+      "description": "ゴルフスクールにおけるUTAGE活用で体験レッスン予約とゴルフレッスン動画販売を自動化し、2025年問題対応と収益最大化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール",
+        "フィットネス・スポーツ",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-health-center-consultation-screening.html",
+      "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+      "description": "保健所におけるUTAGE活用で健康相談予約と検診案内の自動配信を実現し、2025年デジタル社会推進と住民健康サービス向上を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "医療・健康"
+      ]
+    },
+    {
+      "file": "article-utage-hellowork-employment-seminar-consultation.html",
+      "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+      "description": "ハローワークにおけるUTAGE導入で就職支援セミナーと個別相談予約を自動化し、求職者サービスの向上と就職活動の効率化を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-hospital-nurse-recruitment.html",
+      "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+      "description": "病院の看護師採用におけるUTAGE戦略で説明会予約システムと採用後研修動画配信を自動化し、看護師確保と定着率向上を実現する方法を詳しく解説。",
+      "categories": [
+        "医療・健康",
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-hotel-ryokan-direct-booking.html",
+      "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典",
+      "description": "ホテル・旅館におけるUTAGE導入で直接予約促進とリピーター特典を自動化し、OTA依存脱却とRevPAR向上を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "観光・飲食",
+        "予約システム"
+      ]
+    },
+    {
+      "file": "article-utage-internship-recruitment-system.html",
+      "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+      "description": "インターン募集におけるUTAGE活用で先輩社員の声動画と業務日報管理システムを構築し、効果的なインターン採用と育成の自動化を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-it-engineer-recruitment.html",
+      "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整",
+      "description": "IT企業のエンジニア採用におけるUTAGE戦略で技術テスト実施と面接調整を自動化し、優秀なエンジニア確保と効率的な採用プロセスを実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-japanese-language-school.html",
+      "title": "日本語学校のUTAGE導入｜オンライン説明会と入学手続き案内",
+      "description": "日本語学校におけるUTAGE活用でオンライン説明会と入学手続き案内を自動化し、外国人留学生の獲得と入学プロセスの効率化を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-judicial-scrivener-inheritance-diagnosis.html",
+      "title": "司法書士のUTAGE活用｜相続診断チェックと無料相談誘導",
+      "description": "司法書士におけるUTAGE活用で相続診断チェックと無料相談誘導を自動化し、相続手続き支援の効率化と顧客獲得を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-kindergarten-trial-newsletter.html",
+      "title": "幼児教室のUTAGE｜体験会予約と育児情報メルマガ配信",
+      "description": "幼児教室におけるUTAGE活用で体験会予約と育児情報メルマガ配信を自動化し、新規生徒獲得と保護者満足度向上を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-label-automation.html",
+      "title": "UTAGEのラベル機能活用術｜読者管理を自動化して売上アップする方法",
+      "description": "UTAGEのラベル機能を活用した読者管理自動化テクニックを徹底解説。セグメント配信から行動分析まで、売上向上に直結する実践的な活用方法をプロが伝授します。",
+      "categories": [
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-landing-page-guide.html",
+      "title": "UTAGEでランディングページ作成｜成約率10%超えのLP制作術",
+      "description": "UTAGEを使って成約率10%超えを実現するランディングページの作り方を徹底解説。効果的なLP制作のポイントからデザインのコツまで、実践的なノウハウをお伝えします。",
+      "categories": [
+        "ファネル・LP機能",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-lawyer-consultation-estimate-automation.html",
+      "title": "弁護士事務所のUTAGE｜初回相談予約と料金見積もり自動化",
+      "description": "弁護士事務所におけるUTAGE活用で初回相談予約と料金見積もりを自動化し、新規顧客獲得と業務効率化を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル",
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-learning-academy-trial-lessons.html",
+      "title": "学習塾のUTAGE導入｜体験授業予約と保護者向け情報配信",
+      "description": "学習塾におけるUTAGE導入で体験授業予約と保護者向け情報配信を自動化し、集客力向上と信頼関係構築を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-legal-professionals-online-system.html",
+      "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+      "description": "UTAGEを活用した士業（税理士・行政書士）のオンライン集客システム構築方法を詳細解説。顧客管理から自動化まで、信頼獲得と継続的な顧客関係構築で売上3倍を実現する実践的戦略をご紹介します。",
+      "categories": [
+        "メール・LINE配信",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-line-delivery-guide.html",
+      "title": "UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで",
+      "description": "UTAGEでLINE配信を始めるための完全ガイド。LINE公式アカウント連携の設定から配信設定まで、具体的な手順を画面キャプチャ付きで詳しく解説します。",
+      "categories": [
+        "メール・LINE配信",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-line-step-delivery.html",
+      "title": "UTAGEでLINEステップ配信を作る方法｜CVR20%超えのシナリオ構築術",
+      "description": "UTAGEでLINEステップ配信を構築し、CVR20%超えを実現するシナリオ設計術を詳しく解説。効果的な配信タイミングと心理学に基づくメッセージ設計で成果を最大化する方法をお教えします。",
+      "categories": [
+        "メール・LINE配信"
+      ]
+    },
+    {
+      "file": "article-utage-local-business-digital-transformation.html",
+      "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+      "description": "UTAGEで地方ビジネスのデジタル変革を完全実現。地域密着型企業の顧客基盤拡大から売上向上まで、地方創生に貢献するデジタルマーケティング成功事例を詳しく解説します。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+      "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+      "description": "結婚相談所におけるUTAGE導入で無料相談予約と会員への婚活ノウハウ共有システムを自動化し、成婚率向上と事業収益最大化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-membership-site-manual.html",
+      "title": "UTAGE会員サイト作成完全マニュアル｜初心者でも本格的な会員サイトを構築",
+      "description": "UTAGE会員サイト作成の完全マニュアル。初心者でも本格的なオンラインスクール・講座サイトを構築できる手順を詳しく解説。テンプレート活用・段階的コンテンツ配信・決済連携まで包括的にガイドします。",
+      "categories": [
+        "決済・会員制",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-merits-demerits-2.html",
+      "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+      "description": "UTAGE（ウタゲ）導入を検討中の方へ。メリット・デメリットを詳しく解説。実際の利用者の声を元に、導入後の成功と失敗のポイントをわかりやすく説明します。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-mid-career-recruitment-strategy.html",
+      "title": "中途採用のUTAGE戦略｜会社説明用動画配信と面接日程調整システム",
+      "description": "中途採用におけるUTAGE戦略で会社説明用動画配信と面接日程調整システムを構築し、効率的な採用プロセスと優秀な人材獲得を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-mobile-optimization.html",
+      "title": "UTAGEのモバイル最適化｜スマホファーストなページ作成のコツ",
+      "description": "UTAGEでスマホファーストなページを作成する方法を徹底解説。モバイル最適化のテクニックからコンバージョン率向上のコツまで、実践的なノウハウをご紹介します。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-multistep-funnel.html",
+      "title": "UTAGEでマルチステップファネル｜複雑な商品販売の自動化システム",
+      "description": "UTAGEのマルチステップファネルで複雑な商品販売を完全自動化。条件分岐・セグメント配信・会員サイト機能を活用した高度な顧客育成システムの構築方法を詳しく解説します。",
+      "categories": [
+        "ファネル・LP機能"
+      ]
+    },
+    {
+      "file": "article-utage-municipality-resident-notification.html",
+      "title": "地方自治体のUTAGE活用｜住民向けお知らせ配信と各種申請受付",
+      "description": "地方自治体におけるUTAGE活用で住民向けお知らせ配信と各種申請受付を自動化し、行政DXとデジタル市民サービスの向上を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "公共・行政"
+      ]
+    },
+    {
+      "file": "article-utage-municipality-staff-recruitment.html",
+      "title": "自治体職員採用のUTAGE｜仕事案内動画サイト構築と採用後の研修動画サイト構築",
+      "description": "自治体職員採用におけるUTAGE戦略で仕事案内動画サイトの構築と採用後研修動画配信システムを自動化し、人材確保と職員定着率向上を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材",
+        "公共・行政"
+      ]
+    },
+    {
+      "file": "article-utage-music-school-trial-lessons.html",
+      "title": "音楽教室のUTAGE戦略｜体験レッスン集客と発表会案内配信",
+      "description": "音楽教室におけるUTAGE戦略で体験レッスン集客と発表会案内配信を自動化し、生徒数増加と継続率向上を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-new-graduate-recruitment.html",
+      "title": "新卒採用のUTAGE活用｜会社説明用動画配信とエントリー受付の自動化",
+      "description": "新卒採用におけるUTAGE活用で会社説明用動画配信とエントリー受付を自動化し、採用効率の向上と優秀な人材の獲得を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-nursing-home-tour-booking-automation.html",
+      "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+      "description": "介護施設におけるUTAGE活用で見学予約受付と資料請求を自動化し、入居相談から契約まで一貫したサポートシステムを構築する方法を詳しく解説。",
+      "categories": [
+        "医療・健康",
+        "自動化・管理",
+        "予約システム"
+      ]
+    },
+    {
+      "file": "article-utage-obstetrics-maternity-class-automation.html",
+      "title": "産婦人科のUTAGE導入｜マタニティクラス予約とフォローメール",
+      "description": "産婦人科におけるUTAGE導入でマタニティクラス予約とフォローメール自動化を実現し、妊産婦の満足度向上と業務効率化を同時に達成する方法を詳しく解説。",
+      "categories": [
+        "医療・健康",
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-online-course-creation.html",
+      "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣",
+      "description": "UTAGEでオンライン講座を構築して受講生満足度90%を実現する方法を解説。会員サイト機能・コンテンツ配信・進捗管理まで、効果的なオンライン教育システムの構築手順をご紹介します。",
+      "categories": [
+        "メール・LINE配信",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-online-education-complete-guide.html",
+      "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+      "description": "UTAGEでオンライン教育・資格講座の完全運営システムを構築する方法を詳細解説。動画配信から進捗管理、自動化まで、受講生満足度95%を実現する実践的な運営ガイドをご紹介します。",
+      "categories": [
+        "教育・スクール",
+        "メール・LINE配信",
+        "オンライン教育・動画",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-optin-page-design.html",
+      "title": "UTAGEでオプトインページ作成｜リスト獲得率を5倍にする設計方法",
+      "description": "UTAGEを使ったオプトインページの作成方法を徹底解説。リスト獲得率を5倍にする設計のコツから実際の設定手順まで、成功事例をもとに具体的なテクニックをご紹介します。",
+      "categories": [
+        "ファネル・LP機能"
+      ]
+    },
+    {
+      "file": "article-utage-part-time-recruitment-automation.html",
+      "title": "アルバイト採用のUTAGE｜仕事紹介動画からオンライン面接セッティングまでの効率化",
+      "description": "アルバイト採用におけるUTAGE活用で仕事紹介動画からオンライン面接セッティングまでを自動化し、採用効率の向上と応募者数増加を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材",
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-payment-integration-guide.html",
+      "title": "UTAGE決済システム連携ガイド｜Stripe・UnivaPayなど主要決済の設定方法",
+      "description": "UTAGE決済システムの連携設定を完全解説。Stripe・UnivaPay・AQUAGATES・テレコムクレジットの設定手順から、安全な決済環境構築まで、実践的な連携ガイドをご紹介します。",
+      "categories": [
+        "決済・会員制",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+      "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売",
+      "description": "ペットホテルにおけるUTAGE活用で予約管理とペットケアノウハウ動画販売を自動化し、飼い主の安心確保と事業収益最大化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "観光・飲食",
+        "オンライン教育・動画",
+        "予約システム"
+      ]
+    },
+    {
+      "file": "article-utage-pharmacy-health-consultation.html",
+      "title": "薬局のUTAGE活用｜健康相談予約とサプリメント定期購入システム",
+      "description": "薬局におけるUTAGE活用で健康相談予約システムとサプリメント定期購入の自動化を実現し、地域密着型ヘルスケアサービスの向上を図る方法を詳しく解説。",
+      "categories": [
+        "医療・健康"
+      ]
+    },
+    {
+      "file": "article-utage-photo-studio-booking-photographer-training.html",
+      "title": "写真スタジオのUTAGE｜撮影予約とカメラマン養成講座の販売システム",
+      "description": "写真スタジオにおけるUTAGE活用で撮影予約とカメラマン養成講座の販売システムを自動化し、デジタル化対応と収益最大化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "予約システム"
+      ]
+    },
+    {
+      "file": "article-utage-pricing.html",
+      "title": "UTAGE（ウタゲ）料金プラン完全ガイド｜ライト・スタンダードどちらを選ぶべき？",
+      "description": "UTAGE（ウタゲ）の料金プランについて詳しく解説。ライトプランとスタンダードプランの違い、機能比較、どちらを選ぶべきかわかりやすく説明します。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-programming-school-free-courses.html",
+      "title": "プログラミングスクールのUTAGE｜無料講座配信と本講座への誘導",
+      "description": "プログラミングスクールにおけるUTAGE活用で無料講座配信と本講座への効果的な誘導を実現し、受講生獲得と収益最大化を同時に達成する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-psychiatry-initial-consultation-questionnaire.html",
+      "title": "心療内科のUTAGE活用｜初診予約受付と問診票の事前送信",
+      "description": "心療内科におけるUTAGE活用で初診予約受付と問診票の事前送信を自動化し、患者の心理的負担軽減と診療効率向上を実現する方法を詳しく解説。",
+      "categories": [
+        "医療・健康"
+      ]
+    },
+    {
+      "file": "article-utage-qualification-prep-school.html",
+      "title": "資格予備校のUTAGE活用｜講座申込みと合格者インタビュー配信",
+      "description": "資格予備校におけるUTAGE活用で講座申込みと合格者インタビュー配信を自動化し、受講生獲得と成果の可視化を実現する方法を詳しく解説。",
+      "categories": [
+        "教育・スクール"
+      ]
+    },
+    {
+      "file": "article-utage-real-estate-digital-transformation.html",
+      "title": "UTAGEで不動産業界｜顧客育成から成約までのデジタル化手法",
+      "description": "UTAGEを活用した不動産業界のデジタル化完全ガイド。顧客育成から成約まで、マーケティングオートメーションで売上3倍を実現する実践的手法を詳しく解説します。",
+      "categories": [
+        "不動産"
+      ]
+    },
+    {
+      "file": "article-utage-real-estate-property-training.html",
+      "title": "不動産会社のUTAGE活用｜物件案内予約と新入社員研修用動画講座",
+      "description": "不動産会社におけるUTAGE活用で物件案内予約システムと新入社員研修用動画講座を自動化し、業務効率化と人材育成を同時に実現する方法を詳しく解説。",
+      "categories": [
+        "不動産"
+      ]
+    },
+    {
+      "file": "article-utage-rehabilitation-center-training-videos.html",
+      "title": "リハビリセンターのUTAGE活用｜自主トレ動画配信と進捗管理",
+      "description": "リハビリセンターにおけるUTAGE活用で自主トレ動画配信と進捗管理を自動化し、患者のモチベーション向上と継続的なリハビリ支援を実現する方法を詳しく解説。",
+      "categories": [
+        "医療・健康",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-reminder-system.html",
+      "title": "UTAGEリマインダー配信設定方法｜セミナー・イベント参加率を80%にする技",
+      "description": "UTAGEのリマインダー配信機能を活用してセミナー・イベント参加率を80%まで向上させる具体的設定方法とテクニックを詳しく解説。効果的なタイミングと内容で参加率を劇的に改善できます。",
+      "categories": [
+        "メール・LINE配信"
+      ]
+    },
+    {
+      "file": "article-utage-restaurant-reservation-member-menu.html",
+      "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内",
+      "description": "レストランにおけるUTAGE活用で予約管理と会員限定メニュー案内を自動化し、顧客リテンション向上と売上最大化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "観光・飲食",
+        "予約システム"
+      ]
+    },
+    {
+      "file": "article-utage-sales-page-psychology.html",
+      "title": "UTAGEのセールスページ作成術｜心理学を活用した売れるページの法則",
+      "description": "UTAGEを使ったセールスページ作成の心理学テクニックを徹底解説。人間の購買心理に基づいた売れるページの設計方法から具体的な実装手順まで、成功事例をもとにご紹介します。",
+      "categories": [
+        "ファネル・LP機能"
+      ]
+    },
+    {
+      "file": "article-utage-seitai-clinic-management.html",
+      "title": "整体院・接骨院のUTAGE導入｜回数券販売と顧客管理の自動化",
+      "description": "整体院・接骨院におけるUTAGE導入で回数券販売と顧客管理を自動化し、業務効率化とリピート率向上を実現する具体的な方法を詳しく解説。",
+      "categories": [
+        "医療・健康",
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-sme-consultant-subsidy-guide.html",
+      "title": "中小企業診断士のUTAGE導入｜補助金情報配信と申請サポート",
+      "description": "中小企業診断士におけるUTAGE活用で補助金情報配信と申請サポートを自動化し、2026年法改正対応と企業の事業成長支援を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル",
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-sr-firm-labor-diagnosis.html",
+      "title": "社会保険労務士法人のUTAGE｜労務診断と顧問契約提案",
+      "description": "社会保険労務士法人におけるUTAGE活用で労務診断と顧問契約提案を自動化し、2025年法改正対応と企業の労務管理支援を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-sr-subsidy-diagnosis-consultation.html",
+      "title": "社労士のUTAGE導入｜助成金診断ツールと個別相談予約",
+      "description": "社労士におけるUTAGE導入で助成金診断ツールと個別相談予約を自動化し、労務管理支援の効率化と顧客満足度向上を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-staffing-company-management.html",
+      "title": "派遣会社のUTAGE導入｜スタッフ登録管理と仕事情報の自動配信",
+      "description": "派遣会社におけるUTAGE導入でスタッフ登録管理と仕事情報の自動配信システムを構築し、業務効率化とマッチング精度向上を実現する方法を詳しく解説。",
+      "categories": [
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-step-mail-course.html",
+      "title": "UTAGEステップメール作成講座｜成約率を3倍にする配信シナリオの組み方",
+      "description": "UTAGE（ウタゲ）のステップメール機能で成約率を3倍にする配信シナリオの作り方を徹底解説。効果的なメールシナリオ設計、配信タイミング、成功事例まで初心者にもわかりやすく紹介します。",
+      "categories": [
+        "メール・LINE配信",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-student-management.html",
+      "title": "UTAGEで受講生管理｜進捗確認・コミュニケーション機能の活用法",
+      "description": "UTAGEの受講生管理機能を徹底解説。進捗確認からコメント機能、自動フォロー配信まで、受講生満足度向上と継続率アップに直結する効果的な活用方法をご紹介します。",
+      "categories": [
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-subscription-business.html",
+      "title": "UTAGEで定期課金システム｜サブスクリプションビジネスの始め方",
+      "description": "UTAGEの定期課金システムを活用したサブスクリプションビジネスの始め方を完全解説。継続課金設定から顧客管理、売上最大化まで、安定収益を生み出すサブスクビジネス構築法をご紹介します。",
+      "categories": [
+        "決済・会員制"
+      ]
+    },
+    {
+      "file": "article-utage-support-guide.html",
+      "title": "UTAGEサポート体制完全ガイド｜困った時の問い合わせ方法と活用術",
+      "description": "オールインワンマーケティングツール「Utage（ウタゲ）」のサポート体制、問い合わせ方法、活用術を徹底解説。安心してUtageを利用するための情報をまとめました。",
+      "categories": [
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-tax-office-consultation-conversion.html",
+      "title": "税理士事務所のUTAGE活用｜無料相談予約と顧問契約への誘導",
+      "description": "税理士事務所におけるUTAGE活用で無料相談予約と顧問契約への誘導を自動化し、新規顧客獲得と売上向上を実現する方法を詳しく解説。",
+      "categories": [
+        "士業・コンサル"
+      ]
+    },
+    {
+      "file": "article-utage-teacher-recruitment-strategy.html",
+      "title": "教員採用のUTAGE戦略｜職場紹介動画配信サイト構築とオンライン面接受付システム",
+      "description": "教員採用におけるUTAGE戦略で職場紹介動画配信サイトとオンライン面接受付システムを構築し、優秀な教員確保と効率的な採用活動を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材"
+      ]
+    },
+    {
+      "file": "article-utage-template-guide.html",
+      "title": "UTAGEのテンプレート活用法｜プロ級のページを10分で作る方法",
+      "description": "UTAGEのテンプレート機能を活用して、プロ級のランディングページやセールスページをわずか10分で作成する方法を徹底解説。初心者でも簡単に高品質なページが作れるテクニックをご紹介します。",
+      "categories": [
+        "ガイド・設定"
+      ]
+    },
+    {
+      "file": "article-utage-thanks-page-upsell.html",
+      "title": "UTAGEでサンクスページ活用｜アップセル・クロスセルで単価アップ",
+      "description": "UTAGEのサンクスページを活用したアップセル・クロスセル戦略を徹底解説。購入後の満足度を活かして客単価を向上させる具体的な設定方法とテクニックをご紹介します。",
+      "categories": [
+        "その他"
+      ]
+    },
+    {
+      "file": "article-utage-tourism-association-tour-booking.html",
+      "title": "観光協会のUTAGE活用｜観光情報配信とガイドツアー予約",
+      "description": "観光協会におけるUTAGE活用で観光情報配信とガイドツアー予約を自動化し、観光DXと地域活性化を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "観光・飲食",
+        "予約システム"
+      ]
+    },
+    {
+      "file": "article-utage-veterinary-clinic-vaccination-reminder.html",
+      "title": "動物病院のUTAGE戦略｜ワクチン接種リマインダーと健康情報配信",
+      "description": "動物病院におけるUTAGE戦略でワクチン接種リマインダーと健康情報配信を自動化し、飼い主の利便性向上と診療効率化を実現する方法を詳しく解説。",
+      "categories": [
+        "医療・健康",
+        "メール・LINE配信"
+      ]
+    },
+    {
+      "file": "article-utage-video-content-management.html",
+      "title": "UTAGEで動画コンテンツ管理｜1TBまでアップロード可能な活用術",
+      "description": "UTAGEの動画コンテンツ管理機能を徹底解説。1TBまでアップロード可能な大容量動画管理から視聴維持率分析、マーケティング連携まで効果的な活用術をご紹介します。",
+      "categories": [
+        "自動化・管理",
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-visiting-nurse-schedule-management.html",
+      "title": "訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理",
+      "description": "訪問看護ステーションにおけるUTAGE活用で利用者連絡と訪問スケジュール管理を自動化し、業務効率化と直行直帰の実現を図る方法を詳しく解説。",
+      "categories": [
+        "自動化・管理"
+      ]
+    },
+    {
+      "file": "article-utage-vs-comparison-new.html",
+      "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い",
+      "description": "UTAGE、マイスピー、エキスパ、Lステップの違いを徹底比較。機能・料金・特徴の違いから最適なマーケティングツールを選ぶポイントを解説します。",
+      "categories": [
+        "比較・選定"
+      ]
+    },
+    {
+      "file": "article-utage-vs-comparison.html",
+      "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い",
+      "description": "UTAGE、マイスピー、エキスパ、Lステップの違いを徹底比較。機能・料金・特徴の違いから最適なマーケティングツールを選ぶポイントを解説します。",
+      "categories": [
+        "比較・選定"
+      ]
+    },
+    {
+      "file": "article-utage-vs-myasp-email-comparison.html",
+      "title": "UTAGE vs マイスピー｜メール配信機能を徹底比較してみた結果",
+      "description": "UTAGEとマイスピーのメール配信機能を徹底比較。配信性能、料金、機能の違いを詳しく解説し、あなたのビジネスに最適なツール選択をサポートします。",
+      "categories": [
+        "メール・LINE配信",
+        "比較・選定"
+      ]
+    },
+    {
+      "file": "article-utage-vs-teachable-comparison.html",
+      "title": "UTAGE会員サイト vs Teachable｜オンライン教育プラットフォーム比較",
+      "description": "UTAGE会員サイトとTeachableを徹底比較。料金・機能・サポート・日本語対応など、オンライン教育プラットフォーム選択の重要ポイントを詳しく解説します。",
+      "categories": [
+        "比較・選定"
+      ]
+    },
+    {
+      "file": "article-utage-webinar-registration-page.html",
+      "title": "UTAGEでウェビナー登録ページ｜参加率65%超えの仕組み作り",
+      "description": "UTAGEのオートウェビナー機能を活用して参加率65%超えを実現するウェビナー登録ページの構築方法を解説。リマインダー配信、登録フォーム最適化、自動化システムの設定まで詳しく説明します。",
+      "categories": [
+        "オンライン教育・動画"
+      ]
+    },
+    {
+      "file": "article-utage-welfare-facility-recruitment.html",
+      "title": "福祉施設の職員採用UTAGE｜施設案内動画サイト構築と外国人向け教育用サイト構築",
+      "description": "福祉施設の職員採用におけるUTAGE戦略で施設案内動画サイトと外国人向け教育用サイトを構築し、人材確保と多文化共生の職場環境を実現する方法を詳しく解説。",
+      "categories": [
+        "採用・人材",
+        "公共・行政"
+      ]
+    },
+    {
+      "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+      "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売",
+      "description": "ヨガスタジオにおけるUTAGE戦略でクラス予約とオンラインレッスン販売を自動化し、ハイブリッド型サービスと継続率向上を効率的に実現する方法を詳しく解説。",
+      "categories": [
+        "フィットネス・スポーツ",
+        "メール・LINE配信",
+        "オンライン教育・動画",
+        "予約システム"
+      ]
+    }
+  ],
+  "categoryMap": {
+    "士業・コンサル": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付"
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付"
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化"
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン"
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線"
+      },
+      {
+        "file": "article-utage-fp-lifeplan-consultation.html",
+        "title": "FPのUTAGE活用｜ライフプラン診断と個別相談予約システム"
+      },
+      {
+        "file": "article-utage-judicial-scrivener-inheritance-diagnosis.html",
+        "title": "司法書士のUTAGE活用｜相続診断チェックと無料相談誘導"
+      },
+      {
+        "file": "article-utage-lawyer-consultation-estimate-automation.html",
+        "title": "弁護士事務所のUTAGE｜初回相談予約と料金見積もり自動化"
+      },
+      {
+        "file": "article-utage-sme-consultant-subsidy-guide.html",
+        "title": "中小企業診断士のUTAGE導入｜補助金情報配信と申請サポート"
+      },
+      {
+        "file": "article-utage-sr-firm-labor-diagnosis.html",
+        "title": "社会保険労務士法人のUTAGE｜労務診断と顧問契約提案"
+      },
+      {
+        "file": "article-utage-sr-subsidy-diagnosis-consultation.html",
+        "title": "社労士のUTAGE導入｜助成金診断ツールと個別相談予約"
+      },
+      {
+        "file": "article-utage-tax-office-consultation-conversion.html",
+        "title": "税理士事務所のUTAGE活用｜無料相談予約と顧問契約への誘導"
+      }
+    ],
+    "医療・健康": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化"
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法"
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成"
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信"
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信"
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化"
+      },
+      {
+        "file": "article-utage-obstetrics-maternity-class-automation.html",
+        "title": "産婦人科のUTAGE導入｜マタニティクラス予約とフォローメール"
+      },
+      {
+        "file": "article-utage-pharmacy-health-consultation.html",
+        "title": "薬局のUTAGE活用｜健康相談予約とサプリメント定期購入システム"
+      },
+      {
+        "file": "article-utage-psychiatry-initial-consultation-questionnaire.html",
+        "title": "心療内科のUTAGE活用｜初診予約受付と問診票の事前送信"
+      },
+      {
+        "file": "article-utage-rehabilitation-center-training-videos.html",
+        "title": "リハビリセンターのUTAGE活用｜自主トレ動画配信と進捗管理"
+      },
+      {
+        "file": "article-utage-seitai-clinic-management.html",
+        "title": "整体院・接骨院のUTAGE導入｜回数券販売と顧客管理の自動化"
+      },
+      {
+        "file": "article-utage-veterinary-clinic-vaccination-reminder.html",
+        "title": "動物病院のUTAGE戦略｜ワクチン接種リマインダーと健康情報配信"
+      }
+    ],
+    "教育・スクール": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付"
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約"
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化"
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム"
+      },
+      {
+        "file": "article-utage-english-school-level-check.html",
+        "title": "英会話スクールのUTAGE活用｜レベルチェック予約と教材販売"
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売"
+      },
+      {
+        "file": "article-utage-japanese-language-school.html",
+        "title": "日本語学校のUTAGE導入｜オンライン説明会と入学手続き案内"
+      },
+      {
+        "file": "article-utage-kindergarten-trial-newsletter.html",
+        "title": "幼児教室のUTAGE｜体験会予約と育児情報メルマガ配信"
+      },
+      {
+        "file": "article-utage-learning-academy-trial-lessons.html",
+        "title": "学習塾のUTAGE導入｜体験授業予約と保護者向け情報配信"
+      },
+      {
+        "file": "article-utage-music-school-trial-lessons.html",
+        "title": "音楽教室のUTAGE戦略｜体験レッスン集客と発表会案内配信"
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド"
+      },
+      {
+        "file": "article-utage-programming-school-free-courses.html",
+        "title": "プログラミングスクールのUTAGE｜無料講座配信と本講座への誘導"
+      },
+      {
+        "file": "article-utage-qualification-prep-school.html",
+        "title": "資格予備校のUTAGE活用｜講座申込みと合格者インタビュー配信"
+      }
+    ],
+    "その他": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信"
+      },
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例"
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム"
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント"
+      },
+      {
+        "file": "article-utage-mobile-optimization.html",
+        "title": "UTAGEのモバイル最適化｜スマホファーストなページ作成のコツ"
+      },
+      {
+        "file": "article-utage-pricing.html",
+        "title": "UTAGE（ウタゲ）料金プラン完全ガイド｜ライト・スタンダードどちらを選ぶべき？"
+      },
+      {
+        "file": "article-utage-thanks-page-upsell.html",
+        "title": "UTAGEでサンクスページ活用｜アップセル・クロスセルで単価アップ"
+      }
+    ],
+    "ファネル・LP機能": [
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化"
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線"
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方"
+      },
+      {
+        "file": "article-utage-funnel-seo-strategy.html",
+        "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法"
+      },
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較"
+      },
+      {
+        "file": "article-utage-landing-page-guide.html",
+        "title": "UTAGEでランディングページ作成｜成約率10%超えのLP制作術"
+      },
+      {
+        "file": "article-utage-multistep-funnel.html",
+        "title": "UTAGEでマルチステップファネル｜複雑な商品販売の自動化システム"
+      },
+      {
+        "file": "article-utage-optin-page-design.html",
+        "title": "UTAGEでオプトインページ作成｜リスト獲得率を5倍にする設計方法"
+      },
+      {
+        "file": "article-utage-sales-page-psychology.html",
+        "title": "UTAGEのセールスページ作成術｜心理学を活用した売れるページの法則"
+      }
+    ],
+    "自動化・管理": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化"
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術"
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化"
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで"
+      },
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化"
+      },
+      {
+        "file": "article-utage-label-automation.html",
+        "title": "UTAGEのラベル機能活用術｜読者管理を自動化して売上アップする方法"
+      },
+      {
+        "file": "article-utage-lawyer-consultation-estimate-automation.html",
+        "title": "弁護士事務所のUTAGE｜初回相談予約と料金見積もり自動化"
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化"
+      },
+      {
+        "file": "article-utage-obstetrics-maternity-class-automation.html",
+        "title": "産婦人科のUTAGE導入｜マタニティクラス予約とフォローメール"
+      },
+      {
+        "file": "article-utage-part-time-recruitment-automation.html",
+        "title": "アルバイト採用のUTAGE｜仕事紹介動画からオンライン面接セッティングまでの効率化"
+      },
+      {
+        "file": "article-utage-seitai-clinic-management.html",
+        "title": "整体院・接骨院のUTAGE導入｜回数券販売と顧客管理の自動化"
+      },
+      {
+        "file": "article-utage-staffing-company-management.html",
+        "title": "派遣会社のUTAGE導入｜スタッフ登録管理と仕事情報の自動配信"
+      },
+      {
+        "file": "article-utage-student-management.html",
+        "title": "UTAGEで受講生管理｜進捗確認・コミュニケーション機能の活用法"
+      },
+      {
+        "file": "article-utage-video-content-management.html",
+        "title": "UTAGEで動画コンテンツ管理｜1TBまでアップロード可能な活用術"
+      },
+      {
+        "file": "article-utage-visiting-nurse-schedule-management.html",
+        "title": "訪問看護ステーションのUTAGE｜利用者連絡と訪問スケジュール管理"
+      }
+    ],
+    "オンライン教育・動画": [
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術"
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約"
+      },
+      {
+        "file": "article-utage-corporate-training-elearning.html",
+        "title": "社内研修のUTAGE導入｜eラーニング配信と受講管理"
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開"
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売"
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム"
+      },
+      {
+        "file": "article-utage-online-course-creation.html",
+        "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣"
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド"
+      },
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売"
+      },
+      {
+        "file": "article-utage-programming-school-free-courses.html",
+        "title": "プログラミングスクールのUTAGE｜無料講座配信と本講座への誘導"
+      },
+      {
+        "file": "article-utage-rehabilitation-center-training-videos.html",
+        "title": "リハビリセンターのUTAGE活用｜自主トレ動画配信と進捗管理"
+      },
+      {
+        "file": "article-utage-step-mail-course.html",
+        "title": "UTAGEステップメール作成講座｜成約率を3倍にする配信シナリオの組み方"
+      },
+      {
+        "file": "article-utage-video-content-management.html",
+        "title": "UTAGEで動画コンテンツ管理｜1TBまでアップロード可能な活用術"
+      },
+      {
+        "file": "article-utage-webinar-registration-page.html",
+        "title": "UTAGEでウェビナー登録ページ｜参加率65%超えの仕組み作り"
+      },
+      {
+        "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+        "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売"
+      }
+    ],
+    "フィットネス・スポーツ": [
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化"
+      },
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化"
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開"
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売"
+      },
+      {
+        "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+        "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売"
+      }
+    ],
+    "ガイド・設定": [
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル"
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法"
+      },
+      {
+        "file": "article-utage-free-trial-guide.html",
+        "title": "UTAGEの無料お試し期間を最大限活用する方法｜14日間でマスターする手順"
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方"
+      },
+      {
+        "file": "article-utage-landing-page-guide.html",
+        "title": "UTAGEでランディングページ作成｜成約率10%超えのLP制作術"
+      },
+      {
+        "file": "article-utage-line-delivery-guide.html",
+        "title": "UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで"
+      },
+      {
+        "file": "article-utage-membership-site-manual.html",
+        "title": "UTAGE会員サイト作成完全マニュアル｜初心者でも本格的な会員サイトを構築"
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド"
+      },
+      {
+        "file": "article-utage-payment-integration-guide.html",
+        "title": "UTAGE決済システム連携ガイド｜Stripe・UnivaPayなど主要決済の設定方法"
+      },
+      {
+        "file": "article-utage-sme-consultant-subsidy-guide.html",
+        "title": "中小企業診断士のUTAGE導入｜補助金情報配信と申請サポート"
+      },
+      {
+        "file": "article-utage-support-guide.html",
+        "title": "UTAGEサポート体制完全ガイド｜困った時の問い合わせ方法と活用術"
+      },
+      {
+        "file": "article-utage-template-guide.html",
+        "title": "UTAGEのテンプレート活用法｜プロ級のページを10分で作る方法"
+      }
+    ],
+    "公共・行政": [
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム"
+      },
+      {
+        "file": "article-utage-fire-department-disaster-prevention.html",
+        "title": "消防署のUTAGE活用｜防災情報配信と消防署員への動画講習"
+      },
+      {
+        "file": "article-utage-municipality-resident-notification.html",
+        "title": "地方自治体のUTAGE活用｜住民向けお知らせ配信と各種申請受付"
+      },
+      {
+        "file": "article-utage-municipality-staff-recruitment.html",
+        "title": "自治体職員採用のUTAGE｜仕事案内動画サイト構築と採用後の研修動画サイト構築"
+      },
+      {
+        "file": "article-utage-welfare-facility-recruitment.html",
+        "title": "福祉施設の職員採用UTAGE｜施設案内動画サイト構築と外国人向け教育用サイト構築"
+      }
+    ],
+    "メール・LINE配信": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法"
+      },
+      {
+        "file": "article-utage-email-spam-prevention.html",
+        "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣"
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開"
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム"
+      },
+      {
+        "file": "article-utage-line-delivery-guide.html",
+        "title": "UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで"
+      },
+      {
+        "file": "article-utage-line-step-delivery.html",
+        "title": "UTAGEでLINEステップ配信を作る方法｜CVR20%超えのシナリオ構築術"
+      },
+      {
+        "file": "article-utage-online-course-creation.html",
+        "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣"
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド"
+      },
+      {
+        "file": "article-utage-reminder-system.html",
+        "title": "UTAGEリマインダー配信設定方法｜セミナー・イベント参加率を80%にする技"
+      },
+      {
+        "file": "article-utage-step-mail-course.html",
+        "title": "UTAGEステップメール作成講座｜成約率を3倍にする配信シナリオの組み方"
+      },
+      {
+        "file": "article-utage-veterinary-clinic-vaccination-reminder.html",
+        "title": "動物病院のUTAGE戦略｜ワクチン接種リマインダーと健康情報配信"
+      },
+      {
+        "file": "article-utage-vs-myasp-email-comparison.html",
+        "title": "UTAGE vs マイスピー｜メール配信機能を徹底比較してみた結果"
+      },
+      {
+        "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+        "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売"
+      }
+    ],
+    "決済・会員制": [
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化"
+      },
+      {
+        "file": "article-utage-membership-site-manual.html",
+        "title": "UTAGE会員サイト作成完全マニュアル｜初心者でも本格的な会員サイトを構築"
+      },
+      {
+        "file": "article-utage-payment-integration-guide.html",
+        "title": "UTAGE決済システム連携ガイド｜Stripe・UnivaPayなど主要決済の設定方法"
+      },
+      {
+        "file": "article-utage-subscription-business.html",
+        "title": "UTAGEで定期課金システム｜サブスクリプションビジネスの始め方"
+      }
+    ],
+    "比較・選定": [
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較"
+      },
+      {
+        "file": "article-utage-vs-comparison-new.html",
+        "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い"
+      },
+      {
+        "file": "article-utage-vs-comparison.html",
+        "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い"
+      },
+      {
+        "file": "article-utage-vs-myasp-email-comparison.html",
+        "title": "UTAGE vs マイスピー｜メール配信機能を徹底比較してみた結果"
+      },
+      {
+        "file": "article-utage-vs-teachable-comparison.html",
+        "title": "UTAGE会員サイト vs Teachable｜オンライン教育プラットフォーム比較"
+      }
+    ],
+    "採用・人材": [
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約"
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信"
+      },
+      {
+        "file": "article-utage-internship-recruitment-system.html",
+        "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化"
+      },
+      {
+        "file": "article-utage-it-engineer-recruitment.html",
+        "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整"
+      },
+      {
+        "file": "article-utage-mid-career-recruitment-strategy.html",
+        "title": "中途採用のUTAGE戦略｜会社説明用動画配信と面接日程調整システム"
+      },
+      {
+        "file": "article-utage-municipality-staff-recruitment.html",
+        "title": "自治体職員採用のUTAGE｜仕事案内動画サイト構築と採用後の研修動画サイト構築"
+      },
+      {
+        "file": "article-utage-new-graduate-recruitment.html",
+        "title": "新卒採用のUTAGE活用｜会社説明用動画配信とエントリー受付の自動化"
+      },
+      {
+        "file": "article-utage-part-time-recruitment-automation.html",
+        "title": "アルバイト採用のUTAGE｜仕事紹介動画からオンライン面接セッティングまでの効率化"
+      },
+      {
+        "file": "article-utage-teacher-recruitment-strategy.html",
+        "title": "教員採用のUTAGE戦略｜職場紹介動画配信サイト構築とオンライン面接受付システム"
+      },
+      {
+        "file": "article-utage-welfare-facility-recruitment.html",
+        "title": "福祉施設の職員採用UTAGE｜施設案内動画サイト構築と外国人向け教育用サイト構築"
+      }
+    ],
+    "観光・飲食": [
+      {
+        "file": "article-utage-hotel-ryokan-direct-booking.html",
+        "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典"
+      },
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売"
+      },
+      {
+        "file": "article-utage-restaurant-reservation-member-menu.html",
+        "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内"
+      },
+      {
+        "file": "article-utage-tourism-association-tour-booking.html",
+        "title": "観光協会のUTAGE活用｜観光情報配信とガイドツアー予約"
+      }
+    ],
+    "予約システム": [
+      {
+        "file": "article-utage-hotel-ryokan-direct-booking.html",
+        "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典"
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化"
+      },
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売"
+      },
+      {
+        "file": "article-utage-photo-studio-booking-photographer-training.html",
+        "title": "写真スタジオのUTAGE｜撮影予約とカメラマン養成講座の販売システム"
+      },
+      {
+        "file": "article-utage-restaurant-reservation-member-menu.html",
+        "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内"
+      },
+      {
+        "file": "article-utage-tourism-association-tour-booking.html",
+        "title": "観光協会のUTAGE活用｜観光情報配信とガイドツアー予約"
+      },
+      {
+        "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+        "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売"
+      }
+    ],
+    "不動産": [
+      {
+        "file": "article-utage-real-estate-digital-transformation.html",
+        "title": "UTAGEで不動産業界｜顧客育成から成約までのデジタル化手法"
+      },
+      {
+        "file": "article-utage-real-estate-property-training.html",
+        "title": "不動産会社のUTAGE活用｜物件案内予約と新入社員研修用動画講座"
+      }
+    ]
+  },
+  "relatedArticles": {
+    "article-utage-accounting-cloud-bookkeeping.html": [
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-administrative-scrivener-license-permit.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-beauty-clinic-strategy.html": [
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-beauty-health-digital-marketing.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-calligraphy-school-strategy.html": [
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-english-school-level-check.html",
+        "title": "英会話スクールのUTAGE活用｜レベルチェック予約と教材販売",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-chamber-commerce-seminar-member.html": [
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-mobile-optimization.html",
+        "title": "UTAGEのモバイル最適化｜スマホファーストなページ作成のコツ",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-checkout-optimization.html": [
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-seo-strategy.html",
+        "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      }
+    ],
+    "article-utage-coaching-business-automation.html": [
+      {
+        "file": "article-utage-lawyer-consultation-estimate-automation.html",
+        "title": "弁護士事務所のUTAGE｜初回相談予約と料金見積もり自動化",
+        "score": 2,
+        "commonCategories": [
+          "士業・コンサル",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-consultant-success-patterns.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-consulting-diagnosis-funnel.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-content-management.html": [
+      {
+        "file": "article-utage-video-content-management.html",
+        "title": "UTAGEで動画コンテンツ管理｜1TBまでアップロード可能な活用術",
+        "score": 2,
+        "commonCategories": [
+          "自動化・管理",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-corporate-training-elearning.html",
+        "title": "社内研修のUTAGE導入｜eラーニング配信と受講管理",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-cooking-school-recipe-videos.html": [
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-programming-school-free-courses.html",
+        "title": "プログラミングスクールのUTAGE｜無料講座配信と本講座への誘導",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-corporate-training-elearning.html": [
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-dance-school-automation.html": [
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化",
+        "score": 2,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "フィットネス・スポーツ"
+        ]
+      },
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-dental-clinic-patient-follow-up.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-domain-dkim-spf-setup.html": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-free-trial-guide.html",
+        "title": "UTAGEの無料お試し期間を最大限活用する方法｜14日間でマスターする手順",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-landing-page-guide.html",
+        "title": "UTAGEでランディングページ作成｜成約率10%超えのLP制作術",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      }
+    ],
+    "article-utage-education-committee-parent-notification.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-english-school-level-check.html",
+        "title": "英会話スクールのUTAGE活用｜レベルチェック予約と教材販売",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-email-setup.html": [
+      {
+        "file": "article-utage-line-delivery-guide.html",
+        "title": "UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-spam-prevention.html",
+        "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      }
+    ],
+    "article-utage-email-spam-prevention.html": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-line-delivery-guide.html",
+        "title": "UTAGE LINE配信完全ガイド｜公式アカウント連携から配信まで",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      }
+    ],
+    "article-utage-english-school-level-check.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-event-management-automation.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-fire-department-disaster-prevention.html": [
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-municipality-resident-notification.html",
+        "title": "地方自治体のUTAGE活用｜住民向けお知らせ配信と各種申請受付",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-municipality-staff-recruitment.html",
+        "title": "自治体職員採用のUTAGE｜仕事案内動画サイト構築と採用後の研修動画サイト構築",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-welfare-facility-recruitment.html",
+        "title": "福祉施設の職員採用UTAGE｜施設案内動画サイト構築と外国人向け教育用サイト構築",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      }
+    ],
+    "article-utage-fitness-gym-trial-membership-automation.html": [
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 2,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-fitness-sports-online-expansion.html": [
+      {
+        "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+        "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売",
+        "score": 3,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 2,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-course-creation.html",
+        "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-fp-lifeplan-consultation.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-free-trial-guide.html": [
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-landing-page-guide.html",
+        "title": "UTAGEでランディングページ作成｜成約率10%超えのLP制作術",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      }
+    ],
+    "article-utage-funnel-guide.html": [
+      {
+        "file": "article-utage-landing-page-guide.html",
+        "title": "UTAGEでランディングページ作成｜成約率10%超えのLP制作術",
+        "score": 2,
+        "commonCategories": [
+          "ファネル・LP機能",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      }
+    ],
+    "article-utage-funnel-seo-strategy.html": [
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      }
+    ],
+    "article-utage-funnel-vs-clickfunnels.html": [
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-seo-strategy.html",
+        "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      }
+    ],
+    "article-utage-golf-school-trial-lesson-video-sales.html": [
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "フィットネス・スポーツ"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 2,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-health-center-consultation-screening.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-hellowork-employment-seminar-consultation.html": [
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-internship-recruitment-system.html",
+        "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-it-engineer-recruitment.html",
+        "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-mid-career-recruitment-strategy.html",
+        "title": "中途採用のUTAGE戦略｜会社説明用動画配信と面接日程調整システム",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-hospital-nurse-recruitment.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-hotel-ryokan-direct-booking.html": [
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-restaurant-reservation-member-menu.html",
+        "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-tourism-association-tour-booking.html",
+        "title": "観光協会のUTAGE活用｜観光情報配信とガイドツアー予約",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      }
+    ],
+    "article-utage-internship-recruitment-system.html": [
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-it-engineer-recruitment.html",
+        "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-mid-career-recruitment-strategy.html",
+        "title": "中途採用のUTAGE戦略｜会社説明用動画配信と面接日程調整システム",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-it-engineer-recruitment.html": [
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-internship-recruitment-system.html",
+        "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-mid-career-recruitment-strategy.html",
+        "title": "中途採用のUTAGE戦略｜会社説明用動画配信と面接日程調整システム",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-japanese-language-school.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-judicial-scrivener-inheritance-diagnosis.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-kindergarten-trial-newsletter.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-label-automation.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-landing-page-guide.html": [
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 2,
+        "commonCategories": [
+          "ファネル・LP機能",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      }
+    ],
+    "article-utage-lawyer-consultation-estimate-automation.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 2,
+        "commonCategories": [
+          "士業・コンサル",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-learning-academy-trial-lessons.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-legal-professionals-online-system.html": [
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-course-creation.html",
+        "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-step-mail-course.html",
+        "title": "UTAGEステップメール作成講座｜成約率を3倍にする配信シナリオの組み方",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-line-delivery-guide.html": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-spam-prevention.html",
+        "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      }
+    ],
+    "article-utage-line-step-delivery.html": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-email-spam-prevention.html",
+        "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      }
+    ],
+    "article-utage-local-business-digital-transformation.html": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-mobile-optimization.html",
+        "title": "UTAGEのモバイル最適化｜スマホファーストなページ作成のコツ",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-marriage-agency-consultation-matchmaking-knowledge.html": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-mobile-optimization.html",
+        "title": "UTAGEのモバイル最適化｜スマホファーストなページ作成のコツ",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-membership-site-manual.html": [
+      {
+        "file": "article-utage-payment-integration-guide.html",
+        "title": "UTAGE決済システム連携ガイド｜Stripe・UnivaPayなど主要決済の設定方法",
+        "score": 2,
+        "commonCategories": [
+          "決済・会員制",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化",
+        "score": 1,
+        "commonCategories": [
+          "決済・会員制"
+        ]
+      }
+    ],
+    "article-utage-merits-demerits-2.html": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-mobile-optimization.html",
+        "title": "UTAGEのモバイル最適化｜スマホファーストなページ作成のコツ",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-mid-career-recruitment-strategy.html": [
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-internship-recruitment-system.html",
+        "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-it-engineer-recruitment.html",
+        "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-mobile-optimization.html": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-multistep-funnel.html": [
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-seo-strategy.html",
+        "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      }
+    ],
+    "article-utage-municipality-resident-notification.html": [
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-fire-department-disaster-prevention.html",
+        "title": "消防署のUTAGE活用｜防災情報配信と消防署員への動画講習",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-municipality-staff-recruitment.html",
+        "title": "自治体職員採用のUTAGE｜仕事案内動画サイト構築と採用後の研修動画サイト構築",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-welfare-facility-recruitment.html",
+        "title": "福祉施設の職員採用UTAGE｜施設案内動画サイト構築と外国人向け教育用サイト構築",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      }
+    ],
+    "article-utage-municipality-staff-recruitment.html": [
+      {
+        "file": "article-utage-welfare-facility-recruitment.html",
+        "title": "福祉施設の職員採用UTAGE｜施設案内動画サイト構築と外国人向け教育用サイト構築",
+        "score": 2,
+        "commonCategories": [
+          "採用・人材",
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-fire-department-disaster-prevention.html",
+        "title": "消防署のUTAGE活用｜防災情報配信と消防署員への動画講習",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-music-school-trial-lessons.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-new-graduate-recruitment.html": [
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-internship-recruitment-system.html",
+        "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-it-engineer-recruitment.html",
+        "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-nursing-home-tour-booking-automation.html": [
+      {
+        "file": "article-utage-obstetrics-maternity-class-automation.html",
+        "title": "産婦人科のUTAGE導入｜マタニティクラス予約とフォローメール",
+        "score": 2,
+        "commonCategories": [
+          "医療・健康",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-seitai-clinic-management.html",
+        "title": "整体院・接骨院のUTAGE導入｜回数券販売と顧客管理の自動化",
+        "score": 2,
+        "commonCategories": [
+          "医療・健康",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-obstetrics-maternity-class-automation.html": [
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+        "score": 2,
+        "commonCategories": [
+          "医療・健康",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-seitai-clinic-management.html",
+        "title": "整体院・接骨院のUTAGE導入｜回数券販売と顧客管理の自動化",
+        "score": 2,
+        "commonCategories": [
+          "医療・健康",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-online-course-creation.html": [
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-step-mail-course.html",
+        "title": "UTAGEステップメール作成講座｜成約率を3倍にする配信シナリオの組み方",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-online-education-complete-guide.html": [
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-optin-page-design.html": [
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-seo-strategy.html",
+        "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      }
+    ],
+    "article-utage-part-time-recruitment-automation.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-payment-integration-guide.html": [
+      {
+        "file": "article-utage-membership-site-manual.html",
+        "title": "UTAGE会員サイト作成完全マニュアル｜初心者でも本格的な会員サイトを構築",
+        "score": 2,
+        "commonCategories": [
+          "決済・会員制",
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化",
+        "score": 1,
+        "commonCategories": [
+          "決済・会員制"
+        ]
+      }
+    ],
+    "article-utage-pet-hotel-booking-care-video-sales.html": [
+      {
+        "file": "article-utage-hotel-ryokan-direct-booking.html",
+        "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-restaurant-reservation-member-menu.html",
+        "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-tourism-association-tour-booking.html",
+        "title": "観光協会のUTAGE活用｜観光情報配信とガイドツアー予約",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-yoga-studio-class-booking-online-lessons.html",
+        "title": "ヨガスタジオのUTAGE戦略｜クラス予約とオンラインレッスン販売",
+        "score": 2,
+        "commonCategories": [
+          "オンライン教育・動画",
+          "予約システム"
+        ]
+      }
+    ],
+    "article-utage-pharmacy-health-consultation.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-photo-studio-booking-photographer-training.html": [
+      {
+        "file": "article-utage-hotel-ryokan-direct-booking.html",
+        "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-restaurant-reservation-member-menu.html",
+        "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      }
+    ],
+    "article-utage-pricing.html": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-programming-school-free-courses.html": [
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "教育・スクール",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-psychiatry-initial-consultation-questionnaire.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-health-center-consultation-screening.html",
+        "title": "保健所のUTAGE｜健康相談予約と検診案内の自動配信",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-qualification-prep-school.html": [
+      {
+        "file": "article-utage-calligraphy-school-strategy.html",
+        "title": "書道教室のUTAGE戦略｜お手本動画配信と通信添削受付",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "教育・スクール"
+        ]
+      }
+    ],
+    "article-utage-real-estate-digital-transformation.html": [
+      {
+        "file": "article-utage-real-estate-property-training.html",
+        "title": "不動産会社のUTAGE活用｜物件案内予約と新入社員研修用動画講座",
+        "score": 1,
+        "commonCategories": [
+          "不動産"
+        ]
+      }
+    ],
+    "article-utage-real-estate-property-training.html": [
+      {
+        "file": "article-utage-real-estate-digital-transformation.html",
+        "title": "UTAGEで不動産業界｜顧客育成から成約までのデジタル化手法",
+        "score": 1,
+        "commonCategories": [
+          "不動産"
+        ]
+      }
+    ],
+    "article-utage-rehabilitation-center-training-videos.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-reminder-system.html": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-email-spam-prevention.html",
+        "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      }
+    ],
+    "article-utage-restaurant-reservation-member-menu.html": [
+      {
+        "file": "article-utage-hotel-ryokan-direct-booking.html",
+        "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-tourism-association-tour-booking.html",
+        "title": "観光協会のUTAGE活用｜観光情報配信とガイドツアー予約",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      }
+    ],
+    "article-utage-sales-page-psychology.html": [
+      {
+        "file": "article-utage-checkout-optimization.html",
+        "title": "UTAGEの決済ページ設定｜離脱率を下げるチェックアウト最適化",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-consulting-diagnosis-funnel.html",
+        "title": "コンサルティング会社のUTAGE｜無料診断から有料コンサルへの導線",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-seo-strategy.html",
+        "title": "UTAGEファネルのSEO対策｜検索エンジンからの集客を増やす方法",
+        "score": 1,
+        "commonCategories": [
+          "ファネル・LP機能"
+        ]
+      }
+    ],
+    "article-utage-seitai-clinic-management.html": [
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+        "score": 2,
+        "commonCategories": [
+          "医療・健康",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-obstetrics-maternity-class-automation.html",
+        "title": "産婦人科のUTAGE導入｜マタニティクラス予約とフォローメール",
+        "score": 2,
+        "commonCategories": [
+          "医療・健康",
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      }
+    ],
+    "article-utage-sme-consultant-subsidy-guide.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-sr-firm-labor-diagnosis.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-sr-subsidy-diagnosis-consultation.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-staffing-company-management.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-step-mail-course.html": [
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-course-creation.html",
+        "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-education-complete-guide.html",
+        "title": "UTAGE活用法｜オンライン教育・資格講座運営者のための完全ガイド",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-student-management.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-subscription-business.html": [
+      {
+        "file": "article-utage-fitness-gym-trial-membership-automation.html",
+        "title": "フィットネスジムのUTAGE｜体験予約と入会キャンペーン自動化",
+        "score": 1,
+        "commonCategories": [
+          "決済・会員制"
+        ]
+      },
+      {
+        "file": "article-utage-membership-site-manual.html",
+        "title": "UTAGE会員サイト作成完全マニュアル｜初心者でも本格的な会員サイトを構築",
+        "score": 1,
+        "commonCategories": [
+          "決済・会員制"
+        ]
+      },
+      {
+        "file": "article-utage-payment-integration-guide.html",
+        "title": "UTAGE決済システム連携ガイド｜Stripe・UnivaPayなど主要決済の設定方法",
+        "score": 1,
+        "commonCategories": [
+          "決済・会員制"
+        ]
+      }
+    ],
+    "article-utage-support-guide.html": [
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-free-trial-guide.html",
+        "title": "UTAGEの無料お試し期間を最大限活用する方法｜14日間でマスターする手順",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      }
+    ],
+    "article-utage-tax-office-consultation-conversion.html": [
+      {
+        "file": "article-utage-accounting-cloud-bookkeeping.html",
+        "title": "会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-administrative-scrivener-license-permit.html",
+        "title": "行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      },
+      {
+        "file": "article-utage-consultant-success-patterns.html",
+        "title": "UTAGE活用事例｜コンサルタント業界での売上アップ成功パターン",
+        "score": 1,
+        "commonCategories": [
+          "士業・コンサル"
+        ]
+      }
+    ],
+    "article-utage-teacher-recruitment-strategy.html": [
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-hospital-nurse-recruitment.html",
+        "title": "病院の看護師採用UTAGE活用｜説明会予約受け付けと採用後の研修動画配信",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-internship-recruitment-system.html",
+        "title": "インターン募集のUTAGE活用｜先輩社員の声動画と業務日報管理のシステム化",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      },
+      {
+        "file": "article-utage-it-engineer-recruitment.html",
+        "title": "IT企業のエンジニア採用UTAGE｜技術テスト実施と面接調整",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-template-guide.html": [
+      {
+        "file": "article-utage-domain-dkim-spf-setup.html",
+        "title": "UTAGEメール配信の独自ドメイン設定｜DKIM・SPF設定完全マニュアル",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-free-trial-guide.html",
+        "title": "UTAGEの無料お試し期間を最大限活用する方法｜14日間でマスターする手順",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-guide.html",
+        "title": "UTAGEファネル機能完全ガイド｜売れるセールスファネルの作り方",
+        "score": 1,
+        "commonCategories": [
+          "ガイド・設定"
+        ]
+      }
+    ],
+    "article-utage-thanks-page-upsell.html": [
+      {
+        "file": "article-utage-chamber-commerce-seminar-member.html",
+        "title": "商工会議所のUTAGE｜セミナー集客と会員企業向け情報配信",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-local-business-digital-transformation.html",
+        "title": "UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "title": "結婚相談所のUTAGE導入｜無料相談予約と会員への婚活ノウハウ共有システム",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      },
+      {
+        "file": "article-utage-merits-demerits-2.html",
+        "title": "UTAGEのメリット・デメリット｜導入前に知っておくべき重要ポイント",
+        "score": 1,
+        "commonCategories": [
+          "その他"
+        ]
+      }
+    ],
+    "article-utage-tourism-association-tour-booking.html": [
+      {
+        "file": "article-utage-hotel-ryokan-direct-booking.html",
+        "title": "ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-pet-hotel-booking-care-video-sales.html",
+        "title": "ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-restaurant-reservation-member-menu.html",
+        "title": "レストランのUTAGE活用｜予約管理と会員限定メニュー案内",
+        "score": 2,
+        "commonCategories": [
+          "観光・飲食",
+          "予約システム"
+        ]
+      },
+      {
+        "file": "article-utage-nursing-home-tour-booking-automation.html",
+        "title": "介護施設のUTAGE｜見学予約受付と資料請求の自動化",
+        "score": 1,
+        "commonCategories": [
+          "予約システム"
+        ]
+      }
+    ],
+    "article-utage-veterinary-clinic-vaccination-reminder.html": [
+      {
+        "file": "article-utage-beauty-clinic-strategy.html",
+        "title": "美容クリニックのUTAGE戦略｜カウンセリング予約とアフターケア自動化",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-beauty-health-digital-marketing.html",
+        "title": "UTAGE活用事例｜美容・健康業界でのデジタルマーケティング成功法",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-dental-clinic-patient-follow-up.html",
+        "title": "歯科医院のUTAGE活用｜予約管理と患者フォローで再診率70%達成",
+        "score": 1,
+        "commonCategories": [
+          "医療・健康"
+        ]
+      },
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      }
+    ],
+    "article-utage-video-content-management.html": [
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 2,
+        "commonCategories": [
+          "自動化・管理",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-corporate-training-elearning.html",
+        "title": "社内研修のUTAGE導入｜eラーニング配信と受講管理",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-visiting-nurse-schedule-management.html": [
+      {
+        "file": "article-utage-coaching-business-automation.html",
+        "title": "UTAGEでコーチングビジネス｜個人指導の予約・決済・フォロー自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-dance-school-automation.html",
+        "title": "ダンススクールのUTAGE活用｜体験予約と月謝決済の自動化",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      },
+      {
+        "file": "article-utage-event-management-automation.html",
+        "title": "UTAGEでイベント運営｜セミナー・ワークショップの集客から決済まで",
+        "score": 1,
+        "commonCategories": [
+          "自動化・管理"
+        ]
+      }
+    ],
+    "article-utage-vs-comparison-new.html": [
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-comparison.html",
+        "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-myasp-email-comparison.html",
+        "title": "UTAGE vs マイスピー｜メール配信機能を徹底比較してみた結果",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-teachable-comparison.html",
+        "title": "UTAGE会員サイト vs Teachable｜オンライン教育プラットフォーム比較",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      }
+    ],
+    "article-utage-vs-comparison.html": [
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-comparison-new.html",
+        "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-myasp-email-comparison.html",
+        "title": "UTAGE vs マイスピー｜メール配信機能を徹底比較してみた結果",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-teachable-comparison.html",
+        "title": "UTAGE会員サイト vs Teachable｜オンライン教育プラットフォーム比較",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      }
+    ],
+    "article-utage-vs-myasp-email-comparison.html": [
+      {
+        "file": "article-utage-email-setup.html",
+        "title": "UTAGEメール配信機能の使い方｜初心者でも5分で設定完了する方法",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-email-spam-prevention.html",
+        "title": "UTAGEメール配信で迷惑メール扱いされない設定方法｜到達率向上の秘訣",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 1,
+        "commonCategories": [
+          "メール・LINE配信"
+        ]
+      },
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      }
+    ],
+    "article-utage-vs-teachable-comparison.html": [
+      {
+        "file": "article-utage-funnel-vs-clickfunnels.html",
+        "title": "UTAGEファネル vs ClickFunnels｜海外ツールとの機能・価格比較",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-comparison-new.html",
+        "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-comparison.html",
+        "title": "UTAGE vs 他社ツール徹底比較｜マイスピー・エキスパ・Lステップとの違い",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      },
+      {
+        "file": "article-utage-vs-myasp-email-comparison.html",
+        "title": "UTAGE vs マイスピー｜メール配信機能を徹底比較してみた結果",
+        "score": 1,
+        "commonCategories": [
+          "比較・選定"
+        ]
+      }
+    ],
+    "article-utage-webinar-registration-page.html": [
+      {
+        "file": "article-utage-content-management.html",
+        "title": "UTAGE会員サイトのコンテンツ管理｜効率的な更新・整理術",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-cooking-school-recipe-videos.html",
+        "title": "料理教室のUTAGE｜レシピ動画配信と単発レッスン予約",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-corporate-training-elearning.html",
+        "title": "社内研修のUTAGE導入｜eラーニング配信と受講管理",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 1,
+        "commonCategories": [
+          "オンライン教育・動画"
+        ]
+      }
+    ],
+    "article-utage-welfare-facility-recruitment.html": [
+      {
+        "file": "article-utage-municipality-staff-recruitment.html",
+        "title": "自治体職員採用のUTAGE｜仕事案内動画サイト構築と採用後の研修動画サイト構築",
+        "score": 2,
+        "commonCategories": [
+          "採用・人材",
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-education-committee-parent-notification.html",
+        "title": "教育委員会のUTAGE｜保護者向け通知と教育相談予約システム",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-fire-department-disaster-prevention.html",
+        "title": "消防署のUTAGE活用｜防災情報配信と消防署員への動画講習",
+        "score": 1,
+        "commonCategories": [
+          "公共・行政"
+        ]
+      },
+      {
+        "file": "article-utage-hellowork-employment-seminar-consultation.html",
+        "title": "ハローワークのUTAGE導入｜就職支援セミナーと個別相談予約",
+        "score": 1,
+        "commonCategories": [
+          "採用・人材"
+        ]
+      }
+    ],
+    "article-utage-yoga-studio-class-booking-online-lessons.html": [
+      {
+        "file": "article-utage-fitness-sports-online-expansion.html",
+        "title": "UTAGE活用事例｜フィットネス・スポーツ業界でのオンライン展開",
+        "score": 3,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-golf-school-trial-lesson-video-sales.html",
+        "title": "ゴルフスクールのUTAGE｜体験レッスン予約とゴルフレッスン動画販売",
+        "score": 2,
+        "commonCategories": [
+          "フィットネス・スポーツ",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-legal-professionals-online-system.html",
+        "title": "UTAGE活用法｜士業（税理士・行政書士）のオンライン集客システム",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      },
+      {
+        "file": "article-utage-online-course-creation.html",
+        "title": "UTAGEでオンライン講座を作る方法｜受講生満足度90%の秘訣",
+        "score": 2,
+        "commonCategories": [
+          "メール・LINE配信",
+          "オンライン教育・動画"
+        ]
+      }
+    ]
+  }
+}

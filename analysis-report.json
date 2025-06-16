@@ -1,0 +1,2257 @@
+{
+  "files": {
+    "html": [
+      "achievement/customer1.html",
+      "achievement/customer2.html",
+      "achievement/customer3.html",
+      "achievement/customer4.html",
+      "achievement/customer5.html",
+      "achievement/index.html",
+      "blog/article-utage-accounting-cloud-bookkeeping.html",
+      "blog/article-utage-administrative-scrivener-license-permit.html",
+      "blog/article-utage-beauty-clinic-strategy.html",
+      "blog/article-utage-beauty-health-digital-marketing.html",
+      "blog/article-utage-calligraphy-school-strategy.html",
+      "blog/article-utage-chamber-commerce-seminar-member.html",
+      "blog/article-utage-checkout-optimization.html",
+      "blog/article-utage-coaching-business-automation.html",
+      "blog/article-utage-consultant-success-patterns.html",
+      "blog/article-utage-consulting-diagnosis-funnel.html",
+      "blog/article-utage-content-management.html",
+      "blog/article-utage-cooking-school-recipe-videos.html",
+      "blog/article-utage-corporate-training-elearning.html",
+      "blog/article-utage-dance-school-automation.html",
+      "blog/article-utage-dental-clinic-patient-follow-up.html",
+      "blog/article-utage-domain-dkim-spf-setup.html",
+      "blog/article-utage-education-committee-parent-notification.html",
+      "blog/article-utage-email-setup.html",
+      "blog/article-utage-email-spam-prevention.html",
+      "blog/article-utage-english-school-level-check.html",
+      "blog/article-utage-event-management-automation.html",
+      "blog/article-utage-fire-department-disaster-prevention.html",
+      "blog/article-utage-fitness-gym-trial-membership-automation.html",
+      "blog/article-utage-fitness-sports-online-expansion.html",
+      "blog/article-utage-fp-lifeplan-consultation.html",
+      "blog/article-utage-free-trial-guide.html",
+      "blog/article-utage-funnel-guide.html",
+      "blog/article-utage-funnel-seo-strategy.html",
+      "blog/article-utage-funnel-vs-clickfunnels.html",
+      "blog/article-utage-golf-school-trial-lesson-video-sales.html",
+      "blog/article-utage-health-center-consultation-screening.html",
+      "blog/article-utage-hellowork-employment-seminar-consultation.html",
+      "blog/article-utage-hospital-nurse-recruitment.html",
+      "blog/article-utage-hotel-ryokan-direct-booking.html",
+      "blog/article-utage-internship-recruitment-system.html",
+      "blog/article-utage-it-engineer-recruitment.html",
+      "blog/article-utage-japanese-language-school.html",
+      "blog/article-utage-judicial-scrivener-inheritance-diagnosis.html",
+      "blog/article-utage-kindergarten-trial-newsletter.html",
+      "blog/article-utage-label-automation.html",
+      "blog/article-utage-landing-page-guide.html",
+      "blog/article-utage-lawyer-consultation-estimate-automation.html",
+      "blog/article-utage-learning-academy-trial-lessons.html",
+      "blog/article-utage-legal-professionals-online-system.html",
+      "blog/article-utage-line-delivery-guide.html",
+      "blog/article-utage-line-step-delivery.html",
+      "blog/article-utage-local-business-digital-transformation.html",
+      "blog/article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+      "blog/article-utage-membership-site-manual.html",
+      "blog/article-utage-merits-demerits-2.html",
+      "blog/article-utage-mid-career-recruitment-strategy.html",
+      "blog/article-utage-mobile-optimization.html",
+      "blog/article-utage-multistep-funnel.html",
+      "blog/article-utage-municipality-resident-notification.html",
+      "blog/article-utage-municipality-staff-recruitment.html",
+      "blog/article-utage-music-school-trial-lessons.html",
+      "blog/article-utage-new-graduate-recruitment.html",
+      "blog/article-utage-nursing-home-tour-booking-automation.html",
+      "blog/article-utage-obstetrics-maternity-class-automation.html",
+      "blog/article-utage-online-course-creation.html",
+      "blog/article-utage-online-education-complete-guide.html",
+      "blog/article-utage-optin-page-design.html",
+      "blog/article-utage-part-time-recruitment-automation.html",
+      "blog/article-utage-payment-integration-guide.html",
+      "blog/article-utage-pet-hotel-booking-care-video-sales.html",
+      "blog/article-utage-pharmacy-health-consultation.html",
+      "blog/article-utage-photo-studio-booking-photographer-training.html",
+      "blog/article-utage-pricing.html",
+      "blog/article-utage-programming-school-free-courses.html",
+      "blog/article-utage-psychiatry-initial-consultation-questionnaire.html",
+      "blog/article-utage-qualification-prep-school.html",
+      "blog/article-utage-real-estate-digital-transformation.html",
+      "blog/article-utage-real-estate-property-training.html",
+      "blog/article-utage-rehabilitation-center-training-videos.html",
+      "blog/article-utage-reminder-system.html",
+      "blog/article-utage-restaurant-reservation-member-menu.html",
+      "blog/article-utage-sales-page-psychology.html",
+      "blog/article-utage-seitai-clinic-management.html",
+      "blog/article-utage-sme-consultant-subsidy-guide.html",
+      "blog/article-utage-sr-firm-labor-diagnosis.html",
+      "blog/article-utage-sr-subsidy-diagnosis-consultation.html",
+      "blog/article-utage-staffing-company-management.html",
+      "blog/article-utage-step-mail-course.html",
+      "blog/article-utage-student-management.html",
+      "blog/article-utage-subscription-business.html",
+      "blog/article-utage-support-guide.html",
+      "blog/article-utage-tax-office-consultation-conversion.html",
+      "blog/article-utage-teacher-recruitment-strategy.html",
+      "blog/article-utage-template-guide.html",
+      "blog/article-utage-thanks-page-upsell.html",
+      "blog/article-utage-tourism-association-tour-booking.html",
+      "blog/article-utage-veterinary-clinic-vaccination-reminder.html",
+      "blog/article-utage-video-content-management.html",
+      "blog/article-utage-visiting-nurse-schedule-management.html",
+      "blog/article-utage-vs-comparison-new.html",
+      "blog/article-utage-vs-comparison.html",
+      "blog/article-utage-vs-myasp-email-comparison.html",
+      "blog/article-utage-vs-teachable-comparison.html",
+      "blog/article-utage-webinar-registration-page.html",
+      "blog/article-utage-welfare-facility-recruitment.html",
+      "blog/article-utage-yoga-studio-class-booking-online-lessons.html",
+      "blog/index.html",
+      "clear-cache.html",
+      "index.html",
+      "owner.html",
+      "privacy.html",
+      "terms.html",
+      "tokutei.html",
+      "tools/calc.html",
+      "tools/color-palette.html",
+      "tools/image-resize.html",
+      "tools/index.html",
+      "tools/letters-counter.html",
+      "tools/meme-generator.html",
+      "tools/png-jpeg-to-webp.html",
+      "tools/png-to-jpeg.html",
+      "tools/wareki-seireki.html"
+    ],
+    "css": [
+      "blog/myblog-style.css",
+      "css/common-hamburger.css",
+      "css/common-variables.css",
+      "css/style.css"
+    ],
+    "js": [
+      "achievement/achievement.js",
+      "add-japanese-titles-to-all.js",
+      "add-navigation.js",
+      "blog/blog-manager.js",
+      "blog/myblog-script.js",
+      "fix-skipped-files.js",
+      "js/common-cache.js",
+      "js/common-init.js",
+      "js/common-lazy-loading.js",
+      "js/main.js",
+      "project-analysis.js",
+      "service-worker.js",
+      "update-japanese-titles.js"
+    ],
+    "other": [
+      ".claude/settings.local.json",
+      ".github/workflows/deploy.yml",
+      ".gitignore",
+      ".htaccess",
+      "CONSOLIDATION_REPORT.md",
+      "README.md",
+      "assets/images/1.webp",
+      "assets/images/2.webp",
+      "assets/images/achieve-1.webp",
+      "assets/images/achieve-2.webp",
+      "assets/images/achieve-3.webp",
+      "assets/images/achieve-4.webp",
+      "assets/images/achieve-5.webp",
+      "assets/images/achieve-6.webp",
+      "assets/images/banner-pink.webp",
+      "assets/images/coaching-interview-advice.webp",
+      "assets/images/coaching-interview-approach.webp",
+      "assets/images/coaching-interview-challenge.webp",
+      "assets/images/coaching-interview-effect.webp",
+      "assets/images/coaching-interview-profile.webp",
+      "assets/images/coaching-interview-reason.webp",
+      "assets/images/course-slide-1.webp",
+      "assets/images/course-thumb-1.webp",
+      "assets/images/course-video.webp",
+      "assets/images/golf-interview-advice.webp",
+      "assets/images/golf-interview-challenge.webp",
+      "assets/images/golf-interview-effect.webp",
+      "assets/images/golf-interview-profile.webp",
+      "assets/images/golf-interview-reason.webp",
+      "assets/images/golf-interview-tips.webp",
+      "assets/images/hero-pc.webp",
+      "assets/images/hero-sp.webp",
+      "assets/images/interview-approach.webp",
+      "assets/images/interview-challenge.webp",
+      "assets/images/interview-effect.webp",
+      "assets/images/interview-message.webp",
+      "assets/images/interview-profile.webp",
+      "assets/images/interview-reason.webp",
+      "assets/images/it-subsidy-banner.webp",
+      "assets/images/logo-white.webp",
+      "assets/images/logo.webp",
+      "assets/images/marketing-interview-advice.webp",
+      "assets/images/marketing-interview-challenge.webp",
+      "assets/images/marketing-interview-effect.webp",
+      "assets/images/marketing-interview-profile.webp",
+      "assets/images/marketing-interview-reason.webp",
+      "assets/images/marketing-interview-strategy.webp",
+      "assets/images/medical-interview-advice.webp",
+      "assets/images/medical-interview-challenge.webp",
+      "assets/images/medical-interview-effect.webp",
+      "assets/images/medical-interview-message.webp",
+      "assets/images/medical-interview-profile.webp",
+      "assets/images/medical-interview-reason.webp",
+      "assets/images/profile-YUKI.webp",
+      "assets/images/profile-owner.webp",
+      "assets/images/profile-photo.webp",
+      "assets/images/profile-sidebar.webp",
+      "blog/BLOG_CREATION_GUIDE.md",
+      "blog/CSS_REFERENCE.md",
+      "blog/README.md",
+      "blog/UPDATED_BLOG_PROMPT.md",
+      "emergency-fix-loading.ps1",
+      "final-check-all.ps1",
+      "fix-all-english-titles-final.ps1",
+      "fix-all-loading-issues.ps1",
+      "fix-inconsistent-articles.ps1",
+      "fix-loading-final.ps1",
+      "restore-beautiful-design.ps1",
+      "robots.txt",
+      "sitemap.xml"
+    ]
+  },
+  "issues": {
+    "errors": [],
+    "duplicates": [
+      {
+        "file": "tools/calc.html",
+        "type": "duplicate_ids",
+        "ids": [
+          "${item.id}"
+        ]
+      }
+    ],
+    "conflicts": [],
+    "brokenLinks": [
+      {
+        "file": "achievement/customer1.html",
+        "link": "/css/style.css",
+        "resolvedPath": "/css/style.css"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/logo.webp",
+        "resolvedPath": "/assets/images/logo.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/achievement/",
+        "resolvedPath": "/achievement"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/achievement/customer2.html",
+        "resolvedPath": "/achievement/customer2.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/interview-profile.webp",
+        "resolvedPath": "/assets/images/interview-profile.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/interview-challenge.webp",
+        "resolvedPath": "/assets/images/interview-challenge.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/interview-reason.webp",
+        "resolvedPath": "/assets/images/interview-reason.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/interview-effect.webp",
+        "resolvedPath": "/assets/images/interview-effect.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/interview-message.webp",
+        "resolvedPath": "/assets/images/interview-message.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/assets/images/interview-approach.webp",
+        "resolvedPath": "/assets/images/interview-approach.webp"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/js/common-cache.js",
+        "resolvedPath": "/js/common-cache.js"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/js/common-lazy-loading.js",
+        "resolvedPath": "/js/common-lazy-loading.js"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/js/common-init.js",
+        "resolvedPath": "/js/common-init.js"
+      },
+      {
+        "file": "achievement/customer1.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/css/style.css",
+        "resolvedPath": "/css/style.css"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/images/favicon.ico",
+        "resolvedPath": "/images/favicon.ico"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/achievement/customer1.html",
+        "resolvedPath": "/achievement/customer1.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/achievement/customer3.html",
+        "resolvedPath": "/achievement/customer3.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/assets/images/golf-interview-profile.webp",
+        "resolvedPath": "/assets/images/golf-interview-profile.webp"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/assets/images/golf-interview-challenge.webp",
+        "resolvedPath": "/assets/images/golf-interview-challenge.webp"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/assets/images/golf-interview-reason.webp",
+        "resolvedPath": "/assets/images/golf-interview-reason.webp"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/assets/images/golf-interview-effect.webp",
+        "resolvedPath": "/assets/images/golf-interview-effect.webp"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/assets/images/golf-interview-advice.webp",
+        "resolvedPath": "/assets/images/golf-interview-advice.webp"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/assets/images/golf-interview-tips.webp",
+        "resolvedPath": "/assets/images/golf-interview-tips.webp"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/js/common-cache.js",
+        "resolvedPath": "/js/common-cache.js"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/js/common-lazy-loading.js",
+        "resolvedPath": "/js/common-lazy-loading.js"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/js/common-init.js",
+        "resolvedPath": "/js/common-init.js"
+      },
+      {
+        "file": "achievement/customer2.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/css/style.css",
+        "resolvedPath": "/css/style.css"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/images/favicon.ico",
+        "resolvedPath": "/images/favicon.ico"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/achievement/customer2.html",
+        "resolvedPath": "/achievement/customer2.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/achievement/customer4.html",
+        "resolvedPath": "/achievement/customer4.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/assets/images/marketing-interview-profile.webp",
+        "resolvedPath": "/assets/images/marketing-interview-profile.webp"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/assets/images/marketing-interview-challenge.webp",
+        "resolvedPath": "/assets/images/marketing-interview-challenge.webp"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/assets/images/marketing-interview-reason.webp",
+        "resolvedPath": "/assets/images/marketing-interview-reason.webp"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/assets/images/marketing-interview-effect.webp",
+        "resolvedPath": "/assets/images/marketing-interview-effect.webp"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/assets/images/marketing-interview-advice.webp",
+        "resolvedPath": "/assets/images/marketing-interview-advice.webp"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/assets/images/marketing-interview-strategy.webp",
+        "resolvedPath": "/assets/images/marketing-interview-strategy.webp"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/js/common-cache.js",
+        "resolvedPath": "/js/common-cache.js"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/js/common-lazy-loading.js",
+        "resolvedPath": "/js/common-lazy-loading.js"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/js/common-init.js",
+        "resolvedPath": "/js/common-init.js"
+      },
+      {
+        "file": "achievement/customer3.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/css/style.css",
+        "resolvedPath": "/css/style.css"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/images/favicon.ico",
+        "resolvedPath": "/images/favicon.ico"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/achievement/customer3.html",
+        "resolvedPath": "/achievement/customer3.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/achievement/customer5.html",
+        "resolvedPath": "/achievement/customer5.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/assets/images/coaching-interview-profile.webp",
+        "resolvedPath": "/assets/images/coaching-interview-profile.webp"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/assets/images/coaching-interview-challenge.webp",
+        "resolvedPath": "/assets/images/coaching-interview-challenge.webp"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/assets/images/coaching-interview-reason.webp",
+        "resolvedPath": "/assets/images/coaching-interview-reason.webp"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/assets/images/coaching-interview-effect.webp",
+        "resolvedPath": "/assets/images/coaching-interview-effect.webp"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/assets/images/coaching-interview-advice.webp",
+        "resolvedPath": "/assets/images/coaching-interview-advice.webp"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/assets/images/coaching-interview-approach.webp",
+        "resolvedPath": "/assets/images/coaching-interview-approach.webp"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/js/common-cache.js",
+        "resolvedPath": "/js/common-cache.js"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/js/common-lazy-loading.js",
+        "resolvedPath": "/js/common-lazy-loading.js"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/js/common-init.js",
+        "resolvedPath": "/js/common-init.js"
+      },
+      {
+        "file": "achievement/customer4.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/css/style.css",
+        "resolvedPath": "/css/style.css"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/images/favicon.ico",
+        "resolvedPath": "/images/favicon.ico"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/achievement/customer4.html",
+        "resolvedPath": "/achievement/customer4.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/achievement/customer1.html",
+        "resolvedPath": "/achievement/customer1.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/assets/images/medical-interview-profile.webp",
+        "resolvedPath": "/assets/images/medical-interview-profile.webp"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/assets/images/medical-interview-challenge.webp",
+        "resolvedPath": "/assets/images/medical-interview-challenge.webp"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/assets/images/medical-interview-reason.webp",
+        "resolvedPath": "/assets/images/medical-interview-reason.webp"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/assets/images/medical-interview-effect.webp",
+        "resolvedPath": "/assets/images/medical-interview-effect.webp"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/assets/images/medical-interview-advice.webp",
+        "resolvedPath": "/assets/images/medical-interview-advice.webp"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/assets/images/medical-interview-message.webp",
+        "resolvedPath": "/assets/images/medical-interview-message.webp"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/js/common-cache.js",
+        "resolvedPath": "/js/common-cache.js"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/js/common-lazy-loading.js",
+        "resolvedPath": "/js/common-lazy-loading.js"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/js/common-init.js",
+        "resolvedPath": "/js/common-init.js"
+      },
+      {
+        "file": "achievement/customer5.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/css/style.css",
+        "resolvedPath": "/css/style.css"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/customer1.html",
+        "resolvedPath": "/achievement/customer1.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/customer2.html",
+        "resolvedPath": "/achievement/customer2.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/customer3.html",
+        "resolvedPath": "/achievement/customer3.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/customer4.html",
+        "resolvedPath": "/achievement/customer4.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/customer5.html",
+        "resolvedPath": "/achievement/customer5.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/assets/images/achieve-1.webp",
+        "resolvedPath": "/assets/images/achieve-1.webp"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/assets/images/achieve-2.webp",
+        "resolvedPath": "/assets/images/achieve-2.webp"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/assets/images/achieve-3.webp",
+        "resolvedPath": "/assets/images/achieve-3.webp"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/assets/images/achieve-4.webp",
+        "resolvedPath": "/assets/images/achieve-4.webp"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/assets/images/achieve-5.webp",
+        "resolvedPath": "/assets/images/achieve-5.webp"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/js/common-cache.js",
+        "resolvedPath": "/js/common-cache.js"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/js/common-lazy-loading.js",
+        "resolvedPath": "/js/common-lazy-loading.js"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/js/common-init.js",
+        "resolvedPath": "/js/common-init.js"
+      },
+      {
+        "file": "achievement/index.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "blog/article-utage-accounting-cloud-bookkeeping.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-administrative-scrivener-license-permit.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-beauty-clinic-strategy.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-calligraphy-school-strategy.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-chamber-commerce-seminar-member.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-coaching-business-automation.html",
+        "link": "article-utage-customer-journey-optimization.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-customer-journey-optimization.html"
+      },
+      {
+        "file": "blog/article-utage-consulting-diagnosis-funnel.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-cooking-school-recipe-videos.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-corporate-training-elearning.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-dance-school-automation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-dental-clinic-patient-follow-up.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-dental-clinic-patient-follow-up.html",
+        "link": "article-utage-medical-interview-advice.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-medical-interview-advice.html"
+      },
+      {
+        "file": "blog/article-utage-dental-clinic-patient-follow-up.html",
+        "link": "article-utage-customer-management.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-customer-management.html"
+      },
+      {
+        "file": "blog/article-utage-education-committee-parent-notification.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-english-school-level-check.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-fire-department-disaster-prevention.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-fitness-gym-trial-membership-automation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-fp-lifeplan-consultation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-golf-school-trial-lesson-video-sales.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-health-center-consultation-screening.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-hellowork-employment-seminar-consultation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-hospital-nurse-recruitment.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-hospital-nurse-recruitment.html",
+        "link": "article-utage-medical-marketing-automation.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-medical-marketing-automation.html"
+      },
+      {
+        "file": "blog/article-utage-hotel-ryokan-direct-booking.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-internship-recruitment-system.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-internship-recruitment-system.html",
+        "link": "../js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "blog/article-utage-it-engineer-recruitment.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-japanese-language-school.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-judicial-scrivener-inheritance-diagnosis.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-kindergarten-trial-newsletter.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-lawyer-consultation-estimate-automation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-learning-academy-trial-lessons.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-marriage-agency-consultation-matchmaking-knowledge.html",
+        "link": "article-utage-event-planning-venue-coordination.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-event-planning-venue-coordination.html"
+      },
+      {
+        "file": "blog/article-utage-mid-career-recruitment-strategy.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-mid-career-recruitment-strategy.html",
+        "link": "../js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "blog/article-utage-municipality-resident-notification.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-municipality-staff-recruitment.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-music-school-trial-lessons.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-new-graduate-recruitment.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-new-graduate-recruitment.html",
+        "link": "../js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "blog/article-utage-nursing-home-tour-booking-automation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-obstetrics-maternity-class-automation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-part-time-recruitment-automation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-part-time-recruitment-automation.html",
+        "link": "../js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "blog/article-utage-pet-hotel-booking-care-video-sales.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-pharmacy-health-consultation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-photo-studio-booking-photographer-training.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-photo-studio-booking-photographer-training.html",
+        "link": "article-utage-art-gallery-exhibition-workshop.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-art-gallery-exhibition-workshop.html"
+      },
+      {
+        "file": "blog/article-utage-photo-studio-booking-photographer-training.html",
+        "link": "article-utage-music-lesson-instrument-rental.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-music-lesson-instrument-rental.html"
+      },
+      {
+        "file": "blog/article-utage-programming-school-free-courses.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-psychiatry-initial-consultation-questionnaire.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-qualification-prep-school.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-real-estate-property-training.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-real-estate-property-training.html",
+        "link": "../js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "blog/article-utage-rehabilitation-center-training-videos.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-restaurant-reservation-member-menu.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-seitai-clinic-management.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-seitai-clinic-management.html",
+        "link": "article-utage-customer-management.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-customer-management.html"
+      },
+      {
+        "file": "blog/article-utage-sme-consultant-subsidy-guide.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-sr-firm-labor-diagnosis.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-sr-subsidy-diagnosis-consultation.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-staffing-company-management.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-staffing-company-management.html",
+        "link": "../js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "blog/article-utage-tax-office-consultation-conversion.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-teacher-recruitment-strategy.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-tourism-association-tour-booking.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-veterinary-clinic-vaccination-reminder.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-visiting-nurse-schedule-management.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-visiting-nurse-schedule-management.html",
+        "link": "article-utage-medical-interview-advice.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/blog/article-utage-medical-interview-advice.html"
+      },
+      {
+        "file": "blog/article-utage-welfare-facility-recruitment.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "blog/article-utage-yoga-studio-class-booking-online-lessons.html",
+        "link": "../css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "index.html",
+        "link": "css/style.css?v=10001",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/css/style.css?v=10001"
+      },
+      {
+        "file": "index.html",
+        "link": "//fonts.googleapis.com",
+        "resolvedPath": "/fonts.googleapis.com"
+      },
+      {
+        "file": "index.html",
+        "link": "//fonts.gstatic.com",
+        "resolvedPath": "/fonts.gstatic.com"
+      },
+      {
+        "file": "index.html",
+        "link": "//cdnjs.cloudflare.com",
+        "resolvedPath": "/cdnjs.cloudflare.com"
+      },
+      {
+        "file": "index.html",
+        "link": "//cdn.jsdelivr.net",
+        "resolvedPath": "/cdn.jsdelivr.net"
+      },
+      {
+        "file": "index.html",
+        "link": "//utage-system.com",
+        "resolvedPath": "/utage-system.com"
+      },
+      {
+        "file": "index.html",
+        "link": "seminar/index.html",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/seminar/index.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/blog/article-utage-funnel-guide.html",
+        "resolvedPath": "/blog/article-utage-funnel-guide.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/blog/article-utage-landing-page-guide.html",
+        "resolvedPath": "/blog/article-utage-landing-page-guide.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/achievement/customer1.html",
+        "resolvedPath": "/achievement/customer1.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/blog/article-utage-pricing.html",
+        "resolvedPath": "/blog/article-utage-pricing.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/achievement/customer3.html",
+        "resolvedPath": "/achievement/customer3.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "index.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "index.html",
+        "link": "data:image/svg+xml,%3Csvg xmlns=",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/data:image/svg+xml,%3Csvg xmlns="
+      },
+      {
+        "file": "index.html",
+        "link": "data:image/svg+xml,%3Csvg xmlns=",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/data:image/svg+xml,%3Csvg xmlns="
+      },
+      {
+        "file": "index.html",
+        "link": "data:image/svg+xml,%3Csvg xmlns=",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/data:image/svg+xml,%3Csvg xmlns="
+      },
+      {
+        "file": "index.html",
+        "link": "data:image/svg+xml,%3Csvg xmlns=",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/data:image/svg+xml,%3Csvg xmlns="
+      },
+      {
+        "file": "index.html",
+        "link": "data:image/svg+xml,%3Csvg xmlns=",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/data:image/svg+xml,%3Csvg xmlns="
+      },
+      {
+        "file": "index.html",
+        "link": "data:image/svg+xml,%3Csvg xmlns=",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/data:image/svg+xml,%3Csvg xmlns="
+      },
+      {
+        "file": "index.html",
+        "link": "js/main.js?v=10000",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/js/main.js?v=10000"
+      },
+      {
+        "file": "terms.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "terms.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "tokutei.html",
+        "link": "/js/main.js",
+        "resolvedPath": "/js/main.js"
+      },
+      {
+        "file": "tools/calc.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/calc.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/calc.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/calc.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/color-palette.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/color-palette.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/color-palette.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/color-palette.html",
+        "link": "/js/include.js",
+        "resolvedPath": "/js/include.js"
+      },
+      {
+        "file": "tools/image-resize.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/image-resize.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/image-resize.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/image-resize.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/images/hero-bg.webp",
+        "resolvedPath": "/images/hero-bg.webp"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/index.html",
+        "resolvedPath": "/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/achievement/index.html",
+        "resolvedPath": "/achievement/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/tools/index.html",
+        "resolvedPath": "/tools/index.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/owner.html",
+        "resolvedPath": "/owner.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/terms.html",
+        "resolvedPath": "/terms.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/privacy.html",
+        "resolvedPath": "/privacy.html"
+      },
+      {
+        "file": "tools/index.html",
+        "link": "/tokutei.html",
+        "resolvedPath": "/tokutei.html"
+      },
+      {
+        "file": "tools/letters-counter.html",
+        "link": "/css/footer-hover.css",
+        "resolvedPath": "/css/footer-hover.css"
+      },
+      {
+        "file": "tools/letters-counter.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/letters-counter.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/letters-counter.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/letters-counter.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/letters-counter.html",
+        "link": "/js/include.js",
+        "resolvedPath": "/js/include.js"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "../tools/image-resize/",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/tools/image-resize"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "../tools/png-to-jpeg/",
+        "resolvedPath": "/mnt/c/Users/atara/Desktop/CLAN/tools/png-to-jpeg"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/meme-generator.html",
+        "link": "/js/include.js",
+        "resolvedPath": "/js/include.js"
+      },
+      {
+        "file": "tools/png-jpeg-to-webp.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/png-jpeg-to-webp.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/png-jpeg-to-webp.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/png-jpeg-to-webp.html",
+        "link": "/js/include.js",
+        "resolvedPath": "/js/include.js"
+      },
+      {
+        "file": "tools/png-jpeg-to-webp.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/png-to-jpeg.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/png-to-jpeg.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/png-to-jpeg.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/png-to-jpeg.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/png-to-jpeg.html",
+        "link": "/js/include.js",
+        "resolvedPath": "/js/include.js"
+      },
+      {
+        "file": "tools/wareki-seireki.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/wareki-seireki.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/wareki-seireki.html",
+        "link": "/blog/index.html",
+        "resolvedPath": "/blog/index.html"
+      },
+      {
+        "file": "tools/wareki-seireki.html",
+        "link": "/js/script.js",
+        "resolvedPath": "/js/script.js"
+      },
+      {
+        "file": "tools/wareki-seireki.html",
+        "link": "/js/include.js",
+        "resolvedPath": "/js/include.js"
+      }
+    ],
+    "cssIssues": [
+      {
+        "file": "blog/myblog-style.css",
+        "type": "duplicate_selectors",
+        "selectors": [
+          ".myblog-auto-image .myblog-auto-image-text",
+          ".myblog-nav-container",
+          ".myblog-article-card:hover",
+          ".myblog-pros-cons",
+          ".myblog-rank-badge",
+          ".myblog-page-title",
+          ".myblog-article-title",
+          ".myblog-content h2",
+          ".myblog-related-grid",
+          ".myblog-page-description",
+          ".myblog-filter-section",
+          ".myblog-filter-select",
+          ".myblog-article-card-meta",
+          ".myblog-article-card-image.myblog-auto-image::before",
+          ".myblog-pagination-numbers",
+          ".myblog-pagination-btn",
+          ".myblog-header-container",
+          ".myblog-nav-list",
+          ".myblog-nav-link",
+          ".myblog-social-links",
+          ".myblog-article-summary",
+          ".myblog-article-meta",
+          ".myblog-featured-image img",
+          ".myblog-toc-toggle",
+          ".myblog-toc-nav",
+          ".myblog-content h3",
+          ".myblog-link-card-image",
+          ".myblog-link-card-image img",
+          ".myblog-share-buttons",
+          ".myblog-share-btn",
+          ".myblog-footer-nav",
+          ".myblog-article-card-content",
+          ".myblog-article-card-title",
+          ".myblog-pagination-number",
+          ".myblog-quiz-options",
+          ".myblog-quiz-option",
+          ".myblog-container",
+          ".myblog-body"
+        ]
+      },
+      {
+        "file": "blog/myblog-style.css",
+        "type": "vendor_prefixes",
+        "count": 29
+      },
+      {
+        "file": "css/common-hamburger.css",
+        "type": "duplicate_selectors",
+        "selectors": [
+          ".myblog-nav",
+          ".common-hamburger span",
+          ".common-mobile-menu-content"
+        ]
+      },
+      {
+        "file": "css/common-hamburger.css",
+        "type": "vendor_prefixes",
+        "count": 3
+      },
+      {
+        "file": "css/common-variables.css",
+        "type": "duplicate_selectors",
+        "selectors": [
+          ":root"
+        ]
+      },
+      {
+        "file": "css/style.css",
+        "type": "duplicate_selectors",
+        "selectors": [
+          ".footer-bottom",
+          ".global-nav a",
+          ".header-container",
+          ".global-nav ul",
+          ".site-logo-text a",
+          ".hamburger-button",
+          ".mobile-menu nav a",
+          ".mobile-menu nav a:hover",
+          ".footer-content",
+          ".cta-buttons",
+          ".cta-title",
+          ".index-page .apple-hero-cta",
+          ".index-page .apple-hero-container",
+          ".index-page .apple-hero-subtitle-mobile",
+          ".legal-container",
+          ".legal-title",
+          ".legal-content h2",
+          ".footer-brand h2",
+          ".footer-links ul",
+          ".footer-links a",
+          ".header-cta .btn-contact",
+          ".mobile-menu",
+          ".footer-container",
+          ".index-page .apple-hero-title",
+          ".section",
+          ".site-header",
+          ".hamburger-button span",
+          ".btn-contact",
+          ".footer-section a",
+          ".site-footer::after",
+          ".tool-container",
+          ".btn-group",
+          ".files-container",
+          ".file-item",
+          ".cta-container"
+        ]
+      },
+      {
+        "file": "css/style.css",
+        "type": "vendor_prefixes",
+        "count": 5
+      }
+    ],
+    "jsIssues": [
+      {
+        "file": "achievement/achievement.js",
+        "type": "console_logs",
+        "count": 1
+      },
+      {
+        "file": "add-japanese-titles-to-all.js",
+        "type": "console_logs",
+        "count": 5
+      },
+      {
+        "file": "add-navigation.js",
+        "type": "console_logs",
+        "count": 13
+      },
+      {
+        "file": "blog/blog-manager.js",
+        "type": "console_logs",
+        "count": 6
+      },
+      {
+        "file": "blog/myblog-script.js",
+        "type": "console_logs",
+        "count": 4
+      },
+      {
+        "file": "fix-skipped-files.js",
+        "type": "console_logs",
+        "count": 5
+      },
+      {
+        "file": "js/common-cache.js",
+        "type": "console_logs",
+        "count": 1
+      },
+      {
+        "file": "js/common-init.js",
+        "type": "console_logs",
+        "count": 2
+      },
+      {
+        "file": "js/common-lazy-loading.js",
+        "type": "console_logs",
+        "count": 1
+      },
+      {
+        "file": "js/main.js",
+        "type": "console_logs",
+        "count": 1
+      },
+      {
+        "file": "project-analysis.js",
+        "type": "console_logs",
+        "count": 27
+      },
+      {
+        "file": "service-worker.js",
+        "type": "console_logs",
+        "count": 6
+      },
+      {
+        "file": "update-japanese-titles.js",
+        "type": "console_logs",
+        "count": 13
+      }
+    ]
+  }
+}

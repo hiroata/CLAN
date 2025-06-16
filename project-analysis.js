@@ -1,0 +1,1 @@
+const fs = require('fs');const path = require('path');class ProjectAnalyzer{constructor(){this.results ={files:{html: [],css: [],js: [],other: []},issues:{errors: [],duplicates: [],conflicts: [],brokenLinks: [],cssIssues: [],jsIssues: []}};}

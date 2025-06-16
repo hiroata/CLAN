@@ -13,42 +13,67 @@
     <link rel="stylesheet" href="myblog-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    
+    <!-- 記事ナビゲーション用スタイル -->
+    
     <!-- 記事ナビゲーション用スタイル -->
     <style>
         .myblog-article-navigation {
-            margin: 40px 0;
-            padding: 30px 0;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
+            margin: 60px 0 40px;
+            padding: 40px 0;
+            border-top: 2px solid #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
+            background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
         }
         
         .myblog-nav-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 100%;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .myblog-nav-prev,
         .myblog-nav-next {
-            padding: 20px;
+            padding: 24px;
             border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            background: #fafafa;
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            background: #ffffff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
-            min-height: 80px;
+            min-height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .myblog-nav-prev::before,
+        .myblog-nav-next::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 113, 227, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .myblog-nav-prev:hover::before,
+        .myblog-nav-next:hover::before {
+            left: 100%;
         }
         
         .myblog-nav-prev:hover,
         .myblog-nav-next:hover {
-            background: #f0f0f0;
+            background: #f8f9fa;
             border-color: #0071e3;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.15);
         }
         
         .myblog-nav-prev.disabled,
@@ -68,43 +93,157 @@
         
         .myblog-nav-label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.875rem;
             color: #666;
-            font-weight: 500;
-            margin-bottom: 8px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
         
         .myblog-nav-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            line-height: 1.4;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5;
             color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
         .myblog-nav-prev .myblog-nav-label::before {
             content: "← ";
             margin-right: 4px;
+            font-weight: 700;
+        }
+        
+        .myblog-nav-next {
+            text-align: right;
         }
         
         .myblog-nav-next .myblog-nav-label::after {
             content: " →";
             margin-left: 4px;
+            font-weight: 700;
+        }
+        
+        /* 関連記事セクション統一スタイル */
+        .myblog-related {
+            margin: 60px 0;
+            padding: 40px 0;
+            background: #f8f9fa;
+            border-radius: 16px;
+        }
+        
+        .myblog-related-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 32px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .myblog-related-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #0071e3;
+            border-radius: 2px;
+        }
+        
+        .myblog-related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            padding: 0 20px;
+        }
+        
+        .myblog-related-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .myblog-related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: #0071e3;
+        }
+        
+        .myblog-related-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .myblog-related-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .myblog-related-content {
+            padding: 20px;
+        }
+        
+        .myblog-related-card-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .myblog-related-date {
+            font-size: 0.875rem;
+            color: #666;
+            font-weight: 500;
         }
         
         @media (max-width: 768px) {
             .myblog-nav-container {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 16px;
             }
             
             .myblog-nav-prev,
             .myblog-nav-next {
-                padding: 16px;
-                min-height: 70px;
+                padding: 20px;
+                min-height: 80px;
+                text-align: left;
             }
             
             .myblog-nav-title {
-                font-size: 0.9rem;
+                font-size: 0.938rem;
+            }
+            
+            .myblog-related {
+                padding: 24px 0;
+                margin: 40px 0;
+            }
+            
+            .myblog-related-grid {
+                grid-template-columns: 1fr;
+                padding: 0 16px;
+            }
+            
+            .myblog-related-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -506,6 +645,7 @@
                 </div>
 
                 <!-- 著者プロフィール -->
+                <!-- 著者プロフィール -->
                 <div class="myblog-author">
                     <div class="myblog-author-avatar">
                         <img src="../assets/images/profile-owner.webp" alt="前田由紀子" loading="lazy">
@@ -513,79 +653,70 @@
                     <div class="myblog-author-info">
                         <h3 class="myblog-author-name">前田由紀子</h3>
                         <p class="myblog-author-bio">
-                            UTAGEコンサルタント。オンラインビジネスの集客・販売戦略の専門家として、中小企業から個人事業主まで幅広くサポート。特にデジタルマーケティングツールの活用による業務効率化と売上向上の実現を得意とする。
+                            UTAGEコンサルタント。オンラインビジネスの集客・販売戦略の専門家として、中小企業から個人事業主まで幅広くサポート。特にコーチングビジネスの自動化・効率化で、クライアントの売上向上と業務最適化の実現を得意とする。
                         </p>
                     </div>
                 </div>
 
                 </div>
 
-                <!-- 記事ナビゲーション -->
-                <div class="myblog-article-navigation">
-                    <div class="myblog-nav-container">
-                        <div class="myblog-nav-prev" id="prevArticle">
-                            <span class="myblog-nav-label">前の記事</span>
-                            <div class="myblog-nav-title" id="prevTitle">読み込み中...</div>
-                        </div>
-                        <div class="myblog-nav-next" id="nextArticle">
-                            <span class="myblog-nav-label">次の記事</span>
-                            <div class="myblog-nav-title" id="nextTitle">読み込み中...</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 関連記事 -->
-                <div class="myblog-related">
-                    <h3 class="myblog-related-title">関連記事</h3>
+                
+    
+            <!-- 関連記事 -->
+            <section class="myblog-related">
+                <div class="myblog-related-container">
+                    <h2 class="myblog-related-title">関連記事</h2>
                     <div class="myblog-related-grid">
-                        <div class="myblog-related-card">
-                            <a href="article-utage-municipality-resident-notification.html" class="myblog-related-link">
-                                <div class="myblog-related-image myblog-auto-image" data-title="地方自治体のUTAGE活用｜住民向けお知らせ配信と各種申請受付">
+                        <article class="myblog-related-item">
+                            <a href="article-utage-hotel-ryokan-direct-booking.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典">
                                 </div>
                                 <div class="myblog-related-content">
-                                    <h4 class="myblog-related-card-title">地方自治体のUTAGE活用｜住民向けお知らせ配信と各種申請受付</h4>
-                                    <div class="myblog-related-date">2025年1月9日</div>
+                                    <h3 class="myblog-related-item-title">ホテル・旅館のUTAGE導入｜直接予約促進とリピーター特典</h3>
                                 </div>
                             </a>
-                        </div>
-                        <div class="myblog-related-card">
-                            <a href="article-utage-sme-consultant-subsidy-guide.html" class="myblog-related-link">
-                                <div class="myblog-related-image myblog-auto-image" data-title="中小企業診断士のUTAGE導入｜補助金情報配信と申請サポート">
+                        </article>
+                        <article class="myblog-related-item">
+                            <a href="article-utage-restaurant-reservation-member-menu.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="レストランのUTAGE活用｜予約管理と会員限定メニュー案内">
                                 </div>
                                 <div class="myblog-related-content">
-                                    <h4 class="myblog-related-card-title">中小企業診断士のUTAGE導入｜補助金情報配信と申請サポート</h4>
-                                    <div class="myblog-related-date">2025年1月9日</div>
+                                    <h3 class="myblog-related-item-title">レストランのUTAGE活用｜予約管理と会員限定メニュー案内</h3>
                                 </div>
                             </a>
-                        </div>
-                        <div class="myblog-related-card">
-                            <a href="article-utage-funnel-guide.html" class="myblog-related-link">
-                                <div class="myblog-related-image myblog-auto-image" data-title="UTAGE完全ガイド">
+                        </article>
+                        <article class="myblog-related-item">
+                            <a href="article-utage-pet-hotel-booking-care-video-sales.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売">
                                 </div>
                                 <div class="myblog-related-content">
-                                    <h4 class="myblog-related-card-title">UTAGEファンネル設計完全ガイド｜効果的な集客から成約まで</h4>
-                                    <div class="myblog-related-date">2024年12月28日</div>
+                                    <h3 class="myblog-related-item-title">ペットホテルのUTAGE活用｜予約管理とペットケアノウハウ動画販売</h3>
                                 </div>
                             </a>
-                        </div>
+                        </article>
+                        <article class="myblog-related-item">
+                            <a href="article-utage-local-business-digital-transformation.html" class="myblog-related-link">
+                                <div class="myblog-related-image myblog-auto-image" data-title="UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例">
+                                </div>
+                                <div class="myblog-related-content">
+                                    <h3 class="myblog-related-item-title">UTAGEで地方ビジネス｜地域密着型企業のデジタル変革成功事例</h3>
+                                </div>
+                            </a>
+                        </article>
                     </div>
                 </div>
-            </article>
-        </div>
-    </main>
+            </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
-            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
-            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
-                UTAGEの導入で最大75万円の補助金が受けられます。<br>
-                面倒な申請手続きはすべてお任せください。<br>
-                あなたは事業成長に集中するだけでOKです。
-            </p>
-            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
+<!-- 記事ナビゲーション -->
+    <section class="myblog-article-navigation">
+        <div class="myblog-nav-container">
+            <div class="myblog-nav-prev" id="prevArticle">
+                <span class="myblog-nav-label">前の記事</span>
+                <div class="myblog-nav-title" id="prevTitle"></div>
+            </div>
+            <div class="myblog-nav-next" id="nextArticle">
+                <span class="myblog-nav-label">次の記事</span>
+                <div class="myblog-nav-title" id="nextTitle"></div>
             </div>
         </div>
     </section>
@@ -623,7 +754,7 @@
     <script src="../js/main.js" defer></script>
     <script src="myblog-script.js" defer></script>
     
-    <!-- 記事ナビゲーション機能 -->
+        <!-- 記事ナビゲーション機能 -->
     <script>
         // 全ブログ記事の配列（アルファベット順）
         const articleList = [
@@ -730,18 +861,119 @@
             'article-utage-yoga-studio-class-booking-online-lessons.html'
         ];
 
-        // 現在の記事のファイル名を取得
         function getCurrentArticleFilename() {
             const path = window.location.pathname;
             return path.substring(path.lastIndexOf('/') + 1);
         }
 
-        // 記事タイトルを取得（ファイル名から推測）
         function getArticleTitle(filename) {
-            return filename.replace('article-utage-', '').replace('.html', '').replace(/-/g, ' ');
+            const titleMapping = {
+                'article-utage-accounting-cloud-bookkeeping.html': 'クラウド会計ソフトでUTAGE活用｜自動化戦略',
+                'article-utage-administrative-scrivener-license-permit.html': '行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付',
+                'article-utage-beauty-clinic-strategy.html': '美容クリニックのUTAGE戦略｜カウンセリング予約自動化',
+                'article-utage-beauty-health-digital-marketing.html': '美容・健康業界のデジタルマーケティング｜UTAGE活用術',
+                'article-utage-calligraphy-school-strategy.html': '書道教室のUTAGE戦略｜体験レッスン予約と継続率向上',
+                'article-utage-chamber-commerce-seminar-member.html': '商工会議所のUTAGE活用｜セミナー運営と会員管理',
+                'article-utage-checkout-optimization.html': 'UTAGE決済最適化ガイド｜コンバージョン率向上テクニック',
+                'article-utage-coaching-business-automation.html': 'コーチング業のUTAGE自動化｜顧客獲得から継続まで',
+                'article-utage-consultant-success-patterns.html': 'コンサルタントのUTAGE成功パターン｜実績と事例',
+                'article-utage-consulting-diagnosis-funnel.html': 'コンサルティング診断ファネル｜UTAGE活用戦略',
+                'article-utage-content-management.html': 'UTAGEコンテンツ管理術｜効率的な運用方法',
+                'article-utage-cooking-school-recipe-videos.html': '料理教室のUTAGE戦略｜レシピ動画と体験レッスン',
+                'article-utage-corporate-training-elearning.html': '企業研修のeラーニング化｜UTAGE活用ガイド',
+                'article-utage-dance-school-automation.html': 'ダンススクールのUTAGE自動化｜体験レッスンから入会まで',
+                'article-utage-dental-clinic-patient-follow-up.html': '歯科医院の患者フォローアップ｜UTAGE活用術',
+                'article-utage-domain-dkim-spf-setup.html': 'UTAGEドメイン設定｜DKIM・SPF設定完全ガイド',
+                'article-utage-education-committee-parent-notification.html': '教育委員会の保護者連絡｜UTAGE活用事例',
+                'article-utage-email-setup.html': 'UTAGEメール設定ガイド｜初心者向け完全マニュアル',
+                'article-utage-email-spam-prevention.html': 'UTAGEメール迷惑メール対策｜到達率向上テクニック',
+                'article-utage-english-school-level-check.html': '英会話スクールのレベルチェック｜UTAGE自動化',
+                'article-utage-event-management-automation.html': 'イベント管理自動化｜UTAGE活用でスムーズ運営',
+                'article-utage-fire-department-disaster-prevention.html': '消防署の防災啓発｜UTAGE活用で効果的情報配信',
+                'article-utage-fitness-gym-trial-membership-automation.html': 'フィットネスジムの体験入会自動化｜UTAGE戦略',
+                'article-utage-fitness-sports-online-expansion.html': 'フィットネス・スポーツのオンライン展開｜UTAGE活用',
+                'article-utage-fp-lifeplan-consultation.html': 'FPのライフプラン相談｜UTAGE活用で顧客獲得',
+                'article-utage-free-trial-guide.html': 'UTAGE無料トライアル完全ガイド｜始め方から活用まで',
+                'article-utage-funnel-guide.html': 'UTAGEファネル構築ガイド｜効果的な導線設計',
+                'article-utage-funnel-seo-strategy.html': 'UTAGEファネルSEO戦略｜検索流入最大化テクニック',
+                'article-utage-funnel-vs-clickfunnels.html': 'UTAGE vs ClickFunnels比較｜日本市場に最適な選択',
+                'article-utage-golf-school-trial-lesson-video-sales.html': 'ゴルフスクールの体験レッスン｜動画セールス活用',
+                'article-utage-health-center-consultation-screening.html': '保健所の相談・健診｜UTAGE活用で効率化',
+                'article-utage-hellowork-employment-seminar-consultation.html': 'ハローワークの就職セミナー・相談｜UTAGE活用',
+                'article-utage-hospital-nurse-recruitment.html': '病院の看護師採用｜UTAGE活用で人材確保',
+                'article-utage-hotel-ryokan-direct-booking.html': 'ホテル・旅館の直接予約｜UTAGE活用で収益向上',
+                'article-utage-internship-recruitment-system.html': 'インターンシップ採用システム｜UTAGE活用事例',
+                'article-utage-it-engineer-recruitment.html': 'IT企業のエンジニア採用｜UTAGE活用戦略',
+                'article-utage-japanese-language-school.html': '日本語学校のUTAGE活用｜留学生募集自動化',
+                'article-utage-judicial-scrivener-inheritance-diagnosis.html': '司法書士の相続診断｜UTAGE活用で顧客獲得',
+                'article-utage-kindergarten-trial-newsletter.html': '幼稚園の体験・お便り｜UTAGE活用で保護者対応',
+                'article-utage-label-automation.html': 'UTAGEラベル自動化｜効率的な顧客管理術',
+                'article-utage-landing-page-guide.html': 'UTAGEランディングページ作成ガイド｜高コンバージョン設計',
+                'article-utage-lawyer-consultation-estimate-automation.html': '弁護士の相談・見積もり自動化｜UTAGE活用術',
+                'article-utage-learning-academy-trial-lessons.html': '学習塾の体験授業｜UTAGE活用で入塾率向上',
+                'article-utage-legal-professionals-online-system.html': '士業のオンライン化｜UTAGE活用でデジタル戦略',
+                'article-utage-line-delivery-guide.html': 'UTAGE×LINE連携ガイド｜効果的な配信戦略',
+                'article-utage-line-step-delivery.html': 'UTAGEステップ配信とLINE｜自動化完全ガイド',
+                'article-utage-local-business-digital-transformation.html': '地域ビジネスのDX｜UTAGE活用で競争力強化',
+                'article-utage-marriage-agency-consultation-matchmaking-knowledge.html': '結婚相談所のお見合い知識｜UTAGE活用術',
+                'article-utage-membership-site-manual.html': 'UTAGEメンバーサイト構築マニュアル｜完全ガイド',
+                'article-utage-merits-demerits-2.html': 'UTAGEのメリット・デメリット徹底解説【2024年版】',
+                'article-utage-mid-career-recruitment-strategy.html': '中途採用戦略｜UTAGE活用で優秀人材確保',
+                'article-utage-mobile-optimization.html': 'UTAGEモバイル最適化｜スマホ対応完全ガイド',
+                'article-utage-multistep-funnel.html': 'UTAGEマルチステップファネル｜高度な導線設計',
+                'article-utage-municipality-resident-notification.html': '自治体の住民通知｜UTAGE活用で効率化',
+                'article-utage-municipality-staff-recruitment.html': '自治体職員採用｜UTAGE活用で人材確保',
+                'article-utage-music-school-trial-lessons.html': '音楽教室の体験レッスン｜UTAGE活用で入会率向上',
+                'article-utage-new-graduate-recruitment.html': '新卒採用戦略｜UTAGE活用で優秀学生確保',
+                'article-utage-nursing-home-tour-booking-automation.html': '介護施設の見学予約自動化｜UTAGE活用術',
+                'article-utage-obstetrics-maternity-class-automation.html': '産婦人科のマタニティクラス｜UTAGE自動化',
+                'article-utage-online-course-creation.html': 'UTAGEオンライン講座作成ガイド｜効果的コンテンツ設計',
+                'article-utage-online-education-complete-guide.html': 'オンライン教育完全ガイド｜UTAGE活用術',
+                'article-utage-optin-page-design.html': 'UTAGEオプトインページデザイン｜登録率向上テクニック',
+                'article-utage-part-time-recruitment-automation.html': 'パート・アルバイト採用自動化｜UTAGE活用術',
+                'article-utage-payment-integration-guide.html': 'UTAGE決済連携ガイド｜設定から運用まで',
+                'article-utage-pet-hotel-booking-care-video-sales.html': 'ペットホテルの予約・ケア動画セールス｜UTAGE活用',
+                'article-utage-pharmacy-health-consultation.html': '薬局の健康相談｜UTAGE活用で顧客満足度向上',
+                'article-utage-photo-studio-booking-photographer-training.html': 'フォトスタジオの予約・撮影研修｜UTAGE活用',
+                'article-utage-pricing.html': 'UTAGE料金体系完全ガイド｜プラン選択のポイント',
+                'article-utage-programming-school-free-courses.html': 'プログラミングスクールの無料講座｜UTAGE活用',
+                'article-utage-psychiatry-initial-consultation-questionnaire.html': '精神科の初診問診票｜UTAGE活用で効率化',
+                'article-utage-qualification-prep-school.html': '資格予備校のUTAGE活用｜合格率向上戦略',
+                'article-utage-real-estate-digital-transformation.html': '不動産業界のDX｜UTAGE活用で業務効率化',
+                'article-utage-real-estate-property-training.html': '不動産の物件研修｜UTAGE活用で営業力強化',
+                'article-utage-rehabilitation-center-training-videos.html': 'リハビリセンターの研修動画｜UTAGE活用術',
+                'article-utage-reminder-system.html': 'UTAGEリマインダーシステム｜自動通知活用術',
+                'article-utage-restaurant-reservation-member-menu.html': '飲食店の予約・会員メニュー｜UTAGE活用術',
+                'article-utage-sales-page-psychology.html': 'UTAGEセールスページ心理学｜購買欲求向上テクニック',
+                'article-utage-seitai-clinic-management.html': '整体院のUTAGE活用｜予約管理から顧客フォローまで',
+                'article-utage-sme-consultant-subsidy-guide.html': '中小企業診断士の補助金ガイド｜UTAGE活用術',
+                'article-utage-sr-firm-labor-diagnosis.html': '社労士事務所の労務診断｜UTAGE活用で顧客獲得',
+                'article-utage-sr-subsidy-diagnosis-consultation.html': '社労士の助成金診断・相談｜UTAGE活用術',
+                'article-utage-staffing-company-management.html': '人材派遣会社のUTAGE活用｜効率的運営術',
+                'article-utage-step-mail-course.html': 'UTAGEステップメール講座｜効果的な設計と運用',
+                'article-utage-student-management.html': 'UTAGE受講生管理｜効率的な顧客対応術',
+                'article-utage-subscription-business.html': 'サブスクリプションビジネス｜UTAGE活用戦略',
+                'article-utage-support-guide.html': 'UTAGEサポート活用ガイド｜困った時の解決法',
+                'article-utage-tax-office-consultation-conversion.html': '税務署の相談対応｜UTAGE活用で効率化',
+                'article-utage-teacher-recruitment-strategy.html': '教員採用戦略｜UTAGE活用で優秀教師確保',
+                'article-utage-template-guide.html': 'UTAGEテンプレート活用ガイド｜効率的なページ作成',
+                'article-utage-thanks-page-upsell.html': 'UTAGEサンクスページアップセル｜収益最大化テクニック',
+                'article-utage-tourism-association-tour-booking.html': '観光協会のツアー予約｜UTAGE活用で効率化',
+                'article-utage-veterinary-clinic-vaccination-reminder.html': '動物病院の予防接種リマインダー｜UTAGE活用',
+                'article-utage-video-content-management.html': 'UTAGE動画コンテンツ管理｜効果的な配信戦略',
+                'article-utage-visiting-nurse-schedule-management.html': '訪問看護のスケジュール管理｜UTAGE活用術',
+                'article-utage-vs-comparison-new.html': 'UTAGE比較検討ガイド｜他社サービスとの違い【最新版】',
+                'article-utage-vs-comparison.html': 'UTAGE vs 他社比較｜選択のポイント完全ガイド',
+                'article-utage-vs-myasp-email-comparison.html': 'UTAGE vs MyASP メール配信機能比較｜徹底解説',
+                'article-utage-vs-teachable-comparison.html': 'UTAGE vs Teachable比較｜オンライン講座プラットフォーム',
+                'article-utage-webinar-registration-page.html': 'UTAGEウェビナー登録ページ｜効果的な集客戦略',
+                'article-utage-welfare-facility-recruitment.html': '福祉施設の職員採用｜UTAGE活用で人材確保',
+                'article-utage-yoga-studio-class-booking-online-lessons.html': 'ヨガスタジオのクラス予約・オンラインレッスン｜UTAGE活用'
+            };
+            
+            return titleMapping[filename] || filename.replace('article-utage-', '').replace('.html', '').replace(/-/g, ' ');
         }
 
-        // ナビゲーションを初期化
         function initializeNavigation() {
             const currentFilename = getCurrentArticleFilename();
             const currentIndex = articleList.indexOf(currentFilename);
@@ -751,7 +983,10 @@
             const prevTitle = document.getElementById('prevTitle');
             const nextTitle = document.getElementById('nextTitle');
 
-            // 前の記事
+            if (!prevArticle || !nextArticle || !prevTitle || !nextTitle) {
+                return;
+            }
+
             if (currentIndex > 0) {
                 const prevFilename = articleList[currentIndex - 1];
                 const prevTitleText = getArticleTitle(prevFilename);
@@ -765,7 +1000,6 @@
                 prevArticle.onclick = null;
             }
 
-            // 次の記事
             if (currentIndex < articleList.length - 1 && currentIndex !== -1) {
                 const nextFilename = articleList[currentIndex + 1];
                 const nextTitleText = getArticleTitle(nextFilename);
@@ -780,7 +1014,6 @@
             }
         }
 
-        // DOMが読み込まれたら初期化
         document.addEventListener('DOMContentLoaded', initializeNavigation);
     </script>
 </body>

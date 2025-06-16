@@ -1,0 +1,1 @@
+const fs = require('fs');const path = require('path');class CacheCleaner{constructor(){this.currentVersion = Date.now().toString();this.updatedFiles = [];}

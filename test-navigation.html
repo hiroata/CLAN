@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Test</title>
+</head>
+<body>
+    <div id="prevArticle"><span>前の記事</span><div id="prevTitle"></div></div>
+    <div id="nextArticle"><span>次の記事</span><div id="nextTitle"></div></div>
+
+    <script>
+        // Test the navigation code from the article
+        const articleList = [
+            'article-utage-accounting-cloud-bookkeeping.html',
+            'article-utage-administrative-scrivener-license-permit.html',
+            'article-utage-beauty-clinic-strategy.html'
+        ];
+
+        function getCurrentArticleFilename() {
+            return 'article-utage-accounting-cloud-bookkeeping.html';
+        }
+
+        function getArticleTitle(filename) {
+            const titleMapping = {
+                'article-utage-accounting-cloud-bookkeeping.html': 'クラウド会計ソフトでUTAGE活用｜自動化戦略',
+                'article-utage-administrative-scrivener-license-permit.html': '行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付'
+            };
+            
+            return titleMapping[filename] || filename.replace('article-utage-', '').replace('.html', '').replace(/-/g, ' ');
+        }
+
+        function initializeNavigation() {
+            const currentFilename = getCurrentArticleFilename();
+            const currentIndex = articleList.indexOf(currentFilename);
+            
+            const prevArticle = document.getElementById('prevArticle');
+            const nextArticle = document.getElementById('nextArticle');
+            const prevTitle = document.getElementById('prevTitle');
+            const nextTitle = document.getElementById('nextTitle');
+
+            if (!prevArticle || !nextArticle || !prevTitle || !nextTitle) {
+                console.error('Navigation elements not found');
+                return;
+            }
+
+            console.log('Current file:', currentFilename);
+            console.log('Current index:', currentIndex);
+
+            // 前の記事
+            if (currentIndex > 0) {
+                const prevFilename = articleList[currentIndex - 1];
+                const prevTitleText = getArticleTitle(prevFilename);
+                prevTitle.textContent = prevTitleText;
+                prevArticle.onclick = () => console.log('Navigate to:', prevFilename);
+                prevArticle.style.cursor = 'pointer';
+                console.log('Prev article:', prevTitleText);
+            } else {
+                prevTitle.textContent = '最初の記事です';
+                prevArticle.classList.add('disabled');
+                prevArticle.onclick = null;
+                console.log('At first article');
+            }
+
+            // 次の記事
+            if (currentIndex < articleList.length - 1 && currentIndex !== -1) {
+                const nextFilename = articleList[currentIndex + 1];
+                const nextTitleText = getArticleTitle(nextFilename);
+                nextTitle.textContent = nextTitleText;
+                nextArticle.onclick = () => console.log('Navigate to:', nextFilename);
+                nextArticle.style.cursor = 'pointer';
+                console.log('Next article:', nextTitleText);
+            } else {
+                nextTitle.textContent = '最後の記事です';
+                nextArticle.classList.add('disabled');
+                nextArticle.onclick = null;
+                console.log('At last article');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeNavigation);
+    </script>
+</body>
+</html>
