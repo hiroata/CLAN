@@ -6,11 +6,11 @@
     <meta name="description" content="CLANは、マーケティング自動化とウェビナー構築であなたのビジネスを加速させるオンラインスクールです。Utageシステム導入やIT導入補助金活用もサポート。">
     <meta name="google-site-verification" content="ndVtQk1I_HAYRlM_aF8eM0hIU1IOnu8GUgl6jHvb6v0" />
     <title>CLAN｜マーケティング自動化とウェビナー構築でビジネスを加速</title>
-    <!-- フォントの最適化: プリロードとサブセット化 -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" as="style">
+    <!-- フォントの最適化: 和風フォント -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=10001">
 
     <!-- クリティカルCSS インライン化 -->
@@ -149,40 +149,50 @@
                 order: -1;
             }        }
 
-        /* 重要告知セクション */
+        /* 重要告知セクション - 和風デザイン */
         .important-notice {
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-            color: white;
+            background: var(--traditional-bg-medium);
+            color: var(--traditional-text-dark);
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             margin: 0;
+            border-top: 3px solid var(--traditional-border);
+            border-bottom: 3px solid var(--traditional-border);
+            position: relative;
         }
 
         .important-notice h2 {
-            font-size: clamp(1.25rem, 4vw, 2rem);
-            font-weight: 600;
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
             margin: 0 0 1.5rem 0;
             line-height: 1.3;
-            letter-spacing: -0.01em;
+            letter-spacing: 0.1em;
+            font-family: var(--font-family-heading);
+            color: var(--traditional-primary);
         }
 
         .important-notice-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: white;
-            color: #ff6b35;
+            background: linear-gradient(135deg, var(--traditional-accent), #DC143C);
+            color: white;
             font-size: 1rem;
-            font-weight: 500;
-            padding: 0.75rem 2rem;
-            border-radius: 980px;
+            font-weight: 600;
+            padding: 0.875rem 2.5rem;
+            border-radius: 0;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
+            border: 2px solid var(--traditional-primary);
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.1em;
+            box-shadow: 0 2px 8px rgba(139, 0, 0, 0.2);
         }
 
         .important-notice-button:hover {
-            background: rgba(255, 255, 255, 0.9);
+            background: linear-gradient(135deg, #DC143C, var(--traditional-primary));
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
         }
 
         /* 旧Hero Section - Apple風に変更のため無効化 */
@@ -436,9 +446,9 @@
             }
         }
 
-        /* CTA Section - 根本的修正版 */
+        /* CTA Section - 和風デザイン統一版 */
         body .cta-section {
-            background: linear-gradient(135deg, #0071e3, #00c2ff) !important;
+            background: linear-gradient(135deg, var(--traditional-primary), #DC143C) !important;
             color: white !important;
             text-align: center !important;
             padding: 100px 0 !important;
@@ -501,20 +511,25 @@
             align-items: center !important;
             justify-content: center !important;
             background: white !important;
-            color: var(--apple-primary, #0071e3) !important;
+            color: var(--traditional-primary) !important;
             font-weight: 600 !important;
             padding: 16px 32px !important;
-            border-radius: 980px !important;
+            border-radius: 0 !important;
             text-decoration: none !important;
-            transition: var(--apple-transition, all 0.3s ease) !important;
+            transition: all 0.3s ease !important;
             min-width: 180px !important;
             text-align: center !important;
             margin: 0 auto !important;
+            border: 2px solid var(--traditional-primary) !important;
+            font-family: var(--font-family-heading) !important;
+            letter-spacing: 0.1em !important;
         }
 
         body .cta-btn:hover {
-            transform: translateY(-4px) !important;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+            background: var(--traditional-bg-light) !important;
+            color: var(--traditional-primary) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3) !important;
         }
 
         body .cta-btn-secondary {
@@ -574,24 +589,29 @@
 
         .related-links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .related-link-card {
-            background: white;
-            border-radius: 18px;
+            background: var(--traditional-bg-light);
+            border-radius: 0;
             padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: 0 2px 10px rgba(139, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid var(--traditional-border);
             text-align: center;
+            position: relative;
         }
 
         .related-link-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.15);
+            border-color: var(--traditional-secondary);
         }
 
         .related-link-icon {
@@ -604,34 +624,39 @@
             font-size: 1.375rem;
             font-weight: 600;
             margin-bottom: 15px;
-            color: #1d1d1f;
+            color: var(--traditional-primary);
             line-height: 1.3;
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.1em;
         }
 
         .related-link-card p {
             font-size: 1rem;
             line-height: 1.6;
-            color: #86868b;
+            color: var(--traditional-text-dark);
             margin-bottom: 25px;
         }
 
         .related-link-btn {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #0071e3, #00a8ff);
+            background: linear-gradient(135deg, var(--traditional-accent), #DC143C);
             color: white;
-            font-weight: 500;
+            font-weight: 600;
             padding: 12px 24px;
-            border-radius: 25px;
+            border-radius: 0;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             font-size: 0.9rem;
+            border: 2px solid var(--traditional-primary);
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.05em;
         }
 
         .related-link-btn:hover {
-            background: linear-gradient(135deg, #0051d5, #0088cc);
+            background: linear-gradient(135deg, #DC143C, var(--traditional-primary));
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.3);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -1010,8 +1035,8 @@
 <main class="site-main" id="main-content">    <!-- Hero Section -->
     <section class="apple-hero">
         <div class="apple-hero-decoration"></div>        <div class="apple-hero-container">
-            <h1 class="apple-hero-title">専門知識を<br>自動で売る</h1>
-            <p class="apple-hero-subtitle">あなたのノウハウを24時間働き続けるデジタル資産に変換<br>UTAGEで構築する、オートウェビナーマーケティングの世界</p>
+            <h1 class="apple-hero-title">ノウハウを<br>自動で売る</h1>
+            <p class="apple-hero-subtitle">あなたの専門知識を24時間働き続けるデジタル資産に変換<br>UTAGEで構築するオートウェビナーマーケティングの世界</p>
             <p class="apple-hero-subtitle-mobile">あなたの専門性を<br>24時間働き続ける<br>デジタル資産に変換<br><br>UTAGEで構築する、<br>次世代マーケティング<br>自動化の世界</p>
             
             <div class="apple-hero-cta">
@@ -1217,6 +1242,33 @@
                     <a href="/achievement/index.html" 
                        title="UTAGE導入企業の成功事例一覧"
                        class="related-link-btn">全事例を見る →</a>
+                </div>
+                
+                <div class="related-link-card">
+                    <div class="related-link-icon">📧</div>
+                    <h3>メール配信システム</h3>
+                    <p>開封率とクリック率を最大化するメール配信戦略とステップメールの活用法。</p>
+                    <a href="/blog/article-utage-email-setup.html" 
+                       title="UTAGEメール配信システム構築ガイド"
+                       class="related-link-btn">詳細を見る →</a>
+                </div>
+                
+                <div class="related-link-card">
+                    <div class="related-link-icon">🎓</div>
+                    <h3>会員サイト構築</h3>
+                    <p>継続率を高める会員制コンテンツの設計と運営のベストプラクティス。</p>
+                    <a href="/blog/article-utage-membership-site-manual.html" 
+                       title="UTAGE会員サイト構築マニュアル"
+                       class="related-link-btn">構築方法を見る →</a>
+                </div>
+                
+                <div class="related-link-card">
+                    <div class="related-link-icon">🚀</div>
+                    <h3>無料トライアル</h3>
+                    <p>UTAGEシステムの全機能を14日間無料でお試しいただけます。</p>
+                    <a href="/blog/article-utage-free-trial-guide.html" 
+                       title="UTAGE無料トライアル申込みガイド"
+                       class="related-link-btn">今すぐ始める →</a>
                 </div>
             </div>
         </div>

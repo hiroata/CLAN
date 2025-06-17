@@ -8,35 +8,42 @@
 @import url('./common-hamburger.css');
 
 :root {
-  /* ===== カラーパレット（統合版） ===== */
-  /* プライマリカラー */
-  --primary: #0071e3;
-  --primary-hover: #005bb5;
-  --primary-alt: #3f51b5; /* ブログ用アクセント */
-  --primary-alt-hover: #2c387e;
+  /* ===== カラーパレット（和風デザイン版） ===== */
+  /* 伝統色 - プライマリ */
+  --traditional-primary: #8B0000;      /* 深紅（見出し・アクセント） */
+  --traditional-secondary: #D4AF37;     /* 金色（装飾・ボーダー） */
+  --traditional-accent: #FF6347;        /* 朱色（ボタン・リンク） */
+  --traditional-bg-light: #FFF8E7;      /* 和紙色（背景） */
+  --traditional-bg-medium: #F5E6D3;     /* 薄茶色（セクション背景） */
+  --traditional-text-dark: #3A3A3A;     /* 墨色（本文） */
+  --traditional-text-light: #666666;    /* 薄墨色（補助テキスト） */
+  --traditional-border: #C8A882;        /* 枯茶色（区切り線） */
   
-  /* セカンダリカラー */
-  --secondary: #ff3b30;
-  --secondary-hover: #d70015;
-  --accent: #ff9500;
-  --accent-hover: #e6820e;
+  /* 互換性のための旧変数マッピング */
+  --primary: var(--traditional-accent);
+  --primary-hover: var(--traditional-primary);
+  --primary-alt: var(--traditional-primary);
+  --primary-alt-hover: #6B0000;
   
-  /* テキストカラー（統合版） */
-  --text-dark: #1d1d1f;
-  --text-mid: #424245;
-  --text-light: #86868b;
-  --text-muted: #6c757d;
+  --secondary: var(--traditional-secondary);
+  --secondary-hover: #B8941F;
+  --accent: var(--traditional-accent);
+  --accent-hover: #E63B2A;
   
-  /* 背景色（統合版） */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f7;
-  --bg-tertiary: #f8f9fa;
-  --bg-dark: #1d1d1f;
+  --text-dark: var(--traditional-text-dark);
+  --text-mid: var(--traditional-text-light);
+  --text-light: #8B8B8B;
+  --text-muted: var(--traditional-text-light);
   
-  /* ボーダー・区切り線 */
-  --border-color: #d1d1d6;
-  --border-color-light: #dee2e6;
-  --border-color-dark: #424245;
+  --bg-primary: var(--traditional-bg-light);
+  --bg-secondary: var(--traditional-bg-medium);
+  --bg-tertiary: #FAF6F0;
+  --bg-dark: #2B2B2B;
+  
+  /* ボーダー・区切り線（和風） */
+  --border-color: var(--traditional-border);
+  --border-color-light: #DCC4A3;
+  --border-color-dark: #8B6F47;
   
   /* シャドウ（統合版） */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -79,8 +86,9 @@
   --container-lg: 1200px;
   --container-xl: 1400px;
   
-  /* ===== フォント（統合版） ===== */
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  /* ===== フォント（和風版） ===== */
+  --font-family: 'Noto Serif JP', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-heading: 'Noto Serif JP', 'Yu Mincho', serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   
   --font-size-xs: 0.75rem;   /* 12px */
