@@ -7,6 +7,141 @@
   'use strict';
   
   /**
+   * 共通コンポーネント管理クラス
+   */
+  class ComponentLoader {
+    constructor() {
+      this.loadSvgDefs();
+    }
+    
+    /**
+     * 全ての共通コンポーネントを読み込み
+     */
+    loadAll() {
+      this.loadHeader();
+      this.loadFooter();
+    }
+    
+    /**
+     * テンプレートファイルを読み込み、指定セレクタの要素に挿入
+     */
+    async loadComponent(templatePath, targetSelector, callback) {
+      const targetElement = document.querySelector(targetSelector);
+      if (!targetElement) return;
+      
+      try {
+        const response = await fetch(templatePath);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const html = await response.text();
+        targetElement.innerHTML = html;
+        
+        if (callback) callback();
+      } catch (error) {
+        console.error(`コンポーネントの読み込みに失敗しました: ${templatePath}`, error);
+      }
+    }
+    
+    /**
+     * SVG定義を読み込み
+     */
+    loadSvgDefs() {
+      const svgContainer = document.getElementById('svg-defs');
+      if (svgContainer) return;
+      
+      const svgDiv = document.createElement('div');
+      svgDiv.id = 'svg-defs';
+      svgDiv.style.display = 'none';
+      document.body.appendChild(svgDiv);
+      
+      this.loadComponent('/common/svg-defs.html', '#svg-defs');
+    }
+    
+    /**
+     * ヘッダーを読み込み
+     */
+    loadHeader() {
+      // ヘッダーが既に存在する場合はスキップ
+      if (document.querySelector('.site-header')) {
+        this.initializeHamburgerMenu();
+        this.setActiveNavItem();
+        return;
+      }
+      
+      const headerPlaceholder = document.getElementById('header-placeholder');
+      if (!headerPlaceholder) return;
+      
+      const path = this.isSubpage() ? '../common/header.html' : 'common/header.html';
+      this.loadComponent(path, '#header-placeholder', () => {
+        this.setActiveNavItem();
+        this.initializeHamburgerMenu();
+      });
+    }
+    
+    /**
+     * フッターを読み込み
+     */
+    loadFooter() {
+      // フッターが既に存在する場合はスキップ
+      if (document.querySelector('.site-footer')) return;
+      
+      const footerPlaceholder = document.getElementById('footer-placeholder');
+      if (!footerPlaceholder) return;
+      
+      const path = this.isSubpage() ? '../common/footer.html' : 'common/footer.html';
+      this.loadComponent(path, '#footer-placeholder');
+    }
+    
+    /**
+     * 現在のページがサブページかどうかを判定
+     */
+    isSubpage() {
+      const path = window.location.pathname;
+      return this.isSubpagePath(path);
+    }
+    
+    /**
+     * サブページかどうかを判定
+     */
+    isSubpagePath(path) {
+      return path.includes('/blog/') || 
+             path.includes('/tools/') ||
+             path.includes('/achievement/') ||
+             path.includes('/course/') ||
+             path.includes('blog/') ||
+             path.includes('tools/') ||
+             path.includes('achievement/') ||
+             path.includes('course/');
+    }
+    
+    /**
+     * アクティブなナビゲーションアイテムを設定
+     */
+    setActiveNavItem() {
+      const currentPath = window.location.pathname;
+      const navLinks = document.querySelectorAll('.global-nav a');
+      
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && currentPath.includes(href.replace('index.html', '').replace('.html', ''))) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+    
+    /**
+     * ヘッダー読み込み後のハンバーガーメニュー初期化
+     */
+    initializeHamburgerMenu() {
+      if (window.siteManager) {
+        window.siteManager.initHamburgerMenu();
+      }
+    }
+  }
+  
+  /**
    * サイト全体の管理クラス
    */
   class SiteManager {
@@ -48,10 +183,22 @@
      */
     initHamburgerMenu() {
       const hamburgerBtn = document.querySelector('.hamburger-button');
-      if (!hamburgerBtn) return;
+      if (!hamburgerBtn) {
+        console.warn('ハンバーガーボタンが見つかりません');
+        return;
+      }
       
       const body = document.body;
-      const mobileMenu = document.querySelector('.mobile-menu') || this.createMobileMenu();
+      let mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (!mobileMenu) {
+        try {
+          mobileMenu = this.createMobileMenu();
+        } catch (error) {
+          console.error('モバイルメニューの作成に失敗しました:', error);
+          return;
+        }
+      }
       
       hamburgerBtn.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.contains('active');
@@ -101,14 +248,15 @@
         mobileMenu.appendChild(navClone);
       }
       
-      const contactBtn = document.querySelector('.btn-contact');
-      if (contactBtn) {
-        const ctaDiv = document.createElement('div');
-        ctaDiv.className = 'mobile-cta';
-        const btnClone = contactBtn.cloneNode(true);
-        ctaDiv.appendChild(btnClone);
-        mobileMenu.appendChild(ctaDiv);
-      }
+      // CTAボタンは削除されたため、この部分をコメントアウト
+      // const contactBtn = document.querySelector('.btn-contact');
+      // if (contactBtn) {
+      //   const ctaDiv = document.createElement('div');
+      //   ctaDiv.className = 'mobile-cta';
+      //   const btnClone = contactBtn.cloneNode(true);
+      //   ctaDiv.appendChild(btnClone);
+      //   mobileMenu.appendChild(ctaDiv);
+      // }
       
       document.body.appendChild(mobileMenu);
       return mobileMenu;
@@ -156,8 +304,11 @@
             }
           });
           
-          // クリックされたFAQの開閉
-          item.classList.toggle('active', !isOpen);
+          // 現在のFAQをトグル
+          item.classList.toggle('active');
+          
+          // ARIA属性を更新
+          question.setAttribute('aria-expanded', !isOpen);
         });
       });
     }
@@ -166,164 +317,41 @@
      * アニメーション初期化
      */
     initAnimations() {
-      if (!('IntersectionObserver' in window)) return;
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
       
-      const fadeElements = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver(entries => {
+      const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            entry.target.classList.add('visible');
           }
         });
-      }, { threshold: 0.1 });
+      }, observerOptions);
       
-      fadeElements.forEach(element => observer.observe(element));
-    }
-    
-    /**
-     * フッターエフェクトの初期化
-     */
-    initFooterEffects() {
-      const footer = document.querySelector('.site-footer');
-      if (!footer || !('IntersectionObserver' in window)) return;
-      
-      const footerObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            footer.classList.add('footer-visible');
-          }
-        });
-      }, { threshold: 0.2 });
-      
-      footerObserver.observe(footer);
-    }
-  }
-  
-  /**
-   * 共通コンポーネント管理クラス
-   */
-  class ComponentLoader {
-    constructor() {
-      this.loadSvgDefs();
-    }
-    
-    /**
-     * 全ての共通コンポーネントを読み込み
-     */
-    loadAll() {
-      this.loadHeader();
-      this.loadFooter();
-    }
-    
-    /**
-     * テンプレートファイルを読み込み、指定セレクタの要素に挿入
-     */
-    async loadComponent(templatePath, targetSelector, callback) {
-      const targetElement = document.querySelector(targetSelector);
-      if (!targetElement) return;
-      
-      try {
-        const response = await fetch(templatePath);
-        if (!response.ok) {
-          throw new Error(`${templatePath} の読み込みに失敗: ${response.status}`);
-        }
-        
-        const data = await response.text();
-        targetElement.innerHTML = data;
-        
-        if (callback && typeof callback === 'function') {
-          callback(targetElement);
-        }
-      } catch (error) {
-        console.error('テンプレート読み込みエラー:', error);
-      }
-    }
-    
-    /**
-     * SVG定義を読み込み
-     */
-    async loadSvgDefs() {
-      try {
-        const response = await fetch('/common/svg-defs.html');
-        if (!response.ok) return;
-        
-        const data = await response.text();
-        const svgContainer = document.createElement('div');
-        svgContainer.innerHTML = data;
-        
-        const svgElement = svgContainer.querySelector('svg');
-        if (svgElement) {
-          document.body.insertBefore(svgElement, document.body.firstChild);
-        }
-      } catch (error) {
-        console.error('SVG定義読み込みエラー:', error);
-      }
-    }
-    
-    /**
-     * ヘッダーを読み込み
-     */
-    loadHeader() {
-      const headerPlaceholder = document.getElementById('header-placeholder');
-      if (headerPlaceholder) {
-        this.loadComponent('/common/header.html', '#header-placeholder', () => {
-          this.setActiveNavItem();
-          this.initializeHamburgerMenu();
-        });
-      }
-    }
-    
-    /**
-     * フッターを読み込み
-     */
-    loadFooter() {
-      const footerPlaceholder = document.getElementById('footer-placeholder');
-      if (footerPlaceholder) {
-        const currentPath = window.location.pathname;
-        const isSubpage = this.isSubpagePath(currentPath);
-        const footerPath = isSubpage ? '../common/footer.html' : '/common/footer.html';
-        this.loadComponent(footerPath, '#footer-placeholder');
-      }
-    }
-    
-    /**
-     * サブページかどうかを判定
-     */
-    isSubpagePath(path) {
-      return path.includes('/blog/') || 
-             path.includes('/tools/') ||
-             path.includes('/achievement/') ||
-             path.includes('/course/') ||
-             path.includes('blog/') ||
-             path.includes('tools/') ||
-             path.includes('achievement/') ||
-             path.includes('course/');
-    }
-    
-    /**
-     * アクティブなナビゲーションアイテムを設定
-     */
-    setActiveNavItem() {
-      const currentPath = window.location.pathname;
-      const navLinks = document.querySelectorAll('.global-nav a');
-      
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && currentPath.includes(href.replace('index.html', '').replace('.html', ''))) {
-          link.setAttribute('aria-current', 'page');
-        } else {
-          link.removeAttribute('aria-current');
-        }
+      // アニメーション対象要素を監視
+      document.querySelectorAll('.fade-in, .slide-up, .scale-in').forEach(el => {
+        animationObserver.observe(el);
       });
     }
     
     /**
-     * ヘッダー読み込み後のハンバーガーメニュー初期化
+     * フッターエフェクト初期化
      */
-    initializeHamburgerMenu() {
-      if (window.siteManager) {
-        window.siteManager.initHamburgerMenu();
-      }
+    initFooterEffects() {
+      const footer = document.querySelector('.site-footer');
+      if (!footer) return;
+      
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            footer.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      footerObserver.observe(footer);
     }
   }
   
@@ -336,148 +364,4 @@
   window.SiteManager = SiteManager;
   window.ComponentLoader = ComponentLoader;
   
-  /**
-   * 画像ツール共通ユーティリティクラス
-   */
-  class ImageToolsUtils {
-    // ファイルドロップとファイル選択の設定
-    static setupFileDropAndSelection(dropArea, fileInput, handleFilesCallback) {
-      // ドラッグ&ドロップ機能
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        dropArea.addEventListener(eventName, this.preventDefaults, false);
-      });
-
-      ['dragenter', 'dragover'].forEach(eventName => {
-        dropArea.addEventListener(eventName, this.highlight.bind(null, dropArea), false);
-      });
-
-      ['dragleave', 'drop'].forEach(eventName => {
-        dropArea.addEventListener(eventName, this.unhighlight.bind(null, dropArea), false);
-      });
-
-      // ファイルドロップ処理
-      dropArea.addEventListener('drop', function(e) {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        handleFilesCallback(files);
-      });
-
-      // ファイル選択ボタン処理
-      dropArea.addEventListener('click', function() {
-        fileInput.click();
-      });
-
-      fileInput.addEventListener('change', function() {
-        handleFilesCallback(this.files);
-      });
-    }
-
-    static preventDefaults(e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    static highlight(dropArea) {
-      dropArea.classList.add('drag-over');
-    }
-
-    static unhighlight(dropArea) {
-      dropArea.classList.remove('drag-over');
-    }
-
-    // ファイルアイテムのUI作成
-    static createFileItem(file, imageSrc, onRemoveCallback) {
-      const fileItem = document.createElement('div');
-      fileItem.className = 'file-item';
-      
-      const sizeInKB = (file.size / 1024).toFixed(1);
-      
-      fileItem.innerHTML = `
-        <div class="file-preview">
-          <img src="${imageSrc}" alt="${file.name}" class="preview-image">
-        </div>
-        <div class="file-info">
-          <div class="file-name">${file.name}</div>
-          <div class="file-size">${sizeInKB} KB</div>
-        </div>
-        <button type="button" class="remove-file-btn" aria-label="ファイルを削除">×</button>
-      `;
-
-      // 削除ボタンイベント
-      const removeBtn = fileItem.querySelector('.remove-file-btn');
-      removeBtn.addEventListener('click', function() {
-        fileItem.remove();
-        if (onRemoveCallback) onRemoveCallback();
-      });
-
-      return fileItem;
-    }
-
-    // UI状態更新
-    static updateUI(message, isError = false) {
-      const messageElement = document.querySelector('.message') || this.createMessageElement();
-      messageElement.textContent = message;
-      messageElement.className = isError ? 'message error' : 'message success';
-      
-      // 3秒後に自動で消去
-      setTimeout(() => {
-        if (messageElement.parentNode) {
-          messageElement.remove();
-        }
-      }, 3000);
-    }
-
-    static createMessageElement() {
-      const messageElement = document.createElement('div');
-      messageElement.className = 'message';
-      document.querySelector('.tool-container').appendChild(messageElement);
-      return messageElement;
-    }
-
-    // ファイルサイズをフォーマット
-    static formatFileSize(bytes) {
-      if (bytes === 0) return '0 Bytes';
-      
-      const k = 1024;
-      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-      const i = Math.floor(Math.log(bytes) / Math.log(k));
-      
-      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-    }
-
-    // 画像の寸法を取得
-    static getImageDimensions(file) {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = function() {
-          resolve({
-            width: this.naturalWidth,
-            height: this.naturalHeight
-          });
-        };
-        img.src = URL.createObjectURL(file);
-      });
-    }
-  }
-
-  // グローバルに公開
-  window.ImageToolsUtils = ImageToolsUtils;
-  
-  // レガシー関数のサポート（後方互換性）
-  window.setupFileDropAndSelection = ImageToolsUtils.setupFileDropAndSelection.bind(ImageToolsUtils);
-  window.createFileItem = ImageToolsUtils.createFileItem.bind(ImageToolsUtils);
-  window.updateUI = ImageToolsUtils.updateUI.bind(ImageToolsUtils);
-  window.formatFileSize = ImageToolsUtils.formatFileSize.bind(ImageToolsUtils);
-  window.getImageDimensions = ImageToolsUtils.getImageDimensions.bind(ImageToolsUtils);
-  
-  // グローバルキャッシュクリア関数（統合システム使用）
-  window.clearSiteCache = function() {
-    if (window.cacheManager) {
-      return window.cacheManager.hardReload('site');
-    } else {
-      console.warn('統合キャッシュシステムが利用できません');
-      window.location.reload(true);
-    }
-  };
-
 })();

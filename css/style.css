@@ -1196,7 +1196,7 @@ footer { flex-shrink: 0; }
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 1.5rem 0 2.5rem 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: #1d1d1f; /* 黒色に変更してモバイルでの視認性を向上 */
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
