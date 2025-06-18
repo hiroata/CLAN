@@ -353,159 +353,6 @@
       left: -15px;
       color: var(--primary);
     }
-    
-    /* 新機能: 初回訪問者向けガイド */
-    .welcome-guide {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    .welcome-guide.show {
-      opacity: 1;
-      visibility: visible;
-    }
-    .welcome-box {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 600px;
-      width: 90%;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      position: relative;
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-    .welcome-title {
-      font-size: 24px;
-      color: var(--primary);
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    .welcome-subtitle {
-      font-size: 16px;
-      color: var(--text-mid);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .welcome-steps {
-      counter-reset: step-counter;
-      margin-bottom: 20px;
-    }
-    .welcome-step {
-      position: relative;
-      padding: 0 0 20px 40px;
-      counter-increment: step-counter;
-    }
-    .welcome-step:before {
-      content: counter(step-counter);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 30px;
-      height: 30px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-    }
-    .welcome-step-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: var(--text-dark);
-    }
-    .welcome-image {
-      width: 100%;
-      border-radius: 8px;
-      margin: 10px 0;
-      border: 1px solid #eee;
-    }
-    .welcome-close {
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: #f0f0f0;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: var(--text-mid);
-      transition: all 0.2s;
-    }
-    .welcome-close:hover {
-      background: #e0e0e0;
-      transform: scale(1.1);
-    }
-    .welcome-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    .welcome-button {
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s;
-      border: none;
-    }
-    .welcome-button-primary {
-      background: var(--primary);
-      color: white;
-    }
-    .welcome-button-primary:hover {
-      background: var(--dark-blue);
-      transform: translateY(-2px);
-    }
-    .welcome-button-secondary {
-      background: #f0f0f0;
-      color: var(--text-dark);
-    }
-    .welcome-button-secondary:hover {
-      background: #e0e0e0;
-      transform: translateY(-2px);
-    }
-    .show-guide-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: white;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      z-index: 100;
-      transition: all 0.3s;
-    }
-    .show-guide-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    }
 
     /* 新機能: 履歴とお気に入り */
     .history-favorites {
@@ -707,37 +554,6 @@
         <p class="tool-subtitle">長さ、重さ、面積、通貨など様々な単位を変換</p>
         <span class="tool-label">多機能</span>
         
-        <!-- 初回訪問者向けのガイド -->
-        <div class="welcome-guide" id="welcomeGuide">
-          <div class="welcome-box">
-            <button class="welcome-close" id="welcomeClose">&times;</button>
-            <h2 class="welcome-title">単位換算ツールへようこそ！</h2>
-            <p class="welcome-subtitle">このツールの使い方をご紹介します</p>
-            <div class="welcome-steps">
-              <div class="welcome-step">
-                <h3 class="welcome-step-title">単位カテゴリを選ぶ</h3>
-                <p>画面上部のタブから、変換したい単位のカテゴリ（長さ、重さ、通貨など）を選びましょう。</p>
-              </div>
-              <div class="welcome-step">
-                <h3 class="welcome-step-title">値と単位を入力</h3>
-                <p>変換したい数値と単位を左側のフィールドに入力します。変換先の単位は右側で選択できます。</p>
-              </div>
-              <div class="welcome-step">
-                <h3 class="welcome-step-title">結果を確認</h3>
-                <p>変換結果が下部に自動で表示されます。便利な換算表や詳細情報も確認できます。</p>
-              </div>
-              <div class="welcome-step">
-                <h3 class="welcome-step-title">履歴とお気に入り</h3>
-                <p>良く使う変換はお気に入りに登録できます。変換履歴も自動で保存されるので後から参照できます。</p>
-              </div>
-            </div>
-            <div class="welcome-buttons">
-              <button class="welcome-button welcome-button-primary" id="welcomeStartBtn">はじめる</button>
-              <button class="welcome-button welcome-button-secondary" id="welcomeDontShowBtn">次回から表示しない</button>
-            </div>
-          </div>
-        </div>
-        <button class="show-guide-button" id="showGuideBtn" title="ガイドを表示">?</button>
 
         <!-- 単位換算タブ -->        <div class="calculator-tabs">
           <button class="calculator-tab active" data-tab="length">
@@ -1732,9 +1548,6 @@
       // タブ切り替え機能
       setupTabs();
 
-      // 初回ユーザーガイド
-      setupWelcomeGuide();
-
       // 単位換算クラス
       const UnitConverter = {
         // 長さの変換係数（メートルを基準）
@@ -2353,42 +2166,6 @@
               }
             });
           });
-        });
-      }
-      
-      // 初回ユーザーガイド
-      function setupWelcomeGuide() {
-        const welcomeGuide = document.getElementById('welcomeGuide');
-        const closeButton = document.getElementById('welcomeClose');
-        const startButton = document.getElementById('welcomeStartBtn');
-        const dontShowButton = document.getElementById('welcomeDontShowBtn');
-        const showGuideButton = document.getElementById('showGuideBtn');
-        
-        // 初回訪問チェック
-        const hasVisited = localStorage.getItem('hasVisitedCalcTool');
-        
-        if (!hasVisited) {
-          // 初回訪問の場合、ガイドを表示
-          welcomeGuide.classList.add('show');
-        }
-        
-        // ボタンのイベントリスナー設定
-        closeButton.addEventListener('click', () => {
-          welcomeGuide.classList.remove('show');
-        });
-        
-        startButton.addEventListener('click', () => {
-          welcomeGuide.classList.remove('show');
-          localStorage.setItem('hasVisitedCalcTool', 'true');
-        });
-        
-        dontShowButton.addEventListener('click', () => {
-          welcomeGuide.classList.remove('show');
-          localStorage.setItem('hasVisitedCalcTool', 'true');
-        });
-        
-        showGuideButton.addEventListener('click', () => {
-          welcomeGuide.classList.add('show');
         });
       }
 
