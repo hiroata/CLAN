@@ -15,72 +15,10 @@
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet">
 
-  <!-- 個別ツールのスタイル -->  <style>
+  <!-- 個別ツールのスタイル -->
+  <style>
     :root{--primary:#0066ff;--secondary:#ff3a3a;--accent:#ff9500;--dark-blue:#0d3283;--light-bg:#f8f9fa;--text-dark:#333;--text-mid:#555;--header-h:60px}*,::after,::before{box-sizing:border-box;margin:0;padding:0}body{font:16px/1.6 'Noto Sans JP',sans-serif;color:var(--text-dark);background:#fff;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;-webkit-text-size-adjust:100%}img{max-width:100%;height:auto;vertical-align:middle;border:0}a{text-decoration:none;color:inherit}ul{list-style:none}main{flex:1 0 auto}.site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);height:var(--header-h);display:flex;align-items:center}.header-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;width:100%}.site-logo-text{font-weight:700;font-size:20px}.site-logo-text a{color:var(--dark-blue)}.hamburger-button{display:block;width:30px;height:30px;position:relative;z-index:1001;border:0;background:0;cursor:pointer}.hamburger-button span{display:block;position:absolute;width:100%;height:2px;background:var(--text-dark);left:0}.hamburger-button span:nth-child(1){top:8px}.hamburger-button span:nth-child(2){top:14px}.hamburger-button span:nth-child(3){bottom:8px}
 
-     /* フッタースタイル */
-     .site-footer {
-         background: linear-gradient(135deg, #1a2d54, #0d3283);
-         color: #fff;
-         padding-top: 50px;
-         position: relative;
-         z-index: 10;
-         margin-top: 40px;
-         box-shadow: 0 -8px 20px rgba(0,0,0,0.15);
-     }
-     .footer-container {
-         max-width: 1200px;
-         margin: 0 auto;
-         padding: 0 20px;
-         display: flex;
-         flex-wrap: wrap;
-         align-items: flex-start;
-         gap: 32px;
-     }
-     .footer-widgets {
-         display: flex;
-         flex: 1;
-         flex-wrap: wrap;
-         gap: 32px;
-     }
-     .widget-area {
-         min-width: 160px;
-     }
-     .widget-area h4 {
-         color: white;
-         margin-bottom: 15px;
-         font-size: 16px;
-         font-weight: bold;
-     }
-     .widget-area ul {
-         padding: 0;
-         list-style: none;
-     }
-     .widget-area ul li {
-         position: relative;
-         margin-bottom: 10px;
-     }
-     .widget-area ul li a {
-         position: relative;
-         display: inline-block;
-         color: rgba(255, 255, 255, 0.8);
-         font-size: 14px;
-         text-decoration: none;
-         transition: all 0.15s ease-out;
-     }
-     .widget-area ul li a:hover {
-         color: white;
-     }
-     @media (max-width: 768px) {
-         .footer-container {
-             flex-direction: column;
-             gap: 20px;
-         }
-         .footer-widgets {
-             flex-direction: column;
-             gap: 20px;
-         }
-     }
 
      /* WebP変換ツールスタイル */
      .tool-section {
@@ -513,23 +451,31 @@
     </section>
 
   <!-- フッター -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>CLAN</h2>
-      </div>      <div class="footer-links">
-        <ul>
-          <li><a href="../achievement/index.html">お客様の声</a></li>
-          <li><a href="/blog/index.html">ブログ</a></li>
-          <li><a href="../tools/index.html">まえゆきツール</a></li>
-          <li><a href="../owner.html">運営者情報</a></li>
-          <li><a href="../terms.html">利用規約</a></li>
-          <li><a href="../privacy.html">プライバシーポリシー</a></li>
-          <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
-        </ul>
-      </div>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>CLAN</h2>
     </div>
-  </footer>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="/achievement/index.html" 
+               title="UTAGE導入企業の成功事例">お客様の声</a></li>
+        <li><a href="/blog/index.html" 
+               title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+        <li><a href="/tools/index.html" 
+               title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+        <li><a href="/owner.html" 
+               title="CLANの運営会社情報">運営者情報</a></li>
+        <li><a href="/terms.html" 
+               title="サービス利用規約">利用規約</a></li>
+        <li><a href="/privacy.html" 
+               title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+        <li><a href="/tokutei.html" 
+               title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>

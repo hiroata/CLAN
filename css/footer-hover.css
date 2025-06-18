@@ -1,0 +1,129 @@
+/* フッター共通スタイル */
+.site-footer {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 40px 20px !important;
+  background-color: #0d3283 !important;
+  background: #0d3283 !important;
+  color: white !important;
+  border-top: none !important;
+  position: relative !important;
+}
+
+/* 擬似要素を無効化 */
+.site-footer::before,
+.site-footer::after {
+  display: none !important;
+  content: none !important;
+}
+
+.site-footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.site-footer .footer-brand h2 {
+  color: white !important;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.site-footer .footer-links ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 30px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.site-footer .footer-links ul li {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.site-footer .footer-links ul li a {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+}
+
+.site-footer .footer-links ul li a:hover {
+  color: white !important;
+  transform: translateX(3px);
+}
+
+/* フッター（旧ウィジェットスタイル互換） */
+.site-footer .footer-widgets {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.site-footer .widget-area {
+  min-width: 160px;
+}
+
+.site-footer .widget-area h4 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.site-footer .widget-area ul {
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .widget-area ul li {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.site-footer .widget-area ul li a {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+}
+
+.site-footer .widget-area ul li a:hover {
+  color: white !important;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 20px;
+  }
+
+  .site-footer .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .site-footer .footer-links ul {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .site-footer .footer-widgets {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

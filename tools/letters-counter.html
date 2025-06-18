@@ -20,9 +20,26 @@
     :root{--primary:#0066ff;--secondary:#ff3a3a;--accent:#ff9500;--dark-blue:#0d3283;--light-bg:#f8f9fa;--text-dark:#333;--text-mid:#555;--header-h:60px}*,::after,::before{box-sizing:border-box;margin:0;padding:0}body{font:16px/1.6 'Noto Sans JP',sans-serif;color:var(--text-dark);background:#fff;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;-webkit-text-size-adjust:100%}img{max-width:100%;height:auto;vertical-align:middle;border:0}a{text-decoration:none;color:inherit}ul{list-style:none}main{flex:1 0 auto}.site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);height:var(--header-h);display:flex;align-items:center}.header-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;width:100%}.site-logo-text{font-weight:700;font-size:20px}.site-logo-text a{color:var(--dark-blue)}.hamburger-button{display:block;width:30px;height:30px;position:relative;z-index:1001;border:0;background:0;cursor:pointer}.hamburger-button span{display:block;position:absolute;width:100%;height:2px;background:var(--text-dark);left:0}.hamburger-button span:nth-child(1){top:8px}.hamburger-button span:nth-child(2){top:14px}.hamburger-button span:nth-child(3){bottom:8px}
 
      /* 文字数カウントツールスタイル */
-     .tool-section {
-         padding: 80px 0 40px;
+     .tool-header {
+         padding: 80px 0 20px;
          margin-top: var(--header-h);
+         background: #f9f3e9;
+         text-align: center;
+     }
+     .tool-header h1 {
+         font-size: 32px;
+         margin-bottom: 10px;
+         color: var(--text-dark);
+     }
+     .tool-description {
+         font-size: 16px;
+         color: var(--text-mid);
+         max-width: 600px;
+         margin: 0 auto;
+         line-height: 1.6;
+     }
+     .tool-section {
+         padding: 20px 0 40px;
          background: #f9f3e9;
      }
      .tool-container {
@@ -291,8 +308,18 @@
 
      /* レスポンシブ対応 */
      @media (max-width: 768px) {
+         .tool-header {
+             padding: 70px 0 15px;
+         }
+         .tool-header h1 {
+             font-size: 26px;
+         }
+         .tool-description {
+             font-size: 14px;
+             padding: 0 20px;
+         }
          .tool-section {
-             padding: 70px 0 30px;
+             padding: 15px 0 30px;
          }
          .counter-bar {
              font-size: 16px;
@@ -377,8 +404,6 @@
   <!-- JavaScriptの遅延ロード -->
   <script src="/js/script.js" defer></script>
 
-  <!-- フッターのスタイル -->
-  <link rel="stylesheet" href="/css/footer-hover.css">
 
   <link rel="icon" href="../assets/images/logo.webp" type="image/webp">
   <meta property="og:title" content="文字数カウント | まえゆきツール">
@@ -387,81 +412,6 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="/images/ogp_image_tools.webp">
   <meta property="og:type" content="website">
-    <!-- フッターのスタイル調整 -->
-  <style>
-    /* ツールページでのフッター調整 */
-    .site-footer {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      padding: 40px 20px;
-      background-color: #0d3283;
-      color: white;
-    }
-
-    .site-footer .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 32px;
-    }
-
-    .site-footer .footer-widgets {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    .site-footer .widget-area {
-      min-width: 160px;
-    }
-
-    .site-footer .widget-area h4 {
-      color: white;
-      margin-bottom: 15px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .site-footer .widget-area ul {
-      padding: 0;
-      list-style: none;
-    }
-
-    .site-footer .widget-area ul li {
-      position: relative;
-      margin-bottom: 10px;
-    }
-
-    .site-footer .widget-area ul li a {
-      position: relative;
-      display: inline-block;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.15s ease-out;
-    }
-
-    .site-footer .widget-area ul li a:hover {
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .site-footer .footer-container {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .site-footer .footer-widgets {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
-  </style>
   <!-- インクルード処理 -->
 
 </head>
@@ -499,18 +449,17 @@
 
   <!-- メインコンテンツ -->
   <main>
-    <!-- ツールのコンテナ -->    
-    <div class="app-wrapper">
+    <!-- ツールのヘッダー -->
+    <div class="tool-header">
       <div class="tool-container">
-        <div class="tool-header">
-          <h1>文字数カウント</h1>
-          <p class="tool-description">日本語の文章の文字数を素早く正確にカウントできるシンプルなツールです。空白や改行を除外した文字数、行数、UTF-8バイト数も表示します。</p>
-        </div>
-        <!-- ツール固有のコンテンツ -->
-        <div class="tool-content">
-          <!-- ツールセクション -->
-          <section class="tool-section">
-            <div class="tool-container">
+        <h1>文字数カウント</h1>
+        <p class="tool-description">日本語の文章の文字数を素早く正確にカウントできるシンプルなツールです。空白や改行を除外した文字数、行数、UTF-8バイト数も表示します。</p>
+      </div>
+    </div>
+    
+    <!-- ツールセクション -->
+    <section class="tool-section">
+      <div class="tool-container">
               <!-- テキスト入力エリア -->
               <div class="input-area">
                 <div class="counter-bar">
@@ -622,12 +571,10 @@
                   <a href="color-palette.html" class="tool-link">カラーパレット</a>
                   <a href="wareki-seireki.html" class="tool-link">年齢・和暦計算ツール</a>
                 </div>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
-    </div>  </main>
+    </section>
+  </main>
 
     <!-- 重大告知 -->
     <div class="important-notice">
@@ -652,25 +599,31 @@
     </section>
 
   <!-- フッターを共通コンポーネントとして読み込み -->  <!-- フッター -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>CLAN</h2>
-      </div>
-      <div class="footer-links">
-        <ul>
-          <li><a href="../../owner.html">無料相談</a></li>
-          <li><a href="../achievement/index.html">お客様の声</a></li>
-          <li><a href="/blog/index.html">ブログ</a></li>
-          <li><a href="../tools/index.html">まえゆきツール</a></li>
-          <li><a href="../owner.html">運営者情報</a></li>
-          <li><a href="../terms.html">利用規約</a></li>
-          <li><a href="../privacy.html">プライバシーポリシー</a></li>
-          <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
-        </ul>
-      </div>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>CLAN</h2>
     </div>
-  </footer>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="/achievement/index.html" 
+               title="UTAGE導入企業の成功事例">お客様の声</a></li>
+        <li><a href="/blog/index.html" 
+               title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+        <li><a href="/tools/index.html" 
+               title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+        <li><a href="/owner.html" 
+               title="CLANの運営会社情報">運営者情報</a></li>
+        <li><a href="/terms.html" 
+               title="サービス利用規約">利用規約</a></li>
+        <li><a href="/privacy.html" 
+               title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+        <li><a href="/tokutei.html" 
+               title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
 
   <!-- AOS JavaScript -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

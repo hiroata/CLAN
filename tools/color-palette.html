@@ -840,78 +840,6 @@
         }
     }
     
-    /* ツールページでのフッター調整 */
-    .site-footer {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      padding: 40px 20px;
-      background-color: #0d3283;
-      color: white;
-    }
-    
-    .site-footer .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 32px;
-    }
-    
-    .site-footer .footer-widgets {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-    
-    .site-footer .widget-area {
-      min-width: 160px;
-    }
-    
-    .site-footer .widget-area h4 {
-      color: white;
-      margin-bottom: 15px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    
-    .site-footer .widget-area ul {
-      padding: 0;
-      list-style: none;
-    }
-    
-    .site-footer .widget-area ul li {
-      position: relative;
-      margin-bottom: 10px;
-    }
-    
-    .site-footer .widget-area ul li a {
-      position: relative;
-      display: inline-block;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.15s ease-out;
-    }
-    
-    .site-footer .widget-area ul li a:hover {
-      color: white;
-    }
-    
-    @media (max-width: 768px) {
-      .site-footer .footer-container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      
-      .site-footer .footer-widgets {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
     
     /* その他のツールリンクのスタイル */
     .other-tools {
@@ -1305,120 +1233,8 @@
       </div>
     </section>  </main>
   
-    <!-- 重大告知 -->
-    <div class="important-notice">
-        <h2>UTAGE構築代行丸投げちゃんとは？</h2>
-        <a href="https://utage-system.com/p/EcESO02xLLoK" class="important-notice-button">詳細を見る</a>
-    </div>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
-            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
-            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
-                UTAGEの導入で最大75万円の補助金が受けられます。<br>
-                面倒な申請手続きはすべてお任せください。<br>
-                あなたは事業成長に集中するだけでOKです。
-            </p>
-            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
-            </div>
-        </div>
-    </section>
-
-  <!-- フッターを共通コンポーネントとして読み込み -->  <!-- フッター -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>CLAN</h2>
-      </div>      <div class="footer-links">
-        <ul>
-          <li><a href="../../owner.html">無料相談</a></li>
-          <li><a href="../achievement/index.html">お客様の声</a></li>
-          <li><a href="/blog/index.html">ブログ</a></li>
-          <li><a href="../tools/index.html">まえゆきツール</a></li>
-          <li><a href="../owner.html">運営者情報</a></li>
-          <li><a href="../terms.html">利用規約</a></li>
-          <li><a href="../privacy.html">プライバシーポリシー</a></li>
-          <li><a href="../tokutei.html">特定商取引法に基づく表記</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
-  <!-- AOS JavaScript -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- カラーパレット用JavaScript -->
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
-
-    // Intersection Observer for fade-in elements
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all fade-in-section elements
-    document.querySelectorAll('.fade-in-section').forEach(section => {
-      observer.observe(section);
-    });
-
-    // ハンバーガーメニューの制御
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.querySelector('.hamburger-menu');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      
-      if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', function() {
-          hamburger.classList.toggle('active');
-          mobileMenu.classList.toggle('active');
-          document.body.classList.toggle('mobile-menu-open');
-        });
-
-        // モバイルメニューのリンクをクリックしたときにメニューを閉じる
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.classList.remove('mobile-menu-open');
-          });
-        });
-      }
-    });
-  </script>
-  <script>
-    if (!window.isScriptLoaded || !window.isScriptLoaded('/js/include.js')) {
-        document.write('<script src="/js/include.js"><\/script>');
-    } else {
-        console.log('include.jsのロードをスキップしました');
-    }
-</script>
-
-  
-  <!-- SVGアイコン -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="icon-pdf" viewBox="0 0 24 24">
-      <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z"/>
-    </symbol>
-  </svg>
-
-  <!-- 共通JavaScript -->
-  
-  
-  <!-- カラーパレット用JavaScript -->  <script>
     document.addEventListener('DOMContentLoaded', function() {
       // DOM要素
       const colorSchemeSelect = document.getElementById('colorScheme');
@@ -1537,13 +1353,13 @@
         // 彩度スライダーの背景を動的に更新 (純粋な色相のグラデーションに)
         satSlider.style.background = `linear-gradient(to right, 
             hsl(${hsl.h}, 0%, ${hsl.l}%), 
-            hsl(${hsl.h}, 100%, ${hsl.l}%))`;
+            hsl(${hsl.h}, 100%, ${hsl.l}%)`;
             
         // 明度スライダーの背景を動的に更新 (黒→色→白のグラデーションに)
         lightSlider.style.background = `linear-gradient(to right, 
             hsl(${hsl.h}, ${hsl.s}%, 0%), 
             hsl(${hsl.h}, ${hsl.s}%, 50%), 
-            hsl(${hsl.h}, ${hsl.s}%, 100%))`;
+            hsl(${hsl.h}, ${hsl.s}%, 100%)`;
       }
       
       // カラープレビューを更新
@@ -1741,7 +1557,8 @@
         
         loadSavedPalettes();
       }
-        // 保存されたパレットを読み込む
+      
+      // 保存されたパレットを読み込む
       function loadSavedPalettes() {
         const savedPalettes = getSavedPalettes();
         
@@ -1848,7 +1665,8 @@
         const palettesJson = localStorage.getItem('savedPalettes');
         return palettesJson ? JSON.parse(palettesJson) : [];
       }
-        // メッセージ表示
+      
+      // メッセージ表示
       function showMessage(msg) {
         // 既存のタイマーをクリア
         if (window.messageTimeout) {
@@ -1945,10 +1763,108 @@
       }
     });
   </script>
+  
+    <!-- 重大告知 -->
+    <div class="important-notice">
+        <h2>UTAGE構築代行丸投げちゃんとは？</h2>
+        <a href="https://utage-system.com/p/EcESO02xLLoK" class="important-notice-button">詳細を見る</a>
+    </div>
 
-<!-- footer -->
-</body>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
+            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
+                UTAGEの導入で最大75万円の補助金が受けられます。<br>
+                面倒な申請手続きはすべてお任せください。<br>
+                あなたは事業成長に集中するだけでOKです。
+            </p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- AOS JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Intersection Observer for fade-in elements
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in-section elements
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // ハンバーガーメニューの制御
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.classList.toggle('mobile-menu-open');
+        });
+
+        // モバイルメニューのリンクをクリックしたときにメニューを閉じる
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
+          });
+        });
+      }
+    });
+  </script>
+
   <!-- フッター -->
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>CLAN</h2>
+    </div>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <ul>
+        <li><a href="/achievement/index.html" 
+               title="UTAGE導入企業の成功事例">お客様の声</a></li>
+        <li><a href="/blog/index.html" 
+               title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+        <li><a href="/tools/index.html" 
+               title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+        <li><a href="/owner.html" 
+               title="CLANの運営会社情報">運営者情報</a></li>
+        <li><a href="/terms.html" 
+               title="サービス利用規約">利用規約</a></li>
+        <li><a href="/privacy.html" 
+               title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+        <li><a href="/tokutei.html" 
+               title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
 
   <!-- 統合システムスクリプト（優先読み込み） -->
   <script src="../js/common-cache.js" onerror="console.warn('common-cache.js not found')"></script>
@@ -1956,4 +1872,3 @@
   <script src="../js/common-init.js" onerror="console.warn('common-init.js not found')"></script>
 </body>
 </html>
-
