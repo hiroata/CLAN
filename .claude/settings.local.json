@@ -16,7 +16,15 @@
       "Bash(./remove-footer-link.sh:*)",
       "Bash(python:*)",
       "Bash(mv:*)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "Bash(sed:*)",
+      "Bash(./update-card-title-fontsize.sh:*)",
+      "Bash(for:*)",
+      "Bash(do if [[ -f \"$file\" ]])",
+      "Bash(then sed -i '/.myblog-related-card-title[[:space:]]*{/,/}/ s/font-size:[[:space:]]*1\\.125rem/font-size: 1.3rem/' \"$file\")",
+      "Bash(echo \"Updated: $file\")",
+      "Bash(fi)",
+      "Bash(done)"
     ],
     "deny": []
   }

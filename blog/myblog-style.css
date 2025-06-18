@@ -443,13 +443,9 @@
 /* 記事カード用自動生成画像（CLS対策） */
 .myblog-article-card-image {
   width: 100%;
-  height: 160px;
+  height: 100%;
   overflow: hidden;
   position: relative;
-  /* CLS対策：アスペクト比固定 */
-  aspect-ratio: 16 / 9;
-  min-height: 160px;
-  background-color: #f8f9fa;
 }
 
 .myblog-article-card-image.myblog-auto-image {
@@ -462,31 +458,11 @@
 }
 
 .myblog-article-card-image.myblog-auto-image::before {
-  content: attr(data-title);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.25;
-  padding: var(--myblog-spacing-sm);
-  max-width: 95%;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  word-break: break-word;
-  hyphens: auto;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  white-space: pre-line;
+  display: none;
 }
 
 .myblog-article-card-image.myblog-auto-image .myblog-auto-image-text {
-  display: none;
+  display: none !important;
 }
 
 .myblog-article-meta {
@@ -512,12 +488,14 @@
 }
 
 .myblog-tag {
-  background-color: var(--myblog-accent-color);
-  color: var(--myblog-content-bg);
-  padding: var(--myblog-spacing-xs) var(--myblog-spacing-sm);
-  border-radius: var(--myblog-border-radius-small);
+  background-color: rgba(255,255,255,0.15);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
   font-size: 0.8rem;
   font-weight: var(--myblog-font-weight-medium);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .myblog-article-title {
@@ -793,7 +771,7 @@
 }
 
 .myblog-link-card-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: var(--myblog-font-weight-bold);
   margin: 0 0 var(--myblog-spacing-sm) 0;
   color: var(--myblog-text-color);
@@ -1049,17 +1027,20 @@
   gap: var(--myblog-spacing-lg);
 }
 
-.myblog-related-card {
-  border: 1px solid var(--myblog-border-color);
+.myblog-related-card,
+.myblog-related-item {
   border-radius: var(--myblog-border-radius);
   overflow: hidden;
   transition: var(--myblog-transition);
-  background-color: var(--myblog-content-bg);
+  height: 280px;
+  position: relative;
+  display: block;
 }
 
-.myblog-related-card:hover {
-  box-shadow: var(--myblog-shadow-hover);
-  transform: translateY(-2px);
+.myblog-related-card:hover,
+.myblog-related-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 .myblog-related-link {
@@ -1070,7 +1051,7 @@
 
 .myblog-related-image {
   width: 100%;
-  height: 180px;
+  height: 280px;
   overflow: hidden;
   position: relative;
 }
@@ -1084,31 +1065,26 @@
 }
 
 .myblog-related-image.myblog-auto-image::before {
-  content: attr(data-title);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  line-height: 1.3;
-  padding: var(--myblog-spacing-sm);
-  max-width: 90%;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  word-break: break-word;
-  hyphens: auto;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  white-space: pre-line;
+  display: none;
 }
 
 .myblog-related-image.myblog-auto-image .myblog-auto-image-text {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
 }
 
 .myblog-related-image img {
@@ -1123,12 +1099,13 @@
 }
 
 .myblog-related-content {
-  padding: var(--myblog-spacing-md);
+  display: none;
 }
 
-.myblog-related-card-title {
-  font-size: 0.9rem;
-  font-weight: var(--myblog-font-weight-medium);
+.myblog-related-card-title,
+.myblog-related-item-title {
+  font-size: 1.1rem;
+  font-weight: var(--myblog-font-weight-bold);
   line-height: 1.3;
   margin: 0 0 var(--myblog-spacing-sm) 0;
   color: var(--myblog-text-color);
@@ -1268,12 +1245,12 @@
 
 /* 記事カード */
 .myblog-article-card {
-  background-color: var(--myblog-content-bg);
   border-radius: var(--myblog-border-radius);
-  box-shadow: var(--myblog-shadow);
   overflow: hidden;
   transition: var(--myblog-gpu-transition), var(--myblog-color-transition);
-  height: fit-content;
+  height: 380px;
+  position: relative;
+  display: block;
   /* GPUアクセラレーション有効化 */
   will-change: transform;
   transform: translateZ(0);
@@ -1300,10 +1277,18 @@
 }
 
 .myblog-article-card-content {
-  padding: var(--myblog-spacing-md);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+  color: white;
   display: flex;
   flex-direction: column;
-  gap: var(--myblog-spacing-sm);
+  justify-content: center;
+  gap: var(--myblog-spacing-md);
 }
 
 .myblog-article-card-meta {
@@ -1315,9 +1300,10 @@
 }
 
 .myblog-article-card-date {
-  font-size: 0.8rem;
-  color: var(--myblog-text-light);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
   flex-shrink: 0;
+  font-weight: 500;
 }
 
 .myblog-article-card-tags {
@@ -1327,14 +1313,15 @@
 }
 
 .myblog-article-card-title {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   font-weight: var(--myblog-font-weight-bold);
-  line-height: 1.3;
+  line-height: 1.4;
   margin: 0;
-  color: var(--myblog-text-color);
+  color: white;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.9);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
@@ -1342,14 +1329,7 @@
 }
 
 .myblog-article-card-excerpt {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: var(--myblog-text-light);
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: none;
 }
 
 /* ページネーション */
@@ -1840,7 +1820,7 @@
   }
   
   .myblog-article-card-title {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     line-height: 1.3;
   }
   

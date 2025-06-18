@@ -70,6 +70,7 @@ footer { flex-shrink: 0; }
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
   background: var(--traditional-bg-light);
   border-bottom: 3px solid var(--traditional-border);
   box-shadow: 0 2px 15px rgba(139, 0, 0, 0.08);
@@ -80,7 +81,7 @@ footer { flex-shrink: 0; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: var(--container-max);
+  max-width: var(--container-lg);
   margin: 0 auto;
   padding: 1rem var(--space-lg);
   min-height: 70px;
@@ -361,7 +362,7 @@ footer { flex-shrink: 0; }
 .index-page .apple-hero-container {
   position: relative;
   z-index: 10;
-  max-width: var(--container-max);
+  max-width: var(--container-lg);
   margin: var(--container-center);
   padding: calc(var(--header-height) + 10px) 40px 60px 40px;
   text-align: center;
@@ -457,7 +458,7 @@ footer { flex-shrink: 0; }
    5. 共通コンポーネント・セクション
    ========================================== */
 .inner {
-  max-width: var(--container-max);
+  max-width: var(--container-lg);
   margin: var(--container-center);
   padding: var(--container-padding);
 }
@@ -538,7 +539,7 @@ footer { flex-shrink: 0; }
 
 /* Grid Layouts */
 .features-container {
-  max-width: var(--container-max);
+  max-width: var(--container-lg);
   margin: var(--container-center);
   padding: var(--container-padding);
 }
@@ -800,9 +801,9 @@ footer { flex-shrink: 0; }
 }
 
 .footer-container {
-  max-width: var(--container-max);
-  margin: var(--container-center);
-  padding: var(--container-padding);
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
   position: relative;
   z-index: 2;
   display: flex;
@@ -1541,7 +1542,7 @@ footer { flex-shrink: 0; }
 }
 
 .achievement-container {
-  max-width: var(--container-max);
+  max-width: var(--container-lg);
   margin: 0 auto;
   padding: 80px 20px;
 }
