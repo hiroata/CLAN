@@ -171,11 +171,33 @@
         justify-content: center;
         font-size: 14px;
         cursor: pointer;
-    }
-    .files-meta {
+    }    .files-meta {
         font-size: 14px;
         margin: 15px 0 0;
         color: var(--text-mid);
+    }
+
+    /* ステータス表示 */
+    .status-message {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: 500;
+        transition: opacity 0.3s;
+    }
+    .status-message.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+    .status-message.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    .status-message:empty {
+        display: none;
     }
 
     /* 設定フォーム */
@@ -379,11 +401,7 @@
         .files-container {
             justify-content: center;
         }
-    }
-  </style>
-
-  <!-- JavaScriptの遅延ロード -->
-  <script src="/js/script.js" defer></script>
+    }  </style>
 
   <link rel="icon" href="../assets/images/logo.webp" type="image/webp">
   <meta property="og:title" content="PNG→JPEG変換ツール | まえゆきツール">
@@ -452,10 +470,11 @@
                      + ファイルを追加
                      <input type="file" class="file-input" id="fileInput" accept="image/png" multiple>
                   </label>
-               </div>
-
-               <div class="files-meta" id="filesMeta"></div>
+               </div>               <div class="files-meta" id="filesMeta"></div>
                <div class="files-container" id="filesContainer"></div>
+               
+               <!-- ステータス表示 -->
+               <div id="status" class="status-message"></div>
             </div>
 
             <!-- ステップ2: 品質設定 -->
@@ -681,16 +700,63 @@
           const bgColorHex = document.getElementById('bgColorHex');
           const convertBtn = document.getElementById('convertBtn');
           const downloadBtn = document.getElementById('downloadBtn');
-          const resultTableContainer = document.getElementById('resultTableContainer');
-
-          // 状態管理
+          const resultTableContainer = document.getElementById('resultTableContainer');          // 状態管理
           let selectedFiles = [];
           let convertedImages = [];
           let quality = 90;
           let bgColor = '#FFFFFF';
 
-          // 共通関数を使用してファイルドロップ設定
-          setupFileDropAndSelection(dropArea, fileInput, handleFiles);
+          // ファイルドロップとファイル選択の設定
+          setupFileDropAndSelection();
+
+          // ファイルドロップとファイル選択機能の実装
+          function setupFileDropAndSelection() {
+              // ドラッグ&ドロップイベント
+              ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                  dropArea.addEventListener(eventName, preventDefaults, false);
+              });
+
+              function preventDefaults(e) {
+                  e.preventDefault();
+                  e.stopPropagation();
+              }
+
+              // ドラッグエフェクト
+              ['dragenter', 'dragover'].forEach(eventName => {
+                  dropArea.addEventListener(eventName, highlight, false);
+              });
+
+              ['dragleave', 'drop'].forEach(eventName => {
+                  dropArea.addEventListener(eventName, unhighlight, false);
+              });
+
+              function highlight() {
+                  dropArea.classList.add('active');
+              }
+
+              function unhighlight() {
+                  dropArea.classList.remove('active');
+              }
+
+              // ファイルドロップ処理
+              dropArea.addEventListener('drop', handleDrop, false);
+
+              function handleDrop(e) {
+                  const dt = e.dataTransfer;
+                  const files = dt.files;
+                  handleFiles(files);
+              }
+
+              // ファイル選択ボタン
+              fileInput.addEventListener('change', function(e) {
+                  handleFiles(e.target.files);
+              });
+
+              // ドロップエリアクリック
+              dropArea.addEventListener('click', function() {
+                  fileInput.click();
+              });
+          }
 
           // 品質スライダー
           qualitySlider.addEventListener('input', function() {

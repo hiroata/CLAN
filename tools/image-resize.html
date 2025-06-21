@@ -431,11 +431,7 @@
       font-size: 14px;
       color: #666;
       margin: 5px 0;
-    }
-  </style>
-
-  <!-- JavaScriptの遅延ロード -->
-  <script src="/js/script.js" defer></script>
+    }  </style>
 
   <link rel="icon" href="../assets/images/logo.webp" type="image/webp">
   <meta property="og:title" content="画像サイズ変更ツール | まえゆきツール">
@@ -747,14 +743,61 @@
                 const newHeight = parseInt(maxHeightInput.value) || 0;
                 maxWidthInput.value = Math.round(newHeight * originalAspectRatio);
             }
-        }
-
-        // 入力フィールドの変更をリッスン
+        }        // 入力フィールドの変更をリッスン
         maxWidthInput.addEventListener('input', updateAspectRatio);
         maxHeightInput.addEventListener('input', updateAspectRatio);
 
-        // 共通関数を使用してファイルドロップ設定
-        setupFileDropAndSelection(dropArea, fileInput, handleFiles);
+        // ファイルドロップとファイル選択の設定
+        setupFileDropAndSelection();
+
+        // ファイルドロップとファイル選択機能の実装
+        function setupFileDropAndSelection() {
+            // ドラッグ&ドロップイベント
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            // ドラッグエフェクト
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                dropArea.classList.add('active');
+            }
+
+            function unhighlight() {
+                dropArea.classList.remove('active');
+            }
+
+            // ファイルドロップ処理
+            dropArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            }
+
+            // ファイル選択ボタン
+            fileInput.addEventListener('change', function(e) {
+                handleFiles(e.target.files);
+            });
+
+            // ドロップエリアクリック
+            dropArea.addEventListener('click', function() {
+                fileInput.click();
+            });
+        }
 
         // ファイル処理
         function handleFiles(files) {

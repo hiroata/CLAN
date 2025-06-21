@@ -164,11 +164,33 @@
          font-size: 12px;
          cursor: pointer;
          z-index: 1;
-     }
-     .files-meta {
+     }     .files-meta {
          font-size: 14px;
          color: var(--text-mid);
          margin-bottom: 15px;
+     }
+
+     /* ステータス表示 */
+     .status-message {
+         padding: 10px;
+         margin: 10px 0;
+         border-radius: 5px;
+         text-align: center;
+         font-weight: 500;
+         transition: opacity 0.3s;
+     }
+     .status-message.success {
+         background: #d4edda;
+         color: #155724;
+         border: 1px solid #c3e6cb;
+     }
+     .status-message.error {
+         background: #f8d7da;
+         color: #721c24;
+         border: 1px solid #f5c6cb;
+     }
+     .status-message:empty {
+         display: none;
      }
 
      /* 品質スライダー */
@@ -382,10 +404,12 @@
               <input type="file" id="fileInput" class="file-input" accept="image/jpeg,image/png,image/gif" multiple>
             </label>
           </div>
-          
-          <!-- ファイルプレビュー -->
+            <!-- ファイルプレビュー -->
           <div id="filesContainer" class="files-container"></div>
           <div id="filesMeta" class="files-meta"></div>
+          
+          <!-- ステータス表示 -->
+          <div id="status" class="status-message"></div>
         </div>
         
         <!-- ステップ2: 変換設定 -->
@@ -535,17 +559,7 @@
         fadeElements.forEach(element => {
             observer.observe(element);
         });
-    });
-  </script>
-  <script>
-    if (!window.isScriptLoaded || !window.isScriptLoaded('/js/include.js')) {
-        document.write('<script src="/js/include.js"><\/script>');
-    } else {
-        console.log('include.jsのロードをスキップしました');
-    }
-  </script>
-
-  <script src="/js/script.js"></script>
+    });  </script>
   
   <!-- JSZipの読み込み -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -576,9 +590,7 @@
                 return false;
             }
             return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-        }
-
-        // WebPがサポートされていない場合の処理
+        }        // WebPがサポートされていない場合の処理
         if (!checkWebPSupport()) {
             const errorMessage = document.createElement('div');
             errorMessage.className = 'error-message';
@@ -594,18 +606,63 @@
             convertBtn.disabled = true;
             downloadBtn.disabled = true;
             return;
-        }
+        }        // ファイルドロップとファイル選択の設定
+        setupFileDropAndSelection();
 
-        // 共通関数を使用してファイルドロップ設定
-        setupFileDropAndSelection(dropArea, fileInput, handleFiles);
+        // ファイルドロップとファイル選択機能の実装
+        function setupFileDropAndSelection() {
+            // ドラッグ&ドロップイベント
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            // ドラッグエフェクト
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                dropArea.classList.add('active');
+            }
+
+            function unhighlight() {
+                dropArea.classList.remove('active');
+            }
+
+            // ファイルドロップ処理
+            dropArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            }
+
+            // ファイル選択ボタン
+            fileInput.addEventListener('change', function(e) {
+                handleFiles(e.target.files);
+            });
+
+            // ドロップエリアクリック
+            dropArea.addEventListener('click', function() {
+                fileInput.click();
+            });
+        }
 
         // 品質スライダー
         qualitySlider.addEventListener('input', function() {
             quality = parseInt(this.value);
             qualityValue.textContent = `${quality}%`;
-        });
-
-        // ファイル処理
+        });        // ファイル処理
         function handleFiles(files) {
             const validFiles = Array.from(files).filter(file => {
                 const type = file.type.toLowerCase();
@@ -613,7 +670,7 @@
             });
 
             if (validFiles.length === 0) {
-                // 共通関数を使用してエラー表示
+                // エラー表示
                 updateUI('JPEG/PNG/GIF画像を選択してください。', true);
                 return;
             }
@@ -627,21 +684,14 @@
 
             // 変換ボタンを有効化
             convertBtn.disabled = selectedFiles.length === 0;
-        }
-
-        // ファイルUI更新（共通関数を使用）
+        }        // ファイルUI更新
         function updateFilesUI() {
             filesContainer.innerHTML = '';
 
             selectedFiles.forEach((file, index) => {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    const fileItem = createFileItem(file, e.target.result, () => {
-                        selectedFiles.splice(index, 1);
-                        updateFilesUI();
-                        updateFilesMetaUI();
-                        convertBtn.disabled = selectedFiles.length === 0;
-                    });
+                    const fileItem = createFileItem(file, e.target.result, index);
                     filesContainer.appendChild(fileItem);
                 };
                 reader.readAsDataURL(file);
@@ -662,10 +712,8 @@
 
             const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
             filesMeta.textContent = `${selectedFiles.length}枚の画像（合計 ${sizeInMB} MB）`;
-        }
-
-        // ファイルアイテム作成
-        function createFileItem(file, previewUrl, onRemove) {
+        }        // ファイルアイテム作成
+        function createFileItem(file, previewUrl, fileIndex) {
             const fileItem = document.createElement('div');
             fileItem.className = 'file-item';
 
@@ -676,7 +724,12 @@
             const removeBtn = document.createElement('div');
             removeBtn.className = 'file-remove';
             removeBtn.textContent = '×';
-            removeBtn.addEventListener('click', onRemove);
+            removeBtn.addEventListener('click', function() {
+                selectedFiles.splice(fileIndex, 1);
+                updateFilesUI();
+                updateFilesMetaUI();
+                convertBtn.disabled = selectedFiles.length === 0;
+            });
 
             fileItem.appendChild(preview);
             fileItem.appendChild(removeBtn);
@@ -778,18 +831,17 @@
                         <td class="file-size-reduction">${reductionPercent}%</td>
                     `;
 
-                    resultTableBody.appendChild(row);
-                } catch (err) {
+                    resultTableBody.appendChild(row);                } catch (err) {
                     console.error('変換エラー:', err);
 
                     // エラー表示
-                    updateUI('変換エラーが発生しました', true);
+                    updateUI(`${file.name}の変換でエラーが発生しました: ${err.message}`, true);
 
                     // エラー行を追加
                     const errorRow = document.createElement('tr');
                     errorRow.innerHTML = `
                         <td>${file.name}</td>
-                        <td colspan="3" style="color: red;">変換エラー</td>
+                        <td colspan="3" style="color: red;">変換エラー: ${err.message}</td>
                     `;
                     resultTableBody.appendChild(errorRow);
                 }
@@ -849,34 +901,28 @@
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
             });
-        });
-
-        // UI状態の更新
+        });        // UI状態の更新
         function updateUI(message, isError = false) {
             const statusElement = document.getElementById('status');
-            if (!statusElement) return;
+            if (!statusElement) {
+                console.warn('Status element not found');
+                return;
+            }
             
             statusElement.textContent = message;
-            statusElement.className = isError ? 'error' : 'success';
+            statusElement.className = `status-message ${isError ? 'error' : 'success'}`;
             
             // 一定時間後にメッセージを消す
             setTimeout(() => {
                 statusElement.textContent = '';
-                statusElement.className = '';
+                statusElement.className = 'status-message';
             }, 5000);
         }
     });
   </script>
-
   <!-- 統合システムスクリプト（優先読み込み） -->
   <script src="../js/common-cache.js" onerror="console.warn('common-cache.js not found')"></script>
   <script src="../js/common-lazy-loading.js" onerror="console.warn('common-lazy-loading.js not found')"></script>
   <script src="../js/common-init.js" onerror="console.warn('common-init.js not found')"></script>
 </body>
 </html>
-
-
-
-
-
-
