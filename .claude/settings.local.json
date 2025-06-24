@@ -25,7 +25,9 @@
       "Bash(echo \"Updated: $file\")",
       "Bash(fi)",
       "Bash(done)",
-      "Bash(do echo \"=== $file ===\")"
+      "Bash(do echo \"=== $file ===\")",
+      "WebFetch(domain:clanbiz.net)",
+      "WebFetch(domain:search.google.com)"
     ],
     "deny": []
   }

@@ -710,27 +710,53 @@
          // 絵文字トグル
          emojiToggle.addEventListener('change', countText);
 
-         // 文字数カウント関数
+         // 高精度文字数カウント関数
          function countText() {
              // テキストを取得
              let text = textInput.value;
 
-             // HTMLタグを除外する場合
+             // HTMLタグを除外する場合（より安全な処理）
              if (htmlToggle.checked) {
-                 text = text.replace(/<[^>]*>/g, '');
+                 // DOMParserを使用してより安全にHTMLを除去
+                 try {
+                     const tempDiv = document.createElement('div');
+                     tempDiv.innerHTML = text;
+                     text = tempDiv.textContent || tempDiv.innerText || '';
+                 } catch (error) {
+                     // フォールバック：正規表現による除去
+                     text = text.replace(/<[^>]*>/g, '');
+                 }
              }
 
-             // 絵文字を1文字としてカウント
-             let totalChars = text.length;
-
-             // 絵文字を特殊処理する場合
+             // 絵文字と複合文字の正確なカウント
+             let totalChars;
+             
              if (emojiToggle.checked) {
-                 // サロゲートペア（絵文字など）を1文字としてカウント
-                 totalChars = [...text].length;
+                 // Intl.Segmenterを使用した高精度カウント（サポートされている場合）
+                 if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+                     const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
+                     totalChars = Array.from(segmenter.segment(text)).length;
+                 } else {
+                     // フォールバック：スプレッド演算子による分割
+                     totalChars = [...text].length;
+                 }
+             } else {
+                 // 通常の文字数カウント
+                 totalChars = text.length;
              }
 
-             // 空白や改行を除外した文字数
-             const noSpaceChars = text.replace(/\s+/g, '').length;
+             // 空白や改行を除外した文字数（改良版）
+             const textWithoutWhitespace = text.replace(/\s+/g, '');
+             let noSpaceChars;
+             
+             if (emojiToggle.checked && typeof Intl !== 'undefined' && Intl.Segmenter) {
+                 const segmenter = new Intl.Segmenter('ja', { granularity: 'grapheme' });
+                 noSpaceChars = Array.from(segmenter.segment(textWithoutWhitespace)).length;
+             } else if (emojiToggle.checked) {
+                 noSpaceChars = [...textWithoutWhitespace].length;
+             } else {
+                 noSpaceChars = textWithoutWhitespace.length;
+             }
 
              // 行数（改行ごとにカウント）
              const lines = text === '' ? 1 : text.split('\n').length;
@@ -760,7 +786,8 @@
 ・UTF-8バイト数のカウント
 
 HTML対応：<div>タグのカウント</div> もできます。
-絵文字対応：🎉✨🚀 絵文字も正確にカウントします。`;
+絵文字対応：🎉✨🚀👨‍👩‍👧‍👦🏴󠁧󠁢󠁳󠁣󠁴󠁿 複合絵文字も正確にカウントします。
+特殊文字：café, naïve, résumé なども対応しています。`;
 
                  textInput.value = sampleText;
                  countText();

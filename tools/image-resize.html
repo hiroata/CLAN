@@ -431,6 +431,92 @@
       font-size: 14px;
       color: #666;
       margin: 5px 0;
+    }
+    
+    /* モバイル対応強化 */
+    @media (max-width: 768px) {
+        .tool-title {
+            font-size: 24px;
+        }
+        .step-section {
+            padding: 20px 15px;
+        }
+        .setting-row {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .setting-title {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .setting-input {
+            width: 100%;
+            min-width: auto;
+        }
+        .preset-tabs {
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .preset-tab {
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+        .files-container {
+            justify-content: center;
+        }
+        .file-item {
+            width: 120px;
+        }
+        .action-container {
+            text-align: center;
+        }
+        .resize-button {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .tool-container {
+            padding: 0 15px;
+        }
+        .step-section {
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .drop-area {
+            padding: 15px;
+        }
+        .drop-area-text {
+            font-size: 14px;
+        }
+        .file-item {
+            width: 100px;
+        }
+        .files-container {
+            gap: 10px;
+        }
+        .preset-tab {
+            font-size: 13px;
+            padding: 6px 12px;
+        }
+        .size-input {
+            width: 80px;
+        }
+        .usage-box {
+            padding: 20px;
+        }
+        .tools-list {
+            gap: 8px;
+        }
+        .tool-link {
+            font-size: 13px;
+            padding: 6px 12px;
+        }
+        .resize-button {
+            font-size: 14px;
+            padding: 10px 20px;
+        }
     }  </style>
 
   <link rel="icon" href="../assets/images/logo.webp" type="image/webp">
@@ -661,6 +747,48 @@
         let selectedFiles = [];
         let resizedImages = [];
         let originalAspectRatio = 1;
+        let imageWorker = null;
+
+        // Web Workerの初期化
+        function initImageWorker() {
+            if (typeof Worker !== 'undefined' && !imageWorker) {
+                try {
+                    imageWorker = new Worker('./image-worker.js');
+                    
+                    imageWorker.addEventListener('message', function(e) {
+                        const { type, fileName, blob, error } = e.data;
+                        
+                        switch (type) {
+                            case 'resizeComplete':
+                                handleWorkerResizeComplete(fileName, blob);
+                                break;
+                            case 'error':
+                                console.error('Worker error:', error);
+                                updateUI(`処理エラー: ${error}`, true);
+                                break;
+                            case 'fallbackToMain':
+                                console.log('Falling back to main thread for', fileName);
+                                break;
+                            case 'progress':
+                                updateProgressBar(e.data.current, e.data.total);
+                                break;
+                        }
+                    });
+                    
+                    imageWorker.addEventListener('error', function(error) {
+                        console.error('Worker initialization error:', error);
+                        imageWorker = null; // Workerが使えない場合はnullに
+                    });
+                    
+                } catch (error) {
+                    console.log('Web Worker not available:', error);
+                    imageWorker = null;
+                }
+            }
+        }
+
+        // Workerの初期化を実行
+        initImageWorker();
 
         // プリセット設定
         const presets = {
@@ -801,12 +929,36 @@
 
         // ファイル処理
         function handleFiles(files) {
+            const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+            const MAX_TOTAL_SIZE = 50 * 1024 * 1024; // 50MB
+            
             const validFiles = Array.from(files).filter(file => {
                 const type = file.type.toLowerCase();
-                return type === 'image/jpeg' || type === 'image/png' || type === 'image/gif';
+                const isValidType = type === 'image/jpeg' || type === 'image/png' || type === 'image/gif';
+                
+                if (!isValidType) {
+                    updateUI(`${file.name}は対応していないファイル形式です`, true);
+                    return false;
+                }
+                
+                if (file.size > MAX_FILE_SIZE) {
+                    updateUI(`${file.name}のサイズが大きすぎます（最大10MB）`, true);
+                    return false;
+                }
+                
+                return true;
             });
 
             if (validFiles.length === 0) return;
+
+            // 合計ファイルサイズチェック
+            const currentTotalSize = selectedFiles.reduce((sum, file) => sum + file.size, 0);
+            const newTotalSize = validFiles.reduce((sum, file) => sum + file.size, 0);
+            
+            if (currentTotalSize + newTotalSize > MAX_TOTAL_SIZE) {
+                updateUI('ファイルの合計サイズが上限（50MB）を超えています', true);
+                return;
+            }
 
             // 既存のファイルに追加
             selectedFiles = [...selectedFiles, ...validFiles];
@@ -872,13 +1024,44 @@
             filesMeta.textContent = `${selectedFiles.length}枚の画像（合計 ${sizeInMB} MB）`;
         }
 
+        // キャンセルボタンの追加
+        function addCancelButton() {
+            if (document.getElementById('cancelBtn')) return;
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.id = 'cancelBtn';
+            cancelBtn.textContent = 'キャンセル';
+            cancelBtn.className = 'resize-button';
+            cancelBtn.style.background = '#e74c3c';
+            cancelBtn.style.marginLeft = '10px';
+            cancelBtn.style.display = 'none';
+            
+            cancelBtn.addEventListener('click', function() {
+                isProcessingCancelled = true;
+                cancelBtn.style.display = 'none';
+                resizeBtn.textContent = 'リサイズしてダウンロード';
+                resizeBtn.disabled = false;
+                progressContainer.style.display = 'none';
+                updateUI('処理がキャンセルされました', false);
+            });
+            
+            resizeBtn.parentNode.appendChild(cancelBtn);
+        }
+
         // リサイズボタン
         resizeBtn.addEventListener('click', async function() {
             if (selectedFiles.length === 0) return;
 
+            // キャンセルフラグをリセット
+            isProcessingCancelled = false;
+            
+            // キャンセルボタンを追加
+            addCancelButton();
+            
             // ボタンを無効化して処理中表示
             resizeBtn.disabled = true;
             resizeBtn.textContent = '処理中...';
+            document.getElementById('cancelBtn').style.display = 'inline-block';
 
             // 進捗表示を表示
             progressContainer.style.display = 'block';
@@ -893,23 +1076,32 @@
             // 画像を非同期でリサイズ
             resizedImages = [];
 
-            for (let i = 0; i < selectedFiles.length; i++) {
-                const file = selectedFiles[i];
-                try {
-                    const resizedBlob = await resizeImage(file, maxWidth, maxHeight, quality);
-                    resizedImages.push({
-                        name: file.name,
-                        blob: resizedBlob
-                    });
+            // Web Workerが利用可能な場合は並列処理
+            if (imageWorker && selectedFiles.length > 3) {
+                await processImagesWithWorker(selectedFiles, maxWidth, maxHeight, quality);
+            } else {
+                // 従来の逐次処理
+                for (let i = 0; i < selectedFiles.length; i++) {
+                    if (isProcessingCancelled) break;
+                    
+                    const file = selectedFiles[i];
+                    try {
+                        const resizedBlob = await resizeImage(file, maxWidth, maxHeight, quality);
+                        resizedImages.push({
+                            name: file.name,
+                            blob: resizedBlob
+                        });
 
-                    // 進捗表示更新
-                    const progress = Math.round(((i + 1) / selectedFiles.length) * 100);
-                    progressBar.style.width = progress + '%';
-                    progressText.textContent = `画像処理中 (${i + 1}/${selectedFiles.length})`;
-                } catch (err) {
-                    console.error('リサイズエラー:', err);
-                    // 共通関数を使用したエラーメッセージ表示
-                    updateUI('処理エラーが発生しました', true);
+                        // 進捗表示更新
+                        const progress = Math.round(((i + 1) / selectedFiles.length) * 100);
+                        progressBar.style.width = progress + '%';
+                        progressText.textContent = `画像処理中 (${i + 1}/${selectedFiles.length})`;
+                    } catch (err) {
+                        console.error('リサイズエラー:', err);
+                        if (!isProcessingCancelled) {
+                            updateUI(`${file.name}: ${err.message}`, true);
+                        }
+                    }
                 }
             }
 
@@ -927,18 +1119,28 @@
                 progressContainer.style.display = 'none';
                 resizeBtn.textContent = 'リサイズしてダウンロード';
                 resizeBtn.disabled = false;
+                document.getElementById('cancelBtn').style.display = 'none';
             }, 1000);
         });
+
+        // キャンセル用のフラグ
+        let isProcessingCancelled = false;
 
         // 画像リサイズ処理
         async function resizeImage(file, maxWidth, maxHeight, quality) {
             return new Promise((resolve, reject) => {
+                if (isProcessingCancelled) {
+                    reject(new Error('処理がキャンセルされました'));
+                    return;
+                }
+
                 const img = new Image();
                 
                 img.onload = function() {
-                    const origWidth = img.width;
-                    const origHeight = img.height;
-                    const aspectRatio = origWidth / origHeight;
+                    try {
+                        const origWidth = img.width;
+                        const origHeight = img.height;
+                        const aspectRatio = origWidth / origHeight;
                     
                     // 初期サイズ
                     let newWidth = origWidth;
@@ -968,23 +1170,37 @@
                         return;
                     }
 
-                    // キャンバスでリサイズ
-                    const canvas = document.createElement('canvas');
-                    canvas.width = newWidth;
-                    canvas.height = newHeight;
+                        // キャンバスでリサイズ
+                        const canvas = document.createElement('canvas');
+                        canvas.width = newWidth;
+                        canvas.height = newHeight;
 
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                        const ctx = canvas.getContext('2d');
+                        
+                        // メモリ不足対策：画像品質を調整
+                        if (newWidth * newHeight > 4000000) { // 4MP以上の場合
+                            ctx.imageSmoothingEnabled = true;
+                            ctx.imageSmoothingQuality = 'medium';
+                        }
+                        
+                        ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
-                    // JPEG/PNGで出力
-                    const mimeType = file.type;
+                        // JPEG/PNGで出力
+                        const mimeType = file.type;
 
-                    canvas.toBlob(blob => {
-                        resolve(blob);
-                    }, mimeType, quality / 100);
+                        canvas.toBlob(blob => {
+                            if (blob) {
+                                resolve(blob);
+                            } else {
+                                reject(new Error('画像の変換に失敗しました。ファイルサイズが大きすぎる可能性があります。'));
+                            }
+                        }, mimeType, quality / 100);
+                    } catch (error) {
+                        reject(new Error(`リサイズ処理でエラーが発生しました: ${error.message}`));
+                    }
                 };
 
-                img.onerror = reject;
+                img.onerror = () => reject(new Error('画像の読み込みに失敗しました'));
 
                 // 画像読み込み
                 const reader = new FileReader();
@@ -1037,6 +1253,64 @@
 
             // 進捗テキスト更新
             progressText.textContent = 'ダウンロード完了！';        }
+
+        // Web Workerを使った並列処理
+        async function processImagesWithWorker(files, maxWidth, maxHeight, quality) {
+            return new Promise((resolve) => {
+                let processedCount = 0;
+                const totalFiles = files.length;
+                
+                progressText.textContent = `並列処理中 (0/${totalFiles})`;
+                
+                files.forEach((file, index) => {
+                    if (isProcessingCancelled) {
+                        resolve();
+                        return;
+                    }
+                    
+                    // ファイルをWorkerに送信
+                    imageWorker.postMessage({
+                        type: 'resizeImage',
+                        data: {
+                            imageData: file,
+                            maxWidth: maxWidth,
+                            maxHeight: maxHeight,
+                            quality: quality,
+                            fileName: file.name
+                        }
+                    });
+                });
+                
+                // Worker完了の処理
+                function handleWorkerResizeComplete(fileName, blob) {
+                    if (!isProcessingCancelled) {
+                        resizedImages.push({
+                            name: fileName,
+                            blob: blob
+                        });
+                    }
+                    
+                    processedCount++;
+                    const progress = Math.round((processedCount / totalFiles) * 100);
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = `並列処理中 (${processedCount}/${totalFiles})`;
+                    
+                    if (processedCount >= totalFiles) {
+                        resolve();
+                    }
+                }
+                
+                // グローバル関数として定義
+                window.handleWorkerResizeComplete = handleWorkerResizeComplete;
+            });
+        }
+
+        // 進捗バー更新関数
+        function updateProgressBar(current, total) {
+            const progress = Math.round((current / total) * 100);
+            progressBar.style.width = progress + '%';
+            progressText.textContent = `処理中 (${current}/${total})`;
+        }
     });  </script>  </main>
 
     <!-- 重大告知 -->

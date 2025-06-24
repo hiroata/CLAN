@@ -583,30 +583,81 @@
         let convertedImages = [];
         let quality = 80;
 
-        // WebPサポートチェック
+        // WebPサポートチェック（詳細版）
         function checkWebPSupport() {
-            const canvas = document.createElement('canvas');
-            if (!canvas.getContext || !canvas.getContext('2d')) {
+            return new Promise((resolve) => {
+                const canvas = document.createElement('canvas');
+                if (!canvas.getContext || !canvas.getContext('2d')) {
+                    resolve({ 
+                        supported: false, 
+                        reason: 'Canvas APIがサポートされていません' 
+                    });
+                    return;
+                }
+
+                // より詳細なWebP機能チェック
+                const webpData = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+                const img = new Image();
+                
+                img.onload = () => {
+                    resolve({ 
+                        supported: img.width === 1 && img.height === 1,
+                        reason: img.width === 1 && img.height === 1 ? '' : 'WebP画像の読み込みに失敗'
+                    });
+                };
+                
+                img.onerror = () => {
+                    resolve({ 
+                        supported: false, 
+                        reason: 'WebP画像形式がサポートされていません' 
+                    });
+                };
+                
+                img.src = webpData;
+                
+                // タイムアウト処理
+                setTimeout(() => {
+                    resolve({ 
+                        supported: false, 
+                        reason: 'WebPサポートチェックがタイムアウトしました' 
+                    });
+                }, 1000);
+            });
+        }        // WebPサポートの初期化
+        async function initWebPSupport() {
+            const supportResult = await checkWebPSupport();
+            
+            if (!supportResult.supported) {
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.style.color = '#f00';
+                errorMessage.style.padding = '15px';
+                errorMessage.style.marginTop = '20px';
+                errorMessage.style.background = '#ffeeee';
+                errorMessage.style.borderRadius = '8px';
+                errorMessage.style.border = '1px solid #ffcccc';
+                errorMessage.innerHTML = `
+                    <strong>⚠️ WebP変換が利用できません</strong><br>
+                    理由: ${supportResult.reason}<br><br>
+                    <strong>推奨ブラウザ:</strong><br>
+                    • Google Chrome 23+<br>
+                    • Microsoft Edge 18+<br>
+                    • Firefox 65+<br>
+                    • Safari 14+<br><br>
+                    <small>ブラウザを最新版に更新してから再度お試しください。</small>
+                `;
+
+                dropArea.parentNode.appendChild(errorMessage);
+                dropArea.style.opacity = '0.5';
+                convertBtn.disabled = true;
+                downloadBtn.disabled = true;
                 return false;
             }
-            return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-        }        // WebPがサポートされていない場合の処理
-        if (!checkWebPSupport()) {
-            const errorMessage = document.createElement('div');
-            errorMessage.className = 'error-message';
-            errorMessage.style.color = '#f00';
-            errorMessage.style.padding = '10px';
-            errorMessage.style.marginTop = '20px';
-            errorMessage.style.background = '#ffeeee';
-            errorMessage.style.borderRadius = '5px';
-            errorMessage.innerHTML = '<strong>ご利用のブラウザはWebP形式をサポートしていません。</strong><br>Google Chrome、Microsoft Edgeなど、最新のブラウザでご利用ください。';
+            return true;
+        }
 
-            dropArea.parentNode.appendChild(errorMessage);
-            dropArea.style.opacity = '0.5';
-            convertBtn.disabled = true;
-            downloadBtn.disabled = true;
-            return;
-        }        // ファイルドロップとファイル選択の設定
+        // 初期化
+        initWebPSupport();        // ファイルドロップとファイル選択の設定
         setupFileDropAndSelection();
 
         // ファイルドロップとファイル選択機能の実装
@@ -664,14 +715,36 @@
             qualityValue.textContent = `${quality}%`;
         });        // ファイル処理
         function handleFiles(files) {
+            const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+            const MAX_TOTAL_SIZE = 50 * 1024 * 1024; // 50MB
+            
             const validFiles = Array.from(files).filter(file => {
                 const type = file.type.toLowerCase();
-                return type === 'image/jpeg' || type === 'image/png' || type === 'image/gif';
+                const isValidType = type === 'image/jpeg' || type === 'image/png' || type === 'image/gif';
+                
+                if (!isValidType) {
+                    updateUI(`${file.name}は対応していないファイル形式です（JPEG/PNG/GIF のみ対応）`, true);
+                    return false;
+                }
+                
+                if (file.size > MAX_FILE_SIZE) {
+                    updateUI(`${file.name}のサイズが大きすぎます（最大10MB）`, true);
+                    return false;
+                }
+                
+                return true;
             });
 
             if (validFiles.length === 0) {
-                // エラー表示
-                updateUI('JPEG/PNG/GIF画像を選択してください。', true);
+                return;
+            }
+
+            // 合計ファイルサイズチェック
+            const currentTotalSize = selectedFiles.reduce((sum, file) => sum + file.size, 0);
+            const newTotalSize = validFiles.reduce((sum, file) => sum + file.size, 0);
+            
+            if (currentTotalSize + newTotalSize > MAX_TOTAL_SIZE) {
+                updateUI('ファイルの合計サイズが上限（50MB）を超えています', true);
                 return;
             }
 
@@ -736,29 +809,48 @@
             return fileItem;
         }
 
+        // キャンセル用のフラグ
+        let isConversionCancelled = false;
+
         // WebP形式に変換
         function convertToWebP(file, quality) {
             return new Promise((resolve, reject) => {
+                if (isConversionCancelled) {
+                    reject(new Error('変換がキャンセルされました'));
+                    return;
+                }
+
                 const img = new Image();
                 img.onload = function() {
-                    const canvas = document.createElement('canvas');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0);
-                    
-                    // WebPに変換
-                    canvas.toBlob(blob => {
-                        if (blob) {
-                            resolve(blob);
-                        } else {
-                            reject(new Error('WebP変換に失敗しました'));
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        
+                        const ctx = canvas.getContext('2d');
+                        
+                        // メモリ不足対策：大きな画像の場合は品質を調整
+                        if (img.width * img.height > 4000000) { // 4MP以上
+                            ctx.imageSmoothingEnabled = true;
+                            ctx.imageSmoothingQuality = 'medium';
                         }
-                    }, 'image/webp', quality / 100);
+                        
+                        ctx.drawImage(img, 0, 0);
+                        
+                        // WebPに変換
+                        canvas.toBlob(blob => {
+                            if (blob && blob.size > 0) {
+                                resolve(blob);
+                            } else {
+                                reject(new Error('WebP変換に失敗しました。画像が大きすぎる可能性があります。'));
+                            }
+                        }, 'image/webp', quality / 100);
+                    } catch (error) {
+                        reject(new Error(`変換処理でエラーが発生しました: ${error.message}`));
+                    }
                 };
                 
-                img.onerror = () => reject(new Error('画像の読み込みに失敗しました'));
+                img.onerror = () => reject(new Error('画像の読み込みに失敗しました。ファイルが破損している可能性があります。'));
                 
                 // 画像読み込み
                 const reader = new FileReader();
@@ -770,12 +862,41 @@
             });
         }
 
+        // キャンセルボタンの追加（WebP用）
+        function addCancelButtonWebP() {
+            if (document.getElementById('cancelBtnWebP')) return;
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.id = 'cancelBtnWebP';
+            cancelBtn.textContent = 'キャンセル';
+            cancelBtn.className = 'btn-secondary';
+            cancelBtn.style.marginLeft = '10px';
+            cancelBtn.style.display = 'none';
+            
+            cancelBtn.addEventListener('click', function() {
+                isConversionCancelled = true;
+                cancelBtn.style.display = 'none';
+                convertBtn.textContent = '→ WebPに変換する';
+                convertBtn.disabled = false;
+                updateUI('変換がキャンセルされました', false);
+            });
+            
+            convertBtn.parentNode.appendChild(cancelBtn);
+        }
+
         // 変換ボタン
         convertBtn.addEventListener('click', async function() {
             if (selectedFiles.length === 0) return;
 
+            // キャンセルフラグをリセット
+            isConversionCancelled = false;
+            
+            // キャンセルボタンを追加
+            addCancelButtonWebP();
+
             convertBtn.disabled = true;
             convertBtn.textContent = '変換中...';
+            document.getElementById('cancelBtnWebP').style.display = 'inline-block';
 
             // 変換結果をクリア
             convertedImages = [];
@@ -800,6 +921,8 @@
 
             // 各画像を変換
             for (let i = 0; i < selectedFiles.length; i++) {
+                if (isConversionCancelled) break;
+                
                 const file = selectedFiles[i];
                 try {
                     const webpBlob = await convertToWebP(file, quality);
@@ -857,6 +980,7 @@
             setTimeout(() => {
                 convertBtn.textContent = '→ WebPに変換する';
                 convertBtn.disabled = false;
+                document.getElementById('cancelBtnWebP').style.display = 'none';
             }, 2000);
         });
 
