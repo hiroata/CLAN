@@ -1377,12 +1377,13 @@
   justify-content: center;
   align-items: center;
   gap: var(--myblog-spacing-md);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .myblog-pagination-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--myblog-spacing-sm);
   padding: var(--myblog-spacing-sm) var(--myblog-spacing-lg);
   background-color: var(--myblog-content-bg);
@@ -1397,18 +1398,21 @@
   -webkit-tap-highlight-color: transparent;
   transition: var(--myblog-transition);
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .myblog-pagination-btn:hover:not(.myblog-pagination-btn--disabled) {
   background-color: var(--myblog-accent-color);
   color: var(--myblog-content-bg);
   border-color: var(--myblog-accent-color);
+  transform: translateY(-1px);
 }
 
 .myblog-pagination-btn--disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
+  background-color: var(--myblog-bg-color);
 }
 
 .myblog-pagination-numbers {
@@ -1434,12 +1438,14 @@
   font-weight: var(--myblog-font-weight-medium);
   transition: var(--myblog-transition);
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
-.myblog-pagination-number:hover {
+a.myblog-pagination-number:hover {
   background-color: var(--myblog-accent-color);
   color: var(--myblog-content-bg);
   border-color: var(--myblog-accent-color);
+  transform: translateY(-1px);
 }
 
 .myblog-pagination-number:focus {
@@ -1447,10 +1453,12 @@
   outline-offset: 2px;
 }
 
-.myblog-pagination-number--active {
+.myblog-pagination-number--active,
+span.myblog-pagination-number--active {
   background-color: var(--myblog-accent-color);
   color: var(--myblog-content-bg);
   border-color: var(--myblog-accent-color);
+  cursor: default;
 }
 
 .myblog-pagination-ellipsis {
@@ -1483,18 +1491,13 @@
 /* ページネーション */
 @media (max-width: 768px) {
   .myblog-pagination-container {
-    flex-direction: column;
-    gap: var(--myblog-spacing-lg);
-  }
-  
-  .myblog-pagination-numbers {
-    order: -1;
+    flex-wrap: wrap;
+    gap: var(--myblog-spacing-sm);
   }
   
   .myblog-pagination-btn {
-    width: 100%;
-    justify-content: center;
-    max-width: 200px;
+    padding: var(--myblog-spacing-sm) var(--myblog-spacing-md);
+    font-size: 0.85rem;
   }
   
   /* ヘッダー */

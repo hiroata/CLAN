@@ -13,6 +13,8 @@ class BlogManager {
         
         // 記事データの初期化
         this.initializeArticles();
+        
+        console.log('BlogManager initialized');
     }
 
     /**
@@ -603,43 +605,55 @@ class BlogManager {
         `;
 
         // 前のページボタン
-        const prevDisabled = this.currentPage <= 1 ? 'myblog-pagination-btn--disabled' : '';
-        paginationHTML += `
-            <a href="#" class="myblog-pagination-btn myblog-pagination-btn--prev ${prevDisabled}" 
-               data-page="${this.currentPage - 1}" aria-label="前のページ">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                前のページ
-            </a>
-        `;
+        if (this.currentPage > 1) {
+            paginationHTML += `
+                <a href="#" class="myblog-pagination-btn" 
+                   data-page="${this.currentPage - 1}" aria-label="前のページ">
+                    <span>前のページ</span>
+                </a>
+            `;
+        } else {
+            paginationHTML += `
+                <span class="myblog-pagination-btn myblog-pagination-btn--disabled">
+                    <span>前のページ</span>
+                </span>
+            `;
+        }
 
         // ページ番号
         paginationHTML += '<div class="myblog-pagination-numbers">';
         
         for (let i = 1; i <= this.totalPages; i++) {
             const activeClass = i === this.currentPage ? 'myblog-pagination-number--active' : '';
-            const ariaCurrent = i === this.currentPage ? 'aria-current="page"' : '';
             
-            paginationHTML += `
-                <a href="#" class="myblog-pagination-number ${activeClass}" 
-                   data-page="${i}" ${ariaCurrent}>${i}</a>
-            `;
+            if (i === this.currentPage) {
+                paginationHTML += `
+                    <span class="myblog-pagination-number ${activeClass}" aria-current="page">${i}</span>
+                `;
+            } else {
+                paginationHTML += `
+                    <a href="#" class="myblog-pagination-number" data-page="${i}">${i}</a>
+                `;
+            }
         }
         
         paginationHTML += '</div>';
 
         // 次のページボタン
-        const nextDisabled = this.currentPage >= this.totalPages ? 'myblog-pagination-btn--disabled' : '';
-        paginationHTML += `
-            <a href="#" class="myblog-pagination-btn myblog-pagination-btn--next ${nextDisabled}" 
-               data-page="${this.currentPage + 1}" aria-label="次のページ">
-                次のページ
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2"/>
-                </svg>
-            </a>
-        `;
+        if (this.currentPage < this.totalPages) {
+            paginationHTML += `
+                <a href="#" class="myblog-pagination-btn" 
+                   data-page="${this.currentPage + 1}" aria-label="次のページ">
+                    <span>次のページ</span>
+                </a>
+            `;
+        } else {
+            paginationHTML += `
+                <span class="myblog-pagination-btn myblog-pagination-btn--disabled">
+                    <span>次のページ</span>
+                </span>
+            `;
+        }
 
         paginationHTML += `
                 </div>
@@ -723,18 +737,21 @@ class BlogManager {
      * ページネーションのみを更新（静的記事表示時に使用）
      */
     updatePaginationOnly() {
-        const paginationContainer = document.querySelector('.myblog-pagination');
-        const paginationHTML = this.generatePaginationHTML();
+        const existingPagination = document.querySelector('.myblog-pagination');
+        const newPaginationHTML = this.generatePaginationHTML();
         
-        if (paginationContainer) {
-            paginationContainer.innerHTML = '';
-            if (paginationHTML) {
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = paginationHTML;
-                const newPaginationContainer = tempDiv.querySelector('.myblog-pagination-container');
-                if (newPaginationContainer) {
-                    paginationContainer.innerHTML = newPaginationContainer.innerHTML;
-                }
+        if (existingPagination && newPaginationHTML) {
+            // 既存のページネーションを新しいものに置き換える
+            existingPagination.outerHTML = newPaginationHTML;
+            
+            // イベントリスナーを再設定
+            this.attachEventListeners();
+        } else if (!existingPagination && newPaginationHTML) {
+            // ページネーションが存在しない場合は、記事グリッドの後に追加
+            const articlesGrid = document.querySelector('.myblog-articles-grid');
+            if (articlesGrid && articlesGrid.parentNode) {
+                articlesGrid.insertAdjacentHTML('afterend', newPaginationHTML);
+                this.attachEventListeners();
             }
         }
     }
@@ -790,7 +807,19 @@ class BlogManager {
     handlePaginationClick(event) {
         event.preventDefault();
         
-        const targetPage = parseInt(event.target.getAttribute('data-page'));
+        // クリックされた要素またはその親要素からdata-pageを取得
+        let targetElement = event.target;
+        let targetPage = null;
+        
+        // data-page属性を持つ要素を探す（親要素まで遡る）
+        while (targetElement && !targetPage) {
+            targetPage = targetElement.getAttribute('data-page');
+            if (!targetPage) {
+                targetElement = targetElement.parentElement;
+            }
+        }
+        
+        targetPage = parseInt(targetPage);
         
         if (targetPage && targetPage !== this.currentPage && 
             targetPage >= 1 && targetPage <= this.totalPages) {
@@ -863,9 +892,9 @@ class BlogManager {
         
         // 既存の静的記事がある場合は、それらを保持してJavaScriptは拡張機能として動作
         const existingStaticArticles = document.querySelectorAll('.myblog-article-card');
-        if (existingStaticArticles.length >= 12) {
+        if (existingStaticArticles.length > 0) {
             // 静的記事が既に表示されている場合、JavaScriptは拡張機能として動作
-            console.log('Static articles detected. JavaScript functioning as enhancement layer.');
+            console.log('Static articles detected:', existingStaticArticles.length);
             
             // 静的記事のリンクにもイベントリスナーを追加
             this.attachArticleCardListeners();
@@ -877,6 +906,15 @@ class BlogManager {
             this.updatePaginationOnly();
             
             console.log('Blog Manager initialized in enhancement mode with', this.articles.length, 'total articles, totalPages:', this.totalPages);
+            console.log('Articles per page:', this.articlesPerPage);
+            console.log('Should show pagination:', this.totalPages > 1);
+            
+            // ページ2以降をクリックした時は、動的に記事を生成する必要がある
+            // 既存のページネーションにイベントリスナーを追加
+            const paginationButtons = document.querySelectorAll('.myblog-pagination-number, .myblog-pagination-btn');
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', this.handlePaginationClick.bind(this));
+            });
         } else {
             // 静的記事がない場合は従来通りの全面的なJavaScript制御
             this.attachEventListeners();
