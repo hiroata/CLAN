@@ -338,36 +338,40 @@
 <header class="site-header">
     <div class="header-container">
         <div class="site-logo-text">
-            <a href="index.html">CLAN</a>
-        </div>        <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+            <a href="/index.html">CLAN</a>
+        </div>
+        <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
             <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="achievement/index.html">お客様の声</a></li>
-                <li><a href="blog/index.html">ブログ</a></li>
-                <li><a href="tools/index.html">まえゆきツール</a></li>
-                <li><a href="partner.html">パートナー募集</a></li>
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/achievement/index.html">お客様の声</a></li>
+                <li><a href="/blog/index.html">ブログ</a></li>
+                <li><a href="/tools/index.html">まえゆきツール</a></li>
+                <li><a href="/partner.html">パートナー募集</a></li>
             </ul>
         </nav>
-        <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+
+        <button class="hamburger-button sp-nav" 
+                aria-label="メニューを開く" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu" 
+                type="button">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
-</header>    <!-- モバイルメニュー -->    <div class="mobile-menu">    <nav aria-label="モバイルメニュー">
+</header>    <!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+    <nav aria-label="モバイルナビゲーション">
         <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <!-- <li><a href="seminar/index.html">オンライン講座</a></li> -->
-            <li><a href="achievement/index.html">お客様の声</a></li>
-            <li><a href="blog/index.html">ブログ</a></li>
-            <li><a href="tools/index.html">まえゆきツール</a></li>
-            <li><a href="partner.html">パートナー募集</a></li>
+            <li><a href="/index.html">ホーム</a></li>
+            <li><a href="/achievement/index.html">お客様の声</a></li>
+            <li><a href="/blog/index.html">ブログ</a></li>
+            <li><a href="/tools/index.html">まえゆきツール</a></li>
+            <li><a href="/partner.html">パートナー募集</a></li>
         </ul>
-    </nav></div>
-
-
-
-<main class="site-main">
+    </nav>
+</div><main class="site-main">
 <section class="apple-hero-section">
     <div class="apple-hero-container">
       <h1 class="apple-hero-title">運営者情報</h1>
@@ -470,7 +474,7 @@
         <li><a href="/tools/index.html" 
                title="無料で使えるビジネスツール集">まえゆきツール</a></li>
         <li><a href="/seminar-request.html" 
-               title="自治体・商工会・業界団体限定セミナー要望受付">セミナー要望受付</a></li>
+               title="自治体・商工会・業界団体向けセミナー要望受付">セミナー要望受付</a></li>
         <li><a href="/owner.html" 
                title="CLANの運営会社情報">運営者情報</a></li>
         <li><a href="/terms.html" 

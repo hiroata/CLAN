@@ -415,19 +415,23 @@
 <header class="site-header">
     <div class="header-container">
         <div class="site-logo-text">
-            <a href="index.html">CLAN</a>
+            <a href="/index.html">CLAN</a>
         </div>
         <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
             <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="achievement/index.html">お客様の声</a></li>
-                <li><a href="blog/index.html">ブログ</a></li>
-                <li><a href="tools/index.html">まえゆきツール</a></li>
-                <li><a href="partner.html" aria-current="page">パートナー募集</a></li>
+                <li><a href="/index.html">ホーム</a></li>
+                <li><a href="/achievement/index.html">お客様の声</a></li>
+                <li><a href="/blog/index.html">ブログ</a></li>
+                <li><a href="/tools/index.html">まえゆきツール</a></li>
+                <li><a href="/partner.html" aria-current="page">パートナー募集</a></li>
             </ul>
         </nav>
 
-        <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+        <button class="hamburger-button sp-nav" 
+                aria-label="メニューを開く" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu" 
+                type="button">
             <span></span>
             <span></span>
             <span></span>
@@ -436,19 +440,17 @@
 </header>
 
 <!-- モバイルメニュー -->
-<div class="mobile-menu">
-    <nav aria-label="モバイルメニュー">
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+    <nav aria-label="モバイルナビゲーション">
         <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="achievement/index.html">お客様の声</a></li>
-            <li><a href="blog/index.html">ブログ</a></li>
-            <li><a href="tools/index.html">まえゆきツール</a></li>
-            <li><a href="partner.html">パートナー募集</a></li>
+            <li><a href="/index.html">ホーム</a></li>
+            <li><a href="/achievement/index.html">お客様の声</a></li>
+            <li><a href="/blog/index.html">ブログ</a></li>
+            <li><a href="/tools/index.html">まえゆきツール</a></li>
+            <li><a href="/partner.html" aria-current="page">パートナー募集</a></li>
         </ul>
     </nav>
-</div>
-
-<main class="site-main" id="main-content">
+</div><main class="site-main" id="main-content">
     <!-- ヒーローセクション -->
     <section class="partner-hero">
         <div class="partner-hero-content">
@@ -477,18 +479,14 @@
                     <li><strong>レスポンシブ対応</strong>とモバイル最適化ができる</li>
                     <li><strong>クライアント要件に応じたカスタマイズ</strong>が可能</li>
                     <li><strong>期限内での納品</strong>と品質管理ができる</li>
-                    <li><strong>リモートでのコミュニケーション</strong>がスムーズに行える</li>
+                    <li><strong>リモートでのコミュニケーション</strong>がスムーズに行える（ChatWork、Zoom）</li>
                 </ul>
             </div>
 
             <div class="requirements-list">
                 <h3>歓迎条件</h3>
                 <ul>
-                    <li>WordPressとの連携経験</li>
-                    <li>決済システム（Stripe、PayPal等）の設定経験</li>
-                    <li>アナリティクス設定・改善提案ができる</li>
-                    <li>デザインスキル（UI/UX改善提案ができる）</li>
-                    <li>複数案件の同時進行管理経験</li>
+                    <li>デザインスキル（CanvaもしくはPhotoshopが使える）</li>
                 </ul>
             </div>
         </div>
@@ -563,7 +561,7 @@
             <div class="faq-item">
                 <div class="faq-question">どの程度の稼働が必要ですか？</div>
                 <div class="faq-answer">
-                    <p>プロジェクトにより異なりますが、週10-20時間程度から対応可能です。継続的にお仕事をお受けいただける方を優遇させていただきます。</p>
+                    <p>週10時間程度から対応可能です。継続的にお仕事をお受けいただける方を優遇させていただきます。</p>
                 </div>
             </div>
 
@@ -590,7 +588,7 @@
             <p class="cta-subtitle">経験豊富なパートナーとの協業をお待ちしています</p>
             
             <div style="margin-top: 40px;">
-                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">
+                <a href="https://site.skillmade.online/p/aWSFw3ixjRCo" class="cta-btn">
                     📧 今すぐ応募する
                 </a>
                 <a href="#main-content" class="cta-btn" style="background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(10px);">
@@ -598,34 +596,38 @@
                 </a>
             </div>
             
-            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
-                応募フォームでは「UTAGE構築パートナー希望」とご記入ください<br>
-                24時間以内に詳細資料をお送りいたします
-            </p>
         </div>
     </section>
 </main>
 
 <!-- フッター -->
 <footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <h2>CLAN</h2>
-        </div>
-        <nav class="footer-links" aria-label="フッターナビゲーション">
-            <ul>
-                <li><a href="/achievement/index.html" title="UTAGE導入企業の成功事例">お客様の声</a></li>
-                <li><a href="/blog/index.html" title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
-                <li><a href="/tools/index.html" title="無料で使えるビジネスツール集">まえゆきツール</a></li>
-                <li><a href="/seminar-request.html" title="自治体・商工会・業界団体限定セミナー要望受付">セミナー要望受付</a></li>
-                <li><a href="/partner.html" title="UTAGE構築協業パートナー募集">パートナー募集</a></li>
-                <li><a href="/owner.html" title="CLANの運営会社情報">運営者情報</a></li>
-                <li><a href="/terms.html" title="サービス利用規約">利用規約</a></li>
-                <li><a href="/privacy.html" title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
-                <li><a href="/tokutei.html" title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
-            </ul>
-        </nav>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>CLAN</h2>
     </div>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <ul>
+        
+        <li><a href="/achievement/index.html" 
+               title="UTAGE導入企業の成功事例">お客様の声</a></li>
+        <li><a href="/blog/index.html" 
+               title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+        <li><a href="/tools/index.html" 
+               title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+        <li><a href="/seminar-request.html" 
+               title="自治体・商工会・業界団体向けセミナー要望受付">セミナー要望受付</a></li>
+        <li><a href="/owner.html" 
+               title="CLANの運営会社情報">運営者情報</a></li>
+        <li><a href="/terms.html" 
+               title="サービス利用規約">利用規約</a></li>
+        <li><a href="/privacy.html" 
+               title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+        <li><a href="/tokutei.html" 
+               title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+      </ul>
+    </nav>
+  </div>
 </footer>
 
 <!-- JavaScript -->
