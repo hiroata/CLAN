@@ -1,0 +1,131 @@
+
+/* 目次のスタイル */
+.article-toc {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
+    position: relative;
+}
+
+.article-toc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0071e3, #00c4cc);
+    border-radius: 12px 12px 0 0;
+}
+
+.toc-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 16px 0;
+    padding-left: 8px;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: toc-counter;
+}
+
+.toc-item-h2 {
+    counter-increment: toc-counter;
+    margin-bottom: 8px;
+}
+
+.toc-item-h2 > .toc-link::before {
+    content: counter(toc-counter) ". ";
+    font-weight: 700;
+    color: #0071e3;
+}
+
+.toc-sublist {
+    list-style: none;
+    padding-left: 24px;
+    margin: 8px 0;
+    counter-reset: toc-sub-counter;
+}
+
+.toc-item-h3 {
+    counter-increment: toc-sub-counter;
+    margin-bottom: 4px;
+}
+
+.toc-item-h3 > .toc-link::before {
+    content: counter(toc-counter) "." counter(toc-sub-counter) " ";
+    font-weight: 500;
+    color: #666;
+}
+
+.toc-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+.toc-link:hover {
+    background: #e9ecef;
+    color: #0071e3;
+    transform: translateX(4px);
+}
+
+.toc-link.active {
+    background: #0071e3;
+    color: white;
+    font-weight: 600;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .article-toc {
+        padding: 20px;
+        margin: 24px -16px;
+        border-radius: 0;
+    }
+    
+    .toc-title {
+        font-size: 1.125rem;
+    }
+    
+    .toc-link {
+        font-size: 0.875rem;
+    }
+}
+
+/* スティッキー目次（デスクトップのみ） */
+@media (min-width: 1200px) {
+    .article-toc {
+        position: sticky;
+        top: 100px;
+        float: right;
+        width: 280px;
+        margin-left: 32px;
+        margin-right: -320px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+    
+    .article-toc::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .article-toc::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    .article-toc::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 2px;
+    }
+}

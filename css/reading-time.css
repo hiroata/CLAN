@@ -1,0 +1,89 @@
+
+/* 読了時間表示のスタイル */
+.reading-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.reading-time svg {
+    color: #0071e3;
+}
+
+.reading-time-text {
+    letter-spacing: 0.02em;
+}
+
+/* 読了プログレスバー */
+.reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.reading-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #0071e3, #00c4cc);
+    width: 0%;
+    transition: width 0.2s ease-out;
+    box-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+}
+
+.reading-progress-bar.completed {
+    animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 113, 227, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+    }
+}
+
+/* 記事メタ情報の調整 */
+.myblog-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .reading-time {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+    }
+    
+    .myblog-article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ダークモード対応（オプション） */
+@media (prefers-color-scheme: dark) {
+    .reading-time {
+        color: #ccc;
+    }
+    
+    .reading-progress-container {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}

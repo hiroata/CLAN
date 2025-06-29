@@ -1,405 +1,793 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- メインページ -->
   <url>
-    <loc>https://clanbiz.net/</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://clanbiz.jp/</loc>
+    <lastmod>2025-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://clanbiz.jp/assets/images/hero-pc.webp</image:loc>
+      <image:title>CLANメインビジュアル</image:title>
+    </image:image>
   </url>
   
-  <!-- 重要ページ -->
+  <!-- お客様の声 -->
   <url>
-    <loc>https://clanbiz.net/owner.html</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://clanbiz.jp/achievement/</loc>
+    <lastmod>2025-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- ブログインデックス -->
+  <!-- お客様の声詳細 -->
   <url>
-    <loc>https://clanbiz.net/blog/</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://clanbiz.jp/achievement/customer1.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clanbiz.jp/assets/images/achieve-1.webp</image:loc>
+      <image:title>月額44万円サブスク成功事例</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/achievement/customer2.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clanbiz.jp/assets/images/achieve-2.webp</image:loc>
+      <image:title>顧客満足度100%達成事例</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/achievement/customer3.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clanbiz.jp/assets/images/achieve-3.webp</image:loc>
+      <image:title>24時間無人販売システム構築事例</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/achievement/customer4.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clanbiz.jp/assets/images/achieve-4.webp</image:loc>
+      <image:title>月商1000万円達成事例</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/achievement/customer5.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clanbiz.jp/assets/images/achieve-5.webp</image:loc>
+      <image:title>商談プロセス完全自動化事例</image:title>
+    </image:image>
+  </url>
+  
+  <!-- ブログトップ -->
+  <url>
+    <loc>https://clanbiz.jp/blog/</loc>
+    <lastmod>2025-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- ブログ記事 -->
+  <!-- ブログ記事（優先度の高い記事） -->
   <url>
-    <loc>https://clanbiz.net/blog/article-utage-funnel-guide.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-funnel-guide.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/blog/article-utage-landing-page-guide.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-landing-page-guide.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/blog/article-utage-sales-page-psychology.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-email-setup.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/blog/article-utage-email-setup.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-membership-site-manual.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/blog/article-utage-step-mail-course.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-free-trial-guide.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/blog/article-utage-line-delivery-guide.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-thanks-page-upsell.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-optin-page-design.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-template-guide.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-free-trial-guide.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-pricing.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-vs-comparison.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-vs-comparison-new.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-funnel-vs-clickfunnels.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-vs-myasp-email-comparison.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-vs-teachable-comparison.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-merits-demerits-2.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-support-guide.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-email-spam-prevention.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-domain-dkim-spf-setup.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-reminder-system.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-label-automation.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-line-step-delivery.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-beauty-health-digital-marketing.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-checkout-optimization.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-coaching-business-automation.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-consultant-success-patterns.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-content-management.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-event-management-automation.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-fitness-sports-online-expansion.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-funnel-seo-strategy.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-legal-professionals-online-system.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-local-business-digital-transformation.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-membership-site-manual.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-mobile-optimization.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-multistep-funnel.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-online-course-creation.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-online-education-complete-guide.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-payment-integration-guide.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-real-estate-digital-transformation.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-student-management.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-subscription-business.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-video-content-management.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/blog/article-utage-webinar-registration-page.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-pricing.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- 成果・実績ページ -->
+  <!-- ブログ記事（中優先度の記事） -->
   <url>
-    <loc>https://clanbiz.net/achievement/</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/achievement/customer1.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-online-education-complete-guide.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/achievement/customer2.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-coaching-business-automation.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/achievement/customer3.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-consultant-success-patterns.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/achievement/customer4.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://clanbiz.net/achievement/customer5.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-merits-demerits-2.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- ツールページ -->
+  <!-- その他のブログ記事 -->
   <url>
-    <loc>https://clanbiz.net/tools/</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-accounting-cloud-bookkeeping.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/calc.html</loc>
+    <loc>https://clanbiz.jp/blog/article-utage-administrative-scrivener-license-permit.html</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-beauty-clinic-strategy.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-beauty-health-digital-marketing.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-calligraphy-school-strategy.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-chamber-commerce-seminar-member.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-checkout-optimization.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-consulting-diagnosis-funnel.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-content-management.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-cooking-school-recipe-videos.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-corporate-training-elearning.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-dance-school-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-dental-clinic-patient-follow-up.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-domain-dkim-spf-setup.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-education-committee-parent-notification.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-email-spam-prevention.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-english-school-level-check.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-event-management-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-fire-department-disaster-prevention.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-fitness-gym-trial-membership-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-fitness-sports-online-expansion.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-fp-lifeplan-consultation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-funnel-seo-strategy.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-funnel-vs-clickfunnels.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-golf-school-trial-lesson-video-sales.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-health-center-consultation-screening.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-hellowork-employment-seminar-consultation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-hospital-nurse-recruitment.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-hotel-ryokan-direct-booking.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-internship-recruitment-system.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-it-engineer-recruitment.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-japanese-language-school.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-judicial-scrivener-inheritance-diagnosis.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-kindergarten-trial-newsletter.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-label-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-lawyer-consultation-estimate-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-learning-academy-trial-lessons.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-legal-professionals-online-system.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-line-delivery-guide.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-line-step-delivery.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-local-business-digital-transformation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-marriage-agency-consultation-matchmaking-knowledge.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-mid-career-recruitment-strategy.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-mobile-optimization.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-multistep-funnel.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-municipality-resident-notification.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-municipality-staff-recruitment.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-music-school-trial-lessons.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-new-graduate-recruitment.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-nursing-home-tour-booking-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-obstetrics-maternity-class-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-online-course-creation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-optin-page-design.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-part-time-recruitment-automation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-payment-integration-guide.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-pet-hotel-booking-care-video-sales.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-pharmacy-health-consultation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-photo-studio-booking-photographer-training.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-programming-school-free-courses.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-psychiatry-initial-consultation-questionnaire.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-qualification-prep-school.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-real-estate-digital-transformation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-real-estate-property-training.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-rehabilitation-center-training-videos.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-reminder-system.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-restaurant-reservation-member-menu.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-sales-page-psychology.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-seitai-clinic-management.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-sme-consultant-subsidy-guide.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-sr-firm-labor-diagnosis.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-sr-subsidy-diagnosis-consultation.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-staffing-company-management.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-step-mail-course.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-student-management.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-subscription-business.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-support-guide.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-tax-office-consultation-conversion.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-teacher-recruitment-strategy.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-template-guide.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-thanks-page-upsell.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-tourism-association-tour-booking.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-veterinary-clinic-vaccination-reminder.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-video-content-management.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-visiting-nurse-schedule-management.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-vs-comparison-new.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-vs-comparison.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-vs-myasp-email-comparison.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-vs-teachable-comparison.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-webinar-registration-page.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-welfare-facility-recruitment.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/blog/article-utage-yoga-studio-class-booking-online-lessons.html</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- ツール -->
+  <url>
+    <loc>https://clanbiz.jp/tools/</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clanbiz.jp/tools/calc.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/color-palette.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/color-palette.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/image-resize.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/image-resize.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/letters-counter.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/letters-counter.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/meme-generator.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/meme-generator.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/png-jpeg-to-webp.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/png-jpeg-to-webp.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/png-to-jpeg.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/png-to-jpeg.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://clanbiz.net/tools/wareki-seireki.html</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://clanbiz.jp/tools/wareki-seireki.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   
-  <!-- 法的ページ -->
+  <!-- その他のページ -->
   <url>
-    <loc>https://clanbiz.net/privacy.html</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://clanbiz.jp/partner.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://clanbiz.jp/seminar-request.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://clanbiz.jp/owner.html</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://clanbiz.jp/terms.html</loc>
+    <lastmod>2025-06-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  
   <url>
-    <loc>https://clanbiz.net/terms.html</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://clanbiz.jp/privacy.html</loc>
+    <lastmod>2025-06-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  
   <url>
-    <loc>https://clanbiz.net/tokutei.html</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://clanbiz.jp/tokutei.html</loc>
+    <lastmod>2025-06-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
