@@ -27,7 +27,11 @@
       "Bash(done)",
       "Bash(do echo \"=== $file ===\")",
       "WebFetch(domain:clanbiz.net)",
-      "WebFetch(domain:search.google.com)"
+      "WebFetch(domain:search.google.com)",
+      "WebFetch(domain:have-a-nice-day.jp)",
+      "WebFetch(domain:www.teory.co.jp)",
+      "WebFetch(domain:www.saunashi.com)",
+      "WebFetch(domain:basaranet.com)"
     ],
     "deny": []
   }

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UTAGE構築の協業パートナーを募集しています。経験者限定。案件提供・クライアント対応なし。リモート対応可能。">
+    <meta name="google-site-verification" content="ndVtQk1I_HAYRlM_aF8eM0hIU1IOnu8GUgl6jHvb6v0" />
+    <title>UTAGE構築協業パートナー募集｜CLAN</title>
+    
+    <!-- フォントの最適化 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;display=swap&amp;subset=japanese&amp;font-display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=10001">
+
+    <!-- クリティカルCSS インライン化 -->
+    <style>
+        /* Apple風変数設定 */
+        :root {
+            --apple-primary: #0071e3;
+            --apple-primary-dark: #0051a0;
+            --apple-secondary: #86868b;
+            --apple-text-dark: #1d1d1f;
+            --apple-text-light: #86868b;
+            --apple-text-medium: #424245;
+            --apple-bg-light: #f5f5f7;
+            --apple-bg-medium: #e8e8ed;
+            --apple-accent: #ff6131;
+            --apple-border-radius: 12px;
+            --apple-transition: all 0.075s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --apple-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            
+            /* 和風変数 */
+            --traditional-primary: #8B0000;
+            --traditional-secondary: #DC143C;
+            --traditional-accent: #FF6B6B;
+            --traditional-bg-light: #FFFEF7;
+            --traditional-bg-medium: #F8F6F0;
+            --traditional-text-dark: #2C2C2C;
+            --traditional-border: #E5E5E5;
+            --font-family-heading: 'Noto Serif JP', serif;
+        }
+
+        /* パートナー募集専用スタイル */
+        .partner-hero {
+            background: linear-gradient(135deg, var(--traditional-primary), #DC143C);
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .partner-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .partner-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .partner-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.05em;
+        }
+
+        .partner-hero .subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .partner-hero .highlight-box {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 0;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight-box h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: var(--font-family-heading);
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* セクション共通スタイル */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--traditional-primary);
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.05em;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            text-align: center;
+            color: var(--apple-text-medium);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* 条件・特徴グリッド */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border: 2px solid var(--traditional-border);
+            border-radius: 0;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.15);
+            border-color: var(--traditional-secondary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--traditional-primary);
+            font-family: var(--font-family-heading);
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--traditional-text-dark);
+            margin: 0;
+        }
+
+        /* 条件リスト */
+        .requirements-list {
+            background: var(--traditional-bg-light);
+            border: 3px solid var(--traditional-primary);
+            border-radius: 0;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .requirements-list h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--traditional-primary);
+            text-align: center;
+            font-family: var(--font-family-heading);
+        }
+
+        .requirements-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .requirements-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--traditional-border);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--traditional-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ セクション */
+        .faq-section {
+            background: var(--apple-bg-light);
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--traditional-border);
+            border-radius: 0;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--traditional-bg-medium);
+            padding: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--traditional-primary);
+            cursor: pointer;
+            position: relative;
+            font-family: var(--font-family-heading);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .faq-answer {
+            padding: 25px;
+            line-height: 1.7;
+            color: var(--traditional-text-dark);
+            border-top: 1px solid var(--traditional-border);
+        }
+
+        /* CTA セクション */
+        .cta-section {
+            background: linear-gradient(135deg, var(--traditional-primary), #DC143C);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: var(--font-family-heading);
+        }
+
+        .cta-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--traditional-primary);
+            font-weight: 600;
+            padding: 18px 40px;
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+            border: 3px solid var(--traditional-primary);
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.1em;
+            margin: 10px;
+        }
+
+        .cta-btn:hover {
+            background: var(--traditional-bg-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .partner-hero {
+                padding: 80px 0 60px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+
+            .requirements-list {
+                padding: 30px 20px;
+            }
+
+            .faq-question,
+            .faq-answer {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .partner-hero {
+                padding: 60px 0 40px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .highlight-box {
+                padding: 20px;
+                margin: 20px 0;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+    <link rel="canonical" href="https://clanbiz.jp/partner.html">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="UTAGE構築協業パートナー募集｜CLAN">
+    <meta property="og:description" content="UTAGE構築の協業パートナーを募集しています。経験者限定。案件提供・クライアント対応なし。リモート対応可能。">
+    <meta property="og:image" content="https://clanbiz.jp/assets/images/hero-pc.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clanbiz.jp/partner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "UTAGE構築協業パートナー",
+      "description": "UTAGE構築の協業パートナーを募集。経験者限定。案件提供・クライアント対応なし。",
+      "datePosted": "2025-06-27",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "CLAN",
+        "url": "https://clanbiz.jp/"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "addressLocality": "リモート対応可",
+        "addressCountry": "JP"
+      },
+      "employmentType": "CONTRACTOR",
+      "workHours": "柔軟対応",
+      "qualifications": "UTAGE構築経験必須"
+    }
+    </script>
+</head>
+
+<body class="partner-page">
+
+<!-- SVGアイコン定義 -->
+<svg aria-hidden="true" class="svg-sprite" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <symbol id="icon-handshake" viewBox="0 0 32 32">
+            <path d="M6 20c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm16 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm-6-8h4v4h-4v-4zm-8 0h4v4H8v-4z"/>
+        </symbol>
+    </defs>
+</svg>
+
+<!-- ヘッダー -->
+<header class="site-header">
+    <div class="header-container">
+        <div class="site-logo-text">
+            <a href="index.html">CLAN</a>
+        </div>
+        <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="achievement/index.html">お客様の声</a></li>
+                <li><a href="blog/index.html">ブログ</a></li>
+                <li><a href="tools/index.html">まえゆきツール</a></li>
+                <li><a href="partner.html" aria-current="page">パートナー募集</a></li>
+            </ul>
+        </nav>
+
+        <button class="hamburger-button sp-nav" aria-label="メニューを開く" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="mobile-menu">
+    <nav aria-label="モバイルメニュー">
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="achievement/index.html">お客様の声</a></li>
+            <li><a href="blog/index.html">ブログ</a></li>
+            <li><a href="tools/index.html">まえゆきツール</a></li>
+            <li><a href="partner.html">パートナー募集</a></li>
+        </ul>
+    </nav>
+</div>
+
+<main class="site-main" id="main-content">
+    <!-- ヒーローセクション -->
+    <section class="partner-hero">
+        <div class="partner-hero-content">
+            <h1>UTAGE構築<br>協業パートナー募集</h1>
+            <p class="subtitle">経験者限定・案件提供型・リモート対応可</p>
+            
+            <div class="highlight-box">
+                <h2>⚡ こんな方を探しています</h2>
+                <p>UTAGE構築の経験がある方限定で協業パートナーを募集中。<br>
+                案件はこちらから提供するので、クライアントとのやりとりは一切不要です。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 募集条件セクション -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">募集条件</h2>
+            <p class="section-subtitle">以下の条件を満たす方からのご応募をお待ちしています</p>
+
+            <div class="requirements-list">
+                <h3>必須条件</h3>
+                <ul>
+                    <li><strong>UTAGE構築の実務経験</strong>（最低3案件以上の完了実績）</li>
+                    <li><strong>ファネル設計からメール配信設定まで</strong>の一通りの作業が可能</li>
+                    <li><strong>レスポンシブ対応</strong>とモバイル最適化ができる</li>
+                    <li><strong>クライアント要件に応じたカスタマイズ</strong>が可能</li>
+                    <li><strong>期限内での納品</strong>と品質管理ができる</li>
+                    <li><strong>リモートでのコミュニケーション</strong>がスムーズに行える</li>
+                </ul>
+            </div>
+
+            <div class="requirements-list">
+                <h3>歓迎条件</h3>
+                <ul>
+                    <li>WordPressとの連携経験</li>
+                    <li>決済システム（Stripe、PayPal等）の設定経験</li>
+                    <li>アナリティクス設定・改善提案ができる</li>
+                    <li>デザインスキル（UI/UX改善提案ができる）</li>
+                    <li>複数案件の同時進行管理経験</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特徴・メリットセクション -->
+    <section class="section" style="background: var(--apple-bg-light);">
+        <div class="section-container">
+            <h2 class="section-title">協業の特徴・メリット</h2>
+            <p class="section-subtitle">働きやすい環境でスキルを活かせます</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>案件提供型</h3>
+                    <p>営業活動は不要。案件はこちらから継続的に提供します。作業に集中できる環境です。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>クライアント対応なし</h3>
+                    <p>クライアントとのやりとりは全てこちらで対応。技術的な作業のみに専念していただけます。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>完全リモート対応</h3>
+                    <p>全国どこからでも参加可能。自宅やお好きな場所で作業していただけます。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>柔軟な働き方</h3>
+                    <p>プロジェクトベースでの協業。あなたのペースに合わせてお仕事をお受けいただけます。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>適正報酬</h3>
+                    <p>UTAGE構築の専門性を正当に評価。スキルレベルに応じた報酬体系を用意しています。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>スキル向上機会</h3>
+                    <p>様々な業界のプロジェクトを通じて、さらなるスキルアップの機会を提供します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- よくある質問セクション -->
+    <section class="section faq-section">
+        <div class="section-container">
+            <h2 class="section-title">よくある質問</h2>
+            <p class="section-subtitle">パートナー応募に関するよくある質問</p>
+
+            <div class="faq-item">
+                <div class="faq-question">どのような案件が多いですか？</div>
+                <div class="faq-answer">
+                    <p>コンサルティング、士業、美容・健康、教育関連の企業様からの案件が中心です。ファネル構築からメール配信設定、決済システム連携まで幅広い内容があります。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">報酬はどのように決まりますか？</div>
+                <div class="faq-answer">
+                    <p>プロジェクトの規模・複雑さ・納期などを総合的に判断し、事前に協議の上で報酬を決定します。UTAGE構築の専門性を適正に評価した報酬体系です。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">どの程度の稼働が必要ですか？</div>
+                <div class="faq-answer">
+                    <p>プロジェクトにより異なりますが、週10-20時間程度から対応可能です。継続的にお仕事をお受けいただける方を優遇させていただきます。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">技術サポートはありますか？</div>
+                <div class="faq-answer">
+                    <p>はい。技術的な質問や困った際のサポート体制を整えています。チームでの情報共有も積極的に行っています。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">契約形態はどうなりますか？</div>
+                <div class="faq-answer">
+                    <p>業務委託契約でのお取引となります。プロジェクト単位での契約も、継続的な協業契約も対応可能です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA（応募）セクション -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2 class="cta-title">一緒にUTAGE案件を<br>成功させませんか？</h2>
+            <p class="cta-subtitle">経験豊富なパートナーとの協業をお待ちしています</p>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="cta-btn">
+                    📧 今すぐ応募する
+                </a>
+                <a href="#main-content" class="cta-btn" style="background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(10px);">
+                    📋 条件を再確認
+                </a>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.8;">
+                応募フォームでは「UTAGE構築パートナー希望」とご記入ください<br>
+                24時間以内に詳細資料をお送りいたします
+            </p>
+        </div>
+    </section>
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>CLAN</h2>
+        </div>
+        <nav class="footer-links" aria-label="フッターナビゲーション">
+            <ul>
+                <li><a href="/achievement/index.html" title="UTAGE導入企業の成功事例">お客様の声</a></li>
+                <li><a href="/blog/index.html" title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+                <li><a href="/tools/index.html" title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+                <li><a href="/seminar-request.html" title="自治体・商工会・業界団体限定セミナー要望受付">セミナー要望受付</a></li>
+                <li><a href="/partner.html" title="UTAGE構築協業パートナー募集">パートナー募集</a></li>
+                <li><a href="/owner.html" title="CLANの運営会社情報">運営者情報</a></li>
+                <li><a href="/terms.html" title="サービス利用規約">利用規約</a></li>
+                <li><a href="/privacy.html" title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+                <li><a href="/tokutei.html" title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/common-cache.js" onerror="console.warn('common-cache.js not found')"></script>
+<script src="js/common-lazy-loading.js" onerror="console.warn('common-lazy-loading.js not found')"></script>
+<script src="js/common-init.js" onerror="console.warn('common-init.js not found')"></script>
+<script src="js/main.js?v=10000" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // FAQ アコーディオン機能
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            
+            // すべての他のFAQを閉じる
+            faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== this) {
+                    const otherFaqItem = otherQuestion.parentElement;
+                    const otherAnswer = otherFaqItem.querySelector('.faq-answer');
+                    otherAnswer.style.display = 'none';
+                    otherQuestion.style.borderBottom = '';
+                    otherQuestion.querySelector('::after') ? 
+                        (otherQuestion.style.setProperty('--icon', '"+"')) : null;
+                }
+            });
+            
+            // 現在のFAQをトグル
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                this.style.borderBottom = '';
+            } else {
+                answer.style.display = 'block';
+                this.style.borderBottom = 'none';
+            }
+        });
+    });
+
+    // スムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // フォーカス管理とアクセシビリティ
+    document.querySelectorAll('.cta-btn, .feature-card').forEach(element => {
+        element.addEventListener('focus', function() {
+            this.style.outline = '2px solid #0071e3';
+            this.style.outlineOffset = '2px';
+        });
+        
+        element.addEventListener('blur', function() {
+            this.style.outline = '';
+            this.style.outlineOffset = '';
+        });
+    });
+});
+</script>
+
+</body>
+</html>
