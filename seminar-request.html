@@ -12,9 +12,9 @@
 
         /* ヒーローセクション */
         .apple-hero {
-            background: linear-gradient(135deg, #0d3283 0%, #1a5cb5 50%, #0d3283 100%);
-            color: white;
-            padding: 100px 0 80px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e8f4fd 100%);
+            color: #333;
+            padding: 120px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -23,13 +23,24 @@
         .apple-hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .apple-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
             pointer-events: none;
         }
 
@@ -42,23 +53,89 @@
         }
 
         .apple-hero-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-            font-family: var(--font-family-heading);
-            letter-spacing: 0.1em;
-            color: white;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            position: relative;
+            z-index: 1;
         }
 
         .apple-hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             margin-bottom: 3rem;
-            opacity: 0.95;
-            line-height: 1.7;
-            max-width: 800px;
+            line-height: 1.8;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            text-align: center;
+            color: #666;
+        }
+
+        .apple-hero-subtitle-desktop {
+            display: none;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .apple-hero-subtitle-items {
+            display: none;
+        }
+
+        .apple-hero-subtitle-mobile {
+            display: block;
+            color: #666;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        @media (min-width: 769px) {
+            .apple-hero-subtitle {
+                display: block;
+            }
+            
+            .apple-hero-subtitle-desktop {
+                display: block;
+                margin-bottom: 25px;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+            
+            .apple-hero-subtitle-desktop:last-of-type {
+                margin-top: 25px;
+            }
+            
+            .apple-hero-subtitle-mobile {
+                display: none;
+            }
+            
+            .apple-hero-subtitle-items {
+                display: flex;
+                justify-content: center;
+                gap: 60px;
+                margin-bottom: 20px;
+            }
+            
+            .apple-hero-subtitle-items span {
+                font-size: 2.3rem;
+                font-weight: 700;
+                padding: 25px 65px;
+                background: white;
+                color: #4A90E2;
+                border: none;
+                border-radius: 35px;
+                letter-spacing: 0.02em;
+                box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .apple-hero-subtitle-items span:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 35px rgba(74, 144, 226, 0.25);
+            }
         }
 
         /* セクション共通スタイル */
@@ -73,15 +150,15 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
             text-align: center;
-            color: var(--traditional-primary);
-            font-family: var(--font-family-heading);
-            letter-spacing: 0.05em;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            letter-spacing: -0.02em;
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
 
         .section-title::after {
@@ -90,27 +167,133 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--traditional-accent);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #4A90E2 0%, #FF6B6B 100%);
             border-radius: 2px;
         }
 
         .section-subtitle {
-            font-size: 1.125rem;
+            font-size: 1.4rem;
             text-align: center;
             color: var(--text-medium);
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* 情報セクション */
         .info-section {
             background: var(--bg-light);
             padding: 80px 0;
+        }
+
+        /* セミナー内容カードの特別スタイル */
+        .seminar-content-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seminar-content-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #4A90E2 0%, #FF6B6B 100%);
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .seminar-content-card:hover::before {
+            opacity: 1;
+        }
+
+        .seminar-content-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: white;
+        }
+
+        .seminar-content-card h3 {
+            color: var(--traditional-primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-family: var(--font-family-heading);
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .seminar-content-card h3::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--traditional-accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .seminar-content-card:nth-child(1) h3::before {
+            content: '🌏';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .seminar-content-card:nth-child(2) h3::before {
+            content: '🚀';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .seminar-content-card:nth-child(3) h3::before {
+            content: '⚙️';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .seminar-content-card p {
+            color: var(--traditional-text-dark);
+            line-height: 2;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding-left: 55px;
+        }
+
+        .seminar-content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
         }
 
         .info-grid {
@@ -122,22 +305,41 @@
 
         .info-card {
             background: white;
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: var(--transition-cubic);
-            border: 1px solid var(--traditional-border);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4A90E2 0%, #FF6B6B 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-card:hover::before {
+            opacity: 1;
         }
 
         .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .info-card h3 {
             color: var(--traditional-primary);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             font-weight: 700;
             font-family: var(--font-family-heading);
             letter-spacing: 0.05em;
@@ -149,11 +351,15 @@
         }
 
         .info-card ul li {
-            padding: 10px 0;
-            padding-left: 25px;
+            padding: 12px 0;
+            padding-left: 30px;
             position: relative;
             color: var(--text-medium);
-            line-height: 1.7;
+            line-height: 1.8;
+            text-align: left;
+            max-width: 350px;
+            margin: 0 auto;
+            font-size: 1.2rem;
         }
 
         .info-card ul li::before {
@@ -165,42 +371,38 @@
         }
 
         .price-highlight {
-            background: var(--traditional-primary);
+            background: linear-gradient(135deg, #4A90E2 0%, #5BA3F5 100%);
             color: white;
-            padding: 15px 25px;
-            border-radius: 0;
+            padding: 25px 40px;
+            border-radius: 15px;
             font-weight: 700;
-            margin: 20px 0;
+            margin: 30px 0;
             display: inline-block;
-            font-size: 1.125rem;
+            font-size: 1.6rem;
             position: relative;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.02em;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .price-highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 10px;
-            right: 10px;
-            height: 3px;
-            background: var(--traditional-accent);
-            border-radius: 2px;
+        .price-highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.4);
         }
 
         /* フォームセクション */
         .form-section {
             background: white;
             max-width: 900px;
-            margin: 60px auto;
-            padding: 60px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            border: 1px solid var(--traditional-border);
+            margin: 80px auto;
+            padding: 80px 60px;
+            border-radius: 30px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+            border: none;
         }
 
         .form-section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 40px;
             text-align: center;
@@ -280,36 +482,42 @@
         }
 
         .submit-btn {
-            background: var(--traditional-primary);
+            background: linear-gradient(135deg, #4A90E2 0%, #5BA3F5 100%);
             color: white;
-            padding: 20px 50px;
+            padding: 30px 70px;
             border: none;
-            border-radius: 0;
-            font-size: 18px;
-            font-weight: 700;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: var(--transition-cubic);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
-            margin-top: 40px;
+            max-width: 600px;
+            margin: 40px auto 0;
+            display: block;
             position: relative;
             overflow: hidden;
-            letter-spacing: 0.1em;
-            font-family: var(--font-family-heading);
+            letter-spacing: 0.02em;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
         }
 
         .submit-btn::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--traditional-accent);
-            transition: left 0.3s ease;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
         .submit-btn:hover::before {
-            left: 0;
+            width: 600px;
+            height: 600px;
         }
 
         .submit-btn span {
@@ -318,18 +526,20 @@
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(139, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
         }
 
         .note {
             background: var(--traditional-bg-medium);
             border: 2px solid var(--traditional-border);
-            padding: 25px;
+            padding: 30px;
             border-radius: 0;
             margin: 30px 0;
             position: relative;
             overflow: hidden;
+            font-size: 1.2rem;
+            line-height: 1.8;
         }
 
         .note::before {
@@ -344,9 +554,9 @@
 
         .note strong {
             color: var(--traditional-primary);
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 700;
             letter-spacing: 0.05em;
         }
@@ -371,6 +581,80 @@
             user-select: none;
         }
 
+        /* セミナー実績セクション */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin-top: 50px;
+            margin-bottom: 80px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .achievement-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            min-height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-card {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+
+        .achievement-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-card img {
+                min-height: 250px;
+            }
+        }
+
+        .achievement-card-content {
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-card-content {
+                padding: 30px;
+            }
+        }
+
+        .achievement-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--traditional-primary);
+            margin-bottom: 15px;
+            letter-spacing: 0.02em;
+        }
+
+        .achievement-card p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
         /* レスポンシブデザイン */
         @media (max-width: 768px) {
             .seminar-hero {
@@ -390,6 +674,25 @@
                 gap: 20px;
             }
 
+            .seminar-content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .seminar-content-card {
+                padding: 30px;
+            }
+
+            .seminar-content-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .seminar-content-card p {
+                padding-left: 0;
+                margin-top: 20px;
+                font-size: 1rem;
+            }
+
             .form-section {
                 padding: 40px 20px;
                 margin: 40px 20px;
@@ -403,10 +706,16 @@
                 padding: 18px 40px;
                 font-size: 16px;
             }
+
+            .achievement-grid {
+                gap: 40px;
+            }
+
         }
     </style>
 </head>
 <body>
+<!-- ヘッダー -->
 <!-- ヘッダー -->
 <header class="site-header">
     <div class="header-container">
@@ -415,11 +724,11 @@
         </div>
         <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
             <ul>
-                <li><a href="/index.html">ホーム</a></li>
                 <li><a href="/achievement/index.html">お客様の声</a></li>
                 <li><a href="/blog/index.html">ブログ</a></li>
                 <li><a href="/tools/index.html">まえゆきツール</a></li>
                 <li><a href="/partner.html">パートナー募集</a></li>
+                <li><a href="/seminar-request.html" aria-current="page">セミナー要望受付</a></li>
             </ul>
         </nav>
 
@@ -436,14 +745,15 @@
 </header>
 
 <!-- モバイルメニュー -->
+<!-- モバイルメニュー -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
     <nav aria-label="モバイルナビゲーション">
         <ul>
-            <li><a href="/index.html">ホーム</a></li>
             <li><a href="/achievement/index.html">お客様の声</a></li>
             <li><a href="/blog/index.html">ブログ</a></li>
             <li><a href="/tools/index.html">まえゆきツール</a></li>
             <li><a href="/partner.html">パートナー募集</a></li>
+            <li><a href="/seminar-request.html" aria-current="page">セミナー要望受付</a></li>
         </ul>
     </nav>
 </div><main class="site-main">
@@ -451,7 +761,15 @@
     <section class="apple-hero">
         <div class="apple-hero-container">
             <h1 class="apple-hero-title">セミナー要望受付</h1>
-            <p class="apple-hero-subtitle">自治体・商工会・業界団体限定のセミナー開僊をサポートいたします</p>
+            <div class="apple-hero-subtitle">
+                <span class="apple-hero-subtitle-desktop">自治体様・商工会議所様・業界団体様向けに</span>
+                <div class="apple-hero-subtitle-items">
+                    <span>勉強会・講演会</span>
+                    <span>セミナーの開催</span>
+                </div>
+                <span class="apple-hero-subtitle-desktop">を受け付けています</span>
+                <span class="apple-hero-subtitle-mobile">自治体様・商工会議所様・業界団体様向けに勉強会・講演会・セミナーの開催を受け付けています</span>
+            </div>
         </div>
     </section>
 
@@ -473,8 +791,62 @@
                     </div>
                     <div class="info-card">
                         <h3>参加者数</h3>
-                        <p style="font-size: 1.125rem; color: var(--traditional-text-dark); margin: 20px 0;"><strong>5名以上</strong>から開催可能</p>
-                        <p style="color: var(--text-medium); line-height: 1.7;">少人数でも質の高いセミナーを提供いたします</p>
+                        <p style="font-size: 1.5rem; color: var(--traditional-text-dark); margin: 20px 0;"><strong>5名以上</strong>から開催可能</p>
+                        <p style="color: var(--text-medium); line-height: 1.8; font-size: 1.2rem;">少人数でも質の高いセミナーを提供いたします</p>
+                    </div>
+                </div>
+
+                <section style="background: white; padding: 80px 0; margin: 60px -20px 0; position: relative;">
+                    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                        <h2 class="section-title">セミナー内容</h2>
+                        <p class="section-subtitle" style="font-size: 1.5rem; margin-bottom: 50px;">セミナー内容は柔軟に対応いたします</p>
+                        <div class="seminar-content-grid">
+                            <div class="seminar-content-card">
+                                <h3>地域活性化・移住促進</h3>
+                                <p>地域の魅力を全国にPRするためのブランディング、移住促進セミナー</p>
+                            </div>
+                            <div class="seminar-content-card">
+                                <h3>地方企業の全国展開</h3>
+                                <p>地方企業が商品を全国で売るためのセールス自動化とブランディング戦略セミナー</p>
+                            </div>
+                            <div class="seminar-content-card" style="grid-column: 1 / -1;">
+                                <h3>ビジネス自動化・販売戦略</h3>
+                                <p>あなたの会社のノウハウを自動化ファネルに載せて全国に販売する戦略セミナーなど</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <h2 class="section-title" style="margin-top: 80px;">セミナー開催実績</h2>
+                <p class="section-subtitle">様々な団体様でセミナーを開催させていただいております</p>
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <img src="assets/images/スクリーンショット 2025-06-30 042608.png" alt="市役所職員向け講座">
+                        <div class="achievement-card-content">
+                            <h3>市役所職員向け講座</h3>
+                            <p>市役所様で地域ブランディング講座を実施。職員の皆様の情報発信力向上をサポート。</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <img src="assets/images/スクリーンショット 2025-06-30 040339.png" alt="実店舗様向けセミナー">
+                        <div class="achievement-card-content">
+                            <h3>実店舗様向けセミナー</h3>
+                            <p>地域の実店舗様にセールス自動化の実践的なノウハウをお伝えし、多くの成果報告をいただいています。</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <img src="assets/images/スクリーンショット 2025-06-30 040329.png" alt="商工会議所でのセミナー">
+                        <div class="achievement-card-content">
+                            <h3>商工会議所セミナー</h3>
+                            <p>商工会議所様主催のデジタルマーケティングセミナーで多数の事業者様にご参加いただきました。</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <img src="assets/images/スクリーンショット 2025-06-30 040325.png" alt="商工会でのセミナー">
+                        <div class="achievement-card-content">
+                            <h3>商工会セミナー</h3>
+                            <p>地域商工会様で中小企業向けのブランディング戦略セミナーを開催。実践的な内容で好評をいただきました。</p>
+                        </div>
                     </div>
                 </div>
 
@@ -483,22 +855,23 @@
                 <div class="info-grid">
                     <div class="info-card">
                         <h3>オンラインセミナー（ZOOM）</h3>
-                    <div class="price-highlight">無料</div>
-                    <ul>
-                        <li>ZOOMを使用したライブ配信</li>
-                        <li>質疑応答セッション含む</li>
-                        <li>録画データ提供可能</li>
-                    </ul>
-                </div>
+                        <div class="price-highlight">無料</div>
+                        <ul>
+                            <li>ZOOMを使用したライブ配信</li>
+                            <li>質疑応答セッション含む</li>
+                            <li>2時間程度</li>
+                        </ul>
+                    </div>
                     <div class="info-card">
                         <h3>現地開催（リアルセミナー）</h3>
-                    <div class="price-highlight">交通費・宿泊費 + 3万円</div>
-                    <ul>
-                        <li>講師が現地に伺います</li>
-                        <li>対面での濃密な指導</li>
-                        <li>ワークショップ形式可能</li>
-                    </ul>
-                </div>
+                        <div class="price-highlight">交通費・宿泊費 + 5万円</div>
+                        <ul>
+                            <li>講師が現地に伺います</li>
+                            <li>対面での濃密な指導</li>
+                            <li>ワークショップ形式可能</li>
+                            <li>2時間程度</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -506,105 +879,15 @@
         <!-- フォームセクション -->
         <div class="form-section">
             <h2>セミナー要望フォーム</h2>
-            <form id="seminarForm">
-                <div class="form-group">
-                    <label for="organization">団体名 <span class="required">※必須</span></label>
-                    <input type="text" id="organization" name="organization" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="organizationType">団体種別 <span class="required">※必須</span></label>
-                    <select id="organizationType" name="organizationType" required>
-                        <option value="">選択してください</option>
-                        <option value="自治体">自治体</option>
-                        <option value="商工会">商工会</option>
-                        <option value="商工会議所">商工会議所</option>
-                        <option value="業界団体">業界団体</option>
-                        <option value="その他">その他</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="contactName">ご担当者名 <span class="required">※必須</span></label>
-                    <input type="text" id="contactName" name="contactName" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">メールアドレス <span class="required">※必須</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">電話番号 <span class="required">※必須</span></label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="seminarType">開催形式 <span class="required">※必須</span></label>
-                    <select id="seminarType" name="seminarType" required>
-                        <option value="">選択してください</option>
-                        <option value="オンライン">オンライン（ZOOM）</option>
-                        <option value="現地開催">現地開催</option>
-                        <option value="ハイブリッド">ハイブリッド（オンライン+現地）</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="participantCount">予定参加者数 <span class="required">※必須</span></label>
-                    <select id="participantCount" name="participantCount" required>
-                        <option value="">選択してください</option>
-                        <option value="5-10名">5-10名</option>
-                        <option value="11-20名">11-20名</option>
-                        <option value="21-50名">21-50名</option>
-                        <option value="51-100名">51-100名</option>
-                        <option value="100名以上">100名以上</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="seminarTopic">希望セミナーテーマ <span class="required">※必須</span></label>
-                    <textarea id="seminarTopic" name="seminarTopic" placeholder="例：デジタルマーケティング入門、中小企業のDX推進、補助金活用セミナーなど" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferredDate">希望開催時期</label>
-                    <input type="text" id="preferredDate" name="preferredDate" placeholder="例：2024年3月頃、平日午後希望など">
-                </div>
-
-                <div class="form-group">
-                    <label for="duration">希望時間</label>
-                    <select id="duration" name="duration">
-                        <option value="">選択してください</option>
-                        <option value="1時間">1時間</option>
-                        <option value="2時間">2時間</option>
-                        <option value="3時間">3時間</option>
-                        <option value="半日">半日（4時間）</option>
-                        <option value="1日">1日（6-8時間）</option>
-                        <option value="その他">その他</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="additionalInfo">その他ご要望・質問</label>
-                    <textarea id="additionalInfo" name="additionalInfo" placeholder="特別な要望、機材の有無、参加者の特徴などがあればお書きください"></textarea>
-                </div>
-
-                <div class="note">
-                    <strong>⚠️ 重要事項</strong><br>
-                    • 現地開催の場合、交通費・宿泊費は実費をご負担いただきます<br>
-                    • セミナー内容は事前に詳細をご相談させていただきます<br>
-                    • 開催1週間前までのキャンセルは無料です
-                </div>
-
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="agreement" name="agreement" required>
-                        <label for="agreement">上記の内容に同意します <span class="required">※必須</span></label>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn"><span>セミナー要望を送信する</span></button>
-            </form>
+            <div class="note">
+                <strong>📋 お申し込みについて</strong><br>
+                • セミナーのご要望は専用フォームで受け付けております<br>
+                • 下記ボタンから詳細をご入力ください<br>
+                • 担当者より3営業日以内にご連絡いたします
+            </div>
+            <a href="https://site.skillmade.online/p/fTFJ7PlhrRsJ" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">
+                <span>セミナー内容打ち合わせ相談フォーム</span>
+            </a>
         </div>
     </div>
 </main>
@@ -641,55 +924,5 @@
 <!-- メインスクリプト -->
 <script src="js/main.js?v=10000" defer></script>
 
-    <script>
-        document.getElementById('seminarForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // フォームデータの取得
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // 簡単なバリデーション
-            const requiredFields = ['organization', 'organizationType', 'contactName', 'email', 'phone', 'seminarType', 'participantCount', 'seminarTopic'];
-            const missingFields = requiredFields.filter(field => !data[field]);
-            
-            if (missingFields.length > 0) {
-                alert('必須項目が未入力です。すべての必須項目を入力してください。');
-                return;
-            }
-            
-            if (!data.agreement) {
-                alert('利用規約への同意が必要です。');
-                return;
-            }
-            
-            // メール形式の簡単なチェック
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('正しいメールアドレスを入力してください。');
-                return;
-            }
-            
-            // 送信処理（実際の実装では適切なエンドポイントに送信）
-            alert('セミナー要望を受け付けました。\n担当者より3営業日以内にご連絡いたします。');
-            
-            // フォームのリセット
-            this.reset();
-        });
-
-        // 開催形式に応じた料金表示の更新
-        document.getElementById('seminarType').addEventListener('change', function() {
-            const selectedType = this.value;
-            const noteElement = document.querySelector('.note');
-            
-            if (selectedType === 'オンライン') {
-                noteElement.innerHTML = '<strong>💰 料金：無料</strong><br>• ZOOMを使用したオンライン開催<br>• 録画データの提供も可能です<br>• 開催1週間前までのキャンセルは無料です';
-            } else if (selectedType === '現地開催') {
-                noteElement.innerHTML = '<strong>💰 料金：交通費・宿泊費 + 3万円</strong><br>• 講師が現地に伺います<br>• 交通費・宿泊費は実費をご負担いただきます<br>• 開催1週間前までのキャンセルは無料です';
-            } else {
-                noteElement.innerHTML = '<strong>⚠️ 重要事項</strong><br>• 現地開催の場合、交通費・宿泊費は実費をご負担いただきます<br>• セミナー内容は事前に詳細をご相談させていただきます<br>• 開催1週間前までのキャンセルは無料です';
-            }
-        });
-    </script>
 </body>
 </html>

@@ -31,7 +31,9 @@
       "WebFetch(domain:have-a-nice-day.jp)",
       "WebFetch(domain:www.teory.co.jp)",
       "WebFetch(domain:www.saunashi.com)",
-      "WebFetch(domain:basaranet.com)"
+      "WebFetch(domain:basaranet.com)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

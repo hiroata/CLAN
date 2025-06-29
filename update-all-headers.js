@@ -10,11 +10,11 @@ const standardHeaderTemplate = `<!-- ヘッダー -->
         </div>
         <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
             <ul>
-                <li><a href="/index.html"{{HOME_CURRENT}}>ホーム</a></li>
                 <li><a href="/achievement/index.html"{{ACHIEVEMENT_CURRENT}}>お客様の声</a></li>
                 <li><a href="/blog/index.html"{{BLOG_CURRENT}}>ブログ</a></li>
                 <li><a href="/tools/index.html"{{TOOLS_CURRENT}}>まえゆきツール</a></li>
                 <li><a href="/partner.html"{{PARTNER_CURRENT}}>パートナー募集</a></li>
+                <li><a href="/seminar-request.html"{{SEMINAR_CURRENT}}>セミナー要望受付</a></li>
             </ul>
         </nav>
 
@@ -35,11 +35,11 @@ const standardMobileMenuTemplate = `<!-- モバイルメニュー -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
     <nav aria-label="モバイルナビゲーション">
         <ul>
-            <li><a href="/index.html"{{HOME_CURRENT}}>ホーム</a></li>
             <li><a href="/achievement/index.html"{{ACHIEVEMENT_CURRENT}}>お客様の声</a></li>
             <li><a href="/blog/index.html"{{BLOG_CURRENT}}>ブログ</a></li>
             <li><a href="/tools/index.html"{{TOOLS_CURRENT}}>まえゆきツール</a></li>
             <li><a href="/partner.html"{{PARTNER_CURRENT}}>パートナー募集</a></li>
+            <li><a href="/seminar-request.html"{{SEMINAR_CURRENT}}>セミナー要望受付</a></li>
         </ul>
     </nav>
 </div>`;
@@ -52,9 +52,7 @@ function setAriaCurrent(template, filePath) {
     let result = template;
     
     // ファイルパスに基づいてaria-currentを設定
-    if (fileName === 'index.html' && dirName.endsWith('CLAN')) {
-        result = result.replace(/{{HOME_CURRENT}}/g, ' aria-current="page"');
-    } else if (dirName.includes('achievement')) {
+    if (dirName.includes('achievement')) {
         result = result.replace(/{{ACHIEVEMENT_CURRENT}}/g, ' aria-current="page"');
     } else if (dirName.includes('blog')) {
         result = result.replace(/{{BLOG_CURRENT}}/g, ' aria-current="page"');
@@ -62,14 +60,16 @@ function setAriaCurrent(template, filePath) {
         result = result.replace(/{{TOOLS_CURRENT}}/g, ' aria-current="page"');
     } else if (fileName === 'partner.html') {
         result = result.replace(/{{PARTNER_CURRENT}}/g, ' aria-current="page"');
+    } else if (fileName === 'seminar-request.html') {
+        result = result.replace(/{{SEMINAR_CURRENT}}/g, ' aria-current="page"');
     }
     
     // 残りのプレースホルダーを空文字に置換
-    result = result.replace(/{{HOME_CURRENT}}/g, '');
     result = result.replace(/{{ACHIEVEMENT_CURRENT}}/g, '');
     result = result.replace(/{{BLOG_CURRENT}}/g, '');
     result = result.replace(/{{TOOLS_CURRENT}}/g, '');
     result = result.replace(/{{PARTNER_CURRENT}}/g, '');
+    result = result.replace(/{{SEMINAR_CURRENT}}/g, '');
     
     return result;
 }
@@ -144,8 +144,17 @@ function main() {
     const rootDir = '/mnt/c/Users/atara/Desktop/CLAN';
     console.log('Finding all HTML files...');
     
-    const htmlFiles = findHTMLFiles(rootDir);
-    console.log(`Found ${htmlFiles.length} HTML files`);
+    let htmlFiles = findHTMLFiles(rootDir);
+    
+    // index.htmlとtest-navigation.htmlを除外
+    htmlFiles = htmlFiles.filter(file => {
+        const fileName = path.basename(file);
+        const isRootIndex = fileName === 'index.html' && path.dirname(file) === rootDir;
+        const isTestFile = fileName === 'test-navigation.html';
+        return !isRootIndex && !isTestFile;
+    });
+    
+    console.log(`Found ${htmlFiles.length} HTML files to update (excluding root index.html and test files)`);
     
     let successCount = 0;
     let failCount = 0;
