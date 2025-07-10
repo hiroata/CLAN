@@ -13,138 +13,557 @@
     <link rel="stylesheet" href="myblog-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    
-    <!-- 記事ナビゲーション用スタイル -->
-    
-    <!-- 記事ナビゲーション用スタイル -->
+    <!-- 強化されたスタイル -->
     <style>
-        .myblog-article-navigation {
-            margin: 60px 0 40px;
-            padding: 40px 0;
-            border-top: 2px solid #e0e0e0;
-            border-bottom: 2px solid #e0e0e0;
-            background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+        /* Udemy風のデザイン変数 */
+        :root {
+            --udemy-purple: #a435f0;
+            --udemy-purple-dark: #8710d8;
+            --udemy-blue: #5624d0;
+            --udemy-black: #1c1d1f;
+            --udemy-gray: #6a6f73;
+            --udemy-light-gray: #d1d7dc;
+            --udemy-bg-gray: #f7f9fa;
+            --udemy-success: #4caf50;
+            --udemy-warning: #ff9800;
+            --udemy-danger: #f44336;
+            --shadow-light: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 8px 24px rgba(0,0,0,0.16);
         }
-        
-        .myblog-nav-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+
+        /* メインコンテンツのレイアウト改善 */
+        .myblog-main {
+            background: var(--udemy-bg-gray);
+            min-height: 100vh;
+        }
+
+        .myblog-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
-        
-        .myblog-nav-prev,
-        .myblog-nav-next {
+
+        .myblog-content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* 記事コンテンツエリア */
+        .myblog-article {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+        }
+
+        /* 記事ヘッダーの改善 */
+        .myblog-article-header {
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-bottom: 1px solid var(--udemy-light-gray);
+        }
+
+        .myblog-article-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--udemy-black);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .myblog-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .myblog-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--udemy-gray);
+            font-size: 0.9rem;
+        }
+
+        .myblog-meta-item i {
+            color: var(--udemy-purple);
+        }
+
+        /* タグのデザイン改善 */
+        .myblog-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .myblog-tag {
+            background: var(--udemy-bg-gray);
+            color: var(--udemy-gray);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .myblog-tag:hover {
+            background: var(--udemy-purple);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* コンテンツエリアの改善 */
+        .myblog-content {
+            padding: 40px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--udemy-black);
+        }
+
+        .myblog-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            color: var(--udemy-black);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .myblog-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 80%;
+            background: var(--udemy-purple);
+            border-radius: 2px;
+        }
+
+        .myblog-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--udemy-black);
+        }
+
+        /* 強調ボックスの改善 */
+        .emphasis-box {
+            border: 2px solid;
+            border-radius: 8px;
             padding: 24px;
-            border: 1px solid #e0e0e0;
-            border-radius: 16px;
-            background: #ffffff;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            min-height: 100px;
+            margin: 24px 0;
+            background: white;
             position: relative;
             overflow: hidden;
         }
-        
-        .myblog-nav-prev::before,
-        .myblog-nav-next::before {
+
+        .emphasis-box::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .emphasis-box.success {
+            border-color: #e8f5e9;
+            background: #f1f8f4;
+        }
+
+        .emphasis-box.success::before {
+            background: var(--udemy-success);
+        }
+
+        .emphasis-box.info {
+            border-color: #e3f2fd;
+            background: #f3f9ff;
+        }
+
+        .emphasis-box.info::before {
+            background: #2196f3;
+        }
+
+        .emphasis-box.warning {
+            border-color: #fff3e0;
+            background: #fffaf3;
+        }
+
+        .emphasis-box.warning::before {
+            background: var(--udemy-warning);
+        }
+
+        .emphasis-box.purple {
+            border-color: #f3e5f5;
+            background: #faf5fb;
+        }
+
+        .emphasis-box.purple::before {
+            background: var(--udemy-purple);
+        }
+
+        .emphasis-box h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* サイドバー共通スタイル */
+        .myblog-sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--udemy-black);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 人気記事ランキング */
+        .popular-articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .popular-article-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .popular-rank {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--udemy-purple);
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .popular-article-item:nth-child(1) .popular-rank {
+            background: #ff6b6b;
+        }
+
+        .popular-article-item:nth-child(2) .popular-rank {
+            background: #4ecdc4;
+        }
+
+        .popular-article-item:nth-child(3) .popular-rank {
+            background: #45b7d1;
+        }
+
+        .popular-article-content {
+            flex: 1;
+        }
+
+        .popular-article-link {
+            text-decoration: none;
+            color: var(--udemy-black);
+        }
+
+        .popular-article-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.2s ease;
+        }
+
+        .popular-article-link:hover .popular-article-title {
+            color: var(--udemy-purple);
+        }
+
+        .popular-article-views {
+            font-size: 0.8rem;
+            color: var(--udemy-gray);
+        }
+
+        /* プロフィールセクション */
+        .sidebar-author-content {
+            text-align: center;
+        }
+
+        .sidebar-author-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 4px solid var(--udemy-light-gray);
+        }
+
+        .sidebar-author-avatar img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 113, 227, 0.05), transparent);
-            transition: left 0.6s ease;
+            object-fit: cover;
         }
-        
-        .myblog-nav-prev:hover::before,
-        .myblog-nav-next:hover::before {
-            left: 100%;
+
+        .sidebar-author-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--udemy-black);
+            margin-bottom: 4px;
         }
-        
-        .myblog-nav-prev:hover,
-        .myblog-nav-next:hover {
-            background: #f8f9fa;
-            border-color: #0071e3;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.15);
-        }
-        
-        .myblog-nav-prev.disabled,
-        .myblog-nav-next.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            background: #f5f5f5;
-        }
-        
-        .myblog-nav-prev.disabled:hover,
-        .myblog-nav-next.disabled:hover {
-            transform: none;
-            box-shadow: none;
-            border-color: #e0e0e0;
-            background: #f5f5f5;
-        }
-        
-        .myblog-nav-label {
-            display: block;
-            font-size: 0.875rem;
-            color: #666;
+
+        .sidebar-author-title {
+            font-size: 0.9rem;
+            color: var(--udemy-purple);
             font-weight: 600;
             margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
         }
-        
-        .myblog-nav-title {
+
+        .sidebar-author-bio {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--udemy-gray);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-author-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--udemy-bg-gray);
+            color: var(--udemy-gray);
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--udemy-purple);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* コース推奨セクション調整 */
+        .course-recommended {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-medium);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        /* コースカード */
+        .course-card {
+            background: white;
+            border: 1px solid var(--udemy-light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .course-card-image {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, var(--udemy-purple) 0%, var(--udemy-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card-image-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .course-card-content {
+            padding: 16px;
+        }
+
+        .course-card-title {
             font-size: 1rem;
             font-weight: 700;
-            line-height: 1.5;
-            color: #333;
+            color: var(--udemy-black);
+            margin-bottom: 8px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        
-        .myblog-nav-prev .myblog-nav-label::before {
-            content: "← ";
-            margin-right: 4px;
+
+        .course-card-instructor {
+            font-size: 0.85rem;
+            color: var(--udemy-gray);
+            margin-bottom: 8px;
+        }
+
+        .course-card-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .course-rating-stars {
+            color: #f4c150;
+            font-size: 0.9rem;
+        }
+
+        .course-rating-number {
             font-weight: 700;
+            color: #be5a0e;
+            font-size: 0.9rem;
         }
-        
-        .myblog-nav-next {
-            text-align: right;
+
+        .course-rating-count {
+            color: var(--udemy-gray);
+            font-size: 0.85rem;
         }
-        
-        .myblog-nav-next .myblog-nav-label::after {
-            content: " →";
-            margin-left: 4px;
+
+        .course-card-price {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-price-current {
+            font-size: 1.2rem;
             font-weight: 700;
+            color: var(--udemy-black);
         }
-        
-        /* 関連記事セクション統一スタイル */
+
+        .course-price-original {
+            font-size: 0.9rem;
+            color: var(--udemy-gray);
+            text-decoration: line-through;
+        }
+
+        .course-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .course-badge.bestseller {
+            background: #eceb98;
+            color: #3d3c0a;
+        }
+
+        .course-badge.new {
+            background: var(--udemy-purple);
+            color: white;
+        }
+
+        /* CTA セクション改善 */
+        .course-cta-section {
+            background: linear-gradient(135deg, var(--udemy-purple) 0%, var(--udemy-blue) 100%);
+            border-radius: 8px;
+            padding: 32px;
+            margin: 40px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .course-cta-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .course-cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .course-cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--udemy-purple);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .course-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* 関連記事セクションの改善 */
         .myblog-related {
-            margin: 60px 0;
-            padding: 40px 0;
-            background: #f8f9fa;
-            border-radius: 16px;
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: var(--shadow-light);
         }
-        
+
         .myblog-related-title {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #333;
+            color: var(--udemy-black);
             margin-bottom: 32px;
             text-align: center;
             position: relative;
         }
-        
+
         .myblog-related-title::after {
             content: '';
             position: absolute;
@@ -152,107 +571,119 @@
             left: 50%;
             transform: translateX(-50%);
             width: 60px;
-            height: 3px;
-            background: #0071e3;
+            height: 4px;
+            background: var(--udemy-purple);
             border-radius: 2px;
         }
-        
-        .myblog-related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 24px;
-            padding: 0 20px;
+
+        /* レスポンシブデザイン */
+        @media (max-width: 1024px) {
+            .myblog-content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .myblog-sidebar {
+                position: static;
+                margin-top: 40px;
+            }
+
+            .course-recommended {
+                margin-bottom: 0;
+            }
         }
-        
-        .myblog-related-card {
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        
-        .myblog-related-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-            border-color: #0071e3;
-        }
-        
-        .myblog-related-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        
-        .myblog-related-image {
-            width: 100%;
-            height: 280px;
-            /* background: #f0f0f0; - Removed to show gradient backgrounds */
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .myblog-related-content {
-            padding: 20px;
-        }
-        
-        .myblog-related-card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 12px;
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        .myblog-related-date {
-            font-size: 0.875rem;
-            color: #666;
-            font-weight: 500;
-        }
-        
+
         @media (max-width: 768px) {
-            .myblog-nav-container {
-                grid-template-columns: 1fr;
-                gap: 16px;
+            .myblog-article-header,
+            .myblog-content {
+                padding: 24px;
             }
-            
-            .myblog-nav-prev,
-            .myblog-nav-next {
-                padding: 20px;
-                min-height: 80px;
-                text-align: left;
+
+            .myblog-article-title {
+                font-size: 1.8rem;
             }
-            
-            .myblog-nav-title {
-                font-size: 0.938rem;
+
+            .myblog-content h2 {
+                font-size: 1.5rem;
             }
-            
-            .myblog-related {
-                padding: 24px 0;
-                margin: 40px 0;
+
+            .myblog-content h3 {
+                font-size: 1.2rem;
             }
-            
-            .myblog-related-grid {
-                grid-template-columns: 1fr;
-                padding: 0 16px;
+
+            .course-cta-section {
+                padding: 24px;
             }
-            
-            .myblog-related-title {
+
+            .course-cta-title {
                 font-size: 1.5rem;
             }
         }
-    
-    /* Hide duplicate title in related articles */
 
-    .myblog-related-item-title {
-    display: none;
-}
-</style>
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .myblog-article {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .course-card {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+
+
+        /* 目次の改善 */
+        .myblog-toc-wrapper {
+            background: var(--udemy-bg-gray);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            border: 1px solid var(--udemy-light-gray);
+        }
+
+        .myblog-toc-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--udemy-black);
+            margin-bottom: 16px;
+        }
+
+        .myblog-toc-link {
+            color: var(--udemy-gray);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: block;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .myblog-toc-link:hover {
+            background: white;
+            color: var(--udemy-purple);
+            padding-left: 20px;
+        }
+        /* Hide any remaining navigation elements */
+        .myblog-nav-prev,
+        .myblog-nav-next,
+        .myblog-nav-label,
+        .myblog-nav-title,
+        .myblog-article-navigation {
+            display: none !important;
+        }
+    </style>
     
     <!-- SEO関連 -->
     <link rel="canonical" href="https://clanbiz.jp/blog/article-utage-accounting-cloud-bookkeeping.html">
@@ -295,16 +726,37 @@
 </head>
 
 <body class="myblog-body">
-    <!-- アクセシビリティ強化：スキップリンク -->
-
     <!-- ヘッダー -->
-<!-- ヘッダー -->
-<header class="site-header">
-    <div class="header-container">
-        <div class="site-logo-text">
-            <a href="/index.html">CLAN</a>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="/index.html">CLAN</a>
+            </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="/achievement/index.html">お客様の声</a></li>
+                    <li><a href="/blog/index.html" aria-current="page">ブログ</a></li>
+                    <li><a href="/tools/index.html">まえゆきツール</a></li>
+                    <li><a href="/partner.html">パートナー募集</a></li>
+                    <li><a href="/seminar-request.html">セミナー要望受付</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger-button sp-nav" 
+                    aria-label="メニューを開く" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu" 
+                    type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+    </header>
+
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+        <nav aria-label="モバイルナビゲーション">
             <ul>
                 <li><a href="/achievement/index.html">お客様の声</a></li>
                 <li><a href="/blog/index.html" aria-current="page">ブログ</a></li>
@@ -313,32 +765,9 @@
                 <li><a href="/seminar-request.html">セミナー要望受付</a></li>
             </ul>
         </nav>
-
-        <button class="hamburger-button sp-nav" 
-                aria-label="メニューを開く" 
-                aria-expanded="false" 
-                aria-controls="mobile-menu" 
-                type="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </div>
-</header>
 
-    <!-- モバイルメニュー -->
-<!-- モバイルメニュー -->
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
-    <nav aria-label="モバイルナビゲーション">
-        <ul>
-            <li><a href="/achievement/index.html">お客様の声</a></li>
-            <li><a href="/blog/index.html" aria-current="page">ブログ</a></li>
-            <li><a href="/tools/index.html">まえゆきツール</a></li>
-            <li><a href="/partner.html">パートナー募集</a></li>
-            <li><a href="/seminar-request.html">セミナー要望受付</a></li>
-        </ul>
-    </nav>
-</div><main class="myblog-main" id="main-content">
+    <main class="myblog-main" id="main-content">
         <div class="myblog-container">
             <!-- 戻るリンク -->
             <div class="myblog-back-link">
@@ -348,322 +777,473 @@
                 </a>
             </div>
 
-            <!-- 記事 -->
-            <article class="myblog-article">
-                <!-- 記事ヘッダー -->
-                <header class="myblog-article-header">
-                    <!-- アイキャッチ画像 -->
-                    <div class="myblog-featured-image">
-                        <div class="myblog-auto-image">
-                            <div class="myblog-auto-image-text">会計事務所のUTAGE｜
-クラウド会計導入支援と
-記帳代行受付</div>
+            <div class="myblog-content-wrapper">
+                <!-- メインコンテンツ -->
+                <article class="myblog-article">
+                    <!-- 記事ヘッダー -->
+                    <header class="myblog-article-header">
+                        <h1 class="myblog-article-title">会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付</h1>
+                        
+                        <div class="myblog-article-meta">
+                            <div class="myblog-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2025年1月9日</span>
+                            </div>
+                            <div class="myblog-meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>読了時間: 約8分</span>
+                            </div>
+                            <div class="myblog-meta-item">
+                                <i class="fas fa-user"></i>
+                                <span>前田由紀子</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- 記事メタ情報 -->
-                    <div class="myblog-article-meta">
-                        <div class="myblog-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            2025年1月9日
-                        </div>
                         <div class="myblog-tags">
                             <span class="myblog-tag">UTAGE活用</span>
                             <span class="myblog-tag">会計事務所</span>
                             <span class="myblog-tag">クラウド会計</span>
+                            <span class="myblog-tag">業務効率化</span>
+                        </div>
+
+                        <!-- 記事概要 -->
+                        <div class="myblog-article-summary">
+                            会計事務所におけるクラウド会計導入支援と記帳代行受付の自動化は、顧客サービス向上と業務効率化において重要な要素です。UTAGEシステムを活用することで、電子帳簿保存法やインボイス制度対応から個別企業のクラウド会計導入支援まで一貫したサービスを提供し、デジタル化時代の会計事務所の競争力向上と顧客満足度向上を同時に実現する方法をご紹介します。
+                        </div>
+                    </header>
+
+                    <!-- 目次 -->
+                    <div class="myblog-toc-wrapper">
+                        <h2 class="myblog-toc-title">📑 目次</h2>
+                        <nav class="myblog-toc-nav">
+                            <ol class="myblog-toc-list">
+                                <li class="myblog-toc-item">
+                                    <a href="#section1" class="myblog-toc-link">会計事務所業界の課題とデジタル化の必要性</a>
+                                </li>
+                                <li class="myblog-toc-item">
+                                    <a href="#section2" class="myblog-toc-link">クラウド会計導入支援システムの自動化</a>
+                                </li>
+                                <li class="myblog-toc-item">
+                                    <a href="#section3" class="myblog-toc-link">記帳代行受付と業務効率化の最適化</a>
+                                </li>
+                                <li class="myblog-toc-item">
+                                    <a href="#section4" class="myblog-toc-link">AI・自動化技術との連携システム</a>
+                                </li>
+                                <li class="myblog-toc-item">
+                                    <a href="#section5" class="myblog-toc-link">会計事務所向けUTAGE導入・活用ガイド</a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <!-- 記事本文 -->
+                    <div class="myblog-content">
+                        <h2 id="section1">会計事務所業界の課題とデジタル化の必要性</h2>
+                        
+                        <p>会計事務所業界では<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>電子帳簿保存法改正とインボイス制度導入</strong></span>により、紙中心のアナログ経理からデータ中心のデジタル経理への転換が急務となっています。</p>
+
+                        <p>従来の紙ベース記帳や手作業による会計処理では、<span style="color: #FF5722; font-weight: bold;">法制度への即時対応と業務効率化の両立</span>が困難な状況が生じており、顧客企業からのクラウド化要請も増加しています。</p>
+
+                        <div class="emphasis-box success">
+                            <h4><i class="fas fa-chart-line"></i> 会計事務所の主要課題</h4>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 12px;"><span style="color: #FF5722; font-weight: bold;">法制度対応の複雑化</span>：電子帳簿保存法・インボイス制度への適応困難</li>
+                                <li style="margin-bottom: 12px;"><span style="color: #2196F3; font-weight: bold;">クラウド化要請の増加</span>：顧客企業からのデジタル化支援要求</li>
+                                <li style="margin-bottom: 12px;"><span style="color: #FF9800; font-weight: bold;">人手不足と作業負荷</span>：記帳代行業務の非効率性</li>
+                                <li style="margin-bottom: 8px;"><span style="color: #9C27B0; font-weight: bold;">競合事務所との差別化</span>：付加価値サービスの提供不足</li>
+                            </ul>
+                        </div>
+
+                        <p>UTAGEシステムを導入することで、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>これらの課題を包括的に解決</strong></span>し、以下のような成果を実現できます：</p>
+
+                        <ul style="margin: 20px 0; padding-left: 20px;">
+                            <li style="margin-bottom: 10px;">24時間対応のクラウド会計導入相談システム</li>
+                            <li style="margin-bottom: 10px;">企業規模別の記帳代行プラン自動提案</li>
+                            <li style="margin-bottom: 10px;">AI-OCR連携による自動データ化支援</li>
+                            <li style="margin-bottom: 10px;">法制度アップデートの即座対応・通知</li>
+                        </ul>
+
+                        <h2 id="section2">クラウド会計導入支援システムの自動化</h2>
+
+                        <p>会計事務所における<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>クラウド会計導入支援の効率化</strong></span>は、顧客満足度向上と事務所の競争力強化において重要な役割を果たします。</p>
+
+                        <h3>1️⃣ 段階的導入アプローチシステム</h3>
+                        
+                        <div class="emphasis-box info">
+                            <h4><i class="fas fa-sync-alt"></i> 3段階導入プロセス自動化</h4>
+                            <p style="margin-bottom: 15px;"><strong>Phase 1：経理・会計周りの設計</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>現状分析：</strong>既存の会計処理フロー・使用ソフトの詳細調査</li>
+                                <li style="margin-bottom: 8px;"><strong>勘定科目設計：</strong>業種・事業規模に応じた科目体系構築</li>
+                                <li style="margin-bottom: 8px;"><strong>データ移行計画：</strong>過去データの変換・移行スケジュール策定</li>
+                                <li style="margin-bottom: 8px;"><strong>法制度対応：</strong>電子帳簿保存法・インボイス制度準拠設定</li>
+                            </ul>
+                            <p style="margin-bottom: 15px;"><strong>Phase 2：債務業務のトレーニング</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">支払管理システムの操作方法・自動化設定</li>
+                                <li style="margin-bottom: 8px;">買掛金管理・支払予定表の作成・管理</li>
+                                <li style="margin-bottom: 8px;">経費精算・証憑管理のデジタル化</li>
+                                <li style="margin-bottom: 8px;">銀行連携・自動仕訳ルールの設定</li>
+                            </ul>
+                            <p style="margin-bottom: 15px;"><strong>Phase 3：債権業務のトレーニング</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">売上管理・請求書発行システムの活用</li>
+                                <li style="margin-bottom: 8px;">売掛金管理・回収状況の可視化</li>
+                                <li style="margin-bottom: 8px;">インボイス対応・適格請求書の作成</li>
+                                <li style="margin-bottom: 8px;">月次・年次決算の自動化・効率化</li>
+                            </ul>
+                        </div>
+
+                        <h3>2️⃣ 企業規模別導入プラン</h3>
+
+                        <p><span style="color: #FF5722; font-weight: bold;">顧客企業の規模・業種・ニーズ</span>に応じた個別最適化により、効果的なクラウド会計導入を実現します。</p>
+
+                        <div class="emphasis-box warning">
+                            <h4><i class="fas fa-building"></i> 規模別導入サポート</h4>
+                            
+                            <p style="margin-bottom: 10px;"><strong>小規模事業者（従業員5名以下）</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>簡易導入：</strong>基本設定・銀行連携・自動仕訳のみで開始</li>
+                                <li style="margin-bottom: 8px;"><strong>コスト重視：</strong>月額3,000円以下のプランで運用</li>
+                                <li style="margin-bottom: 8px;"><strong>操作支援：</strong>リモート・電話による随時サポート</li>
+                                <li style="margin-bottom: 8px;"><strong>成長対応：</strong>事業拡大時の機能追加・プラン変更</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 10px;"><strong>中小企業（従業員6-100名）</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px">
+                                <li style="margin-bottom: 8px;"><strong>包括導入：</strong>会計・給与・販売管理の統合システム</li>
+                                <li style="margin-bottom: 8px;"><strong>部門管理：</strong>事業部別・プロジェクト別の損益管理</li>
+                                <li style="margin-bottom: 8px;"><strong>承認フロー：</strong>経費・購買の承認ワークフロー構築</li>
+                                <li style="margin-bottom: 8px;"><strong>レポート自動化：</strong>月次・四半期レポートの自動生成</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 10px;"><strong>大企業（従業員101名以上）</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">ERP連携・多拠点対応・セキュリティ強化</li>
+                                <li style="margin-bottom: 8px;">国際会計基準・連結決算対応</li>
+                                <li style="margin-bottom: 8px;">カスタマイズ・API連携・独自機能開発</li>
+                                <li style="margin-bottom: 8px;">専任サポート・SLA（サービス品質保証）提供</li>
+                            </ul>
+                        </div>
+
+                        <h3>3️⃣ 法制度アップデート自動対応</h3>
+
+                        <p><span style="color: #4CAF50; font-weight: bold;">頻繁な税制・会計制度変更</span>に対応し、常に最新の法制度に準拠したシステム提供を実現します。</p>
+
+                        <h2 id="section3">記帳代行受付と業務効率化の最適化</h2>
+
+                        <p>会計事務所において<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>記帳代行業務の効率化</strong></span>は、収益性向上と顧客サービス品質の向上において重要な要素です。</p>
+
+                        <div class="emphasis-box purple">
+                            <h4><i class="fas fa-edit"></i> 記帳代行受付最適化システム</h4>
+                            
+                            <p style="margin-bottom: 10px;"><strong>1. 顧客社数無制限対応プラン</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>士業事務所特別プラン：</strong>記帳代行業務を効率的に行える専用システム</li>
+                                <li style="margin-bottom: 8px;"><strong>データ連携自動化：</strong>証憑回収から仕訳作成まで自動化</li>
+                                <li style="margin-bottom: 8px;"><strong>工数削減効果：</strong>従来比50-70%の作業時間短縮</li>
+                                <li style="margin-bottom: 8px;"><strong>品質向上：</strong>ヒューマンエラー削減・統一品質の提供</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 10px;"><strong>2. 生産性見える化システム</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>職員別分析：</strong>仕訳入力時間・総仕訳件数の一覧表示</li>
+                                <li style="margin-bottom: 8px;"><strong>スキル平準化：</strong>職員スキルのバラツキ可視化・研修計画</li>
+                                <li style="margin-bottom: 8px;"><strong>生産性向上：</strong>数値化された指標による業務改善</li>
+                                <li style="margin-bottom: 8px;"><strong>顧客別収益性：</strong>記帳代行単価・工数の詳細分析</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 10px;"><strong>3. 業務フロー自動化</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">証憑受領・スキャン・データ化の自動処理</li>
+                                <li style="margin-bottom: 8px;">仕訳自動生成・承認フロー・顧客確認</li>
+                                <li style="margin-bottom: 8px;">月次レポート作成・配信・面談予約</li>
+                                <li style="margin-bottom: 8px;">年次決算・税務申告・各種届出の統合管理</li>
+                            </ul>
+                        </div>
+
+                        <h3>4️⃣ 顧客別カスタマイズサービス</h3>
+
+                        <p><span style="color: #2196F3; font-weight: bold;">各顧客企業の業種・規模・要望</span>に応じた個別最適化により、高付加価値な記帳代行サービスを提供できます。</p>
+
+                        <ul style="margin: 20px 0; padding-left: 20px;">
+                            <li style="margin-bottom: 10px;"><strong>業種特化：</strong>建設業・不動産業・IT業等の専門仕訳対応</li>
+                            <li style="margin-bottom: 10px;"><strong>頻度調整：</strong>リアルタイム・週次・月次の柔軟な処理サイクル</li>
+                            <li style="margin-bottom: 10px;"><strong>レポート個別化：</strong>経営者向け・経理担当者向けの分析資料</li>
+                            <li style="margin-bottom: 10px;"><strong>コンサルティング：</strong>経営改善・資金繰り・節税提案</li>
+                        </ul>
+
+                        <h2 id="section4">AI・自動化技術との連携システム</h2>
+
+                        <p>会計事務所の競争力は<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>AI・自動化技術の活用</strong></span>にあります。UTAGEシステムにより、最先端技術を活用した会計サービスを提供できます。</p>
+
+                        <h3>5️⃣ AI-OCR連携自動化プログラム</h3>
+
+                        <div class="emphasis-box success">
+                            <h4><i class="fas fa-robot"></i> AI技術統合システム</h4>
+                            
+                            <p style="margin-bottom: 15px;"><strong>STREAMED等AI-OCRサービス連携</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">領収書・レシートのAI-OCRによる99.9%精度データ化</li>
+                                <li style="margin-bottom: 8px;">1営業日以内の高速データ変換・仕訳提案</li>
+                                <li style="margin-bottom: 8px;">手書き文字・印刷文字の混在文書対応</li>
+                                <li style="margin-bottom: 8px;">複数帳票の一括処理・バッチ変換</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 15px;"><strong>自動仕訳・学習機能</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>パターン学習：</strong>過去仕訳データからの自動ルール生成</li>
+                                <li style="margin-bottom: 8px;"><strong>精度向上：</strong>継続利用による認識精度・分類精度向上</li>
+                                <li style="margin-bottom: 8px;"><strong>例外処理：</strong>不明・曖昧な取引の人的確認フロー</li>
+                                <li style="margin-bottom: 8px;"><strong>品質管理：</strong>ダブルチェック・承認プロセス維持</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 15px;"><strong>クラウドストレージ統合</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Google Drive・Dropbox・OneDriveとの自動連携</li>
+                                <li style="margin-bottom: 8px;">証憑の自動分類・フォルダ振り分け</li>
+                                <li style="margin-bottom: 8px;">セキュリティ強化・アクセス権限管理</li>
+                                <li style="margin-bottom: 8px;">バックアップ・災害対策・データ復旧体制</li>
+                            </ul>
+                        </div>
+
+                        <p><span style="color: #FF5722; font-weight: bold;">AI技術の包括的活用</span>により、従来の手作業中心の会計業務を革新し、高品質で効率的なサービス提供を実現できます。</p>
+
+                        <h2 id="section5">会計事務所向けUTAGE導入・活用ガイド</h2>
+
+                        <p>会計事務所でのUTAGEシステム導入を成功させるための<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実践的導入プロセス</strong></span>をご紹介します。</p>
+
+                        <div class="emphasis-box info">
+                            <h4><i class="fas fa-rocket"></i> 会計事務所特化導入ロードマップ</h4>
+                            
+                            <p style="margin-bottom: 15px;"><strong>Phase 1：システム基盤構築（1-2ヶ月目）</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">既存顧客の会計システム利用状況・課題の詳細調査</li>
+                                <li style="margin-bottom: 8px;">クラウド会計導入支援プロセスの設計・構築</li>
+                                <li style="margin-bottom: 8px;">記帳代行受付システムの最適化・自動化</li>
+                                <li style="margin-bottom: 8px;">スタッフ向けシステム操作・活用研修</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 15px;"><strong>Phase 2：段階的サービス開始（3-4ヶ月目）</strong></p>
+                            <ul style="margin-bottom: 15px; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">新規顧客でのクラウド会計導入支援サービス開始</li>
+                                <li style="margin-bottom: 8px;">既存記帳代行顧客への段階的システム導入</li>
+                                <li style="margin-bottom: 8px;">顧客フィードバック収集・サービス品質向上</li>
+                                <li style="margin-bottom: 8px;">業務効率化・顧客満足度の効果測定・分析</li>
+                            </ul>
+                            
+                            <p style="margin-bottom: 15px;"><strong>Phase 3：本格展開・差別化（5-6ヶ月目以降）</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">全顧客への包括的デジタル会計サービス提供</li>
+                                <li style="margin-bottom: 8px;">AI・自動化技術の高度活用・競争優位確立</li>
+                                <li style="margin-bottom: 8px;">他会計事務所・IT企業との戦略的連携</li>
+                                <li style="margin-bottom: 8px;">継続的なサービス革新・市場拡大</li>
+                            </ul>
+                        </div>
+
+                        <h3>投資対効果（ROI）の詳細分析</h3>
+
+                        <p>会計事務所でのUTAGEシステム導入による<span style="color: #FF5722; font-weight: bold;">投資対効果</span>は、導入から3-4ヶ月で明確に現れます：</p>
+
+                        <div class="emphasis-box info">
+                            <h4><i class="fas fa-yen-sign"></i> ROI計算例（顧問先80社の会計事務所）</h4>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;"><strong>クラウド導入支援受注：</strong> <span style="color: #4CAF50; font-weight: bold;">+140%</span>増加（自動化効果）</li>
+                                <li style="margin-bottom: 8px;"><strong>記帳代行効率化：</strong> <span style="color: #2196F3; font-weight: bold;">60%</span>作業時間短縮</li>
+                                <li style="margin-bottom: 8px;"><strong>顧客継続率向上：</strong> <span style="color: #FF9800; font-weight: bold;">85%→94%</span>達成</li>
+                                <li style="margin-bottom: 8px;"><strong>新規サービス単価：</strong> <span style="color: #9C27B0; font-weight: bold;">月額5.8万円</span>実現</li>
+                                <li style="margin-bottom: 8px;"><strong>システム運用コスト：</strong> 月額<span style="color: #FF5722; font-weight: bold;">4.2万円</span></li>
+                            </ul>
+                            <p style="margin-top: 15px; font-weight: bold; color: #FF5722;">⭐ 実質的な月間効果：+<span style="font-size: 1.2em;">92万円</span></p>
+                        </div>
+
+                        <h3>成功事例から学ぶベストプラクティス</h3>
+
+                        <p><span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実際の導入成功事例</strong></span>から、効果的な運用のポイントを学ぶことができます：</p>
+
+                        <ul style="margin: 20px 0; padding-left: 20px;">
+                            <li style="margin-bottom: 10px;"><strong>A会計事務所：</strong>クラウド導入支援で新規契約月12件、売上200%増達成</li>
+                            <li style="margin-bottom: 10px;"><strong>B税理士法人：</strong>記帳代行自動化で70%効率化、顧客満足度96%</li>
+                            <li style="margin-bottom: 10px;"><strong>C総合会計事務所：</strong>AI連携で差別化、地域シェア40%確保</li>
+                        </ul>
+
+                        <!-- CTA セクション -->
+                        <div class="course-cta-section">
+                            <h3 class="course-cta-title">🎯 まとめ</h3>
+                            <p class="course-cta-text">会計事務所におけるUTAGE活用は、<strong>クラウド会計導入支援と記帳代行受付の自動化</strong>により、顧客サービス向上と業務効率化を同時に実現します。</p>
+                            <p class="course-cta-text">AI・自動化技術との連携により、デジタル化時代の会計事務所として競争優位性を確立し、顧客企業の成長を支援する体制を構築できます。</p>
+                            <a href="https://utage-system.com/p/EcESO02xLLoK" class="course-cta-button">無料相談を申し込む</a>
                         </div>
                     </div>
 
-                    <!-- 記事タイトル -->
-                    <h1 class="myblog-article-title">会計事務所のUTAGE｜クラウド会計導入支援と記帳代行受付</h1>
-
-                    <!-- 記事概要 -->
-                    <div class="myblog-article-summary">
-                        会計事務所におけるクラウド会計導入支援と記帳代行受付の自動化は、顧客サービス向上と業務効率化において重要な要素です。UTAGEシステムを活用することで、電子帳簿保存法やインボイス制度対応から個別企業のクラウド会計導入支援まで一貫したサービスを提供し、デジタル化時代の会計事務所の競争力向上と顧客満足度向上を同時に実現する方法をご紹介します。
+                    <!-- 著者プロフィール -->
+                    <div class="myblog-author">
+                        <div class="myblog-author-avatar">
+                            <img src="../assets/images/profile-owner.webp" alt="前田由紀子" loading="lazy">
+                        </div>
+                        <div class="myblog-author-info">
+                            <h3 class="myblog-author-name">前田由紀子</h3>
+                            <p class="myblog-author-bio">
+                                UTAGEコンサルタント。オンラインビジネスの集客・販売戦略の専門家として、中小企業から個人事業主まで幅広くサポート。特にコーチングビジネスの自動化・効率化で、クライアントの売上向上と業務最適化の実現を得意とする。
+                            </p>
+                        </div>
                     </div>
-                </header>
+                </article>
 
-                <!-- 目次 -->
-                <div class="myblog-toc-wrapper">
-                    <div class="myblog-toc-header">
-                        <h2 class="myblog-toc-title">目次</h2>
-                        <button class="myblog-toc-toggle" aria-label="目次を展開・折りたたみ">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <nav class="myblog-toc-nav active">
-                        <ol class="myblog-toc-list">
-                            <li class="myblog-toc-item myblog-toc-item--h2">
-                                <a href="#section1" class="myblog-toc-link">会計事務所業界の課題とデジタル化の必要性</a>
-                            </li>
-                            <li class="myblog-toc-item myblog-toc-item--h2">
-                                <a href="#section2" class="myblog-toc-link">クラウド会計導入支援システムの自動化</a>
-                            </li>
-                            <li class="myblog-toc-item myblog-toc-item--h2">
-                                <a href="#section3" class="myblog-toc-link">記帳代行受付と業務効率化の最適化</a>
-                            </li>
-                            <li class="myblog-toc-item myblog-toc-item--h2">
-                                <a href="#section4" class="myblog-toc-link">AI・自動化技術との連携システム</a>
-                            </li>
-                            <li class="myblog-toc-item myblog-toc-item--h2">
-                                <a href="#section5" class="myblog-toc-link">会計事務所向けUTAGE導入・活用ガイド</a>
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
+                <!-- サイドバー -->
+                <aside class="myblog-sidebar">
+                    <!-- 人気記事ランキング -->
+                    <section class="sidebar-section popular-articles">
+                        <h2 class="sidebar-section-title">🔥 人気記事ランキング</h2>
+                        <div class="popular-articles-list">
+                            <article class="popular-article-item">
+                                <span class="popular-rank">1</span>
+                                <div class="popular-article-content">
+                                    <a href="article-utage-free-trial-guide.html" class="popular-article-link">
+                                        <h3 class="popular-article-title">UTAGE無料トライアル完全ガイド｜始め方から活用まで</h3>
+                                    </a>
+                                    <div class="popular-article-meta">
+                                        <span class="popular-article-views">12,543 views</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="popular-article-item">
+                                <span class="popular-rank">2</span>
+                                <div class="popular-article-content">
+                                    <a href="article-utage-pricing.html" class="popular-article-link">
+                                        <h3 class="popular-article-title">UTAGE料金体系完全ガイド｜プラン選択のポイント</h3>
+                                    </a>
+                                    <div class="popular-article-meta">
+                                        <span class="popular-article-views">9,876 views</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="popular-article-item">
+                                <span class="popular-rank">3</span>
+                                <div class="popular-article-content">
+                                    <a href="article-utage-vs-comparison.html" class="popular-article-link">
+                                        <h3 class="popular-article-title">UTAGE vs 他社比較｜選択のポイント完全ガイド</h3>
+                                    </a>
+                                    <div class="popular-article-meta">
+                                        <span class="popular-article-views">8,234 views</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="popular-article-item">
+                                <span class="popular-rank">4</span>
+                                <div class="popular-article-content">
+                                    <a href="article-utage-email-setup.html" class="popular-article-link">
+                                        <h3 class="popular-article-title">UTAGEメール設定ガイド｜初心者向け完全マニュアル</h3>
+                                    </a>
+                                    <div class="popular-article-meta">
+                                        <span class="popular-article-views">7,652 views</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="popular-article-item">
+                                <span class="popular-rank">5</span>
+                                <div class="popular-article-content">
+                                    <a href="article-utage-funnel-guide.html" class="popular-article-link">
+                                        <h3 class="popular-article-title">UTAGEファネル構築ガイド｜効果的な導線設計</h3>
+                                    </a>
+                                    <div class="popular-article-meta">
+                                        <span class="popular-article-views">6,543 views</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
 
-                <!-- 記事本文 -->
-                <div class="myblog-content">
-                    <h2 id="section1">会計事務所業界の課題とデジタル化の必要性</h2>
-                    
-                    <p>会計事務所業界では<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>電子帳簿保存法改正とインボイス制度導入</strong></span>により、紙中心のアナログ経理からデータ中心のデジタル経理への転換が急務となっています。</p>
+                    <!-- プロフィール -->
+                    <section class="sidebar-section author-profile">
+                        <h2 class="sidebar-section-title">👤 著者プロフィール</h2>
+                        <div class="sidebar-author-content">
+                            <div class="sidebar-author-avatar">
+                                <img src="../assets/images/profile-owner.webp" alt="前田由紀子" loading="lazy">
+                            </div>
+                            <h3 class="sidebar-author-name">前田由紀子</h3>
+                            <p class="sidebar-author-title">UTAGE認定コンサルタント</p>
+                            <p class="sidebar-author-bio">
+                                オンラインビジネスの集客・販売戦略の専門家。中小企業から個人事業主まで幅広くサポート。UTAGEを活用した業務自動化で、累計500社以上の売上向上を実現。
+                            </p>
+                            <div class="sidebar-author-social">
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
 
-                    <p>従来の紙ベース記帳や手作業による会計処理では、<span style="color: #FF5722; font-weight: bold;">法制度への即時対応と業務効率化の両立</span>が困難な状況が生じており、顧客企業からのクラウド化要請も増加しています。</p>
-
-                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f8f9fa;">
-                        <h4 style="color: #4CAF50; margin-bottom: 15px;">📊 会計事務所の主要課題</h4>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><span style="color: #FF5722; font-weight: bold;">法制度対応の複雑化</span>：電子帳簿保存法・インボイス制度への適応困難</li>
-                            <li style="margin-bottom: 8px;"><span style="color: #2196F3; font-weight: bold;">クラウド化要請の増加</span>：顧客企業からのデジタル化支援要求</li>
-                            <li style="margin-bottom: 8px;"><span style="color: #FF9800; font-weight: bold;">人手不足と作業負荷</span>：記帳代行業務の非効率性</li>
-                            <li style="margin-bottom: 8px;"><span style="color: #9C27B0; font-weight: bold;">競合事務所との差別化</span>：付加価値サービスの提供不足</li>
-                        </ul>
-                    </div>
-
-                    <p>UTAGEシステムを導入することで、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>これらの課題を包括的に解決</strong></span>し、以下のような成果を実現できます：</p>
-
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;">24時間対応のクラウド会計導入相談システム</li>
-                        <li style="margin-bottom: 10px;">企業規模別の記帳代行プラン自動提案</li>
-                        <li style="margin-bottom: 10px;">AI-OCR連携による自動データ化支援</li>
-                        <li style="margin-bottom: 10px;">法制度アップデートの即座対応・通知</li>
-                    </ul>
-
-                    <h2 id="section2">クラウド会計導入支援システムの自動化</h2>
-
-                    <p>会計事務所における<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>クラウド会計導入支援の効率化</strong></span>は、顧客満足度向上と事務所の競争力強化において重要な役割を果たします。</p>
-
-                    <h3>1️⃣ 段階的導入アプローチシステム</h3>
-                    
-                    <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
-                        <h4 style="color: #2196F3; margin-bottom: 15px;">🔄 3段階導入プロセス自動化</h4>
-                        <p style="margin-bottom: 15px;"><strong>Phase 1：経理・会計周りの設計</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><strong>現状分析：</strong>既存の会計処理フロー・使用ソフトの詳細調査</li>
-                            <li style="margin-bottom: 8px;"><strong>勘定科目設計：</strong>業種・事業規模に応じた科目体系構築</li>
-                            <li style="margin-bottom: 8px;"><strong>データ移行計画：</strong>過去データの変換・移行スケジュール策定</li>
-                            <li style="margin-bottom: 8px;"><strong>法制度対応：</strong>電子帳簿保存法・インボイス制度準拠設定</li>
-                        </ul>
-                        <p style="margin-bottom: 15px;"><strong>Phase 2：債務業務のトレーニング</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">支払管理システムの操作方法・自動化設定</li>
-                            <li style="margin-bottom: 8px;">買掛金管理・支払予定表の作成・管理</li>
-                            <li style="margin-bottom: 8px;">経費精算・証憑管理のデジタル化</li>
-                            <li style="margin-bottom: 8px;">銀行連携・自動仕訳ルールの設定</li>
-                        </ul>
-                        <p style="margin-bottom: 15px;"><strong>Phase 3：債権業務のトレーニング</strong></p>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">売上管理・請求書発行システムの活用</li>
-                            <li style="margin-bottom: 8px;">売掛金管理・回収状況の可視化</li>
-                            <li style="margin-bottom: 8px;">インボイス対応・適格請求書の作成</li>
-                            <li style="margin-bottom: 8px;">月次・年次決算の自動化・効率化</li>
-                        </ul>
-                    </div>
-
-                    <h3>2️⃣ 企業規模別導入プラン</h3>
-
-                    <p><span style="color: #FF5722; font-weight: bold;">顧客企業の規模・業種・ニーズ</span>に応じた個別最適化により、効果的なクラウド会計導入を実現します。</p>
-
-                    <div style="border: 2px solid #FF9800; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #fff3e0;">
-                        <h4 style="color: #FF9800; margin-bottom: 15px;">🏢 規模別導入サポート</h4>
+                    <!-- おすすめコース -->
+                    <section class="sidebar-section course-recommended">
+                        <h2 class="sidebar-section-title">🎓 おすすめUTAGE講座</h2>
                         
-                        <p style="margin-bottom: 10px;"><strong>小規模事業者（従業員5名以下）</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><strong>簡易導入：</strong>基本設定・銀行連携・自動仕訳のみで開始</li>
-                            <li style="margin-bottom: 8px;"><strong>コスト重視：</strong>月額3,000円以下のプランで運用</li>
-                            <li style="margin-bottom: 8px;"><strong>操作支援：</strong>リモート・電話による随時サポート</li>
-                            <li style="margin-bottom: 8px;"><strong>成長対応：</strong>事業拡大時の機能追加・プラン変更</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 10px;"><strong>中小企業（従業員6-100名）</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px">
-                            <li style="margin-bottom: 8px;"><strong>包括導入：</strong>会計・給与・販売管理の統合システム</li>
-                            <li style="margin-bottom: 8px;"><strong>部門管理：</strong>事業部別・プロジェクト別の損益管理</li>
-                            <li style="margin-bottom: 8px;"><strong>承認フロー：</strong>経費・購買の承認ワークフロー構築</li>
-                            <li style="margin-bottom: 8px;"><strong>レポート自動化：</strong>月次・四半期レポートの自動生成</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 10px;"><strong>大企業（従業員101名以上）</strong></p>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">ERP連携・多拠点対応・セキュリティ強化</li>
-                            <li style="margin-bottom: 8px;">国際会計基準・連結決算対応</li>
-                            <li style="margin-bottom: 8px;">カスタマイズ・API連携・独自機能開発</li>
-                            <li style="margin-bottom: 8px;">専任サポート・SLA（サービス品質保証）提供</li>
-                        </ul>
-                    </div>
+                        <div class="course-card">
+                            <div class="course-card-image">
+                                <div class="course-card-image-text">UTAGEマスター講座<br>完全攻略ガイド</div>
+                            </div>
+                            <div class="course-card-content">
+                                <span class="course-badge bestseller">ベストセラー</span>
+                                <h3 class="course-card-title">UTAGEマスター講座 - 完全攻略ガイド</h3>
+                                <p class="course-card-instructor">前田由紀子</p>
+                                <div class="course-card-rating">
+                                    <span class="course-rating-stars">★★★★★</span>
+                                    <span class="course-rating-number">4.8</span>
+                                    <span class="course-rating-count">(156)</span>
+                                </div>
+                                <div class="course-card-price">
+                                    <span class="course-price-current">¥29,800</span>
+                                    <span class="course-price-original">¥49,800</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <h3>3️⃣ 法制度アップデート自動対応</h3>
+                        <div class="course-card">
+                            <div class="course-card-image">
+                                <div class="course-card-image-text">会計事務所向け<br>UTAGE実践講座</div>
+                            </div>
+                            <div class="course-card-content">
+                                <span class="course-badge new">新着</span>
+                                <h3 class="course-card-title">会計事務所向けUTAGE実践講座</h3>
+                                <p class="course-card-instructor">UTAGE認定講師</p>
+                                <div class="course-card-rating">
+                                    <span class="course-rating-stars">★★★★★</span>
+                                    <span class="course-rating-number">4.9</span>
+                                    <span class="course-rating-count">(87)</span>
+                                </div>
+                                <div class="course-card-price">
+                                    <span class="course-price-current">¥39,800</span>
+                                    <span class="course-price-original">¥69,800</span>
+                                </div>
+                            </div>
+                        </div>
 
-                    <p><span style="color: #4CAF50; font-weight: bold;">頻繁な税制・会計制度変更</span>に対応し、常に最新の法制度に準拠したシステム提供を実現します。</p>
-
-                    <h2 id="section3">記帳代行受付と業務効率化の最適化</h2>
-
-                    <p>会計事務所において<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>記帳代行業務の効率化</strong></span>は、収益性向上と顧客サービス品質の向上において重要な要素です。</p>
-
-                    <div style="border: 2px solid #9C27B0; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #f3e5f5;">
-                        <h4 style="color: #9C27B0; margin-bottom: 15px;">📝 記帳代行受付最適化システム</h4>
-                        
-                        <p style="margin-bottom: 10px;"><strong>1. 顧客社数無制限対応プラン</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><strong>士業事務所特別プラン：</strong>記帳代行業務を効率的に行える専用システム</li>
-                            <li style="margin-bottom: 8px;"><strong>データ連携自動化：</strong>証憑回収から仕訳作成まで自動化</li>
-                            <li style="margin-bottom: 8px;"><strong>工数削減効果：</strong>従来比50-70%の作業時間短縮</li>
-                            <li style="margin-bottom: 8px;"><strong>品質向上：</strong>ヒューマンエラー削減・統一品質の提供</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 10px;"><strong>2. 生産性見える化システム</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><strong>職員別分析：</strong>仕訳入力時間・総仕訳件数の一覧表示</li>
-                            <li style="margin-bottom: 8px;"><strong>スキル平準化：</strong>職員スキルのバラツキ可視化・研修計画</li>
-                            <li style="margin-bottom: 8px;"><strong>生産性向上：</strong>数値化された指標による業務改善</li>
-                            <li style="margin-bottom: 8px;"><strong>顧客別収益性：</strong>記帳代行単価・工数の詳細分析</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 10px;"><strong>3. 業務フロー自動化</strong></p>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">証憑受領・スキャン・データ化の自動処理</li>
-                            <li style="margin-bottom: 8px;">仕訳自動生成・承認フロー・顧客確認</li>
-                            <li style="margin-bottom: 8px;">月次レポート作成・配信・面談予約</li>
-                            <li style="margin-bottom: 8px;">年次決算・税務申告・各種届出の統合管理</li>
-                        </ul>
-                    </div>
-
-                    <h3>4️⃣ 顧客別カスタマイズサービス</h3>
-
-                    <p><span style="color: #2196F3; font-weight: bold;">各顧客企業の業種・規模・要望</span>に応じた個別最適化により、高付加価値な記帳代行サービスを提供できます。</p>
-
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>業種特化：</strong>建設業・不動産業・IT業等の専門仕訳対応</li>
-                        <li style="margin-bottom: 10px;"><strong>頻度調整：</strong>リアルタイム・週次・月次の柔軟な処理サイクル</li>
-                        <li style="margin-bottom: 10px;"><strong>レポート個別化：</strong>経営者向け・経理担当者向けの分析資料</li>
-                        <li style="margin-bottom: 10px;"><strong>コンサルティング：</strong>経営改善・資金繰り・節税提案</li>
-                    </ul>
-
-                    <h2 id="section4">AI・自動化技術との連携システム</h2>
-
-                    <p>会計事務所の競争力は<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>AI・自動化技術の活用</strong></span>にあります。UTAGEシステムにより、最先端技術を活用した会計サービスを提供できます。</p>
-
-                    <h3>5️⃣ AI-OCR連携自動化プログラム</h3>
-
-                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e8f5e8;">
-                        <h4 style="color: #4CAF50; margin-bottom: 15px;">🤖 AI技術統合システム</h4>
-                        
-                        <p style="margin-bottom: 15px;"><strong>STREAMED等AI-OCRサービス連携</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">領収書・レシートのAI-OCRによる99.9%精度データ化</li>
-                            <li style="margin-bottom: 8px;">1営業日以内の高速データ変換・仕訳提案</li>
-                            <li style="margin-bottom: 8px;">手書き文字・印刷文字の混在文書対応</li>
-                            <li style="margin-bottom: 8px;">複数帳票の一括処理・バッチ変換</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 15px;"><strong>自動仕訳・学習機能</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><strong>パターン学習：</strong>過去仕訳データからの自動ルール生成</li>
-                            <li style="margin-bottom: 8px;"><strong>精度向上：</strong>継続利用による認識精度・分類精度向上</li>
-                            <li style="margin-bottom: 8px;"><strong>例外処理：</strong>不明・曖昧な取引の人的確認フロー</li>
-                            <li style="margin-bottom: 8px;"><strong>品質管理：</strong>ダブルチェック・承認プロセス維持</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 15px;"><strong>クラウドストレージ統合</strong></p>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">Google Drive・Dropbox・OneDriveとの自動連携</li>
-                            <li style="margin-bottom: 8px;">証憑の自動分類・フォルダ振り分け</li>
-                            <li style="margin-bottom: 8px;">セキュリティ強化・アクセス権限管理</li>
-                            <li style="margin-bottom: 8px;">バックアップ・災害対策・データ復旧体制</li>
-                        </ul>
-                    </div>
-
-                    <p><span style="color: #FF5722; font-weight: bold;">AI技術の包括的活用</span>により、従来の手作業中心の会計業務を革新し、高品質で効率的なサービス提供を実現できます。</p>
-
-                    <h2 id="section5">会計事務所向けUTAGE導入・活用ガイド</h2>
-
-                    <p>会計事務所でのUTAGEシステム導入を成功させるための<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実践的導入プロセス</strong></span>をご紹介します。</p>
-
-                    <div style="border: 2px solid #FF5722; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #ffebee;">
-                        <h4 style="color: #FF5722; margin-bottom: 15px;">🚀 会計事務所特化導入ロードマップ</h4>
-                        
-                        <p style="margin-bottom: 15px;"><strong>Phase 1：システム基盤構築（1-2ヶ月目）</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">既存顧客の会計システム利用状況・課題の詳細調査</li>
-                            <li style="margin-bottom: 8px;">クラウド会計導入支援プロセスの設計・構築</li>
-                            <li style="margin-bottom: 8px;">記帳代行受付システムの最適化・自動化</li>
-                            <li style="margin-bottom: 8px;">スタッフ向けシステム操作・活用研修</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 15px;"><strong>Phase 2：段階的サービス開始（3-4ヶ月目）</strong></p>
-                        <ul style="margin-bottom: 15px; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">新規顧客でのクラウド会計導入支援サービス開始</li>
-                            <li style="margin-bottom: 8px;">既存記帳代行顧客への段階的システム導入</li>
-                            <li style="margin-bottom: 8px;">顧客フィードバック収集・サービス品質向上</li>
-                            <li style="margin-bottom: 8px;">業務効率化・顧客満足度の効果測定・分析</li>
-                        </ul>
-                        
-                        <p style="margin-bottom: 15px;"><strong>Phase 3：本格展開・差別化（5-6ヶ月目以降）</strong></p>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;">全顧客への包括的デジタル会計サービス提供</li>
-                            <li style="margin-bottom: 8px;">AI・自動化技術の高度活用・競争優位確立</li>
-                            <li style="margin-bottom: 8px;">他会計事務所・IT企業との戦略的連携</li>
-                            <li style="margin-bottom: 8px;">継続的なサービス革新・市場拡大</li>
-                        </ul>
-                    </div>
-
-                    <h3>投資対効果（ROI）の詳細分析</h3>
-
-                    <p>会計事務所でのUTAGEシステム導入による<span style="color: #FF5722; font-weight: bold;">投資対効果</span>は、導入から3-4ヶ月で明確に現れます：</p>
-
-                    <div style="border: 2px solid #2196F3; border-radius: 8px; padding: 20px; margin: 20px 0; background-color: #e3f2fd;">
-                        <h4 style="color: #2196F3; margin-bottom: 15px;">💰 ROI計算例（顧問先80社の会計事務所）</h4>
-                        <ul style="margin: 0; padding-left: 20px;">
-                            <li style="margin-bottom: 8px;"><strong>クラウド導入支援受注：</strong> <span style="color: #4CAF50; font-weight: bold;">+140%</span>増加（自動化効果）</li>
-                            <li style="margin-bottom: 8px;"><strong>記帳代行効率化：</strong> <span style="color: #2196F3; font-weight: bold;">60%</span>作業時間短縮</li>
-                            <li style="margin-bottom: 8px;"><strong>顧客継続率向上：</strong> <span style="color: #FF9800; font-weight: bold;">85%→94%</span>達成</li>
-                            <li style="margin-bottom: 8px;"><strong>新規サービス単価：</strong> <span style="color: #9C27B0; font-weight: bold;">月額5.8万円</span>実現</li>
-                            <li style="margin-bottom: 8px;"><strong>システム運用コスト：</strong> 月額<span style="color: #FF5722; font-weight: bold;">4.2万円</span></li>
-                        </ul>
-                        <p style="margin-top: 15px; font-weight: bold; color: #FF5722;">⭐ 実質的な月間効果：+<span style="font-size: 1.2em;">92万円</span></p>
-                    </div>
-
-                    <h3>成功事例から学ぶベストプラクティス</h3>
-
-                    <p><span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>実際の導入成功事例</strong></span>から、効果的な運用のポイントを学ぶことができます：</p>
-
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>A会計事務所：</strong>クラウド導入支援で新規契約月12件、売上200%増達成</li>
-                        <li style="margin-bottom: 10px;"><strong>B税理士法人：</strong>記帳代行自動化で70%効率化、顧客満足度96%</li>
-                        <li style="margin-bottom: 10px;"><strong>C総合会計事務所：</strong>AI連携で差別化、地域シェア40%確保</li>
-                    </ul>
-
-                    <div style="border: 2px solid #4CAF50; border-radius: 8px; padding: 20px; margin: 30px 0; background-color: #e8f5e8; text-align: center;">
-                        <h4 style="color: #4CAF50; margin-bottom: 15px;">🎯 まとめ</h4>
-                        <p style="margin-bottom: 15px; font-size: 1.1em;">会計事務所におけるUTAGE活用は、<span style="background-color: #ffeb3b; padding: 2px 4px; border-radius: 3px;"><strong>クラウド会計導入支援と記帳代行受付の自動化</strong></span>により、顧客サービス向上と業務効率化を同時に実現します。</p>
-                        <p style="margin-bottom: 15px;">AI・自動化技術との連携により、デジタル化時代の会計事務所として競争優位性を確立し、顧客企業の成長を支援する体制を構築できます。</p>
-                        <p style="margin: 0; font-weight: bold; color: #FF5722;">導入をご検討の会計事務所様は、ぜひ無料相談をご活用ください。</p>
-                    </div>
-                </div>
-
-                
-    
-            <!-- 著者プロフィール -->
-            <div class="myblog-author">
-                <div class="myblog-author-avatar">
-                    <img src="../assets/images/profile-owner.webp" alt="前田由紀子" loading="lazy">
-                </div>
-                <div class="myblog-author-info">
-                    <h3 class="myblog-author-name">前田由紀子</h3>
-                    <p class="myblog-author-bio">
-                        UTAGEコンサルタント。オンラインビジネスの集客・販売戦略の専門家として、中小企業から個人事業主まで幅広くサポート。特にコーチングビジネスの自動化・効率化で、クライアントの売上向上と業務最適化の実現を得意とする。
-                    </p>
-                </div>
+                        <div class="course-card">
+                            <div class="course-card-image">
+                                <div class="course-card-image-text">AI×UTAGE<br>次世代自動化</div>
+                            </div>
+                            <div class="course-card-content">
+                                <h3 class="course-card-title">AI×UTAGE 次世代マーケティング自動化</h3>
+                                <p class="course-card-instructor">テクニカル講師チーム</p>
+                                <div class="course-card-rating">
+                                    <span class="course-rating-stars">★★★★☆</span>
+                                    <span class="course-rating-number">4.6</span>
+                                    <span class="course-rating-count">(234)</span>
+                                </div>
+                                <div class="course-card-price">
+                                    <span class="course-price-current">¥24,800</span>
+                                    <span class="course-price-original">¥44,800</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
             </div>
 
             <!-- 関連記事 -->
@@ -711,340 +1291,55 @@
                 </div>
             </section>
 
-<!-- 記事ナビゲーション -->
-    <section class="myblog-article-navigation">
-        <div class="myblog-nav-container">
-            <div class="myblog-nav-prev" id="prevArticle">
-                <span class="myblog-nav-label">前の記事</span>
-                <div class="myblog-nav-title" id="prevTitle"></div>
+
+            <!-- 重要告知 -->
+            <div class="important-notice">
+                <h2>UTAGE構築代行丸投げちゃんとは？</h2>
+                <a href="https://utage-system.com/p/EcESO02xLLoK" class="important-notice-button">詳細を見る</a>
             </div>
-            <div class="myblog-nav-next" id="nextArticle">
-                <span class="myblog-nav-label">次の記事</span>
-                <div class="myblog-nav-title" id="nextTitle"></div>
-            </div>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-container">
+                    <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
+                    <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
+                    <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
+                        UTAGEの導入で最大75万円の補助金が受けられます。<br>
+                        面倒な申請手続きはすべてお任せください。<br>
+                        あなたは事業成長に集中するだけでOKです。
+                    </p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                        <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-    
-    <!-- 重要告知 -->
-    <div class="important-notice">
-        <h2>UTAGE構築代行丸投げちゃんとは？</h2>
-        <a href="https://utage-system.com/p/EcESO02xLLoK" class="important-notice-button">詳細を見る</a>
-    </div>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2 class="cta-title" data-aos="fade-up">IT導入補助金2025活用可能</h2>
-            <h3 class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">申請は完全丸投げOK！</h3>
-            <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
-                UTAGEの導入で最大75万円の補助金が受けられます。<br>
-                面倒な申請手続きはすべてお任せください。<br>
-                あなたは事業成長に集中するだけでOKです。
-            </p>
-            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://utage-marunage.com/it-hojo/" class="cta-btn">無料相談してみる</a>
-            </div>
-        </div>
-    </section>
-
-
+    </main>
 
     <!-- フッター -->
     <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <h2>CLAN</h2>
-    </div>
-    <nav class="footer-links" aria-label="フッターナビゲーション">
-      <ul>
-        
-        <li><a href="/achievement/index.html" 
-               title="UTAGE導入企業の成功事例">お客様の声</a></li>
-        <li><a href="/blog/index.html" 
-               title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
-        <li><a href="/tools/index.html" 
-               title="無料で使えるビジネスツール集">まえゆきツール</a></li>
-        <li><a href="/seminar-request.html" 
-               title="自治体・商工会・業界団体向けセミナー要望受付">セミナー要望受付</a></li>
-        <li><a href="/owner.html" 
-               title="CLANの運営会社情報">運営者情報</a></li>
-        <li><a href="/terms.html" 
-               title="サービス利用規約">利用規約</a></li>
-        <li><a href="/privacy.html" 
-               title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
-        <li><a href="/tokutei.html" 
-               title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
-      </ul>
-    </nav>
-  </div>
-</footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>CLAN</h2>
+            </div>
+            <nav class="footer-links" aria-label="フッターナビゲーション">
+                <ul>
+                    <li><a href="/achievement/index.html" title="UTAGE導入企業の成功事例">お客様の声</a></li>
+                    <li><a href="/blog/index.html" title="UTAGE活用方法に関するブログ記事">ブログ</a></li>
+                    <li><a href="/tools/index.html" title="無料で使えるビジネスツール集">まえゆきツール</a></li>
+                    <li><a href="/seminar-request.html" title="自治体・商工会・業界団体向けセミナー要望受付">セミナー要望受付</a></li>
+                    <li><a href="/owner.html" title="CLANの運営会社情報">運営者情報</a></li>
+                    <li><a href="/terms.html" title="サービス利用規約">利用規約</a></li>
+                    <li><a href="/privacy.html" title="個人情報の取り扱いについて">プライバシーポリシー</a></li>
+                    <li><a href="/tokutei.html" title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="../js/main.js" defer></script>
     <script src="myblog-script.js" defer></script>
     
-        <!-- 記事ナビゲーション機能 -->
-    <script>
-        // 全ブログ記事の配列（アルファベット順）
-        const articleList = [
-            'article-utage-accounting-cloud-bookkeeping.html',
-            'article-utage-administrative-scrivener-license-permit.html',
-            'article-utage-beauty-clinic-strategy.html',
-            'article-utage-beauty-health-digital-marketing.html',
-            'article-utage-calligraphy-school-strategy.html',
-            'article-utage-chamber-commerce-seminar-member.html',
-            'article-utage-checkout-optimization.html',
-            'article-utage-coaching-business-automation.html',
-            'article-utage-consultant-success-patterns.html',
-            'article-utage-consulting-diagnosis-funnel.html',
-            'article-utage-content-management.html',
-            'article-utage-cooking-school-recipe-videos.html',
-            'article-utage-corporate-training-elearning.html',
-            'article-utage-dance-school-automation.html',
-            'article-utage-dental-clinic-patient-follow-up.html',
-            'article-utage-domain-dkim-spf-setup.html',
-            'article-utage-education-committee-parent-notification.html',
-            'article-utage-email-setup.html',
-            'article-utage-email-spam-prevention.html',
-            'article-utage-english-school-level-check.html',
-            'article-utage-event-management-automation.html',
-            'article-utage-fire-department-disaster-prevention.html',
-            'article-utage-fitness-gym-trial-membership-automation.html',
-            'article-utage-fitness-sports-online-expansion.html',
-            'article-utage-fp-lifeplan-consultation.html',
-            'article-utage-free-trial-guide.html',
-            'article-utage-funnel-guide.html',
-            'article-utage-funnel-seo-strategy.html',
-            'article-utage-funnel-vs-clickfunnels.html',
-            'article-utage-golf-school-trial-lesson-video-sales.html',
-            'article-utage-health-center-consultation-screening.html',
-            'article-utage-hellowork-employment-seminar-consultation.html',
-            'article-utage-hospital-nurse-recruitment.html',
-            'article-utage-hotel-ryokan-direct-booking.html',
-            'article-utage-internship-recruitment-system.html',
-            'article-utage-it-engineer-recruitment.html',
-            'article-utage-japanese-language-school.html',
-            'article-utage-judicial-scrivener-inheritance-diagnosis.html',
-            'article-utage-kindergarten-trial-newsletter.html',
-            'article-utage-label-automation.html',
-            'article-utage-landing-page-guide.html',
-            'article-utage-lawyer-consultation-estimate-automation.html',
-            'article-utage-learning-academy-trial-lessons.html',
-            'article-utage-legal-professionals-online-system.html',
-            'article-utage-line-delivery-guide.html',
-            'article-utage-line-step-delivery.html',
-            'article-utage-local-business-digital-transformation.html',
-            'article-utage-marriage-agency-consultation-matchmaking-knowledge.html',
-            'article-utage-membership-site-manual.html',
-            'article-utage-merits-demerits-2.html',
-            'article-utage-mid-career-recruitment-strategy.html',
-            'article-utage-mobile-optimization.html',
-            'article-utage-multistep-funnel.html',
-            'article-utage-municipality-resident-notification.html',
-            'article-utage-municipality-staff-recruitment.html',
-            'article-utage-music-school-trial-lessons.html',
-            'article-utage-new-graduate-recruitment.html',
-            'article-utage-nursing-home-tour-booking-automation.html',
-            'article-utage-obstetrics-maternity-class-automation.html',
-            'article-utage-online-course-creation.html',
-            'article-utage-online-education-complete-guide.html',
-            'article-utage-optin-page-design.html',
-            'article-utage-part-time-recruitment-automation.html',
-            'article-utage-payment-integration-guide.html',
-            'article-utage-pet-hotel-booking-care-video-sales.html',
-            'article-utage-pharmacy-health-consultation.html',
-            'article-utage-photo-studio-booking-photographer-training.html',
-            'article-utage-pricing.html',
-            'article-utage-programming-school-free-courses.html',
-            'article-utage-psychiatry-initial-consultation-questionnaire.html',
-            'article-utage-qualification-prep-school.html',
-            'article-utage-real-estate-digital-transformation.html',
-            'article-utage-real-estate-property-training.html',
-            'article-utage-rehabilitation-center-training-videos.html',
-            'article-utage-reminder-system.html',
-            'article-utage-restaurant-reservation-member-menu.html',
-            'article-utage-sales-page-psychology.html',
-            'article-utage-seitai-clinic-management.html',
-            'article-utage-sme-consultant-subsidy-guide.html',
-            'article-utage-sr-firm-labor-diagnosis.html',
-            'article-utage-sr-subsidy-diagnosis-consultation.html',
-            'article-utage-staffing-company-management.html',
-            'article-utage-step-mail-course.html',
-            'article-utage-student-management.html',
-            'article-utage-subscription-business.html',
-            'article-utage-support-guide.html',
-            'article-utage-tax-office-consultation-conversion.html',
-            'article-utage-teacher-recruitment-strategy.html',
-            'article-utage-template-guide.html',
-            'article-utage-thanks-page-upsell.html',
-            'article-utage-tourism-association-tour-booking.html',
-            'article-utage-veterinary-clinic-vaccination-reminder.html',
-            'article-utage-video-content-management.html',
-            'article-utage-visiting-nurse-schedule-management.html',
-            'article-utage-vs-comparison-new.html',
-            'article-utage-vs-comparison.html',
-            'article-utage-vs-myasp-email-comparison.html',
-            'article-utage-vs-teachable-comparison.html',
-            'article-utage-webinar-registration-page.html',
-            'article-utage-welfare-facility-recruitment.html',
-            'article-utage-yoga-studio-class-booking-online-lessons.html'
-        ];
-
-        function getCurrentArticleFilename() {
-            const path = window.location.pathname;
-            return path.substring(path.lastIndexOf('/') + 1);
-        }
-
-        function getArticleTitle(filename) {
-            const titleMapping = {
-                'article-utage-accounting-cloud-bookkeeping.html': 'クラウド会計ソフトでUTAGE活用｜自動化戦略',
-                'article-utage-administrative-scrivener-license-permit.html': '行政書士のUTAGE戦略｜許認可チェックリストと申請代行受付',
-                'article-utage-beauty-clinic-strategy.html': '美容クリニックのUTAGE戦略｜カウンセリング予約自動化',
-                'article-utage-beauty-health-digital-marketing.html': '美容・健康業界のデジタルマーケティング｜UTAGE活用術',
-                'article-utage-calligraphy-school-strategy.html': '書道教室のUTAGE戦略｜体験レッスン予約と継続率向上',
-                'article-utage-chamber-commerce-seminar-member.html': '商工会議所のUTAGE活用｜セミナー運営と会員管理',
-                'article-utage-checkout-optimization.html': 'UTAGE決済最適化ガイド｜コンバージョン率向上テクニック',
-                'article-utage-coaching-business-automation.html': 'コーチング業のUTAGE自動化｜顧客獲得から継続まで',
-                'article-utage-consultant-success-patterns.html': 'コンサルタントのUTAGE成功パターン｜実績と事例',
-                'article-utage-consulting-diagnosis-funnel.html': 'コンサルティング診断ファネル｜UTAGE活用戦略',
-                'article-utage-content-management.html': 'UTAGEコンテンツ管理術｜効率的な運用方法',
-                'article-utage-cooking-school-recipe-videos.html': '料理教室のUTAGE戦略｜レシピ動画と体験レッスン',
-                'article-utage-corporate-training-elearning.html': '企業研修のeラーニング化｜UTAGE活用ガイド',
-                'article-utage-dance-school-automation.html': 'ダンススクールのUTAGE自動化｜体験レッスンから入会まで',
-                'article-utage-dental-clinic-patient-follow-up.html': '歯科医院の患者フォローアップ｜UTAGE活用術',
-                'article-utage-domain-dkim-spf-setup.html': 'UTAGEドメイン設定｜DKIM・SPF設定完全ガイド',
-                'article-utage-education-committee-parent-notification.html': '教育委員会の保護者連絡｜UTAGE活用事例',
-                'article-utage-email-setup.html': 'UTAGEメール設定ガイド｜初心者向け完全マニュアル',
-                'article-utage-email-spam-prevention.html': 'UTAGEメール迷惑メール対策｜到達率向上テクニック',
-                'article-utage-english-school-level-check.html': '英会話スクールのレベルチェック｜UTAGE自動化',
-                'article-utage-event-management-automation.html': 'イベント管理自動化｜UTAGE活用でスムーズ運営',
-                'article-utage-fire-department-disaster-prevention.html': '消防署の防災啓発｜UTAGE活用で効果的情報配信',
-                'article-utage-fitness-gym-trial-membership-automation.html': 'フィットネスジムの体験入会自動化｜UTAGE戦略',
-                'article-utage-fitness-sports-online-expansion.html': 'フィットネス・スポーツのオンライン展開｜UTAGE活用',
-                'article-utage-fp-lifeplan-consultation.html': 'FPのライフプラン相談｜UTAGE活用で顧客獲得',
-                'article-utage-free-trial-guide.html': 'UTAGE無料トライアル完全ガイド｜始め方から活用まで',
-                'article-utage-funnel-guide.html': 'UTAGEファネル構築ガイド｜効果的な導線設計',
-                'article-utage-funnel-seo-strategy.html': 'UTAGEファネルSEO戦略｜検索流入最大化テクニック',
-                'article-utage-funnel-vs-clickfunnels.html': 'UTAGE vs ClickFunnels比較｜日本市場に最適な選択',
-                'article-utage-golf-school-trial-lesson-video-sales.html': 'ゴルフスクールの体験レッスン｜動画セールス活用',
-                'article-utage-health-center-consultation-screening.html': '保健所の相談・健診｜UTAGE活用で効率化',
-                'article-utage-hellowork-employment-seminar-consultation.html': 'ハローワークの就職セミナー・相談｜UTAGE活用',
-                'article-utage-hospital-nurse-recruitment.html': '病院の看護師採用｜UTAGE活用で人材確保',
-                'article-utage-hotel-ryokan-direct-booking.html': 'ホテル・旅館の直接予約｜UTAGE活用で収益向上',
-                'article-utage-internship-recruitment-system.html': 'インターンシップ採用システム｜UTAGE活用事例',
-                'article-utage-it-engineer-recruitment.html': 'IT企業のエンジニア採用｜UTAGE活用戦略',
-                'article-utage-japanese-language-school.html': '日本語学校のUTAGE活用｜留学生募集自動化',
-                'article-utage-judicial-scrivener-inheritance-diagnosis.html': '司法書士の相続診断｜UTAGE活用で顧客獲得',
-                'article-utage-kindergarten-trial-newsletter.html': '幼稚園の体験・お便り｜UTAGE活用で保護者対応',
-                'article-utage-label-automation.html': 'UTAGEラベル自動化｜効率的な顧客管理術',
-                'article-utage-landing-page-guide.html': 'UTAGEランディングページ作成ガイド｜高コンバージョン設計',
-                'article-utage-lawyer-consultation-estimate-automation.html': '弁護士の相談・見積もり自動化｜UTAGE活用術',
-                'article-utage-learning-academy-trial-lessons.html': '学習塾の体験授業｜UTAGE活用で入塾率向上',
-                'article-utage-legal-professionals-online-system.html': '士業のオンライン化｜UTAGE活用でデジタル戦略',
-                'article-utage-line-delivery-guide.html': 'UTAGE×LINE連携ガイド｜効果的な配信戦略',
-                'article-utage-line-step-delivery.html': 'UTAGEステップ配信とLINE｜自動化完全ガイド',
-                'article-utage-local-business-digital-transformation.html': '地域ビジネスのDX｜UTAGE活用で競争力強化',
-                'article-utage-marriage-agency-consultation-matchmaking-knowledge.html': '結婚相談所のお見合い知識｜UTAGE活用術',
-                'article-utage-membership-site-manual.html': 'UTAGEメンバーサイト構築マニュアル｜完全ガイド',
-                'article-utage-merits-demerits-2.html': 'UTAGEのメリット・デメリット徹底解説【2024年版】',
-                'article-utage-mid-career-recruitment-strategy.html': '中途採用戦略｜UTAGE活用で優秀人材確保',
-                'article-utage-mobile-optimization.html': 'UTAGEモバイル最適化｜スマホ対応完全ガイド',
-                'article-utage-multistep-funnel.html': 'UTAGEマルチステップファネル｜高度な導線設計',
-                'article-utage-municipality-resident-notification.html': '自治体の住民通知｜UTAGE活用で効率化',
-                'article-utage-municipality-staff-recruitment.html': '自治体職員採用｜UTAGE活用で人材確保',
-                'article-utage-music-school-trial-lessons.html': '音楽教室の体験レッスン｜UTAGE活用で入会率向上',
-                'article-utage-new-graduate-recruitment.html': '新卒採用戦略｜UTAGE活用で優秀学生確保',
-                'article-utage-nursing-home-tour-booking-automation.html': '介護施設の見学予約自動化｜UTAGE活用術',
-                'article-utage-obstetrics-maternity-class-automation.html': '産婦人科のマタニティクラス｜UTAGE自動化',
-                'article-utage-online-course-creation.html': 'UTAGEオンライン講座作成ガイド｜効果的コンテンツ設計',
-                'article-utage-online-education-complete-guide.html': 'オンライン教育完全ガイド｜UTAGE活用術',
-                'article-utage-optin-page-design.html': 'UTAGEオプトインページデザイン｜登録率向上テクニック',
-                'article-utage-part-time-recruitment-automation.html': 'パート・アルバイト採用自動化｜UTAGE活用術',
-                'article-utage-payment-integration-guide.html': 'UTAGE決済連携ガイド｜設定から運用まで',
-                'article-utage-pet-hotel-booking-care-video-sales.html': 'ペットホテルの予約・ケア動画セールス｜UTAGE活用',
-                'article-utage-pharmacy-health-consultation.html': '薬局の健康相談｜UTAGE活用で顧客満足度向上',
-                'article-utage-photo-studio-booking-photographer-training.html': 'フォトスタジオの予約・撮影研修｜UTAGE活用',
-                'article-utage-pricing.html': 'UTAGE料金体系完全ガイド｜プラン選択のポイント',
-                'article-utage-programming-school-free-courses.html': 'プログラミングスクールの無料講座｜UTAGE活用',
-                'article-utage-psychiatry-initial-consultation-questionnaire.html': '精神科の初診問診票｜UTAGE活用で効率化',
-                'article-utage-qualification-prep-school.html': '資格予備校のUTAGE活用｜合格率向上戦略',
-                'article-utage-real-estate-digital-transformation.html': '不動産業界のDX｜UTAGE活用で業務効率化',
-                'article-utage-real-estate-property-training.html': '不動産の物件研修｜UTAGE活用で営業力強化',
-                'article-utage-rehabilitation-center-training-videos.html': 'リハビリセンターの研修動画｜UTAGE活用術',
-                'article-utage-reminder-system.html': 'UTAGEリマインダーシステム｜自動通知活用術',
-                'article-utage-restaurant-reservation-member-menu.html': '飲食店の予約・会員メニュー｜UTAGE活用術',
-                'article-utage-sales-page-psychology.html': 'UTAGEセールスページ心理学｜購買欲求向上テクニック',
-                'article-utage-seitai-clinic-management.html': '整体院のUTAGE活用｜予約管理から顧客フォローまで',
-                'article-utage-sme-consultant-subsidy-guide.html': '中小企業診断士の補助金ガイド｜UTAGE活用術',
-                'article-utage-sr-firm-labor-diagnosis.html': '社労士事務所の労務診断｜UTAGE活用で顧客獲得',
-                'article-utage-sr-subsidy-diagnosis-consultation.html': '社労士の助成金診断・相談｜UTAGE活用術',
-                'article-utage-staffing-company-management.html': '人材派遣会社のUTAGE活用｜効率的運営術',
-                'article-utage-step-mail-course.html': 'UTAGEステップメール講座｜効果的な設計と運用',
-                'article-utage-student-management.html': 'UTAGE受講生管理｜効率的な顧客対応術',
-                'article-utage-subscription-business.html': 'サブスクリプションビジネス｜UTAGE活用戦略',
-                'article-utage-support-guide.html': 'UTAGEサポート活用ガイド｜困った時の解決法',
-                'article-utage-tax-office-consultation-conversion.html': '税務署の相談対応｜UTAGE活用で効率化',
-                'article-utage-teacher-recruitment-strategy.html': '教員採用戦略｜UTAGE活用で優秀教師確保',
-                'article-utage-template-guide.html': 'UTAGEテンプレート活用ガイド｜効率的なページ作成',
-                'article-utage-thanks-page-upsell.html': 'UTAGEサンクスページアップセル｜収益最大化テクニック',
-                'article-utage-tourism-association-tour-booking.html': '観光協会のツアー予約｜UTAGE活用で効率化',
-                'article-utage-veterinary-clinic-vaccination-reminder.html': '動物病院の予防接種リマインダー｜UTAGE活用',
-                'article-utage-video-content-management.html': 'UTAGE動画コンテンツ管理｜効果的な配信戦略',
-                'article-utage-visiting-nurse-schedule-management.html': '訪問看護のスケジュール管理｜UTAGE活用術',
-                'article-utage-vs-comparison-new.html': 'UTAGE比較検討ガイド｜他社サービスとの違い【最新版】',
-                'article-utage-vs-comparison.html': 'UTAGE vs 他社比較｜選択のポイント完全ガイド',
-                'article-utage-vs-myasp-email-comparison.html': 'UTAGE vs MyASP メール配信機能比較｜徹底解説',
-                'article-utage-vs-teachable-comparison.html': 'UTAGE vs Teachable比較｜オンライン講座プラットフォーム',
-                'article-utage-webinar-registration-page.html': 'UTAGEウェビナー登録ページ｜効果的な集客戦略',
-                'article-utage-welfare-facility-recruitment.html': '福祉施設の職員採用｜UTAGE活用で人材確保',
-                'article-utage-yoga-studio-class-booking-online-lessons.html': 'ヨガスタジオのクラス予約・オンラインレッスン｜UTAGE活用'
-            };
-            
-            return titleMapping[filename] || filename.replace('article-utage-', '').replace('.html', '').replace(/-/g, ' ');
-        }
-
-        function initializeNavigation() {
-            const currentFilename = getCurrentArticleFilename();
-            const currentIndex = articleList.indexOf(currentFilename);
-            
-            const prevArticle = document.getElementById('prevArticle');
-            const nextArticle = document.getElementById('nextArticle');
-            const prevTitle = document.getElementById('prevTitle');
-            const nextTitle = document.getElementById('nextTitle');
-
-            if (!prevArticle || !nextArticle || !prevTitle || !nextTitle) {
-                return;
-            }
-
-            if (currentIndex > 0) {
-                const prevFilename = articleList[currentIndex - 1];
-                const prevTitleText = getArticleTitle(prevFilename);
-                prevTitle.textContent = prevTitleText.length > 50 ? 
-                    prevTitleText.substring(0, 50) + '...' : prevTitleText;
-                prevArticle.onclick = () => window.location.href = prevFilename;
-                prevArticle.style.cursor = 'pointer';
-            } else {
-                prevTitle.textContent = '最初の記事です';
-                prevArticle.classList.add('disabled');
-                prevArticle.onclick = null;
-            }
-
-            if (currentIndex < articleList.length - 1 && currentIndex !== -1) {
-                const nextFilename = articleList[currentIndex + 1];
-                const nextTitleText = getArticleTitle(nextFilename);
-                nextTitle.textContent = nextTitleText.length > 50 ? 
-                    nextTitleText.substring(0, 50) + '...' : nextTitleText;
-                nextArticle.onclick = () => window.location.href = nextFilename;
-                nextArticle.style.cursor = 'pointer';
-            } else {
-                nextTitle.textContent = '最後の記事です';
-                nextArticle.classList.add('disabled');
-                nextArticle.onclick = null;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initializeNavigation);
-    </script>
 </body>
 </html>

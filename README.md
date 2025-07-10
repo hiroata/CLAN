@@ -1,178 +1,333 @@
-# オートウェビナー大学 公式サイト
+# CLAN - Web集客コンサルティング 公式サイト
 
-このプロジェクトは、オートウェビナー大学の公式サイトのソースコードです。
+株式会社CLANの公式ウェブサイトプロジェクトです。UTAGE構築代行サービスを中心に、Web集客コンサルティングサービスを提供しています。
 
-## 🚀 デプロイ設定
+## 📋 目次
 
-このプロジェクトは GitHub Actions を使用してロリポップサーバーに自動デプロイされます。
+- [プロジェクト概要](#-プロジェクト概要)
+- [プロジェクト構造](#-プロジェクト構造)
+- [主要機能](#-主要機能)
+- [技術スタック](#-技術スタック)
+- [開発環境セットアップ](#-開発環境セットアップ)
+- [デプロイ設定](#-デプロイ設定)
+- [ブログシステム](#-ブログシステム)
+- [ツールセクション](#-ツールセクション)
+- [コースセクション](#-コースセクション)
+- [メンテナンス](#-メンテナンス)
+- [SEO対策](#-seo対策)
+- [トラブルシューティング](#-トラブルシューティング)
 
-### 必要な GitHub Secrets
+## 🎯 プロジェクト概要
 
-GitHubリポジトリの Settings > Secrets and variables > Actions で以下のSecretsを設定してください：
+CLANは、UTAGE構築代行を中心としたWeb集客コンサルティングサービスを提供する企業のコーポレートサイトです。
 
-| Secret名 | 必須 | 説明 | 例 |
-|---------|------|------|-----|
-| `FTP_SERVER` | ✅ | ロリポップのFTPサーバー名 | `ftpXXX.lolipop.jp` |
-| `FTP_USERNAME` | ✅ | FTPアカウント名 | `lolipop.jp-XXXXXX` |
-| `FTP_PASSWORD` | ✅ | FTPパスワード | `your_password` |
-| `REMOTE_DIR` | ✅ | アップロード先ディレクトリ | `public_html/` |
-| `FTP_PORT` | ❌ | SFTPポート（デフォルト: 22） | `22` |
+### 主な特徴
 
-**重要**: パスワードは絶対にコードやドキュメントに直接記載せず、GitHub Secretsで管理してください。
-
-### GitHub Secrets設定手順
-
-1. **ロリポップの情報を確認**
-   - [ロリポップ！ユーザー専用ページ](https://user.lolipop.jp/)にログイン
-   - 「サーバーの管理・設定」→「FTP・WebDAV設定」で情報を確認
-
-2. **GitHubでSecretsを設定**
-   - リポジトリページで「Settings」→「Secrets and variables」→「Actions」
-   - 「New repository secret」で各Secretを追加
-
-### デプロイフロー
-
-1. `master` ブランチにプッシュ
-2. GitHub Actions が自動実行
-3. ロリポップサーバーにFTP経由でファイルアップロード
-4. サイト更新完了
-
-### トラブルシューティング
-
-- **「Input required and not supplied: server」エラー**: GitHub Secretsが未設定
-- **FTP接続エラー**: サーバー情報・認証情報を再確認
+- **UTAGE構築代行サービス**: 月額30%のストック収入を実現する構築代行サービス
+- **100記事以上のブログコンテンツ**: UTAGE活用に関する専門的な情報発信
+- **便利なWebツール集**: 画像変換、計算機、色パレットなど実用的なツール提供
+- **オンライン講座**: UTAGE構築代行養成講座の提供
+- **レスポンシブデザイン**: PC、タブレット、スマートフォン完全対応
+- **高速パフォーマンス**: Critical CSS、遅延読み込み、Service Worker実装
 
 ## 📁 プロジェクト構造
 
 ```
-newsite/
-├── index.html              # トップページ
-├── achievement/            # 実績・事例ページ
-│   ├── index.html         # 実績一覧
-│   ├── customer1.html     # 顧客事例1
-│   ├── customer2.html     # 顧客事例2
-│   ├── customer3.html     # 顧客事例3
-│   ├── customer4.html     # 顧客事例4
-│   ├── customer5.html     # 顧客事例5
-│   └── achievement.js     # 実績ページのJS
-├── assets/                # 静的アセット
-│   └── images/           # 画像ファイル
-├── css/                   # スタイルシート
-│   └── style.css
-├── js/                    # JavaScript
-│   └── main.js
-├── owner.html             # 運営者情報
-├── privacy.html           # プライバシーポリシー
-├── terms.html            # 利用規約
-├── tokutei.html          # 特定商取引法
-├── robots.txt            # SEO設定
-├── service-worker.js     # PWA設定
-└── .htaccess            # Apache設定
+CLAN/
+├── 📄 index.html                    # トップページ
+├── 📄 owner.html                    # 運営者情報
+├── 📄 partner.html                  # パートナーページ
+├── 📄 seminar-request.html          # セミナー申込
+├── 📄 privacy.html                  # プライバシーポリシー
+├── 📄 terms.html                    # 利用規約
+├── 📄 tokutei.html                  # 特定商取引法
+│
+├── 📁 blog/                         # ブログシステム
+│   ├── 📄 index.html               # ブログ一覧
+│   ├── 📄 article-utage-*.html     # 個別記事（100記事以上）
+│   ├── 📄 myblog-style.css         # ブログ専用CSS
+│   ├── 📄 myblog-script.js         # ブログ専用JS
+│   ├── 📄 blog-manager.js          # ブログ管理機能
+│   └── 📄 README.md                # ブログシステムドキュメント
+│
+├── 📁 courses/                      # オンライン講座
+│   ├── 📄 utage-master-course.html # UTAGE構築代行養成講座
+│   └── 📄 utage-master-course-old.html # バックアップ
+│
+├── 📁 tools/                        # Webツール集
+│   ├── 📄 index.html               # ツール一覧
+│   ├── 📄 calc.html                # 電卓
+│   ├── 📄 color-palette.html      # カラーパレット
+│   ├── 📄 image-resize.html       # 画像リサイズ
+│   ├── 📄 letters-counter.html    # 文字数カウンター
+│   ├── 📄 meme-generator.html     # ミーム生成
+│   ├── 📄 png-jpeg-to-webp.html   # WebP変換
+│   ├── 📄 png-to-jpeg.html        # PNG→JPEG変換
+│   ├── 📄 wareki-seireki.html     # 和暦西暦変換
+│   └── 📄 image-worker.js          # 画像処理ワーカー
+│
+├── 📁 achievement/                  # 実績・事例
+│   ├── 📄 index.html               # 実績一覧
+│   ├── 📄 customer1-5.html        # 顧客事例1-5
+│   └── 📄 achievement.js           # 実績ページJS
+│
+├── 📁 assets/                       # 静的アセット
+│   └── 📁 images/                  # 画像ファイル（WebP形式）
+│
+├── 📁 css/                          # スタイルシート
+│   ├── 📄 style.css                # メインCSS
+│   ├── 📄 combined.css             # 統合CSS
+│   ├── 📄 combined.min.css         # 統合CSS（圧縮版）
+│   ├── 📄 critical.css             # クリティカルCSS
+│   ├── 📄 common-variables.css     # CSS変数定義
+│   ├── 📄 common-hamburger.css     # ハンバーガーメニュー
+│   └── 📄 footer-hover.css         # フッターホバー効果
+│
+├── 📁 js/                           # JavaScript
+│   ├── 📄 main.js                  # メインJS
+│   ├── 📄 combined.js              # 統合JS
+│   ├── 📄 combined.min.js          # 統合JS（圧縮版）
+│   ├── 📄 blog-navigation.js       # ブログナビゲーション
+│   ├── 📄 common-cache.js          # キャッシュ管理
+│   ├── 📄 common-init.js           # 共通初期化
+│   └── 📄 common-lazy-loading.js   # 遅延読み込み
+│
+├── 📁 .github/                      # GitHub設定
+│   └── 📁 workflows/
+│       └── 📄 deploy.yml           # 自動デプロイ設定
+│
+├── 📄 .htaccess                     # Apache設定
+├── 📄 robots.txt                    # SEO: クローラー設定
+├── 📄 sitemap.xml                   # SEO: サイトマップ
+├── 📄 service-worker.js             # PWA: Service Worker
+├── 📄 related-articles-mapping.json # ブログ記事関連付け
+└── 📄 analysis-report.json          # プロジェクト分析データ
 ```
 
-## 🛠 開発環境セットアップ
+## 🚀 主要機能
+
+### 1. ブログシステム
+- 100記事以上のUTAGE関連コンテンツ
+- 記事間の自動ナビゲーション
+- 読了時間表示
+- 目次自動生成
+- 関連記事表示
+- レスポンシブデザイン
+
+### 2. Webツール集
+- **画像処理**: リサイズ、形式変換（PNG/JPEG/WebP）
+- **計算機**: 高機能電卓
+- **デザイン**: カラーパレット生成
+- **テキスト**: 文字数カウンター
+- **変換**: 和暦西暦変換
+- **エンタメ**: ミーム生成
+
+### 3. オンライン講座
+- UTAGE構築代行養成講座
+- 14時間56分の動画コンテンツ
+- 124本のレクチャー
+- 修了証明書発行
+
+### 4. 実績・事例
+- 5つの詳細な顧客成功事例
+- ビフォーアフター比較
+- 具体的な数値での成果表示
+
+## 🛠 技術スタック
+
+### フロントエンド
+- **HTML5**: セマンティックマークアップ
+- **CSS3**: モダンレイアウト（Grid, Flexbox）
+- **JavaScript**: ES6+、Web Workers API
+- **Web APIs**: Service Worker, Cache API, Intersection Observer
+
+### パフォーマンス最適化
+- **Critical CSS**: ファーストビューの高速化
+- **遅延読み込み**: 画像・コンテンツの段階的読み込み
+- **圧縮**: CSS/JSのミニファイ
+- **キャッシュ戦略**: Service Workerによるオフライン対応
+
+### SEO対策
+- **構造化データ**: Schema.org対応
+- **メタタグ最適化**: OGP、Twitter Card対応
+- **XMLサイトマップ**: 自動生成
+- **robots.txt**: クローラー制御
+
+## 💻 開発環境セットアップ
 
 ### 必要な環境
 - Git
-- VSCode（推奨）
-- 現代的なブラウザ
+- 現代的なブラウザ（Chrome, Firefox, Safari, Edge）
+- テキストエディタ（VSCode推奨）
+- ローカルWebサーバー（Live Server等）
 
-### ローカル開発
-1. リポジトリをクローン
-2. `index.html` をブラウザで開く
-3. ファイルを編集
-4. 変更をコミット・プッシュ
-
-## 📊 自動デプロイの確認方法
-
-1. **GitHub Actions確認**: リポジトリの「Actions」タブでワークフロー実行状況を確認
-2. **サーバー確認**: FTPクライアントでファイルがアップロードされているか確認
-3. **サイト確認**: 実際のURLにアクセスして表示を確認
-
-## 🔧 トラブルシューティング
-
-### デプロイエラーの場合
-1. GitHub Secretsの設定値を確認
-2. ロリポップのFTP情報が正しいか確認
-3. ディスク容量やアクセス権限を確認
-
-### サイト表示エラーの場合
-1. ファイルパスの確認（相対パス推奨）
-2. .htaccessの設定確認
-3. ブラウザの開発者ツールでエラー確認
-
-## 📝 更新手順
+### セットアップ手順
 
 ```bash
-# ファイルを編集
-git add .
-git commit -m "feat: サイト内容を更新"
-git push origin master
+# 1. リポジトリをクローン
+git clone https://github.com/your-username/CLAN.git
+
+# 2. プロジェクトディレクトリに移動
+cd CLAN
+
+# 3. VSCodeで開く（VSCodeの場合）
+code .
+
+# 4. Live Serverで起動（VSCode拡張機能）
+# index.htmlを右クリック → "Open with Live Server"
 ```
 
-プッシュ後、自動的にデプロイが開始されます。
+## 🚀 デプロイ設定
+
+### GitHub Actions自動デプロイ
+
+このプロジェクトはGitHub Actionsを使用してロリポップサーバーに自動デプロイされます。
+
+### 必要なGitHub Secrets
+
+| Secret名 | 必須 | 説明 | 例 |
+|---------|------|------|-----|
+| `FTP_SERVER` | ✅ | FTPサーバー名 | `ftpXXX.lolipop.jp` |
+| `FTP_USERNAME` | ✅ | FTPアカウント名 | `lolipop.jp-XXXXXX` |
+| `FTP_PASSWORD` | ✅ | FTPパスワード | `your_password` |
+| `REMOTE_DIR` | ✅ | アップロード先 | `public_html/` |
+| `FTP_PORT` | ❌ | SFTPポート | `22` |
+
+### デプロイフロー
+
+1. `master`ブランチにプッシュ
+2. GitHub Actionsが自動実行
+3. ロリポップサーバーにFTPアップロード
+4. サイト更新完了
 
 ## 📝 ブログシステム
 
-### 概要
+### 新規記事作成
 
-既存のウェブサイトに組み込むことができる、汎用性の高いブログテンプレートです。
-HTML、CSS、JavaScriptのみを使用し、外部ライブラリには依存しません。
+1. `/blog/`ディレクトリに新規HTMLファイルを作成
+2. ファイル名規則: `article-utage-[記事トピック].html`
+3. 既存記事をテンプレートとして使用
 
-### 特徴
+### 記事作成ガイドライン
 
-- **シンプルで洗練されたデザイン**: コンテンツが主役となるクリーンなライトテーマ
-- **完全レスポンシブ**: PC、タブレット、スマートフォンに対応
-- **1カラムレイアウト**: どのデバイスでも一貫した表示
-- **アクセシビリティ対応**: セマンティックHTMLとキーボードナビゲーション
-- **既存サイトとの親和性**: CSSクラス名に`myblog-`プレフィックス付きで干渉を防止
-
-### ブログファイル構成
-
-```text
-blog/
-├── article.html          # 記事詳細ページ
-├── index.html           # 記事一覧ページ
-├── myblog-style.css     # CSSスタイルシート
-├── myblog-script.js     # JavaScript
-├── article-*.html       # 個別記事ファイル
-└── AI_*.md             # AI用ドキュメント（削除予定）
+```html
+<!-- 必須構造 -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>記事タイトル | CLAN</title>
+    <meta name="description" content="記事の説明">
+    <link rel="stylesheet" href="myblog-style.css">
+    <script src="myblog-script.js" defer></script>
+</head>
+<body>
+    <!-- ヘッダー、記事本文、関連記事、フッター -->
+</body>
+</html>
 ```
 
-### AI記事作成用プロンプト（推奨）
+詳細は `/blog/BLOG_CREATION_GUIDE.md` を参照してください。
 
-```text
-既存のブログデザインシステムに準拠した記事を作成してください。
+## 🔧 ツールセクション
 
-**記事タイトル**: 「[ここにタイトル]」
+### 新規ツール追加
 
-**必須要件**:
-- 完全なHTMLファイルとして出力
-- myblog-style.cssを使用
-- 以下の構造を必ず含める：
-  * ヘッダーナビゲーション（CLANBIZ Blog）
-  * アイキャッチ画像（自動生成）
-  * メタ情報（日付、タグ）
-  * 目次
-  * 記事本文
-  * 著者プロフィール
-  * 関連記事セクション
+1. `/tools/`ディレクトリに新規HTMLファイルを作成
+2. 共通のデザインシステムに従う
+3. `/tools/index.html`にリンクを追加
 
-**コンテンツ要件**:
-- 文字数：2500-3500文字
-- 見出し構造：H2を3-5個使用
-- 目次：全H2見出しを含める
-- タグ：内容に応じて2-3個
-- ハイライトボックス：重要ポイントで使用
-- 画像：data-title属性で自動生成
-- 日付：今日の日付（2025-06-04）
+### ツール開発ガイドライン
+
+- クライアントサイドで完結する実装
+- プログレッシブエンハンスメント対応
+- エラーハンドリングの実装
+- レスポンシブデザイン必須
+
+## 🎓 コースセクション
+
+### コースページ管理
+
+- `/courses/`ディレクトリで管理
+- Udemy風のデザインシステム採用
+- 動画コンテンツの埋め込み対応
+- 進捗管理機能
+
+## 🛠 メンテナンス
+
+### 定期メンテナンススクリプト
+
+```bash
+# リンクチェック
+node check-all-links.js
+
+# 画像最適化
+node optimize-assets.js
+
+# サイトマップ生成
+node generate-sitemap.js
+
+# メタ情報最適化
+node optimize-meta-descriptions.js
 ```
 
-### 主要CSSクラス（myblog-プレフィックス）
+### コード品質管理
 
-- レイアウト: `myblog-body`, `myblog-main`, `myblog-container`
-- ヘッダー: `myblog-header`, `myblog-logo`, `myblog-nav`
-- 記事: `myblog-article`, `myblog-article-header`, `myblog-article-content`
-- UI要素: `myblog-btn`, `myblog-card`, `myblog-highlight-box`
+- ESLint設定（今後追加予定）
+- Prettier設定（今後追加予定）
+- コミット規約: Conventional Commits
 
-## 🛠️ 開発・運用ガイド
+## 📊 SEO対策
+
+### 実装済みのSEO施策
+
+1. **技術的SEO**
+   - XMLサイトマップ自動生成
+   - robots.txt最適化
+   - 構造化データマークアップ
+   - canonical URL設定
+
+2. **コンテンツSEO**
+   - 100記事以上の専門コンテンツ
+   - 内部リンク最適化
+   - メタディスクリプション最適化
+   - 見出し構造の適正化
+
+3. **パフォーマンスSEO**
+   - Core Web Vitals対応
+   - 画像の遅延読み込み
+   - Critical CSS実装
+   - CDN活用（今後予定）
+
+詳細は `SEO_IMPLEMENTATION_GUIDE.md` を参照してください。
+
+## 🐛 トラブルシューティング
+
+### よくある問題と解決方法
+
+#### デプロイエラー
+- GitHub Secretsの設定値を確認
+- FTP接続情報の正確性を確認
+- サーバーのディスク容量を確認
+
+#### 表示崩れ
+- ブラウザキャッシュをクリア
+- CSS/JSファイルの読み込み順序確認
+- コンソールエラーを確認
+
+#### パフォーマンス問題
+- 画像サイズの最適化
+- 不要なJavaScriptの削除
+- Critical CSSの再生成
+
+## 📞 サポート
+
+- **技術的な質問**: GitHubのIssuesで報告
+- **ビジネスに関する問い合わせ**: サイト内のお問い合わせフォームから
+
+## 📄 ライセンス
+
+このプロジェクトは株式会社CLANの所有物です。無断での複製・転載を禁じます。
+
+---
+
+最終更新日: 2025年1月

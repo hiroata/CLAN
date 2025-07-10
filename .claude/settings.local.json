@@ -33,7 +33,8 @@
       "WebFetch(domain:www.saunashi.com)",
       "WebFetch(domain:basaranet.com)",
       "Bash(mkdir:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

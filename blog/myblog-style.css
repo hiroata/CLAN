@@ -387,7 +387,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
   border-radius: var(--myblog-border-radius);
   overflow: hidden;
 }
@@ -1041,7 +1041,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
 }
 
 .myblog-related-image.myblog-auto-image::before {
@@ -1219,29 +1219,29 @@
 .myblog-articles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--myblog-spacing-lg);
+  gap: var(--myblog-spacing-xl);
   margin-bottom: var(--myblog-spacing-xxl);
 }
 
 /* 記事カード */
 .myblog-article-card {
-  border-radius: var(--myblog-border-radius);
+  border-radius: 16px;
   overflow: hidden;
-  transition: var(--myblog-gpu-transition), var(--myblog-color-transition);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   height: 380px;
   position: relative;
   display: block;
   /* GPUアクセラレーション有効化 */
-  will-change: transform;
+  will-change: transform, box-shadow;
   transform: translateZ(0);
   background: var(--myblog-content-bg);
-  border: 1px solid var(--myblog-border-color);
-  box-shadow: var(--myblog-shadow);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .myblog-article-card:hover {
-  box-shadow: var(--myblog-shadow-hover);
-  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) translateZ(0);
 }
 
 .myblog-article-card-link {
@@ -1264,7 +1264,7 @@
   height: 60%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
 }
 
 .myblog-article-card-image.myblog-auto-image {
@@ -1277,17 +1277,17 @@
   content: attr(data-title);
   display: block;
   color: white;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  padding: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 20px;
   text-align: center;
-  font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 85%;
   box-sizing: border-box;
   /* テキスト省略設定 */
   display: -webkit-box;
@@ -1298,6 +1298,7 @@
   text-overflow: ellipsis;
   word-break: break-word;
   hyphens: auto;
+  letter-spacing: 0.025em;
 }
 
 .myblog-article-card-content {
@@ -1306,14 +1307,14 @@
   left: 0;
   right: 0;
   height: 40%;
-  padding: 20px;
+  padding: 24px;
   background: var(--myblog-content-bg);
   color: var(--myblog-text-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--myblog-spacing-sm);
-  border-top: 1px solid var(--myblog-border-color);
+  border-top: none;
 }
 
 .myblog-article-card-meta {
@@ -1326,9 +1327,10 @@
 
 .myblog-article-card-date {
   font-size: 0.85rem;
-  color: var(--myblog-text-light);
+  color: #9CA3AF;
   flex-shrink: 0;
   font-weight: 500;
+  letter-spacing: 0.025em;
 }
 
 .myblog-article-card-tags {
@@ -1338,21 +1340,28 @@
 }
 
 .myblog-article-card-tags .myblog-tag {
-  background-color: var(--myblog-accent-color);
-  color: white;
-  padding: 3px 10px;
-  border-radius: 12px;
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366F1;
+  padding: 4px 12px;
+  border-radius: 16px;
   font-size: 0.75rem;
-  font-weight: 500;
-  border: none;
+  font-weight: 600;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.myblog-article-card:hover .myblog-article-card-tags .myblog-tag {
+  background-color: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .myblog-article-card-title {
-  font-size: 1.1rem;
-  font-weight: var(--myblog-font-weight-bold);
-  line-height: 1.4;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
   margin: 0;
-  color: var(--myblog-text-color);
+  color: #1F2937;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -1361,6 +1370,7 @@
   word-break: break-word;
   hyphens: auto;
   flex: 1;
+  letter-spacing: -0.025em;
 }
 
 .myblog-article-card-excerpt {
