@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【UTAGE構築代行養成講座】構築代行で年収1000万円を実現する完全マスターコース | CLAN</title>
-    <meta name="description" content="月額報酬30%のストック収入＋構築代行10-50万円で安定収益を実現！到達率99%のメール配信×LINEマーケティング×自動化ファネルで、クライアントの売上を平均2.7倍にアップさせる実践的スキルを習得。IT導入補助金も活用可能！">
+    <meta name="description" content="UTAGEのマーケティング自動化システムを活用した構築代行スキルを習得する実践的な講座。メール配信、LINE連携、自動化ファネルの構築方法を体系的に学び、クライアントの売上向上に貢献できる専門家を目指します。">
     
     <!-- フォント -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -367,21 +367,22 @@
             background: var(--color-dark-hover);
         }
 
-        /* Course Header - Udemy Style */
+        /* Course Header - Udemy Dark Style */
         .course-header {
-            background: var(--color-dark);
-            color: var(--color-light);
-            padding: 32px 0;
+            background: #1c1d1f;
+            color: #ffffff;
+            padding: 32px 0 24px;
+            position: relative;
         }
 
         .course-header-container {
-            max-width: 1340px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 32px;
-            align-items: start;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 48px;
+            align-items: center;
         }
 
         .course-header-content {
@@ -390,9 +391,10 @@
 
         .breadcrumb {
             display: flex;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-            font-size: var(--font-size-sm);
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            align-items: center;
         }
 
         .breadcrumb a {
@@ -414,24 +416,252 @@
         }
 
         .course-title {
-            font-size: var(--font-size-3xl);
+            font-size: 32px;
             font-weight: 700;
-            margin-bottom: var(--spacing-md);
-            line-height: 1.2;
+            margin-bottom: 8px;
+            line-height: 1.25;
+            color: #ffffff;
         }
 
         .course-subtitle {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--spacing-md);
-            opacity: 0.9;
+            font-size: 19px;
+            margin-bottom: 16px;
+            opacity: 1;
+            line-height: 1.4;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        /* 学習内容ハイライト - Udemy Style */
+        .learning-highlights {
+            background: #ffffff;
+            border-radius: 0;
+            padding: 48px 0;
+            margin: 0;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .highlights-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .highlights-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #1c1d1f;
+            text-align: center;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+        }
+
+        .highlight-item i {
+            color: #5cb85c;
+            font-size: 16px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .highlight-item p {
+            margin: 0;
+            font-size: 16px;
+            color: #1c1d1f;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .learning-highlights {
+                padding: 24px 16px;
+                margin: 24px -16px;
+                border-radius: 0;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .highlights-title {
+                font-size: var(--font-size-xl);
+            }
+        }
+
+        /* Video Preview Section */
+        .video-preview-container {
+            position: relative;
+        }
+
+        .video-preview {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: #000;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            border-radius: 50%;
+            color: #1c1d1f;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .play-button i {
+            margin-left: 3px;
+        }
+
+        .play-button:hover {
+            background: rgba(255,255,255,1);
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .preview-label {
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 500;
+            color: #ffffff;
+            font-size: 14px;
+            border: none;
+        }
+
+        .course-pricing {
+            padding: 24px;
+            background: #fff;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1c1d1f;
+        }
+
+        .original-price {
+            font-size: 18px;
+            color: #6a6f73;
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            background: #eceb98;
+            color: #3d3c0a;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .price-timer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            color: #ec5252;
+            font-size: 14px;
+        }
+
+        .btn-purchase {
+            width: 100%;
+            background: #a435f0;
+            color: #fff;
+            border: none;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 12px;
+        }
+
+        .btn-purchase:hover {
+            background: #8710d8;
+        }
+
+        .guarantee-text {
+            text-align: center;
+            color: #6a6f73;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 992px) {
+            .course-header-container {
+                grid-template-columns: 1fr;
+            }
+
+            .video-preview-container {
+                position: static;
+                margin-top: 32px;
+            }
         }
 
         .course-meta {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             margin-bottom: 16px;
             flex-wrap: wrap;
+            font-size: 14px;
         }
 
         .bestseller-badge {
@@ -1443,6 +1673,18 @@
             margin-bottom: var(--spacing-xl);
             color: var(--color-text-primary);
         }
+
+        /* Student Voices Inline (within description) */
+        .student-voices-inline {
+            margin-top: 32px;
+        }
+
+        .student-voices-inline h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-text-primary);
+        }
         
         .voices-grid {
             display: grid;
@@ -1750,8 +1992,9 @@
                 
                 <h1 class="course-title">【UTAGE構築代行養成講座】構築代行で年収1000万円を実現する完全マスターコース</h1>
                 
-                <p class="course-subtitle">月額報酬30%のストック収入＋構築代行10-50万円で安定収益を実現！<br>
-                到達率99%のメール配信×LINEマーケティング×自動化ファネルで、クライアントの売上を平均2.7倍にアップさせる実践的スキルを習得。IT導入補助金も活用可能！</p>
+                <p class="course-subtitle">UTAGEのマーケティング自動化システムを活用した構築代行スキルを習得する実践的な講座<br>
+                メール配信、LINE連携、自動化ファネルの構築方法を体系的に学び、クライアントの売上向上に貢献できる専門家を目指します。</p>
+
                 
                 <div class="course-meta">
                     <span class="bestseller-badge">ベストセラー</span>
@@ -1762,6 +2005,20 @@
                     </div>
                     <span class="students-count">5,782人の受講生</span>
                     <span class="course-highlight" style="color: #be5a0e; font-weight: 600;">💎 構築実績70社以上の実績に基づく実践ノウハウ</span>
+                </div>
+            </div>
+            
+            <!-- Video Preview Section -->
+            <div class="video-preview-container">
+                <div class="video-preview">
+                    <div class="video-thumbnail">
+                        <img src="../images/course-preview.jpg" alt="コースプレビュー" loading="lazy">
+                        <button class="play-button" aria-label="プレビュー動画を再生">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="preview-label">このコースをプレビュー</div>
+                </div>
                 </div>
                 
                 <div class="course-instructor">
@@ -1775,19 +2032,9 @@
                 </div>
             </div>
             
-            <div class="course-preview">
-                <img src="https://via.placeholder.com/400x225" alt="コースプレビュー" class="preview-image">
-                <div class="play-button">
-                    <i class="fas fa-play"></i>
-                </div>
-                <div class="preview-text">無料プレビューを視聴</div>
-                <div class="course-guarantee" style="margin-top: 16px; padding: 12px; background: #f7f9fa; border-radius: 8px; text-align: center;">
-                    <i class="fas fa-shield-alt" style="color: #5cb85c; margin-right: 8px;"></i>
-                    <span style="font-weight: 600;">30日間返金保証</span>
-                </div>
-            </div>
         </div>
     </div>
+
 
     <!-- Main Content -->
     <div class="main-content">
@@ -1853,92 +2100,7 @@
                 </div>
             </section>
 
-            <!-- Student Voices -->
-            <section class="student-voices">
-                <h2>受講生の声</h2>
-                <div class="voices-grid">
-                    <div class="voice-card">
-                        <div class="voice-content">
-                            <div class="voice-rating">★★★★★</div>
-                            <p class="voice-text">
-                                「Web制作の新サービスとして構築代行を始めて3ヶ月で月商200万円を突破しました。特にIT導入補助金の活用法は目から鱗でした。」
-                            </p>
-                            <div class="voice-author">
-                                <div class="voice-avatar">田</div>
-                                <div class="voice-info">
-                                    <div class="voice-name">田中 隆一</div>
-                                    <div class="voice-role">Web制作会社 代表取締役</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-content">
-                            <div class="voice-rating">★★★★★</div>
-                            <p class="voice-text">
-                                「コンサルタントとして活動していましたが、UTAGEでオートウェビナーファネルを構築し、営業時間を80%削減しながら月商が3倍に！」
-                            </p>
-                            <div class="voice-author">
-                                <div class="voice-avatar">山</div>
-                                <div class="voice-info">
-                                    <div class="voice-name">山田 花子</div>
-                                    <div class="voice-role">マーケティングコンサルタント</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-content">
-                            <div class="voice-rating">★★★★★</div>
-                            <p class="voice-text">
-                                「美容サロンの集客で悩んでいましたが、LINEステップ配信を導入して新規予約率が65%アップ。売上も3倍になりました！」
-                            </p>
-                            <div class="voice-author">
-                                <div class="voice-avatar">佐</div>
-                                <div class="voice-info">
-                                    <div class="voice-name">佐藤 美香</div>
-                                    <div class="voice-role">美容サロンオーナー</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- What you'll learn -->
-            <section class="what-learn">
-                <h2>学習内容</h2>
-                <div class="what-learn-grid">
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>UTAGEの9つの主要機能（ファネル作成・メール配信・LINE配信・決済・会員サイト等）を完全マスター</span>
-                    </div>
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>ワンクリックアップセルとオーダーバンプで客単価を最大30%以上アップ</span>
-                    </div>
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>24時間自動販売のオートウェビナーで月商1500万円の売上を実現する手法</span>
-                    </div>
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>LステップからUTAGEへの移行手順と統合の最適化</span>
-                    </div>
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>IT導入補助金を活用して最大75万円の補助金獲得</span>
-                    </div>
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>構築代行料金10万円～50万円の案件を納品し、年収1000万円ビジネスを構築</span>
-                    </div>
-                    <div class="what-learn-item">
-                        <i class="fas fa-check"></i>
-                        <span>成功事例から学ぶ業界別最適化（コンサル・士業・美容・教育・医療）</span>
-                    </div>
-                </div>
-            </section>
 
             <!-- Course Content -->
             <section class="course-section">
@@ -2669,10 +2831,6 @@
                     <!-- More sections... -->
                 </div>
                 
-                <button class="show-more">
-                    すべてのセクションを表示
-                    <i class="fas fa-chevron-down"></i>
-                </button>
             </section>
 
             <!-- Requirements -->
@@ -2704,7 +2862,7 @@
                     
                     <div class="feature-point">
                         <strong>2. 圧倒的な成果実績</strong>
-                        「月商440万円増加」「問い合わせ対応時間67%削減」「初月で月商1,000万円達成」など、実際の成功事例が多数。CLANでは70社以上の構築実績があります。
+                        CLANでは70社以上の構築実績があり、クライアント様の売上向上や業務効率化に貢献。構築代行者として独立・副業で成功している卒業生も多数輩出しています。
                     </div>
                     
                     <div class="feature-point">
@@ -2734,7 +2892,7 @@
                     <ul class="description-list">
                         <li>クライアントの売上を30%以上アップするファネル設計スキル</li>
                         <li>最短1週間で完成させる効率的な構築手法</li>
-                        <li>月額10～20万円の案件を継続的に獲得する営業力</li>
+                        <li>構築代行10～50万円の案件を継続的に獲得する営業力</li>
                         <li>IT導入補助金を活用した高額案件の獲得方法</li>
                         <li>一度の構築で毎月ストック収入を得る仕組み</li>
                     </ul>
@@ -2749,14 +2907,95 @@
                         <li>マーケティングスキルで独立・起業を考えている方</li>
                     </ul>
                     
+                    <!-- Student Voices -->
+                    <div class="student-voices-inline">
+                        <h3>📢 受講生の声</h3>
+                        <div class="voices-grid">
+                            <div class="voice-card">
+                                <div class="voice-content">
+                                    <div class="voice-rating">★★★★★</div>
+                                    <p class="voice-text">
+                                        「UTAGE構築代行ビジネスを始めて3ヶ月で月商200万円を突破しました。特にIT導入補助金を活用した高単価案件の獲得方法は目から鱗でした。」
+                                    </p>
+                                    <div class="voice-author">
+                                        <div class="voice-avatar">田</div>
+                                        <div class="voice-info">
+                                            <div class="voice-name">田中 隆一</div>
+                                            <div class="voice-role">Web制作会社 代表取締役</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="voice-card">
+                                <div class="voice-content">
+                                    <div class="voice-rating">★★★★★</div>
+                                    <p class="voice-text">
+                                        「既存のコンサルビジネスにUTAGE構築代行を追加。1件30万円の案件を月3-4件受注し、パートナー報酬と合わせて安定収入を確保できました。」
+                                    </p>
+                                    <div class="voice-author">
+                                        <div class="voice-avatar">山</div>
+                                        <div class="voice-info">
+                                            <div class="voice-name">山田 花子</div>
+                                            <div class="voice-role">マーケティングコンサルタント</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="voice-card">
+                                <div class="voice-content">
+                                    <div class="voice-rating">★★★★★</div>
+                                    <p class="voice-text">
+                                        「サロン経営の経験を活かして美容業界専門のUTAGE構築代行を開始。1件15万円～25万円の案件を月4-5件受注し、安定した副収入源になりました。」
+                                    </p>
+                                    <div class="voice-author">
+                                        <div class="voice-avatar">佐</div>
+                                        <div class="voice-info">
+                                            <div class="voice-name">佐藤 美香</div>
+                                            <div class="voice-role">美容サロンオーナー兼構築代行者</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <button class="show-more">
-                        もっと見る
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
                 </div>
             </section>
 
+            <!-- What you'll learn -->
+            <section class="what-learn">
+                <h2>学習内容</h2>
+                <div class="what-learn-grid">
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>UTAGEの9つの主要機能（ファネル作成・メール配信・LINE配信・決済・会員サイト等）を完全マスター</span>
+                    </div>
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>ワンクリックアップセルとオーダーバンプで客単価を最大30%以上アップ</span>
+                    </div>
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>24時間自動販売のオートウェビナーで月商1500万円の売上を実現する手法</span>
+                    </div>
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>LステップからUTAGEへの移行手順と統合の最適化</span>
+                    </div>
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>IT導入補助金を活用して最大75万円の補助金獲得</span>
+                    </div>
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>構築代行料金10万円～50万円の案件を納品し、年収1000万円ビジネスを構築</span>
+                    </div>
+                    <div class="what-learn-item">
+                        <i class="fas fa-check"></i>
+                        <span>成功事例から学ぶ業界別最適化（コンサル・士業・美容・教育・医療）</span>
+                    </div>
+                </div>
+            </section>
 
             <!-- Instructor -->
             <section class="instructor-section">
@@ -2832,161 +3071,11 @@
                                 </p>
                             </div>
                             
-                            <button class="show-more">
-                                もっと見る
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Reviews -->
-            <section class="reviews-section" id="reviews">
-                <h2 class="section-title mb-24">⭐ コース評価: 4.8 • 評価: 1.5K</h2>
-                
-                <div class="rating-summary">
-                    <div class="rating-large">
-                        <div class="rating-number-large">4.8</div>
-                        <div class="rating-stars-large">★★★★☆</div>
-                        <div class="rating-label">コース評価</div>
-                    </div>
-                    
-                    <div class="rating-bars">
-                        <div class="rating-bar-item">
-                            <span class="rating-bar-label">5つ星評価</span>
-                            <div class="rating-bar">
-                                <div class="rating-bar-fill" style="width: 82%"></div>
-                            </div>
-                            <span class="rating-bar-percent">82%</span>
-                        </div>
-                        <div class="rating-bar-item">
-                            <span class="rating-bar-label">4つ星評価</span>
-                            <div class="rating-bar">
-                                <div class="rating-bar-fill" style="width: 15%"></div>
-                            </div>
-                            <span class="rating-bar-percent">15%</span>
-                        </div>
-                        <div class="rating-bar-item">
-                            <span class="rating-bar-label">3つ星評価</span>
-                            <div class="rating-bar">
-                                <div class="rating-bar-fill" style="width: 2%"></div>
-                            </div>
-                            <span class="rating-bar-percent">2%</span>
-                        </div>
-                        <div class="rating-bar-item">
-                            <span class="rating-bar-label">2つ星評価</span>
-                            <div class="rating-bar">
-                                <div class="rating-bar-fill" style="width: 0.5%"></div>
-                            </div>
-                            <span class="rating-bar-percent">0.5%</span>
-                        </div>
-                        <div class="rating-bar-item">
-                            <span class="rating-bar-label">1つ星評価</span>
-                            <div class="rating-bar">
-                                <div class="rating-bar-fill" style="width: 1%"></div>
-                            </div>
-                            <span class="rating-bar-percent">1%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Cards -->
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-avatar">宮</div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">宮崎 健太</div>
-                            <div style="font-size: 14px; color: #6a6f73; margin-bottom: 4px;">経営コンサルタント・マーケティング戦略室 代表</div>
-                            <div class="review-rating">
-                                <span class="stars">★★★★☆</span>
-                                <span class="review-date">2週間前</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>コンサルタントとして活動していましたが、集客と販売に多くの時間を取られていました。この講座でUTAGEの全機能を習得し、オートウェビナーファネルを構築したところ、営業時間を80%削減しながら<strong>月商が3倍（440万円）に増加</strong>。特にアクション機能を使った自動化の章が実践的で、すぐに成果が出ました。今では構築代行も始め、<strong>月額10-20万円の追加収入</strong>も得られるようになりました。</p>
-                    </div>
-                    <div class="review-helpful">
-                        <p>役に立ちましたか？</p>
-                        <div class="review-helpful-buttons">
-                            <button class="review-helpful-button">
-                                <i class="far fa-thumbs-up"></i>
-                                はい
-                            </button>
-                            <button class="review-helpful-button">
-                                <i class="far fa-thumbs-down"></i>
-                                いいえ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-avatar">宮</div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">田中 隆一</div>
-                            <div style="font-size: 14px; color: #6a6f73; margin-bottom: 4px;">株式会社TechCreate 代表取締役（Web制作会社）</div>
-                            <div class="review-rating">
-                                <span class="stars">★★★★★</span>
-                                <span class="review-date">4か月前</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>Web制作会社を経営していますが、クライアントから「サイトを作っただけでは売上が上がらない」との声が多く、UTAGE構築代行を始めるために受講しました。<strong>受講後3ヶ月で構築代行業務だけで月商200万円を突破</strong>。特にIT導入補助金の活用法を学んだことで、高額案件も獲得できるようになりました。<strong>パートナー報酬で月額15万円のストック収入</strong>も得られています。</p>
-                    </div>
-                    <div class="review-helpful">
-                        <p>役に立ちましたか？</p>
-                        <div class="review-helpful-buttons">
-                            <button class="review-helpful-button">
-                                <i class="far fa-thumbs-up"></i>
-                                はい
-                            </button>
-                            <button class="review-helpful-button">
-                                <i class="far fa-thumbs-down"></i>
-                                いいえ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-avatar">佐</div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">佐藤 美香</div>
-                            <div style="font-size: 14px; color: #6a6f73; margin-bottom: 4px;">Beauty Salon MIKA オーナー（美容サロン3店舗経営）</div>
-                            <div class="review-rating">
-                                <span class="stars">★★★★★</span>
-                                <span class="review-date">1か月前</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="review-content">
-                        <p>美容サロンを経営していますが、新規集客が難しく、リピート率も低い状態でした。この講座で学んだLINEステップ配信とファネル設計を実践したところ、<strong>新規予約率が65%アップ、リピート率は87%に改善</strong>。ワンクリックアップセルで客単価も上がり、<strong>月商は180万円から520万円に増加</strong>しました。スタッフの業務効率化もでき、本当に感謝しています。</p>
-                    </div>
-                    <div class="review-helpful">
-                        <p>役に立ちましたか？</p>
-                        <div class="review-helpful-buttons">
-                            <button class="review-helpful-button">
-                                <i class="far fa-thumbs-up"></i>
-                                はい
-                            </button>
-                            <button class="review-helpful-button">
-                                <i class="far fa-thumbs-down"></i>
-                                いいえ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="show-more">
-                    すべてのレビューを表示
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-            </section>
         </div>
 
         <!-- Sidebar Purchase Card -->
@@ -3097,19 +3186,6 @@
         });
         
 
-        // Show more functionality
-        document.querySelectorAll('.show-more').forEach(button => {
-            button.addEventListener('click', () => {
-                const parent = button.parentElement;
-                const hiddenContent = parent.querySelector('.hidden-content');
-                if (hiddenContent) {
-                    hiddenContent.style.display = hiddenContent.style.display === 'none' ? 'block' : 'none';
-                    button.innerHTML = hiddenContent.style.display === 'none' 
-                        ? 'もっと見る <i class="fas fa-chevron-down"></i>' 
-                        : '閉じる <i class="fas fa-chevron-up"></i>';
-                }
-            });
-        });
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

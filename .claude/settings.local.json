@@ -34,7 +34,10 @@
       "WebFetch(domain:basaranet.com)",
       "Bash(mkdir:*)",
       "Bash(cp:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
