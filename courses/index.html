@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コース一覧 | CLAN</title>
+    <meta name="description" content="CLANが提供するUTAGE構築代行関連のコース一覧。プロフェッショナルなマーケティング自動化スキルを身につけることができます。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
+            </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="../blog/index.html">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                    <li><a href="../partner.html">パートナー募集</a></li>
+                    <li><a href="../seminar-request.html">セミナー要望受付</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger-button sp-nav" 
+                    aria-label="メニューを開く" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu" 
+                    type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+        <nav aria-label="モバイルナビゲーション">
+            <ul>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="../blog/index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+                <li><a href="../partner.html">パートナー募集</a></li>
+                <li><a href="../seminar-request.html">セミナー要望受付</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="site-main">
+        <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+            <h1 style="font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 2rem; color: #1c1d1f;">コース一覧</h1>
+            <p style="text-align: center; color: #6a6f73; font-size: 1.2rem; margin-bottom: 3rem;">CLANが提供する専門コースをご覧ください</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease;">
+                    <div style="padding: 2rem;">
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #1c1d1f;">UTAGE構築代行養成講座</h2>
+                        <p style="color: #6a6f73; line-height: 1.6; margin-bottom: 1.5rem;">構築代行で年収1000万円を実現する完全マスターコース。14時間56分の充実した内容で、プロフェッショナルなスキルを習得できます。</p>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <span style="color: #f4c150;">★★★★★</span>
+                            <span style="color: #6a6f73; font-size: 0.9rem;">4.8 (1,523件の評価)</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #1c1d1f;">¥128,000</span>
+                            <span style="color: #6a6f73; font-size: 0.9rem; margin-left: 0.5rem;">（月々11,333円〜）</span>
+                        </div>
+                        
+                        <a href="utage-master-course.html" style="display: block; background: #5624d0; color: white; text-decoration: none; padding: 1rem; border-radius: 6px; font-weight: 600; text-align: center; transition: background 0.3s ease;">コースの詳細を見る</a>
+                    </div>
+                </div>
+                
+                <div style="background: #f7f9fa; border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 2px dashed #d1d7dc;">
+                    <div style="font-size: 3rem; color: #d1d7dc; margin-bottom: 1rem;">+</div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #6a6f73; margin-bottom: 0.5rem;">新しいコースを準備中</h3>
+                    <p style="color: #6a6f73; font-size: 0.9rem;">より多くの専門コースを順次追加予定です</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #6a6f73; margin-bottom: 1rem;">コースに関するご質問やご要望がございましたら、お気軽にお問い合わせください。</p>
+                <a href="../index.html" style="display: inline-block; background: #0071e3; color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 6px; font-weight: 500;">CLANについて詳しく見る</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu functionality
+        const hamburgerButton = document.querySelector('.hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (hamburgerButton && mobileMenu) {
+            hamburgerButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                hamburgerButton.setAttribute('aria-expanded', 
+                    mobileMenu.classList.contains('active') ? 'true' : 'false');
+                mobileMenu.setAttribute('aria-hidden', 
+                    mobileMenu.classList.contains('active') ? 'false' : 'true');
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!hamburgerButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                    hamburgerButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

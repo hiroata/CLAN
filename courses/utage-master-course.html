@@ -13,6 +13,77 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* CSS Variables for Udemy Design System */
+        :root {
+            /* Udemy Colors */
+            --color-primary: #5624d0;
+            --color-primary-hover: #401ea8;
+            --color-primary-light: #7c4dff;
+            --color-dark: #1c1d1f;
+            --color-dark-hover: #3e4143;
+            --color-light: #ffffff;
+            --color-gray-50: #f7f9fa;
+            --color-gray-100: #f7f9fa;
+            --color-gray-200: #e4e8eb;
+            --color-gray-300: #d1d7dc;
+            --color-gray-400: #6a6f73;
+            --color-gray-600: #3e4143;
+            --color-text-primary: #1c1d1f;
+            --color-text-secondary: #6a6f73;
+            --color-success: #5cb85c;
+            --color-warning: #f4c150;
+            --color-danger: #ec5252;
+            --color-badge: #eceb98;
+            --color-badge-text: #3d3c0a;
+            --color-rating: #f4c150;
+            --color-link: #5624d0;
+            --color-border: #d1d7dc;
+            
+            /* Typography - Udemy Style */
+            --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-family-heading: inherit;
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-base: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 32px;
+            --font-size-4xl: 40px;
+            --font-size-5xl: 48px;
+            
+            /* Spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --shadow-xl: 0 12px 48px rgba(0,0,0,0.2);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s ease;
+            --transition-normal: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 50%;
+            
+            /* Z-index */
+            --z-header: 1000;
+            --z-sticky: 100;
+            --z-modal: 2000;
+        }
+
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -21,95 +92,285 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            color: #1c1d1f;
-            background-color: #ffffff;
-            line-height: 1.4;
+            font-family: var(--font-family-primary);
+            color: var(--color-text-primary);
+            background-color: var(--color-light);
+            line-height: 1.5;
+            margin: 0;
+            font-size: var(--font-size-base);
         }
 
-        /* Header Styles */
-        .udemy-header {
-            background-color: #fff;
-            border-bottom: 1px solid #d1d7dc;
+        /* Header Styles - Udemy Style */
+        /* Site Header - CLAN Style */
+        .site-header {
+            background-color: var(--color-light);
+            border-bottom: 1px solid var(--color-border);
             padding: 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: var(--z-header);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
 
-        .header-container {
+        .site-header .header-container {
             max-width: 1340px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 24px;
-            height: 72px;
+            height: 64px;
+        }
+
+        .site-logo-text a {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        
+        .site-logo-text a:hover {
+            color: var(--color-primary-hover);
+        }
+
+        .global-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 24px;
+        }
+
+        .global-nav a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            transition: var(--transition-fast);
+        }
+
+        .global-nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .hamburger-button {
+            display: none;
+            background: none;
+            border: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger-button span {
+            width: 20px;
+            height: 2px;
+            background: var(--color-text-primary);
+            margin: 2px 0;
+            transition: var(--transition-fast);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: var(--color-light);
+            border-top: 1px solid var(--color-border);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            z-index: var(--z-header);
+        }
+        
+        .mobile-menu.active {
+            max-height: 400px;
+        }
+        
+        .mobile-menu nav ul {
+            list-style: none;
+            margin: 0;
+            padding: var(--spacing-lg);
+        }
+        
+        .mobile-menu nav a {
+            display: block;
+            padding: var(--spacing-md) 0;
+            color: var(--color-dark);
+            text-decoration: none;
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            border-bottom: 1px solid var(--color-gray-200);
+            transition: var(--transition-fast);
+        }
+        
+        .mobile-menu nav a:hover {
+            color: var(--color-primary);
+        }
+
+        .udemy-header {
+            background-color: var(--color-light);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: var(--z-header);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .header-container {
+            max-width: none;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            height: 64px;
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            color: #a435f0;
+            color: var(--color-primary);
             text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        
+        .logo:hover {
+            color: var(--color-primary-hover);
         }
 
         .header-nav {
             display: flex;
             align-items: center;
             gap: 24px;
+            flex: 1;
+            margin-left: 24px;
         }
 
         .header-nav a {
-            color: #1c1d1f;
+            color: var(--color-text-primary);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            transition: var(--transition-fast);
         }
 
         .header-nav a:hover {
-            color: #a435f0;
+            color: var(--color-primary);
+        }
+        
+        .header-search {
+            flex: 1;
+            max-width: 450px;
+            position: relative;
+        }
+        
+        .header-search input {
+            width: 100%;
+            padding: 12px 16px 12px 40px;
+            border: 1px solid var(--color-border);
+            border-radius: 50px;
+            background: var(--color-gray-50);
+            font-size: var(--font-size-sm);
+            outline: none;
+            transition: var(--transition-fast);
+        }
+        
+        .header-search input:focus {
+            border-color: var(--color-primary);
+            background: var(--color-light);
+        }
+        
+        .header-search::before {
+            content: '\f002';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            z-index: 1;
         }
 
         .header-buttons {
             display: flex;
-            gap: 12px;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .header-link {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            transition: var(--transition-fast);
+            white-space: nowrap;
+        }
+        
+        .header-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .cart-icon, .globe-icon {
+            color: var(--color-text-primary);
+            font-size: 18px;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+        
+        .cart-icon:hover, .globe-icon:hover {
+            background: var(--color-gray-50);
         }
 
         .btn-login {
-            padding: 8px 16px;
-            border: 1px solid #1c1d1f;
-            background: white;
-            color: #1c1d1f;
+            padding: 10px 16px;
+            border: 1px solid var(--color-text-primary);
+            background: var(--color-light);
+            color: var(--color-text-primary);
             font-weight: 700;
-            font-size: 14px;
+            font-size: var(--font-size-sm);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: var(--transition-fast);
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
         }
 
         .btn-login:hover {
-            background: #f7f9fa;
+            background: var(--color-gray-50);
         }
 
         .btn-signup {
-            padding: 8px 16px;
-            background: #1c1d1f;
-            color: white;
+            padding: 10px 16px;
+            background: var(--color-text-primary);
+            color: var(--color-light);
             border: none;
             font-weight: 700;
-            font-size: 14px;
+            font-size: var(--font-size-sm);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: var(--transition-fast);
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
         }
 
         .btn-signup:hover {
-            background: #3e4143;
+            background: var(--color-dark-hover);
         }
 
-        /* Course Header */
+        /* Course Header - Udemy Style */
         .course-header {
-            background: #1c1d1f;
-            color: white;
+            background: var(--color-dark);
+            color: var(--color-light);
             padding: 32px 0;
         }
 
@@ -118,7 +379,7 @@
             margin: 0 auto;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: 1fr 400px;
+            grid-template-columns: 1fr 340px;
             gap: 32px;
             align-items: start;
         }
@@ -129,18 +390,23 @@
 
         .breadcrumb {
             display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-            font-size: 14px;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-sm);
         }
 
         .breadcrumb a {
-            color: #a435f0;
+            color: var(--color-primary-light);
             text-decoration: none;
+            transition: var(--transition-fast);
         }
 
         .breadcrumb a:hover {
             text-decoration: underline;
+        }
+        
+        .breadcrumb span {
+            color: #ccc;
         }
 
         .breadcrumb span {
@@ -148,15 +414,15 @@
         }
 
         .course-title {
-            font-size: 32px;
+            font-size: var(--font-size-3xl);
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: var(--spacing-md);
             line-height: 1.2;
         }
 
         .course-subtitle {
-            font-size: 19px;
-            margin-bottom: 16px;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-md);
             opacity: 0.9;
         }
 
@@ -169,11 +435,12 @@
         }
 
         .bestseller-badge {
-            background: #eceb98;
-            color: #3d3c0a;
-            padding: 4px 8px;
+            background: var(--color-badge);
+            color: var(--color-badge-text);
+            padding: var(--spacing-xs) var(--spacing-sm);
             font-weight: 700;
-            font-size: 12px;
+            font-size: var(--font-size-xs);
+            border-radius: var(--radius-sm);
         }
 
         .rating {
@@ -247,23 +514,25 @@
             font-weight: 700;
         }
 
-        /* Main Content Layout */
+        /* Main Content Layout - Udemy Style */
         .main-content {
             max-width: 1340px;
             margin: 0 auto;
             padding: 32px 24px;
             display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 32px;
+            grid-template-columns: 1fr 340px;
+            gap: 48px;
         }
 
-        /* Purchase Card */
+        /* Purchase Card - Udemy Style */
         .purchase-card {
             position: sticky;
-            top: 100px;
-            background: white;
-            border: 1px solid #d1d7dc;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            top: 88px;
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.08);
+            border-radius: 4px;
+            overflow: hidden;
         }
 
         .purchase-card-body {
@@ -271,9 +540,33 @@
         }
 
         .price {
-            font-size: 32px;
+            font-size: var(--font-size-3xl);
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            color: var(--color-gray-400);
+            font-size: var(--font-size-lg);
+            display: block;
+        }
+        
+        .price-current {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .price-badge {
+            background: var(--color-danger);
+            color: var(--color-light);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            position: absolute;
+            top: -10px;
+            right: -10px;
         }
 
         .purchase-buttons {
@@ -284,42 +577,55 @@
         }
 
         .btn-add-to-cart {
+            display: block;
             width: 100%;
             padding: 16px;
-            background: #a435f0;
-            color: white;
+            background: var(--color-primary);
+            color: var(--color-light);
             border: none;
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: var(--transition-fast);
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            box-sizing: border-box;
         }
 
         .btn-add-to-cart:hover {
-            background: #8710d8;
+            background: var(--color-primary-hover);
+            color: var(--color-light);
         }
 
         .btn-buy-now {
+            display: block;
             width: 100%;
             padding: 16px;
-            background: white;
-            color: #1c1d1f;
-            border: 1px solid #1c1d1f;
+            background: var(--color-light);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-text-primary);
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: var(--transition-fast);
+            border-radius: 4px;
+            text-align: center;
+            text-decoration: none;
+            box-sizing: border-box;
         }
 
         .btn-buy-now:hover {
-            background: #f7f9fa;
+            background: var(--color-gray-50);
+            color: var(--color-text-primary);
         }
 
         .money-back {
             text-align: center;
             font-size: 12px;
-            color: #6a6f73;
-            margin-bottom: 24px;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.4;
         }
 
         .course-includes h3 {
@@ -343,7 +649,7 @@
 
         .course-includes-list i {
             width: 16px;
-            color: #6a6f73;
+            color: var(--color-text-secondary);
         }
 
         .share-gift-coupon {
@@ -355,15 +661,17 @@
         .share-gift-coupon button {
             flex: 1;
             padding: 12px;
-            background: white;
-            border: 1px solid #1c1d1f;
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
             font-weight: 700;
             cursor: pointer;
             font-size: 14px;
+            border-radius: 4px;
+            transition: var(--transition-fast);
         }
 
         .share-gift-coupon button:hover {
-            background: #f7f9fa;
+            background: var(--color-gray-50);
         }
 
         .coupon-form h4 {
@@ -386,22 +694,29 @@
 
         .coupon-apply {
             padding: 12px 24px;
-            background: #1c1d1f;
-            color: white;
+            background: var(--color-text-primary);
+            color: var(--color-light);
             border: none;
             font-weight: 700;
             cursor: pointer;
+            border-radius: 4px;
+            transition: var(--transition-fast);
+        }
+        
+        .coupon-apply:hover {
+            background: var(--color-dark-hover);
         }
 
-        /* Course Content Sections */
+        /* Course Content Sections - Udemy Style */
         .course-section {
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
 
         .section-title {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--color-text-primary);
         }
 
         .section-header {
@@ -416,9 +731,12 @@
             color: #6a6f73;
         }
 
-        /* What You'll Learn */
+        /* What You'll Learn - Udemy Style */
         .what-learn {
             margin-bottom: 32px;
+            border: 1px solid var(--color-border);
+            padding: 24px;
+            border-radius: 4px;
         }
 
         .what-learn-grid {
@@ -438,30 +756,35 @@
             margin-top: 2px;
         }
 
-        /* Curriculum */
+        /* Curriculum - Enhanced Style */
         .curriculum {
-            border: 1px solid #d1d7dc;
+            margin-top: 24px;
         }
 
         .curriculum-section {
-            border-bottom: 1px solid #d1d7dc;
-        }
-
-        .curriculum-section:last-child {
-            border-bottom: none;
+            margin-bottom: 16px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-light);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .curriculum-header {
-            padding: 16px;
-            background: #f7f9fa;
+            padding: 20px 24px;
+            background: var(--color-light);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.2s ease;
         }
 
         .curriculum-header:hover {
-            background: #e3e7ea;
+            background: var(--color-gray-50);
         }
 
         .curriculum-title {
@@ -469,22 +792,57 @@
             align-items: center;
             gap: 12px;
             font-weight: 700;
+            font-size: 18px;
+            color: var(--color-text-primary);
+        }
+        
+        .curriculum-title i {
+            color: var(--color-text-secondary);
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .curriculum-section.expanded .curriculum-title i {
+            transform: rotate(90deg);
+        }
+
+
+        .curriculum-meta {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .curriculum-lectures {
             display: none;
+            background: var(--color-gray-50);
+            border-top: 1px solid var(--color-border);
         }
 
         .curriculum-section.expanded .curriculum-lectures {
             display: block;
         }
 
+        .curriculum-section.expanded .curriculum-header {
+            background: var(--color-gray-50);
+        }
+
         .lecture-item {
-            padding: 12px 16px;
-            border-bottom: 1px solid #e3e7ea;
+            padding: 16px 24px 16px 80px;
+            border-bottom: 1px solid var(--color-gray-200);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 14px;
+            background: var(--color-light);
+            transition: background-color 0.2s ease;
+            position: relative;
+        }
+
+        .lecture-item:hover {
+            background: var(--color-gray-50);
         }
 
         .lecture-item:last-child {
@@ -499,44 +857,158 @@
         }
 
         .lecture-title i {
-            color: #6a6f73;
+            color: var(--color-text-secondary);
             width: 16px;
         }
 
         .lecture-preview {
-            color: #a435f0;
+            color: var(--color-primary);
             font-size: 14px;
             text-decoration: underline;
             cursor: pointer;
             margin-right: 16px;
+            font-weight: 600;
         }
 
         .lecture-duration {
-            color: #6a6f73;
+            color: var(--color-text-secondary);
             font-size: 14px;
+            font-weight: 500;
+        }
+
+        .expand-icon {
+            transition: transform 0.3s ease;
+            color: var(--color-text-secondary);
+        }
+
+        .curriculum-section.expanded .expand-icon {
+            transform: rotate(180deg);
         }
 
         /* Requirements */
         .requirements-list {
-            list-style: disc;
-            padding-left: 24px;
+            list-style: none;
+            padding: 0;
         }
 
         .requirements-list li {
-            padding: 4px 0;
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .requirements-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        /* Description Section Styles */
+        .description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--color-text-primary);
+        }
+        
+        .description p {
+            margin-bottom: 20px;
+        }
+        
+        .description h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 24px;
+            color: var(--color-text-primary);
+            position: relative;
+            padding-left: 16px;
+        }
+        
+        .description h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: var(--color-primary);
+            border-radius: 2px;
+        }
+        
+        .description strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+        
+        .description-highlight {
+            background: #f7f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .description-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .description-list li {
+            padding: 12px 0;
+            padding-left: 36px;
+            position: relative;
+            line-height: 1.7;
+        }
+        
+        .description-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .feature-point {
+            background: var(--color-gray-50);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border: 1px solid var(--color-border);
+        }
+        
+        .feature-point strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-primary);
+            font-size: 18px;
         }
 
         /* Show More Button */
         .show-more {
-            background: none;
-            border: 1px solid #1c1d1f;
+            background: var(--color-light);
+            border: 1px solid var(--color-text-primary);
             padding: 12px 16px;
             font-weight: 700;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            margin-top: 8px;
+            gap: 8px;
+            margin-top: 16px;
+            border-radius: 4px;
+            color: var(--color-text-primary);
+            transition: var(--transition-fast);
+        }
+        
+        .show-more:hover {
+            background: var(--color-gray-50);
         }
 
         /* Instructor */
@@ -599,9 +1071,9 @@
             margin-top: 16px;
         }
 
-        /* Reviews */
+        /* Reviews - Udemy Style */
         .reviews-section {
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
 
         .rating-summary {
@@ -616,22 +1088,22 @@
         }
 
         .rating-number-large {
-            font-size: 64px;
+            font-size: 56px;
             font-weight: 700;
-            color: #f4c150;
+            color: var(--color-rating);
             line-height: 1;
         }
 
         .rating-stars-large {
             font-size: 20px;
-            color: #f4c150;
+            color: var(--color-rating);
             margin: 8px 0;
         }
 
         .rating-label {
             font-size: 18px;
             font-weight: 700;
-            color: #f4c150;
+            color: var(--color-text-primary);
         }
 
         .rating-bars {
@@ -648,7 +1120,7 @@
         .rating-bar-label {
             width: 120px;
             font-size: 14px;
-            color: #a435f0;
+            color: var(--color-primary);
             text-decoration: underline;
             cursor: pointer;
         }
@@ -656,7 +1128,7 @@
         .rating-bar {
             flex: 1;
             height: 8px;
-            background: #d1d7dc;
+            background: var(--color-gray-200);
             position: relative;
         }
 
@@ -665,20 +1137,20 @@
             left: 0;
             top: 0;
             height: 100%;
-            background: #6a6f73;
+            background: var(--color-text-secondary);
         }
 
         .rating-bar-percent {
             width: 40px;
             text-align: right;
             font-size: 14px;
-            color: #6a6f73;
+            color: var(--color-text-secondary);
         }
 
-        /* Review Cards */
+        /* Review Cards - Udemy Style */
         .review-card {
-            border-top: 1px solid #d1d7dc;
-            padding: 24px 0;
+            border-top: 1px solid var(--color-border);
+            padding: 20px 0;
         }
 
         .review-header {
@@ -691,8 +1163,8 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: #1c1d1f;
-            color: white;
+            background: var(--color-text-primary);
+            color: var(--color-light);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -717,11 +1189,11 @@
         }
 
         .review-rating .stars {
-            color: #f4c150;
+            color: var(--color-rating);
         }
 
         .review-date {
-            color: #6a6f73;
+            color: var(--color-text-secondary);
         }
 
         .review-content {
@@ -731,7 +1203,7 @@
 
         .review-helpful {
             font-size: 14px;
-            color: #6a6f73;
+            color: var(--color-text-secondary);
         }
 
         .review-helpful-buttons {
@@ -741,18 +1213,20 @@
         }
 
         .review-helpful-button {
-            background: none;
-            border: 1px solid #1c1d1f;
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
             padding: 8px 16px;
             font-size: 14px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 8px;
+            border-radius: 4px;
+            transition: var(--transition-fast);
         }
 
         .review-helpful-button:hover {
-            background: #f7f9fa;
+            background: var(--color-gray-50);
         }
 
         /* More Courses */
@@ -768,15 +1242,18 @@
         }
 
         .course-card {
-            border: 1px solid #d1d7dc;
+            border: 1px solid var(--color-gray-300);
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: var(--transition-normal);
+            border-radius: var(--radius-md);
+            background: var(--color-light);
         }
 
         .course-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
         }
 
         .course-image {
@@ -831,20 +1308,300 @@
             font-size: 16px;
         }
 
+        /* Price info */
+        .price-info {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-400);
+            margin-top: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
         /* Utility Classes */
         .text-muted {
-            color: #6a6f73;
+            color: var(--color-gray-400);
         }
 
         .mb-16 {
-            margin-bottom: 16px;
+            margin-bottom: var(--spacing-md);
         }
 
         .mb-24 {
-            margin-bottom: 24px;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* Smooth scroll for entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Improve focus states for accessibility */
+        button:focus,
+        a:focus,
+        input:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .course-section {
+            animation: fadeIn 0.6s ease-out;
         }
 
-        /* Responsive */
+
+        /* Hidden content for show more buttons */
+        .hidden-content {
+            display: none;
+        }
+
+        /* Course Features Section */
+        .course-features {
+            background: var(--color-gray-50);
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+            border-radius: var(--radius-md);
+        }
+        
+        .course-features h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-text-primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: var(--spacing-md);
+            background: var(--color-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-fast);
+        }
+        
+        .feature-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: var(--color-light);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            flex-shrink: 0;
+        }
+        
+        .feature-content h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-primary);
+        }
+        
+        .feature-content p {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Student Voices Section */
+        .student-voices {
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .student-voices h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-text-primary);
+        }
+        
+        .voices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .voice-card {
+            background: var(--color-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            position: relative;
+            transition: var(--transition-fast);
+        }
+        
+        .voice-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+        }
+        
+        .voice-card::before {
+            content: '"';
+            position: absolute;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
+            font-size: 48px;
+            color: var(--color-primary);
+            opacity: 0.2;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .voice-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .voice-text {
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-md);
+            font-style: italic;
+        }
+        
+        .voice-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .voice-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--color-primary);
+            color: var(--color-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: var(--font-size-base);
+        }
+        
+        .voice-info {
+            flex: 1;
+        }
+        
+        .voice-name {
+            font-weight: 700;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-primary);
+            margin-bottom: 2px;
+        }
+        
+        .voice-role {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-secondary);
+        }
+        
+        .voice-rating {
+            color: var(--color-rating);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* Additional styles */
+        .urgency-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+
+        
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-2xl);
+            color: var(--color-dark);
+            cursor: pointer;
+            padding: var(--spacing-sm);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--color-light);
+            border-bottom: 1px solid var(--color-gray-300);
+            box-shadow: var(--shadow-md);
+            z-index: var(--z-header);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-nav.active {
+            max-height: 400px;
+        }
+        
+        .mobile-nav-content {
+            padding: var(--spacing-lg);
+        }
+        
+        .mobile-nav-content a {
+            display: block;
+            padding: var(--spacing-md) 0;
+            color: var(--color-dark);
+            text-decoration: none;
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            border-bottom: 1px solid var(--color-gray-200);
+            transition: var(--transition-fast);
+        }
+        
+        .mobile-nav-content a:hover {
+            color: var(--color-primary);
+        }
+        
+        .mobile-nav-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            padding-top: var(--spacing-lg);
+        }
+        
+        .mobile-nav-buttons button {
+            flex: 1;
+        }
+
         @media (max-width: 1200px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -866,47 +1623,129 @@
         }
 
         @media (max-width: 768px) {
+            /* Mobile header */
+            .global-nav {
+                display: none;
+            }
+            
+            .hamburger-button {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .header-buttons {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            /* Content adjustments */
             .what-learn-grid {
                 grid-template-columns: 1fr;
             }
             
             .rating-summary {
                 flex-direction: column;
-                gap: 24px;
+                gap: var(--spacing-lg);
             }
             
             .course-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Mobile specific adjustments */
+            .features-grid,
+            .voices-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-features {
+                padding: var(--spacing-lg);
+            }
+            
+            .feature-item {
+                padding: var(--spacing-md);
+            }
+            
+            .voice-card {
+                padding: var(--spacing-md);
+            }
+            
+            .course-title {
+                font-size: var(--font-size-2xl);
+            }
+            
+            .section-title {
+                font-size: var(--font-size-xl);
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="udemy-header">
+    <header class="site-header">
         <div class="header-container">
-            <a href="#" class="logo">CLAN</a>
-            <nav class="header-nav">
-                <a href="#">カテゴリ</a>
-                <input type="search" placeholder="何でも検索" style="padding: 8px 12px; border: 1px solid #1c1d1f; background: #f7f9fa;">
-            </nav>
-            <div class="header-buttons">
-                <button class="btn-login">ログイン</button>
-                <button class="btn-signup">新規登録</button>
+            <div class="site-logo-text">
+                <a href="../index.html">CLAN</a>
             </div>
+            <nav class="global-nav pc-nav" aria-label="グローバルナビゲーション">
+                <ul>
+                    <li><a href="../achievement/index.html">お客様の声</a></li>
+                    <li><a href="../blog/index.html">ブログ</a></li>
+                    <li><a href="../tools/index.html">まえゆきツール</a></li>
+                    <li><a href="../partner.html">パートナー募集</a></li>
+                    <li><a href="../seminar-request.html">セミナー要望受付</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger-button sp-nav" 
+                    aria-label="メニューを開く" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu" 
+                    type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+    
+    <!-- モバイルメニュー -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="モバイルメニュー">
+        <nav aria-label="モバイルナビゲーション">
+            <ul>
+                <li><a href="../achievement/index.html">お客様の声</a></li>
+                <li><a href="../blog/index.html">ブログ</a></li>
+                <li><a href="../tools/index.html">まえゆきツール</a></li>
+                <li><a href="../partner.html">パートナー募集</a></li>
+                <li><a href="../seminar-request.html">セミナー要望受付</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <!-- Course Header -->
     <div class="course-header">
         <div class="course-header-container">
             <div class="course-header-content">
                 <nav class="breadcrumb">
-                    <a href="#">ビジネス</a>
+                    <a href="../index.html">ホーム</a>
                     <span>›</span>
-                    <a href="#">マーケティング</a>
+                    <a href="../blog/index.html">ブログ</a>
                     <span>›</span>
-                    <a href="#">マーケティング自動化</a>
+                    <a href="../courses/">コース</a>
                 </nav>
                 
                 <h1 class="course-title">【UTAGE構築代行養成講座】構築代行で年収1000万円を実現する完全マスターコース</h1>
@@ -926,7 +1765,7 @@
                 </div>
                 
                 <div class="course-instructor">
-                    作成者: <a href="#">前田由紀子（株式会社CLAN代表）</a>
+                    作成者: <a href="../owner.html">前田由紀子（株式会社CLAN代表）</a>
                 </div>
                 
                 <div class="course-update-info">
@@ -953,6 +1792,119 @@
     <!-- Main Content -->
     <div class="main-content">
         <div class="course-content">
+            <!-- Course Features -->
+            <section class="course-features">
+                <h2>このコースの特徴</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>実績に基づく実践的カリキュラム</h3>
+                            <p>70社以上のUTAGE構築実績から生まれた、成果の出る実践的なノウハウを体系化。理論だけでなく、実際の成功事例に基づいた手法を学べます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>124本の充実した動画レクチャー</h3>
+                            <p>14時間56分の動画で、UTAGEの全機能を網羅。操作画面を見ながら一緒に進められるので、初心者でも確実にスキルを習得できます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>受講生限定コミュニティ</h3>
+                            <p>講師や先輩受講生に直接質問できる専用コミュニティ。案件の相談や最新情報の共有など、継続的なサポートが受けられます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>永続的なアクセス権</h3>
+                            <p>一度購入すれば無期限でアクセス可能。最新のUTAGE機能に対応した追加レクチャーも無料で視聴できます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>実務で使えるテンプレート集</h3>
+                            <p>提案書、契約書、ファネル設計書など、構築代行ビジネスで必要な全てのテンプレートを提供。すぐに実務で活用できます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>30日間返金保証</h3>
+                            <p>内容にご満足いただけない場合は、購入から30日以内であれば全額返金。安心してご受講いただけます。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Student Voices -->
+            <section class="student-voices">
+                <h2>受講生の声</h2>
+                <div class="voices-grid">
+                    <div class="voice-card">
+                        <div class="voice-content">
+                            <div class="voice-rating">★★★★★</div>
+                            <p class="voice-text">
+                                「Web制作の新サービスとして構築代行を始めて3ヶ月で月商200万円を突破しました。特にIT導入補助金の活用法は目から鱗でした。」
+                            </p>
+                            <div class="voice-author">
+                                <div class="voice-avatar">田</div>
+                                <div class="voice-info">
+                                    <div class="voice-name">田中 隆一</div>
+                                    <div class="voice-role">Web制作会社 代表取締役</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voice-card">
+                        <div class="voice-content">
+                            <div class="voice-rating">★★★★★</div>
+                            <p class="voice-text">
+                                「コンサルタントとして活動していましたが、UTAGEでオートウェビナーファネルを構築し、営業時間を80%削減しながら月商が3倍に！」
+                            </p>
+                            <div class="voice-author">
+                                <div class="voice-avatar">山</div>
+                                <div class="voice-info">
+                                    <div class="voice-name">山田 花子</div>
+                                    <div class="voice-role">マーケティングコンサルタント</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voice-card">
+                        <div class="voice-content">
+                            <div class="voice-rating">★★★★★</div>
+                            <p class="voice-text">
+                                「美容サロンの集客で悩んでいましたが、LINEステップ配信を導入して新規予約率が65%アップ。売上も3倍になりました！」
+                            </p>
+                            <div class="voice-author">
+                                <div class="voice-avatar">佐</div>
+                                <div class="voice-info">
+                                    <div class="voice-name">佐藤 美香</div>
+                                    <div class="voice-role">美容サロンオーナー</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- What you'll learn -->
             <section class="what-learn">
                 <h2>学習内容</h2>
@@ -1003,7 +1955,10 @@
                                 <i class="fas fa-chevron-down"></i>
                                 <span>モジュール1: UTAGE基礎とビジネス戦略</span>
                             </div>
-                            <span class="curriculum-meta">12個のレクチャー • 2時間</span>
+                            <div class="curriculum-meta">
+                                <span>12個のレクチャー • 2時間</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1102,7 +2057,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール2: ファネル/ページ作成マスタリー</span>
                             </div>
-                            <span class="curriculum-meta">10個のレクチャー • 1時間46分</span>
+                            <div class="curriculum-meta">
+                                <span>10個のレクチャー • 1時間46分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1185,7 +2143,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール3: メール配信とステップメール自動化</span>
                             </div>
-                            <span class="curriculum-meta">6個のレクチャー • 1時間15分</span>
+                            <div class="curriculum-meta">
+                                <span>6個のレクチャー • 1時間15分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1240,7 +2201,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール4: LINE配信戦略</span>
                             </div>
-                            <span class="curriculum-meta">5個のレクチャー • 52分</span>
+                            <div class="curriculum-meta">
+                                <span>5個のレクチャー • 52分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1288,7 +2252,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール5: 決済システムと商品設定</span>
                             </div>
-                            <span class="curriculum-meta">10個のレクチャー • 1時間40分</span>
+                            <div class="curriculum-meta">
+                                <span>10個のレクチャー • 1時間40分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1371,7 +2338,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール6: 会員サイト構築とイベント管理</span>
                             </div>
-                            <span class="curriculum-meta">8個のレクチャー • 1時間30分</span>
+                            <div class="curriculum-meta">
+                                <span>8個のレクチャー • 1時間30分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1440,7 +2410,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール7: アクション実行とファネル事例</span>
                             </div>
-                            <span class="curriculum-meta">19個のレクチャー • 3時間35分</span>
+                            <div class="curriculum-meta">
+                                <span>19個のレクチャー • 3時間35分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1586,7 +2559,10 @@
                                 <i class="fas fa-chevron-right"></i>
                                 <span>モジュール8: 構築代行ビジネスの実践</span>
                             </div>
-                            <span class="curriculum-meta">14個のレクチャー • 2時間18分</span>
+                            <div class="curriculum-meta">
+                                <span>14個のレクチャー • 2時間18分</span>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
                         </div>
                         <div class="curriculum-lectures">
                             <div class="lecture-item">
@@ -1720,45 +2696,59 @@
                     <p>そんなあなたに、この講座は<strong>14時間56分の充実した内容で、UTAGE構築代行のプロフェッショナル</strong>へと導きます。</p>
                     
                     <h3>⚡️ UTAGEが選ばれる7つの理由</h3>
-                    <p><strong>1. オールインワンの統合型プラットフォーム</strong><br>
-                    UTAGEは、ランディングページ作成、メール/LINE配信、決済システム、会員サイト構築など、マーケティングに必要な全機能を一元管理。複数ツールの連携不要でコストも削減します。</p>
                     
-                    <p><strong>2. 圧倒的な成果実績</strong><br>
-                    「月商440万円増加」「問い合わせ対応時間67%削減」「初月で月商1,000万円達成」など、実際の成功事例が多数。CLANでは70社以上の構築実績があります。</p>
+                    <div class="feature-point">
+                        <strong>1. オールインワンの統合型プラットフォーム</strong>
+                        UTAGEは、ランディングページ作成、メール/LINE配信、決済システム、会員サイト構築など、マーケティングに必要な全機能を一元管理。複数ツールの連携不要でコストも削減します。
+                    </div>
                     
-                    <p><strong>3. 日本企業向けに最適化</strong><br>
-                    LINE公式アカウントとのAPI連携、日本語サポート、国内決済サービス対応など、日本のビジネス環境に完全対応しています。</p>
+                    <div class="feature-point">
+                        <strong>2. 圧倒的な成果実績</strong>
+                        「月商440万円増加」「問い合わせ対応時間67%削減」「初月で月商1,000万円達成」など、実際の成功事例が多数。CLANでは70社以上の構築実績があります。
+                    </div>
+                    
+                    <div class="feature-point">
+                        <strong>3. 日本企業向けに最適化</strong>
+                        LINE公式アカウントとのAPI連携、日本語サポート、国内決済サービス対応など、日本のビジネス環境に完全対応しています。
+                    </div>
                     
                     <h3>🎓 この講座の特徴</h3>
-                    <p><strong>● 124本の動画レクチャーと実践ワークショップ</strong><br>
-                    単なる操作説明ではなく、「売れる仕組み」の構築方法を体系的に学びます。実際のプロジェクトを想定したハンズオンで、即戦力となるスキルを身につけます。</p>
                     
-                    <p><strong>● マーケティング設計力と技術力の両立</strong><br>
-                    ツールの使い方だけでなく、「なぜその設定が必要か」「どうすれば売上につながるか」というマーケティング視点を重視。クライアントの成果にコミットできる真のプロフェッショナルを育成します。</p>
+                    <div class="feature-point">
+                        <strong>● 124本の動画レクチャーと実践ワークショップ</strong>
+                        単なる操作説明ではなく、「売れる仕組み」の構築方法を体系的に学びます。実際のプロジェクトを想定したハンズオンで、即戦力となるスキルを身につけます。
+                    </div>
                     
-                    <p><strong>● 構築代行ビジネスの立ち上げサポート</strong><br>
-                    料金設定、提案書作成、契約書テンプレートなど、ビジネス化に必要な全てをカバー。パートナー制度を活用したストック収入の作り方も伝授します。</p>
+                    <div class="feature-point">
+                        <strong>● マーケティング設計力と技術力の両立</strong>
+                        ツールの使い方だけでなく、「なぜその設定が必要か」「どうすれば売上につながるか」というマーケティング視点を重視。クライアントの成果にコミットできる真のプロフェッショナルを育成します。
+                    </div>
+                    
+                    <div class="feature-point">
+                        <strong>● 構築代行ビジネスの立ち上げサポート</strong>
+                        料金設定、提案書作成、契約書テンプレートなど、ビジネス化に必要な全てをカバー。パートナー制度を活用したストック収入の作り方も伝授します。
+                    </div>
                     
                     <h3>📊 期待できる成果</h3>
-                    <p>✓ クライアントの売上を30%以上アップするファネル設計スキル<br>
-                    ✓ 最短1週間で完成させる効率的な構築手法<br>
-                    ✓ 月額10～20万円の案件を継続的に獲得する営業力<br>
-                    ✓ IT導入補助金を活用した高額案件の獲得方法<br>
-                    ✓ 一度の構築で毎月ストック収入を得る仕組み</p>
+                    
+                    <ul class="description-list">
+                        <li>クライアントの売上を30%以上アップするファネル設計スキル</li>
+                        <li>最短1週間で完成させる効率的な構築手法</li>
+                        <li>月額10～20万円の案件を継続的に獲得する営業力</li>
+                        <li>IT導入補助金を活用した高額案件の獲得方法</li>
+                        <li>一度の構築で毎月ストック収入を得る仕組み</li>
+                    </ul>
                     
                     <h3>📚 誰におすすめ？</h3>
-                    <p>✓ Web制作・マーケティング支援の新サービスを始めたい方<br>
-                    ✓ 既存クライアントに付加価値を提供したいフリーランス・制作会社<br>
-                    ✓ 自身のビジネスをUTAGEで自動化したい事業者<br>
-                    ✓ 時間と場所に縛られない新しい働き方を目指す方<br>
-                    ✓ マーケティングスキルで独立・起業を考えている方</p>
                     
-                    <h3>🎁 特典</h3>
-                    <p>• すぐに使えるファネル設計テンプレート集<br>
-                    • クライアント提案書フォーマット<br>
-                    • 契約書テンプレート<br>
-                    • 受講生限定コミュニティへの参加権<br>
-                    • 最新アップデート情報の継続配信</p>
+                    <ul class="description-list">
+                        <li>Web制作・マーケティング支援の新サービスを始めたい方</li>
+                        <li>既存クライアントに付加価値を提供したいフリーランス・制作会社</li>
+                        <li>自身のビジネスをUTAGEで自動化したい事業者</li>
+                        <li>時間と場所に縛られない新しい働き方を目指す方</li>
+                        <li>マーケティングスキルで独立・起業を考えている方</li>
+                    </ul>
+                    
                     
                     <button class="show-more">
                         もっと見る
@@ -1767,60 +2757,13 @@
                 </div>
             </section>
 
-            <!-- Other Courses -->
-            <section class="more-courses">
-                <h2 class="section-title mb-24">受講生が購入したその他のコース</h2>
-                <div class="course-grid">
-                    <div class="course-card">
-                        <img src="https://via.placeholder.com/240x135" alt="コース画像" class="course-image">
-                        <div class="course-info">
-                            <h3 class="course-card-title">【初心者向け】UTAGEの基本操作とランディングページ作成入門</h3>
-                            <p class="course-instructor-name">合計3時間・更新済み 2025/6</p>
-                            <div class="course-card-rating">
-                                <span class="rating-number">4.5</span>
-                                <span class="stars">★★★★☆</span>
-                                <span class="count">(856)</span>
-                            </div>
-                            <div class="course-card-price">¥9,800</div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-card">
-                        <img src="https://via.placeholder.com/240x135" alt="コース画像" class="course-image">
-                        <div class="course-info">
-                            <h3 class="course-card-title">メールマーケティング自動化で売上2倍！UTAGEステップ配信完全攻略</h3>
-                            <p class="course-instructor-name">合計5時間・更新済み 2025/5</p>
-                            <div class="course-card-rating">
-                                <span class="rating-number">4.7</span>
-                                <span class="stars">★★★★★</span>
-                                <span class="count">(423)</span>
-                            </div>
-                            <div class="course-card-price">¥27,800</div>
-                        </div>
-                    </div>
-                    
-                    <div class="course-card">
-                        <img src="https://via.placeholder.com/240x135" alt="コース画像" class="course-image">
-                        <div class="course-info">
-                            <h3 class="course-card-title">【上級編】UTAGE×セールスファネルで月商100万円超えの仕組み構築術</h3>
-                            <p class="course-instructor-name">ベストセラー・合計8時間・更新済み 2025/6</p>
-                            <div class="course-card-rating">
-                                <span class="rating-number">4.9</span>
-                                <span class="stars">★★★★★</span>
-                                <span class="count">(1,892)</span>
-                            </div>
-                            <div class="course-card-price">¥39,800</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- Instructor -->
             <section class="instructor-section">
                 <h2 class="section-title mb-24">講師</h2>
                 <div class="instructor-card">
                     <div class="instructor-avatar">
-                        <img src="https://via.placeholder.com/112x112" alt="前田由紀子">
+                        <img src="../assets/images/profile-owner.webp" alt="前田由紀子">
                     </div>
                     <div class="instructor-details">
                         <div class="instructor-info">
@@ -1846,9 +2789,49 @@
                             </div>
                         </div>
                         <div class="instructor-bio">
-                            <p>前田由紀子: Web集客コンサルタント / 株式会社CLAN代表取締役</p>
-                            <p>1980年生まれ。高校卒業後、ブルガリなどのハイブランドで13年間勤務し、接客とセールスの基礎を身に着ける。2011年、ローフードとファスティングの事業で福岡で起業。現在は、株式会社CLANの代表取締役として、中小企業のマーケティング自動化とオンライン集客の支援に力を注いでいる。</p>
-                            <p>これまで500以上のプロジェクトでUTAGEを活用したマーケティング自動化を実践し、クライアントの売上向上に貢献してきました。</p>
+                            <p>1980年生まれ。高校卒業後、ブルガリなどのハイブランドで13年間勤務し、接客とセールスの基礎を身に着ける。2011年、ローフードとファスティングの事業で福岡で起業。協会設立を経て、東京・青山に料理教室を開講。現在は、株式会社CLANの代表取締役として、中小企業のマーケティング自動化とオンライン集客の支援に力を注いでいる。</p>
+                            
+                            <div class="profile-highlights" style="background: #f7f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; font-size: 1rem; line-height: 1.6;">
+                                        <span style="color: var(--color-primary); font-weight: bold; margin-right: 12px; font-size: 1.2rem; margin-top: 2px;">✦</span>
+                                        <span><strong>著書:</strong> <a href="https://www.amazon.co.jp/dp/B09X1Y2L4F" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: none;">美人は7日でつくられる</a></span>
+                                    </li>
+                                    <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; font-size: 1rem; line-height: 1.6;">
+                                        <span style="color: var(--color-primary); font-weight: bold; margin-right: 12px; font-size: 1.2rem; margin-top: 2px;">✦</span>
+                                        <span><strong>専門分野:</strong> オートマーケティング、セールスファネル構築、集客戦略策定</span>
+                                    </li>
+                                    <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; font-size: 1rem; line-height: 1.6;">
+                                        <span style="color: var(--color-primary); font-weight: bold; margin-right: 12px; font-size: 1.2rem; margin-top: 2px;">✦</span>
+                                        <span><strong>実績:</strong> 500以上のプロジェクトでUTAGEを活用したマーケティング自動化を実践</span>
+                                    </li>
+                                    <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; font-size: 1rem; line-height: 1.6;">
+                                        <span style="color: var(--color-primary); font-weight: bold; margin-right: 12px; font-size: 1.2rem; margin-top: 2px;">✦</span>
+                                        <span><strong>資格:</strong> IT導入支援事業者、マーケティング戦略コンサルタント</span>
+                                    </li>
+                                    <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; font-size: 1rem; line-height: 1.6;">
+                                        <span style="color: var(--color-primary); font-weight: bold; margin-right: 12px; font-size: 1.2rem; margin-top: 2px;">✦</span>
+                                        <span><strong>得意業界:</strong> 教育・コーチング・コンサルティング・健康美容業界</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div style="background: #f7f9fa; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #a435f0;">
+                                    <i class="fas fa-heart" style="margin-right: 8px;"></i>
+                                    なぜこの講座を作ったのか
+                                </h4>
+                                <p style="line-height: 1.8; font-style: italic;">
+                                    私自身、起業当初は集客に苦労した経験があります。素晴らしい商品やサービスを持っているのに、それを必要としている人に届けることができない…その悔しさは痛いほど理解しています。
+                                </p>
+                                <p style="line-height: 1.8; font-style: italic; margin-top: 12px;">
+                                    UTAGEと出会い、マーケティング自動化の力を知ってから、私のビジネスは大きく変わりました。そして今、多くの企業様の売上向上をお手伝いできるようになりました。
+                                </p>
+                                <p style="line-height: 1.8; font-style: italic; margin-top: 12px;">
+                                    この講座では、私が実際に使っている手法、失敗から学んだポイント、クライアント様との実例を惜しみなくお伝えします。あなたがUTAGEのプロフェッショナルとして活躍し、多くの人のビジネス成功に貢献できることを心から願っています。
+                                </p>
+                            </div>
+                            
                             <button class="show-more">
                                 もっと見る
                                 <i class="fas fa-chevron-down"></i>
@@ -1913,7 +2896,8 @@
                     <div class="review-header">
                         <div class="reviewer-avatar">宮</div>
                         <div class="reviewer-info">
-                            <div class="reviewer-name">宮崎</div>
+                            <div class="reviewer-name">宮崎 健太</div>
+                            <div style="font-size: 14px; color: #6a6f73; margin-bottom: 4px;">経営コンサルタント・マーケティング戦略室 代表</div>
                             <div class="review-rating">
                                 <span class="stars">★★★★☆</span>
                                 <span class="review-date">2週間前</span>
@@ -1942,7 +2926,8 @@
                     <div class="review-header">
                         <div class="reviewer-avatar">宮</div>
                         <div class="reviewer-info">
-                            <div class="reviewer-name">田中隆一</div>
+                            <div class="reviewer-name">田中 隆一</div>
+                            <div style="font-size: 14px; color: #6a6f73; margin-bottom: 4px;">株式会社TechCreate 代表取締役（Web制作会社）</div>
                             <div class="review-rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="review-date">4か月前</span>
@@ -1971,7 +2956,8 @@
                     <div class="review-header">
                         <div class="reviewer-avatar">佐</div>
                         <div class="reviewer-info">
-                            <div class="reviewer-name">佐藤美香</div>
+                            <div class="reviewer-name">佐藤 美香</div>
+                            <div style="font-size: 14px; color: #6a6f73; margin-bottom: 4px;">Beauty Salon MIKA オーナー（美容サロン3店舗経営）</div>
                             <div class="review-rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="review-date">1か月前</span>
@@ -2001,55 +2987,28 @@
                     <i class="fas fa-chevron-down"></i>
                 </button>
             </section>
-
-            <!-- FAQ Section -->
-            <section class="course-section" style="margin-top: 48px;">
-                <h2 class="section-title mb-24">よくある質問</h2>
-                <div class="faq-container">
-                    <div class="faq-item" style="border: 1px solid #d1d7dc; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s;">
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Q: UTAGEの実務経験がなくても受講できますか？</h3>
-                        <p style="color: #6a6f73; line-height: 1.6;">はい、問題ありません。本講座はUTAGEを一度も触ったことがない方でも、基礎から応用まで体系的に学べるよう設計されています。アカウント作成から各機能の詳細まで、ステップバイステップで丁寧に解説しています。</p>
-                    </div>
-                    <div class="faq-item" style="border: 1px solid #d1d7dc; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s;">
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Q: 構築代行で本当に10-50万円の案件が取れますか？</h3>
-                        <p style="color: #6a6f73; line-height: 1.6;">はい、実際に多くの受講生がこの価格帯で案件を獲得しています。UTAGEは単なるツールではなく、「売上を上げる仕組み」です。本講座では、価値提案の方法、提案書テンプレート、料金設定の根拠など、営業面もカバーしています。</p>
-                    </div>
-                    <div class="faq-item" style="border: 1px solid #d1d7dc; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s;">
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Q: IT導入補助金は誰でも活用できますか？</h3>
-                        <p style="color: #6a6f73; line-height: 1.6;">IT導入補助金は中小企業や個人事業主が対象で、最大75万円の補助が受けられます。本講座では、補助金申請の流れ、必要書類、申請代行サポートの活用方法まで詳しく解説。クライアントへの提案時にも強力な武器になります。</p>
-                    </div>
-                    <div class="faq-item" style="border: 1px solid #d1d7dc; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s;">
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Q: パートナー報酬30%はどのように受け取れますか？</h3>
-                        <p style="color: #6a6f73; line-height: 1.6;">UTAGEのパートナー制度に登録することで、紹介したクライアントのUTAGE利用料の30%が毎月継続的に支払われます。5件のクライアントを獲得するだけで、月額3万円以上のストック収入が期待できます。構築代行料とは別の収入源となります。</p>
-                    </div>
-                    <div class="faq-item" style="border: 1px solid #d1d7dc; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s;">
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Q: サポートはありますか？</h3>
-                        <p style="color: #6a6f73; line-height: 1.6;">受講生限定のコミュニティで、講師や他の受講生と相談できる環境を用意しています。また、各モジュールのQ&Aセクションで質問も可能です。実際の案件で困ったときのアドバイスも受けられるので、安心して学習を進められます。</p>
-                    </div>
-                    <div class="faq-item" style="border: 1px solid #d1d7dc; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s;">
-                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Q: どのくらいの期間で習得できますか？</h3>
-                        <p style="color: #6a6f73; line-height: 1.6;">個人差はありますが、集中して学習すれば1-2ヶ月で基本的な構築ができるようになります。3ヶ月目には実際の案件を手がけられるレベルに到達する受講生が多いです。動画は何度でも視聴でき、学習期間の制限もないので、ご自身のペースで学び進められます。</p>
-                    </div>
-                </div>
-            </section>
         </div>
 
         <!-- Sidebar Purchase Card -->
         <aside>
             <div class="purchase-card">
                 <div class="purchase-card-body">
-                    <div class="price" style="position: relative;">
-                        <span style="text-decoration: line-through; color: #6a6f73; font-size: 18px; display: block;">¥128,000</span>
-                        <span style="font-size: 36px; font-weight: 700;">¥68,000</span>
-                        <span style="background: #ec5252; color: white; padding: 4px 8px; border-radius: 4px; font-size: 14px; position: absolute; top: -10px; right: -10px;">47%OFF</span>
+                    <div class="price">
+                        <span class="price-original">¥128,000</span>
+                        <span class="price-current">¥68,000</span>
+                        <span class="price-badge">47%OFF</span>
                     </div>
+                    <p class="price-info">
+                        <i class="fas fa-credit-card"></i>
+                        分割払い対応（月々11,333円〜）
+                    </p>
                     
                     <div class="purchase-buttons">
-                        <button class="btn-add-to-cart">カートに入れる</button>
-                        <button class="btn-buy-now">今すぐ購入する</button>
+                        <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-add-to-cart" target="_blank" rel="noopener">講座の詳細を見る</a>
+                        <a href="https://utage-system.com/p/EcESO02xLLoK" class="btn-buy-now" target="_blank" rel="noopener">今すぐ申し込む</a>
                     </div>
                     
-                    <p class="money-back">30日間返金保証 | 返金ポリシーおよび価格設定ポリシーについてはこちら。</p>
+                    <p class="money-back">30日間返金保証 | <a href="../terms.html" style="color: var(--color-primary); text-decoration: none;">返金ポリシーおよび価格設定ポリシーについてはこちら</a></p>
                     
                     <div class="course-includes">
                         <h3>このコースの内容:</h3>
@@ -2066,16 +3025,15 @@
                     </div>
                     
                     <div class="share-gift-coupon">
-                        <button>シェア</button>
-                        <button>このコースをプレゼントする</button>
+                        <button onclick="navigator.share ? navigator.share({title: 'UTAGE構築代行養成講座', url: window.location.href}) : alert('この講座のURLをコピーしてシェアしてください: ' + window.location.href)">シェア</button>
+                        <a href="https://utage-system.com/p/EcESO02xLLoK" target="_blank" rel="noopener" style="display: inline-block; padding: 8px 16px; background: var(--color-light); border: 1px solid var(--color-border); border-radius: 4px; text-decoration: none; color: var(--color-text-primary); font-size: 14px; font-weight: 500;">講座について詳しく見る</a>
                     </div>
                     
-                    <div class="coupon-form">
-                        <h4>クーポンを適用</h4>
-                        <div class="coupon-input-group">
-                            <input type="text" class="coupon-input" placeholder="クーポンを入力">
-                            <button class="coupon-apply">適用</button>
-                        </div>
+                    <div class="course-note">
+                        <p style="font-size: 14px; color: var(--color-text-secondary); text-align: center; margin: 16px 0;">
+                            <i class="fas fa-info-circle"></i> 
+                            本格的な受講申し込みは上記ボタンからお進みください
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2083,25 +3041,87 @@
     </div>
 
     <script>
-        // Accordion functionality
+        // CLAN Mobile menu toggle
+        const hamburgerButton = document.querySelector('.hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (hamburgerButton && mobileMenu) {
+            hamburgerButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                hamburgerButton.setAttribute('aria-expanded', 
+                    mobileMenu.classList.contains('active') ? 'true' : 'false');
+                mobileMenu.setAttribute('aria-hidden', 
+                    mobileMenu.classList.contains('active') ? 'false' : 'true');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburgerButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                    hamburgerButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+                    mobileNav.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+                }
+            });
+        }
+        
+        // Curriculum accordion functionality
         document.querySelectorAll('.curriculum-header').forEach(header => {
             header.addEventListener('click', () => {
                 const section = header.parentElement;
                 section.classList.toggle('expanded');
-                const icon = header.querySelector('i');
-                if (section.classList.contains('expanded')) {
-                    icon.className = 'fas fa-chevron-down';
-                } else {
-                    icon.className = 'fas fa-chevron-right';
-                }
             });
         });
+        
 
         // Show more functionality
         document.querySelectorAll('.show-more').forEach(button => {
             button.addEventListener('click', () => {
-                // Implementation for expanding content
-                console.log('Show more clicked');
+                const parent = button.parentElement;
+                const hiddenContent = parent.querySelector('.hidden-content');
+                if (hiddenContent) {
+                    hiddenContent.style.display = hiddenContent.style.display === 'none' ? 'block' : 'none';
+                    button.innerHTML = hiddenContent.style.display === 'none' 
+                        ? 'もっと見る <i class="fas fa-chevron-down"></i>' 
+                        : '閉じる <i class="fas fa-chevron-up"></i>';
+                }
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
