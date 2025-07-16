@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTAGE構築代行マスターコース - 講師向け台本ポータル</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .card p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(45deg, #2980b9, #1e74a3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #3498db;
+        }
+        
+        .module-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .module-card .meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .lectures-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ecf0f1;
+            border-radius: 5px;
+            padding: 10px;
+            background: #fafafa;
+        }
+        
+        .lecture-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            transition: background 0.2s;
+        }
+        
+        .lecture-item:hover {
+            background: #f8f9fa;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 0 -10px;
+        }
+        
+        .lecture-item:last-child {
+            border-bottom: none;
+        }
+        
+        .lecture-title {
+            flex: 1;
+            font-size: 0.9rem;
+            color: #2c3e50;
+        }
+        
+        .lecture-duration {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-left: 10px;
+        }
+        
+        .lecture-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        
+        .status-completed {
+            background: #27ae60;
+        }
+        
+        .status-draft {
+            background: #f39c12;
+        }
+        
+        .status-planned {
+            background: #95a5a6;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .alert {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #0c5460;
+        }
+        
+        .alert-icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 UTAGE構築代行マスターコース</h1>
+            <p>講師向け台本・資料ポータル</p>
+            <div class="badge">講師専用</div>
+        </div>
+        
+        <div class="alert">
+            <span class="alert-icon">💡</span>
+            <strong>お知らせ:</strong> 台本作成システムが大幅にアップデートされました。エンゲージメント技法、パフォーマンス指導機能が追加されています。
+        </div>
+        
+        <div class="main-content">
+            <div class="card">
+                <h2>📖 マスターガイド</h2>
+                <p>台本作成に必要な全情報を統合した包括的なガイドです。UTAGEシステム詳細、エンゲージメント技法、トラブルシューティングまで網羅。</p>
+                <a href="../utage-master-guide.md" class="btn" target="_blank">マスターガイドを開く</a>
+            </div>
+            
+            <div class="card">
+                <h2>📝 台本テンプレート</h2>
+                <p>3種類のレクチャータイプ別テンプレート。ビジネス系、システム解説系、実践操作系のテンプレートで効率的に作成。</p>
+                <a href="lecture-template.md" class="btn" target="_blank">テンプレートを開く</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📊 コース進捗状況</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">124</div>
+                    <div class="stat-label">総レクチャー数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">完成済み台本</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">14:56</div>
+                    <div class="stat-label">総時間</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">モジュール数</div>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 4.8%"></div>
+            </div>
+            <p style="text-align: center; color: #7f8c8d; margin-top: 10px;">進捗率: 4.8% (6/124)</p>
+        </div>
+        
+        <div class="modules-grid">
+            <div class="module-card">
+                <h3>📋 モジュール1: UTAGE基礎とビジネス戦略</h3>
+                <div class="meta">13レクチャー • 2時間15分 • 基礎レベル</div>
+                <div class="lectures-list">
+                    <div class="lecture-item" style="cursor: pointer;" onclick="window.open('script-viewer.html?script=module-01-basics/lecture-01-business-model.md', '_blank')">
+                        <span class="lecture-title">1. UTAGE構築代行ビジネスとは？収益モデル</span>
+                        <span class="lecture-duration">12:15</span>
+                        <div class="lecture-status status-completed"></div>
+                    </div>
+                    <div class="lecture-item" style="cursor: pointer;" onclick="window.open('script-viewer.html?script=module-01-basics/lecture-02-utage-overview.md', '_blank')">
+                        <span class="lecture-title">2. UTAGEシステムの全体像と競合優位性</span>
+                        <span class="lecture-duration">10:30</span>
+                        <div class="lecture-status status-completed"></div>
+                    </div>
+                    <div class="lecture-item" style="cursor: pointer;" onclick="window.open('script-viewer.html?script=module-01-basics/lecture-03-pricing-and-costs.md', '_blank')">
+                        <span class="lecture-title">3. UTAGEの料金プランと費用対効果</span>
+                        <span class="lecture-duration">15:00</span>
+                        <div class="lecture-status status-completed"></div>
+                    </div>
+                    <div class="lecture-item" style="cursor: pointer;" onclick="window.open('script-viewer.html?script=module-01-basics/lecture-04-account-setup.md', '_blank')">
+                        <span class="lecture-title">4. アカウント作成と管理画面マスター</span>
+                        <span class="lecture-duration">15:00</span>
+                        <div class="lecture-status status-completed"></div>
+                    </div>
+                    <div class="lecture-item" style="cursor: pointer;" onclick="window.open('script-viewer.html?script=module-01-basics/lecture-05-domain-email-line-basics.md', '_blank')">
+                        <span class="lecture-title">5. UTAGE機能、ドメイン・メールステップ配信・LINEの連携について基礎</span>
+                        <span class="lecture-duration">15:00</span>
+                        <div class="lecture-status status-completed"></div>
+                    </div>
+                    <div class="lecture-item" style="cursor: pointer;" onclick="window.open('script-viewer.html?script=module-01-basics/lecture-06-member-site-payment.md', '_blank')">
+                        <span class="lecture-title">6. UTAGE機能、会員サイト機能、決済システムについて</span>
+                        <span class="lecture-duration">15:00</span>
+                        <div class="lecture-status status-completed"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">7. 提案書の作り方と価格設定</span>
+                        <span class="lecture-duration">9:15</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">8. 契約書の作成と注意点</span>
+                        <span class="lecture-duration">8:00</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">9. プロジェクト管理の基本</span>
+                        <span class="lecture-duration">7:45</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">10. クライアントとのコミュニケーション</span>
+                        <span class="lecture-duration">8:30</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">11. トラブル対応と予防策</span>
+                        <span class="lecture-duration">9:00</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">12. リピート受注の仕組み作り</span>
+                        <span class="lecture-duration">7:40</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">13. モジュール1のまとめと実践課題</span>
+                        <span class="lecture-duration">10:00</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; display: flex; gap: 10px;">
+                    <a href="script-viewer.html?script=module-01-basics/lecture-01-business-model.md" class="btn">台本を見る</a>
+                    <a href="module-01-basics/" class="btn" style="background: #95a5a6;">フォルダを開く</a>
+                </div>
+            </div>
+            
+            <div class="module-card">
+                <h3>🎨 モジュール2: ファネル/ページ作成マスタリー</h3>
+                <div class="meta">18レクチャー • 2時間43分 • 実践レベル</div>
+                <div class="lectures-list">
+                    <div class="lecture-item">
+                        <span class="lecture-title">14. ファネル作成の基本手順</span>
+                        <span class="lecture-duration">15:30</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <div class="lecture-item">
+                        <span class="lecture-title">15. 高成約率LPのデザイン原則</span>
+                        <span class="lecture-duration">12:45</span>
+                        <div class="lecture-status status-planned"></div>
+                    </div>
+                    <!-- 残りのレクチャーも同様に -->
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        + 16レクチャー（企画中）
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+            
+            <div class="module-card">
+                <h3>📧 モジュール3: メール配信とステップメール自動化</h3>
+                <div class="meta">17レクチャー • 2時間22分 • 中級レベル</div>
+                <div class="lectures-list">
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        企画中 - 17レクチャー
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+            
+            <div class="module-card">
+                <h3>📱 モジュール4: LINE配信戦略</h3>
+                <div class="meta">13レクチャー • 1時間33分 • 中級レベル</div>
+                <div class="lectures-list">
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        企画中 - 13レクチャー
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+            
+            <div class="module-card">
+                <h3>💳 モジュール5: 決済システムと商品設定</h3>
+                <div class="meta">11レクチャー • 1時間28分 • 中級レベル</div>
+                <div class="lectures-list">
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        企画中 - 11レクチャー
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+            
+            <div class="module-card">
+                <h3>🏫 モジュール6: 会員サイト構築とイベント管理</h3>
+                <div class="meta">12レクチャー • 1時間20分 • 中級レベル</div>
+                <div class="lectures-list">
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        企画中 - 12レクチャー
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+            
+            <div class="module-card">
+                <h3>📈 モジュール7: アクション実行とファネル事例</h3>
+                <div class="meta">19レクチャー • 1時間26分 • 上級レベル</div>
+                <div class="lectures-list">
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        企画中 - 19レクチャー（19業界事例）
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+            
+            <div class="module-card">
+                <h3>🚀 モジュール8: 構築代行ビジネスの実践</h3>
+                <div class="meta">22レクチャー • 2時間1分 • 上級レベル</div>
+                <div class="lectures-list">
+                    <div style="text-align: center; padding: 20px; color: #7f8c8d;">
+                        企画中 - 22レクチャー
+                    </div>
+                </div>
+                <a href="#" class="btn" style="margin-top: 15px; opacity: 0.5;">準備中</a>
+            </div>
+        </div>
+        
+        <div class="card" style="margin-top: 30px;">
+            <h2>🔧 開発者向け情報</h2>
+            <p>台本作成を効率化するためのツールとガイドライン</p>
+            <div style="margin-top: 20px;">
+                <a href="../utage-master-guide.md#6-台本作成ガイドライン" class="btn" target="_blank">台本作成ガイドライン</a>
+                <a href="../utage-master-guide.md#9-品質管理" class="btn" target="_blank" style="margin-left: 10px;">品質チェックリスト</a>
+                <a href="lecture-template.md" class="btn" target="_blank" style="margin-left: 10px;">テンプレート</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 簡単な進捗更新機能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 完成済みレクチャー数を動的に更新
+            const completedLectures = document.querySelectorAll('.status-completed').length;
+            const totalLectures = 124;
+            const progressPercent = (completedLectures / totalLectures * 100).toFixed(1);
+            
+            document.querySelector('.progress-fill').style.width = progressPercent + '%';
+            document.querySelector('.progress-fill').parentNode.nextElementSibling.textContent = 
+                `進捗率: ${progressPercent}% (${completedLectures}/${totalLectures})`;
+        });
+        
+        // モジュールカードのホバー効果
+        document.querySelectorAll('.module-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    </script>
+</body>
+</html>

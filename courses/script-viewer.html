@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTAGE講座 台本ビューアー</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+        }
+        
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+        
+        .script-content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 500px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 50px;
+            color: #e74c3c;
+        }
+        
+        /* Markdown Content Styling */
+        .markdown-body h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .markdown-body h2 {
+            color: #34495e;
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .markdown-body h3 {
+            color: #34495e;
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+        
+        .markdown-body p {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .markdown-body ul, .markdown-body ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .markdown-body li {
+            margin: 8px 0;
+        }
+        
+        .markdown-body strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .markdown-body em {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .markdown-body code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .markdown-body pre {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #e9ecef;
+        }
+        
+        .markdown-body blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        /* Special Styling for Script Elements */
+        .markdown-body p:contains("**ポーズ") {
+            background: #e8f4fd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #0c5460;
+        }
+        
+        .markdown-body p:contains("**トーン**") {
+            background: #fff3cd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .markdown-body p:contains("**エネルギー**") {
+            background: #d4edda;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #155724;
+        }
+        
+        .markdown-body p:contains("**ペーシング**") {
+            background: #f8d7da;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #721c24;
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 25px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(39,174,96,0.3);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .print-btn:hover {
+            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39,174,96,0.4);
+        }
+        
+        @media print {
+            .header, .nav-buttons, .print-btn {
+                display: none;
+            }
+            
+            .script-content {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .script-content {
+                padding: 20px;
+            }
+            
+            .markdown-body h1 {
+                font-size: 2rem;
+            }
+            
+            .markdown-body h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-book-open"></i> UTAGE構築代行マスターコース</h1>
+            <p>講師向け台本ビューアー</p>
+        </div>
+        
+        <div class="nav-buttons" id="navButtons">
+            <!-- ナビゲーションボタンは動的に生成されます -->
+        </div>
+        
+        <div class="script-content" id="content">
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin fa-3x"></i>
+                <p style="margin-top: 20px;">台本を読み込んでいます...</p>
+            </div>
+        </div>
+    </div>
+    
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> 印刷
+    </button>
+    
+    <script>
+        // 利用可能な台本のリスト（今後追加される台本もここに追加）
+        const availableScripts = [
+            {
+                module: 'module-01-basics',
+                lectures: [
+                    { file: 'lecture-01-business-model.md', title: 'レクチャー01: ビジネスモデル' },
+                    { file: 'lecture-02-utage-overview.md', title: 'レクチャー02: システム概要' },
+                    { file: 'lecture-03-pricing-and-costs.md', title: 'レクチャー03: 料金プランと追加費用' },
+                    { file: 'lecture-04-account-setup.md', title: 'レクチャー04: アカウント作成と管理画面' },
+                    { file: 'lecture-05-domain-email-line-basics.md', title: 'レクチャー05: ドメイン・メール・LINE連携基礎' },
+                    { file: 'lecture-06-member-site-payment.md', title: 'レクチャー06: 会員サイト機能・決済システム' }
+                ]
+            }
+            // 今後のモジュールはここに追加
+        ];
+        
+        // URLパラメータから台本を自動読み込み
+        window.onload = function() {
+            generateNavigation();
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const script = urlParams.get('script');
+            if (script) {
+                loadScript(script);
+            } else {
+                // デフォルトで最初のレクチャーを表示
+                loadScript('module-01-basics/lecture-01-business-model.md');
+            }
+        };
+        
+        // ナビゲーションボタンを動的に生成
+        function generateNavigation() {
+            const navDiv = document.getElementById('navButtons');
+            let navHTML = '';
+            
+            // 各モジュールのレクチャーボタンを生成
+            availableScripts.forEach(module => {
+                module.lectures.forEach(lecture => {
+                    navHTML += `
+                        <button class="btn" onclick="loadScript('${module.module}/${lecture.file}')">
+                            <i class="fas fa-play-circle"></i> ${lecture.title}
+                        </button>
+                    `;
+                });
+            });
+            
+            // 共通ボタンを追加
+            navHTML += `
+                <button class="btn btn-secondary" onclick="loadScript('lecture-template.md')">
+                    <i class="fas fa-file-alt"></i> テンプレート
+                </button>
+                <a href="../utage-master-guide.md" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-book"></i> マスターガイド
+                </a>
+                <a href="instructor-scripts-portal.html" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> ポータルに戻る
+                </a>
+            `;
+            
+            navDiv.innerHTML = navHTML;
+        };
+        
+        function loadScript(filename) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = '<div class="loading"><i class="fas fa-spinner fa-spin fa-3x"></i><p style="margin-top: 20px;">台本を読み込んでいます...</p></div>';
+            
+            // 実際のサーバー環境では、ここでfetchを使用してMDファイルを取得
+            // デモ用に、ローカルファイルパスを使用
+            fetch(`utage-master-course-scripts/${filename}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('ファイルが見つかりません');
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    // Markdownをパース
+                    const html = marked.parse(markdown);
+                    contentDiv.innerHTML = `<div class="markdown-body">${html}</div>`;
+                    
+                    // 特殊なスタイリングを適用
+                    applySpecialStyling();
+                    
+                    // ページトップへスクロール
+                    window.scrollTo(0, 0);
+                })
+                .catch(error => {
+                    contentDiv.innerHTML = `
+                        <div class="error">
+                            <i class="fas fa-exclamation-triangle fa-3x"></i>
+                            <h2 style="margin-top: 20px;">エラーが発生しました</h2>
+                            <p>${error.message}</p>
+                            <p style="margin-top: 20px;">
+                                <small>※ この画面はローカル環境では正常に動作しない場合があります。<br>
+                                サーバーにアップロード後、正常に表示されます。</small>
+                            </p>
+                        </div>
+                    `;
+                });
+        }
+        
+        function applySpecialStyling() {
+            // パフォーマンス指示要素に特別なスタイリング
+            const paragraphs = document.querySelectorAll('.markdown-body p');
+            paragraphs.forEach(p => {
+                const text = p.textContent;
+                if (text.includes('**ポーズ')) {
+                    p.style.background = '#e8f4fd';
+                    p.style.padding = '10px 15px';
+                    p.style.borderRadius = '5px';
+                    p.style.margin = '20px 0';
+                    p.style.color = '#0c5460';
+                    p.style.fontWeight = 'bold';
+                } else if (text.includes('**トーン**')) {
+                    p.style.background = '#fff3cd';
+                    p.style.padding = '10px 15px';
+                    p.style.borderRadius = '5px';
+                    p.style.margin = '20px 0';
+                    p.style.color = '#856404';
+                } else if (text.includes('**エネルギー**')) {
+                    p.style.background = '#d4edda';
+                    p.style.padding = '10px 15px';
+                    p.style.borderRadius = '5px';
+                    p.style.margin = '20px 0';
+                    p.style.color = '#155724';
+                } else if (text.includes('**ペーシング**')) {
+                    p.style.background = '#f8d7da';
+                    p.style.padding = '10px 15px';
+                    p.style.borderRadius = '5px';
+                    p.style.margin = '20px 0';
+                    p.style.color = '#721c24';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
